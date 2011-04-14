@@ -81,6 +81,26 @@
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>axistools-maven-plugin</artifactId>
+                <version>1.4</version>
+                <configuration>
+                    <sourceDirectory>src/main/resources</sourceDirectory>
+                    <wsdlFiles>
+                        <wsdlFile>netsuite.wsdl</wsdlFile>
+                    </wsdlFiles>   
+<!--                    <packageToNamespace>Magento=org.mule.module.magento.api.internal</packageToNamespace>-->
+                    <packageSpace>org.mule.module.netsuite.api.internal</packageSpace>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -168,6 +188,11 @@
 			<artifactId>mule-cloud-connector-annotations</artifactId>
 			<version>${cloudconnect.version}</version>
 		</dependency>
+		<dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-axis</artifactId>
+            <version>${mule.version}</version>
+        </dependency>
 		<!-- for testing -->
 		<dependency>
 			<groupId>junit</groupId>
