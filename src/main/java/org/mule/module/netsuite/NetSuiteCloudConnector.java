@@ -26,4 +26,8 @@ public class NetSuiteCloudConnector
     public void myOperation()
     {
     }
+
+
+
+
 }
