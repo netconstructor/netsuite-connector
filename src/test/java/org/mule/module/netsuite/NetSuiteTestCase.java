@@ -1,5 +1,5 @@
 /**
- * Mule S3 Cloud Connector
+ * Mule NetSuite Cloud Connector
  *
  * Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
  *
