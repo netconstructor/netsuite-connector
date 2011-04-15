@@ -22,19 +22,22 @@ import javax.validation.constraints.NotNull;
  * 
  * @author flbulgarelli
  */
-public interface NetSuiteClient
+public interface NetSuiteClient<E extends Exception>
 {
-    Object getEntity(@NotNull EntityReference sourceEntity);
+    Object getEntity(@NotNull EntityReference sourceEntity) throws E;
 
     @NotNull
-    List<Object> getDeletedEntity(@NotNull EntityType type, @NotNull String whenExpression);
+    List<Object> getDeletedEntity(@NotNull EntityType type, @NotNull String whenExpression) throws E;
 
-    void attachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity);
+    void attachEntity(@NotNull EntityReference sourceEntity,
+                      @NotNull EntityReference destinationEntity,
+                      EntityReference contactEntity) throws E;
 
-    void dettachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity);
+    void detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
+        throws E;
 
-    void deleteEntity(@NotNull EntityReference entity);
+    void deleteEntity(@NotNull EntityReference entity) throws E;
 
     @NotNull
-    List<Object> listEntities(@NotNull EntityType type);
+    List<Object> listEntities(@NotNull EntityType type) throws E;
 }

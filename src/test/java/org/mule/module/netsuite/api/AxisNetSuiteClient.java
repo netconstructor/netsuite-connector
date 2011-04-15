@@ -12,26 +12,26 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.entity.EntityReference;
 import org.mule.module.netsuite.api.entity.EntityType;
-import org.mule.module.netsuite.api.internal.ExceededRecordCountFault;
-import org.mule.module.netsuite.api.internal.ExceededRequestLimitFault;
-import org.mule.module.netsuite.api.internal.ExceededRequestSizeFault;
-import org.mule.module.netsuite.api.internal.ExceededUsageLimitFault;
-import org.mule.module.netsuite.api.internal.InvalidCredentialsFault;
-import org.mule.module.netsuite.api.internal.InvalidSessionFault;
+import org.mule.module.netsuite.api.internal.AttachBasicReference;
+import org.mule.module.netsuite.api.internal.AttachContactReference;
+import org.mule.module.netsuite.api.internal.DetachBasicReference;
+import org.mule.module.netsuite.api.internal.GetAllRecord;
+import org.mule.module.netsuite.api.internal.GetAllRecordType;
 import org.mule.module.netsuite.api.internal.NetSuitePortType;
-import org.mule.module.netsuite.api.internal.UnexpectedErrorFault;
 
 import java.rmi.RemoteException;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.apache.commons.lang.Validate;
 
-public class AxisNetSuiteClient implements NetSuiteClient
+public class AxisNetSuiteClient implements NetSuiteClient<Exception>
 {
     private final AxisPortProvider portProvider;
+
+    // TODO read and write responses may return false error responses - see .isSucced
 
     public AxisNetSuiteClient(@NotNull AxisPortProvider portProvider)
     {
@@ -39,83 +39,57 @@ public class AxisNetSuiteClient implements NetSuiteClient
         this.portProvider = portProvider;
     }
 
-    public void attachEntity(EntityReference sourceEntity, EntityReference destinationEntity)
+    public void attachEntity(@NotNull EntityReference sourceEntity,
+                             @NotNull EntityReference destinationEntity,
+                             EntityReference contactEntity) throws Exception
     {
-        // TODO Auto-generated method stub
+        Validate.notNull(sourceEntity);
+        Validate.notNull(destinationEntity);
 
+        if (contactEntity == null)
+        {
+            getAuthenticatedPort().attach(
+                new AttachBasicReference(destinationEntity.createRecordRef(), sourceEntity.createRecordRef()));
+        }
+        else
+        {
+            getAuthenticatedPort().attach(
+                new AttachContactReference(destinationEntity.createRecordRef(),
+                    contactEntity.createRecordRef(), sourceEntity.createRecordRef()));
+        }
     }
 
-    public void deleteEntity(EntityReference entity)
+    public void deleteEntity(EntityReference entity) throws Exception
     {
-        // TODO Auto-generated method stub
-
+        // TODO use customRecordRef?
+        getAuthenticatedPort().delete(entity.createRecordRef());
     }
 
-    public void dettachEntity(EntityReference sourceEntity, EntityReference destinationEntity)
+    public void detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
+        throws Exception
     {
-        // TODO Auto-generated method stub
-
+        // TODO test arguments order, seems inconsistent
+        getAuthenticatedPort().detach(
+            new DetachBasicReference(sourceEntity.createRecordRef(), destinationEntity.createRecordRef()));
     }
 
-    public List<Object> getDeletedEntity(EntityType type, String whenExpression)
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public Object getEntity(EntityReference entity)
-    {
-        try
-        {
-            return getAuthenticatedPort().get(entity.createRecordRef());
-        }
-        catch (ExceededRequestSizeFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (InvalidCredentialsFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (ExceededUsageLimitFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (ExceededRequestLimitFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (ExceededRecordCountFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (UnexpectedErrorFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (InvalidSessionFault e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        catch (RemoteException e)
-        {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        throw new NotImplementedException("Exception handling is not implemented yet");
-    }
-
-    public List<Object> listEntities(EntityType type)
+    public List<Object> getDeletedEntity(EntityType type, String whenExpression) throws Exception
     {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    public Object getEntity(EntityReference entity) throws Exception
+    {
+        return getAuthenticatedPort().get(entity.createRecordRef()).getRecord();
+    }
+
+    public List<Object> listEntities(EntityType type) throws Exception
+    {
+        return Arrays.asList((Object[]) getAuthenticatedPort().getAll(
+            new GetAllRecord(GetAllRecordType.fromValue(type.getType().getValue())))
+            .getRecordList()
+            .getRecord());
     }
 
     public NetSuitePortType getAuthenticatedPort() throws RemoteException
@@ -123,6 +97,4 @@ public class AxisNetSuiteClient implements NetSuiteClient
         return portProvider.getAuthenticatedPort();
     }
 
-    
-    
 }
