@@ -20,10 +20,13 @@ import java.util.List;
 
 import org.springframework.core.annotation.AnnotationUtils;
 
-public class NetSuiteAdaptor
+public final class NetSuiteAdaptor
 {
-
     private static final Object LOCK = new Object();
+    
+    private NetSuiteAdaptor()
+    {
+    }
 
     @SuppressWarnings("unchecked")
     public static NetSuiteClient<List<Object>, RuntimeException> adapt(final NetSuiteClient<?, ?> client)
