@@ -8,15 +8,27 @@
  * LICENSE.txt file.
  */
 
-package org.mule.module.netsuite.api.entity;
+package org.mule.module.netsuite.api.model.entity;
 
 import org.mule.module.netsuite.api.internal.RecordRef;
 
 public interface EntityId
 {
-    void populate(RecordRef recordRef);
+    RecordRef createRef();
 
-    class ExternalId implements EntityId
+    abstract class AbstractId implements EntityId
+    {
+        public RecordRef createRef()
+        {
+            RecordRef recordRef = new RecordRef();
+            populate(recordRef);
+            return recordRef;
+        }
+
+        abstract void populate(RecordRef recordRef);
+    }
+
+    class ExternalId extends AbstractId
     {
         private final String id;
 
@@ -31,7 +43,7 @@ public interface EntityId
         }
     }
 
-    class InternalId implements EntityId
+    class InternalId extends AbstractId
     {
         private final String id;
 

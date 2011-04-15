@@ -10,10 +10,10 @@
 
 package org.mule.module.netsuite;
 
-import org.mule.module.netsuite.api.entity.EntityReference;
-import org.mule.module.netsuite.api.entity.EntityType;
-import org.mule.module.netsuite.api.entity.EntityId.ExternalId;
-import org.mule.module.netsuite.api.entity.EntityId.InternalId;
+import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.EntityType;
+import org.mule.module.netsuite.api.model.entity.EntityId.ExternalId;
+import org.mule.module.netsuite.api.model.entity.EntityId.InternalId;
 
 import javax.validation.constraints.NotNull;
 

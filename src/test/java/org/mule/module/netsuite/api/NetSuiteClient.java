@@ -10,10 +10,10 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.entity.EntityReference;
-import org.mule.module.netsuite.api.entity.EntityType;
-
-import java.util.List;
+import org.mule.module.netsuite.api.model.entity.EntityId;
+import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.EntityType;
+import org.mule.module.netsuite.api.model.event.EventAttendeeStatus;
 
 import javax.validation.constraints.NotNull;
 
@@ -22,22 +22,44 @@ import javax.validation.constraints.NotNull;
  * 
  * @author flbulgarelli
  */
-public interface NetSuiteClient<E extends Exception>
+public interface NetSuiteClient<CollectionType, ExceptionType extends Exception>
 {
-    Object getEntity(@NotNull EntityReference sourceEntity) throws E;
+    Object getEntity(@NotNull EntityReference sourceEntity) throws ExceptionType;
 
     @NotNull
-    List<Object> getDeletedEntity(@NotNull EntityType type, @NotNull String whenExpression) throws E;
+    CollectionType getDeletedEntity(@NotNull EntityType type, @NotNull String whenExpression)
+        throws ExceptionType;
 
     void attachEntity(@NotNull EntityReference sourceEntity,
                       @NotNull EntityReference destinationEntity,
-                      EntityReference contactEntity) throws E;
+                      EntityReference contactEntity) throws ExceptionType;
 
     void detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
-        throws E;
+        throws ExceptionType;
 
-    void deleteEntity(@NotNull EntityReference entity) throws E;
+    void deleteEntity(@NotNull EntityReference entity) throws ExceptionType;
 
     @NotNull
-    List<Object> listEntities(@NotNull EntityType type) throws E;
+    CollectionType getEntities(@NotNull EntityType type) throws ExceptionType;
+
+    Object getServerTime() throws ExceptionType;
+
+    void updateInviteeStatus(@NotNull EntityReference entity, @NotNull EventAttendeeStatus status)
+        throws ExceptionType;
+
+    CollectionType getCustomizationId(@NotNull EntityType type, boolean includeInactives)
+        throws ExceptionType;
+
+    CollectionType getItemAvailability() throws ExceptionType;
+
+    CollectionType getBudgetExchangeRate(@NotNull EntityId period,
+                                         @NotNull EntityId fromSubsidiary,
+                                         EntityId toSubsidiary) throws ExceptionType;
+
+    CollectionType getConsolidatedExchangeRate(@NotNull EntityId period,
+                                               @NotNull EntityId fromSubsidiary,
+                                               EntityId toSubsidiary) throws ExceptionType;
+
+    CollectionType getSavedSearch(@NotNull EntityType type) throws ExceptionType;
+
 }

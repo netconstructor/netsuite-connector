@@ -8,7 +8,7 @@
  * LICENSE.txt file.
  */
 
-package org.mule.module.netsuite.api.entity;
+package org.mule.module.netsuite.api.model.entity;
 
 import org.mule.module.netsuite.api.internal.RecordRef;
 
@@ -30,11 +30,10 @@ public class EntityReference
     }
 
     @NotNull
-    public RecordRef createRecordRef()
+    public RecordRef createRef()
     {
-        RecordRef recordRef = new RecordRef();
+        RecordRef recordRef = id.createRef();
         recordRef.setType(type.getType());
-        id.populate(recordRef);
         return recordRef;
     }
 

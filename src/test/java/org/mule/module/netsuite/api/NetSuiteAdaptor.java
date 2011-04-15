@@ -10,57 +10,89 @@
 
 package org.mule.module.netsuite.api;
 
+import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
+
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.rmi.RemoteException;
+import java.util.List;
+
+import org.springframework.core.annotation.AnnotationUtils;
 
 public class NetSuiteAdaptor
 {
-    // TODO soft exception interceptor
-    
-    //TODO composite interceptor
 
-    private static class RetryingInterceptor implements Interceptor
+    private static final Object LOCK = new Object();
+
+    @SuppressWarnings("unchecked")
+    public static NetSuiteClient<List<Object>, RuntimeException> adapt(final NetSuiteClient<?, ?> client)
     {
-        public Object invoke(Object proxy, Object target, Method method, Object[] args) throws Throwable
-        {
-            do
+        return (NetSuiteClient<List<Object>, RuntimeException>) Proxy.newProxyInstance(
+            NetSuiteAdaptor.class.getClassLoader(), new Class[]{NetSuiteClient.class},
+            new InvocationHandler()
             {
-                try
+                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable
                 {
-                    return method.invoke(target, args);
-                }
-                catch (Exception ex)
-                {
-                    if (!isRetryError(ex))
+                    NetSuiteOperation operationMetadata = AnnotationUtils.getAnnotation(method,
+                        NetSuiteOperation.class);
+                    if (operationMetadata == null)
                     {
-                        throw ex;
+                        return method.invoke(client, args);
+                    }
+                    try
+                    {
+                        synchronized (LOCK)
+                        {
+                            return adaptReturnType(method.invoke(client, args), operationMetadata);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw soften(e);
                     }
                 }
-            }
-            while (true);
-        }
-
-        private boolean isRetryError(Exception ex)
-        {// TODO
-            return false;
-        }
+            });
     }
 
-    private static class SynchronizingInterceptor implements Interceptor
+    private static Exception soften(Exception e)
     {
-        private static final Object LOCK = new Object();
-
-        public Object invoke(Object proxy, Object target, Method method, Object[] args) throws Throwable
+        if (e instanceof RemoteException)
         {
-            synchronized (LOCK)
-            {
-                return method.invoke(target, args);
-            }
+            return new NetSuiteGenericException(e);
         }
+        return e;
     }
 
-    private interface Interceptor
+    private static Object adaptReturnType(Object returnValue, NetSuiteOperation operationMetadata)
+        throws Throwable
     {
-        Object invoke(Object proxy, Object target, Method method, Object[] args) throws Throwable;
+        return operationMetadata.resultType().adapt(returnValue, operationMetadata.resultName());
     }
+
+    // private static abstract class RetryingInterceptor implements Interceptor
+    // {
+    // public Object intercept(Object target, Block block, Object[] args) throws
+    // Throwable
+    // {
+    // do
+    // {
+    // try
+    // {
+    // return block.proceed(target, args);
+    // }
+    // catch (Throwable ex)
+    // {
+    // if (!isRetryError(ex))
+    // {
+    // throw ex;
+    // }
+    // }
+    // }
+    // while (true);
+    // }
+    //
+    // protected abstract boolean isRetryError(Throwable ex);
+    // }
 
 }

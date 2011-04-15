@@ -9,10 +9,11 @@
  */
 
 
-package org.mule.module.netsuite.api.entity;
+package org.mule.module.netsuite.api.model.entity;
+
+import static org.mule.module.netsuite.api.internal.RecordType.*;
 
 import org.mule.module.netsuite.api.internal.RecordType;
-import static org.mule.module.netsuite.api.internal.RecordType.*;
 
 public enum EntityType
 {

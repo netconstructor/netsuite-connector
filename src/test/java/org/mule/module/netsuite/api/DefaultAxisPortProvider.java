@@ -14,7 +14,6 @@ package org.mule.module.netsuite.api;
 import org.mule.module.netsuite.api.internal.NetSuitePortType;
 import org.mule.module.netsuite.api.internal.NetSuiteServiceLocator;
 import org.mule.module.netsuite.api.internal.Passport;
-import org.mule.module.netsuite.api.internal.RecordRef;
 
 import java.rmi.RemoteException;
 
