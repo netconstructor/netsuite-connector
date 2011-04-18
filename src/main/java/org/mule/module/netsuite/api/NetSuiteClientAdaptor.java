@@ -20,11 +20,11 @@ import java.util.List;
 
 import org.springframework.core.annotation.AnnotationUtils;
 
-public final class NetSuiteAdaptor
+public final class NetSuiteClientAdaptor
 {
     private static final Object LOCK = new Object();
-    
-    private NetSuiteAdaptor()
+
+    private NetSuiteClientAdaptor()
     {
     }
 
@@ -32,7 +32,7 @@ public final class NetSuiteAdaptor
     public static NetSuiteClient<List<Object>, RuntimeException> adapt(final NetSuiteClient<?, ?> client)
     {
         return (NetSuiteClient<List<Object>, RuntimeException>) Proxy.newProxyInstance(
-            NetSuiteAdaptor.class.getClassLoader(), new Class[]{NetSuiteClient.class},
+            NetSuiteClientAdaptor.class.getClassLoader(), new Class[]{NetSuiteClient.class},
             new InvocationHandler()
             {
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable
@@ -60,7 +60,7 @@ public final class NetSuiteAdaptor
 
     private static Exception soften(Exception e)
     {
-        if (e instanceof RemoteException)
+        if (!(e instanceof RuntimeException))
         {
             return new NetSuiteGenericException(e);
         }

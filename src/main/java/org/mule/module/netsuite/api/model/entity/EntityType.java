@@ -8,7 +8,6 @@
  * LICENSE.txt file.
  */
 
-
 package org.mule.module.netsuite.api.model.entity;
 
 import static org.mule.module.netsuite.api.internal.RecordType.*;

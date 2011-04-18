@@ -17,6 +17,8 @@ import org.mule.module.netsuite.api.model.entity.EntityId.InternalId;
 
 import javax.validation.constraints.NotNull;
 
+import org.apache.commons.lang.Validate;
+
 /**
  * Utility class for creating {@link EntityReferences} from connector arguments
  */
@@ -28,6 +30,7 @@ public final class EntityReferences
 
     public static EntityReference from(@NotNull EntityType entityType, String internalId, String externalId)
     {
+        Validate.isTrue((internalId == null) != (externalId == null), "Must specify one and only one id");
         return new EntityReference(//
             internalId != null ? new InternalId(internalId) : new ExternalId(externalId), entityType);
     }

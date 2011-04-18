@@ -25,6 +25,7 @@ import org.mule.module.netsuite.api.internal.GetDeletedFilter;
 import org.mule.module.netsuite.api.internal.GetSavedSearchRecord;
 import org.mule.module.netsuite.api.internal.ItemAvailabilityFilter;
 import org.mule.module.netsuite.api.internal.NetSuitePortType;
+import org.mule.module.netsuite.api.internal.Record;
 import org.mule.module.netsuite.api.internal.RecordRef;
 import org.mule.module.netsuite.api.internal.SearchRecordType;
 import org.mule.module.netsuite.api.internal.UpdateInviteeStatusReference;
@@ -47,6 +48,18 @@ public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
     {
         Validate.notNull(portProvider);
         this.portProvider = portProvider;
+    }
+
+    private void update()
+    {
+        // TODO Auto-generated method stub
+
+    }
+
+    private void add()
+    {
+        // getAuthenticatedPort().add(nre Record);
+
     }
 
     @NetSuiteOperation
