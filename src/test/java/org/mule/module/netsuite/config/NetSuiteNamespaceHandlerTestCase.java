@@ -24,24 +24,9 @@ public class NetSuiteNamespaceHandlerTestCase extends FunctionalTestCase
         return "netsuite-namespace-config.xml";
     }
 
-    public void testSendMessageToFlow()throws Exception
+    public void testname() throws Exception
     {
-    /*
-        This test case tests your Mule integration.
-
-        To test your flow directly (i.e. without any inbound endpoints, declare a flow in
-        netsuite-namespace-config.xml and put the element from your
-        cloud connector's namespace that you want to test into it.
-        A proper example was put into netsuite-namespace-config.xml
-
-        Now you can send data to your test flow from the unit test:
-
-        String payload = <your input to the flow here>;
-        SimpleFlowConstruct flow = lookupFlowConstruct("theFlow");
-        MuleEvent event = getTestEvent(payload);
-        MuleEvent responseEvent = flow.process(event);
-        assertEquals(<expected test output>, responseEvent.getMessage().getPayloadAsString());
-    */
+        lookupFlowConstruct("theFlow");
     }
 
     private SimpleFlowConstruct lookupFlowConstruct(String name)

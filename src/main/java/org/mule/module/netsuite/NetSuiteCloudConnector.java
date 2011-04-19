@@ -25,12 +25,14 @@ import org.mule.module.netsuite.api.model.event.EventAttendeeStatus;
 import org.mule.tools.cloudconnect.annotations.Connector;
 import org.mule.tools.cloudconnect.annotations.Operation;
 import org.mule.tools.cloudconnect.annotations.Parameter;
+import org.mule.tools.cloudconnect.annotations.Property;
 
 import java.util.List;
 
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
 public class NetSuiteCloudConnector implements Initialisable
 {
+    @Property(name = "client-ref", optional = true) 
     private NetSuiteClient<List<Object>, RuntimeException> client;
 
     @Operation
@@ -122,7 +124,7 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public Object getServerTime()
+    public Object GetServerTime()
     {
         return client.getServerTime();
     }
@@ -137,5 +139,15 @@ public class NetSuiteCloudConnector implements Initialisable
     {
 
     }
+    
+    public NetSuiteClient<List<Object>, RuntimeException> getClient()
+    {
+        return client;
+    }
+    public void setClient(NetSuiteClient<List<Object>, RuntimeException> client)
+    {
+        this.client = client;
+    }
+    
 
 }

@@ -64,7 +64,7 @@
 			<plugin>
 				<groupId>org.mule.tools</groupId>
 				<artifactId>mule-cloud-connector-maven-plugin</artifactId>
-				<version>2.0.14-SNAPSHOT</version>
+				<version>${cloudconnect.version}</version>
 				<extensions>true</extensions>
 			</plugin>
 

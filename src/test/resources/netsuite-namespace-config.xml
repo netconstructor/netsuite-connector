@@ -25,14 +25,15 @@
                           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
                           http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd">
 
+	<netsuite:config client-ref="ffdfsdf"/>
         <!--
            Declare one flow like this one per element you add in your schema.
 
            See the comment in NetSuiteNamespaceHandlerTestCase for an example how to send
            Mule events directly to this flow.
-
+-->
        <flow name="theFlow">
-           <netsuite:operation parameter="#[payload]"/>
+           <netsuite:get-server-time />
        </flow>
-        -->
+        
 </mule>

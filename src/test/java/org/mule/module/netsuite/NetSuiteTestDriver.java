@@ -39,7 +39,7 @@ public class NetSuiteTestDriver
     @Test
     public void getServerTime() throws Exception
     {
-        assertThat(connector.getServerTime(), instanceOf(Calendar.class));
+        assertThat(connector.GetServerTime(), instanceOf(Calendar.class));
     }
 
     @Test
