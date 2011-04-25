@@ -81,7 +81,7 @@
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
-			<plugin>
+<!--			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>axistools-maven-plugin</artifactId>
 				<version>1.4</version>
@@ -90,19 +90,17 @@
 					<wsdlFiles>
 						<wsdlFile>netsuite.wsdl</wsdlFile>
 					</wsdlFiles>
-					<!--
-						<packageToNamespace>Magento=org.mule.module.magento.api.internal</packageToNamespace>
-					-->
+
+					<packageToNamespace>Magento=org.mule.module.magento.api.internal</packageToNamespace>
+
 					<packageSpace>org.mule.module.netsuite.api.internal</packageSpace>
+					<timeout>-1</timeout>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+				
+					<executions> <execution> <goals> <goal>wsdl2java</goal> </goals>
+					</execution> </executions>
+				
+			</plugin>-->
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
