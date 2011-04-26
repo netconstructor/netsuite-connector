@@ -33,6 +33,11 @@ public class NetSuiteTestDriver
     public void setup() throws InitialisationException
     {
         connector = new NetSuiteCloudConnector();
+        connector.setAddress("https://webservices.netsuite.com/wsdl/v2010_2_0");
+        connector.setAccount("lala");
+        connector.setEmail("juan+netsuite@zaubersoftware.com");
+        connector.setPassword("lala1234");
+        connector.setRoleId("3");
         connector.initialise();
     }
 

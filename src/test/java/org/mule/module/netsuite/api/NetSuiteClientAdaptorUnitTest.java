@@ -29,6 +29,7 @@ public class NetSuiteClientAdaptorUnitTest
     private NetSuiteClient<Object, Exception> mock;
     private NetSuiteClient<List<Object>, RuntimeException> client;
 
+    @SuppressWarnings("unchecked")
     @Before
     public void setup()
     {

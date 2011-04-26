@@ -10,6 +10,7 @@
 
 package org.mule.module.netsuite;
 
+import org.mule.module.netsuite.api.model.entity.EntityId;
 import org.mule.module.netsuite.api.model.entity.EntityReference;
 import org.mule.module.netsuite.api.model.entity.EntityType;
 import org.mule.module.netsuite.api.model.entity.EntityId.ExternalId;
@@ -30,9 +31,16 @@ public final class EntityReferences
 
     public static EntityReference from(@NotNull EntityType entityType, String internalId, String externalId)
     {
-        Validate.isTrue((internalId == null) != (externalId == null), "Must specify one and only one id");
-        return new EntityReference(//
-            internalId != null ? new InternalId(internalId) : new ExternalId(externalId), entityType);
+        return new EntityReference(EntityIds.from(internalId, externalId), entityType);
+    }
+
+    public static EntityReference nulSafeFrom(EntityType contanctEntityType,
+                                              String contanctInternalId,
+                                              String contanctExternalId)
+    {
+        return contanctEntityType != null
+                                         ? from(contanctEntityType, contanctInternalId, contanctExternalId)
+                                         : null;
     }
 
 }

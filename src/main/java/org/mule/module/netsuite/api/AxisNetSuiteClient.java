@@ -25,7 +25,6 @@ import org.mule.module.netsuite.api.internal.GetDeletedFilter;
 import org.mule.module.netsuite.api.internal.GetSavedSearchRecord;
 import org.mule.module.netsuite.api.internal.ItemAvailabilityFilter;
 import org.mule.module.netsuite.api.internal.NetSuitePortType;
-import org.mule.module.netsuite.api.internal.Record;
 import org.mule.module.netsuite.api.internal.RecordRef;
 import org.mule.module.netsuite.api.internal.SearchRecordType;
 import org.mule.module.netsuite.api.internal.UpdateInviteeStatusReference;
@@ -39,7 +38,6 @@ import java.rmi.RemoteException;
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang.Validate;
-
 public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
 {
     private final AxisPortProvider portProvider;
@@ -53,13 +51,11 @@ public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
     private void update()
     {
         // TODO Auto-generated method stub
-
     }
 
     private void add()
     {
         // getAuthenticatedPort().add(nre Record);
-
     }
 
     @NetSuiteOperation
@@ -120,13 +116,13 @@ public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
 
     @NetSuiteOperation(resultName = "BudgetExchangeRate", resultType = ReturnType.LIST)
     public Object getBudgetExchangeRate(@NotNull EntityId period,
-                                        @NotNull EntityId fromSubsidiary,
-                                        EntityId toSubsidiary) throws Exception
+                                  @NotNull EntityId fromSubsidiary,
+                                  EntityId toSubsidiary) throws Exception
     {
         Validate.notNull(period);
         Validate.notNull(fromSubsidiary);
         return getAuthenticatedPort().getBudgetExchangeRate(
-            new BudgetExchangeRateFilter(createRefNullSafe(period), createRefNullSafe(fromSubsidiary),
+            new BudgetExchangeRateFilter(period.createRef(), fromSubsidiary.createRef(),
                 createRefNullSafe(toSubsidiary)));
     }
 
@@ -136,7 +132,7 @@ public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
                                               EntityId toSubsidiary) throws Exception
     {
         return getAuthenticatedPort().getConsolidatedExchangeRate(
-            new ConsolidatedExchangeRateFilter(createRefNullSafe(period), createRefNullSafe(fromSubsidiary),
+            new ConsolidatedExchangeRateFilter(period.createRef(), fromSubsidiary.createRef(),
                 createRefNullSafe(toSubsidiary)));
     }
 
