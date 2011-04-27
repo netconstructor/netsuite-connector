@@ -10,11 +10,11 @@
 
 package org.mule.module.netsuite;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-import org.mule.module.netsuite.api.internal.RecordRef;
-import org.mule.module.netsuite.api.model.entity.EntityReference;
-import org.mule.module.netsuite.api.model.entity.EntityType;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import org.junit.Test;
 
@@ -25,9 +25,9 @@ public class EntityReferencesUnitTest
     public void testFromInternalId()
     {
         String internalId = "A123";
-        RecordRef ref = EntityReferences.from(EntityType.ACCOUNT, internalId, null).createRef();
+        RecordRef ref = EntityReferences.from(RecordType.ACCOUNT, internalId, null).createRef();
         assertEquals(internalId, ref.getInternalId());
-        assertEquals(EntityType.ACCOUNT.getType(), ref.getType());
+        assertEquals(RecordType.ACCOUNT, ref.getType());
         assertNull(ref.getExternalId());
     }
 
@@ -35,7 +35,7 @@ public class EntityReferencesUnitTest
     public void testFromExternalId()
     {
         String externalId = "A123";
-        RecordRef ref = EntityReferences.from(EntityType.ACCOUNT, null, externalId).createRef();
+        RecordRef ref = EntityReferences.from(RecordType.ACCOUNT, null, externalId).createRef();
         assertEquals(externalId, ref.getExternalId());
         assertNull(ref.getInternalId());
     }
@@ -43,7 +43,7 @@ public class EntityReferencesUnitTest
     @Test(expected = IllegalArgumentException.class)
     public void testFromBadInputId()
     {
-        EntityReferences.from(EntityType.ACCOUNT, null, null);
+        EntityReferences.from(RecordType.ACCOUNT, null, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -55,7 +55,7 @@ public class EntityReferencesUnitTest
     @Test(expected = IllegalArgumentException.class)
     public void testFromTwoIds()
     {
-        EntityReferences.from(EntityType.ASSEMBLY_UNBUILD, "A126", "EFR5");
+        EntityReferences.from(RecordType.ASSEMBLY_UNBUILD, "A126", "EFR5");
     }
 
 }

@@ -23,20 +23,24 @@ import org.mule.module.netsuite.api.AxisNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultAxisPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
-import org.mule.module.netsuite.api.model.entity.EntityType;
-import org.mule.module.netsuite.api.model.event.EventAttendeeStatus;
 import org.mule.tools.cloudconnect.annotations.Connector;
 import org.mule.tools.cloudconnect.annotations.Operation;
 import org.mule.tools.cloudconnect.annotations.Parameter;
 import org.mule.tools.cloudconnect.annotations.Property;
 
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+
+import java.util.Calendar;
 import java.util.List;
+
+import javax.xml.datatype.XMLGregorianCalendar;
 
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
 public class NetSuiteCloudConnector implements Initialisable
 {
     @Property(name = "client-ref", optional = true)
-    private NetSuiteClient<List<Object>, RuntimeException> client;
+    private NetSuiteClient<List<Object>, RuntimeException, Void> client;
     @Property
     private String address;
     @Property
@@ -49,24 +53,24 @@ public class NetSuiteCloudConnector implements Initialisable
     private String roleId;
 
     @Operation
-    public void attachEntity(@Parameter(optional = false) EntityType sourceEntityType,
+    public void attachEntity(@Parameter(optional = false) RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
                              @Parameter(optional = true) String sourceExternalId,
-                             @Parameter(optional = false) EntityType destinationEntityType,
+                             @Parameter(optional = false) RecordType destinationRecordType,
                              @Parameter(optional = true) String destinationInternalId,
                              @Parameter(optional = true) String destinationExternalId,
-                             @Parameter(optional = true) EntityType contanctEntityType,
+                             @Parameter(optional = true) RecordType contanctRecordType,
                              @Parameter(optional = true) String contanctInternalId,
                              @Parameter(optional = true) String contanctExternalId)
     {
         client.attachEntity( //
-            from(sourceEntityType, sourceInternalId, sourceExternalId), //
-            from(destinationEntityType, destinationInternalId, destinationExternalId), // 
-            nulSafeFrom(contanctEntityType, contanctInternalId, contanctExternalId));
+            from(sourceRecordType, sourceInternalId, sourceExternalId), //
+            from(destinationRecordType, destinationInternalId, destinationExternalId), // 
+            nulSafeFrom(contanctRecordType, contanctInternalId, contanctExternalId));
     }
 
     @Operation
-    public void deleteEntity(@Parameter EntityType entityType,
+    public void deleteEntity(@Parameter RecordType entityType,
                              @Parameter(optional = true) String internalId,
                              @Parameter(optional = true) String externalId)
     {
@@ -74,16 +78,16 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public void detachEntity(@Parameter EntityType sourceEntityType,
+    public void detachEntity(@Parameter RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
                              @Parameter(optional = true) String sourceExternalId,
-                             @Parameter EntityType destinationEntityType,
+                             @Parameter RecordType destinationRecordType,
                              @Parameter(optional = true) String destinationInternalId,
                              @Parameter(optional = true) String destinationExternalId)
     {
         client.detachEntity(//
-            from(sourceEntityType, sourceInternalId, sourceExternalId),// 
-            from(destinationEntityType, destinationInternalId, destinationExternalId));
+            from(sourceRecordType, sourceInternalId, sourceExternalId),// 
+            from(destinationRecordType, destinationInternalId, destinationExternalId));
     }
 
     @Operation
@@ -115,26 +119,26 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public List<Object> getCustomizationId(@Parameter EntityType type,
+    public List<Object> getCustomizationId(@Parameter RecordType type,
                                            @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
     {
         return client.getCustomizationId(type, includeInactives);
     }
 
     @Operation
-    public List<Object> getDeletedEntity(@Parameter EntityType type, @Parameter String whenExpression)
+    public List<Object> getDeletedEntity(@Parameter RecordType type, @Parameter String whenExpression)
     {
         return client.getDeletedEntity(type, whenExpression);
     }
 
     @Operation
-    public List<Object> getEntities(@Parameter EntityType type)
+    public List<Object> getEntities(@Parameter RecordType type)
     {
         return client.getEntities(type);
     }
 
     @Operation
-    public Object getEntity(@Parameter EntityType entityType,
+    public Object getEntity(@Parameter RecordType entityType,
                             @Parameter(optional = true) String internalId,
                             @Parameter(optional = true) String externalId)
     {
@@ -148,22 +152,22 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public List<Object> getSavedSearch(@Parameter EntityType type)
+    public List<Object> getSavedSearch(@Parameter RecordType type)
     {
         return client.getSavedSearch(type);
     }
 
     @Operation
-    public Object GetServerTime()
+    public Calendar GetServerTime()
     {
-        return client.getServerTime();
+        return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar();
     }
 
     @Operation
-    public void updateInviteeStatus(@Parameter EntityType entityType,
+    public void updateInviteeStatus(@Parameter RecordType entityType,
                                     @Parameter(optional = true) String internalId,
                                     @Parameter(optional = true) String externalId,
-                                    @Parameter EventAttendeeStatus status)
+                                    @Parameter CalendarEventAttendeeResponse status)
     {
         client.updateInviteeStatus(from(entityType, internalId, externalId), status);
     }
@@ -177,12 +181,12 @@ public class NetSuiteCloudConnector implements Initialisable
         }
     }
 
-    public NetSuiteClient<List<Object>, RuntimeException> getClient()
+    public NetSuiteClient<List<Object>, RuntimeException, Void> getClient()
     {
         return client;
     }
 
-    public void setClient(NetSuiteClient<?, ?> client)
+    public void setClient(NetSuiteClient<?, ?, ?> client)
     {
         this.client = NetSuiteClientAdaptor.adapt(client);
     }

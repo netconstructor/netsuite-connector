@@ -12,8 +12,13 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.model.entity.EntityId;
 import org.mule.module.netsuite.api.model.entity.EntityReference;
-import org.mule.module.netsuite.api.model.entity.EntityType;
-import org.mule.module.netsuite.api.model.event.EventAttendeeStatus;
+
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
+import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
+
+import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
@@ -22,32 +27,38 @@ import javax.validation.constraints.NotNull;
  * 
  * @author flbulgarelli
  */
-public interface NetSuiteClient<CollectionType, ExceptionType extends Exception>
+public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
+    void find() throws ExceptionType;
+
+    VoidType update(RecordType recordType, Map<String, Object> recordAttributes) throws Exception;
+
+    VoidType add(RecordType recordType, Map<String, Object> recordAttributes) throws Exception;
+
     Object getEntity(@NotNull EntityReference sourceEntity) throws ExceptionType;
 
     @NotNull
-    CollectionType getDeletedEntity(@NotNull EntityType type, @NotNull String whenExpression)
+    CollectionType getDeletedEntity(@NotNull RecordType type, @NotNull String whenExpression)
         throws ExceptionType;
 
-    void attachEntity(@NotNull EntityReference sourceEntity,
-                      @NotNull EntityReference destinationEntity,
-                      EntityReference contactEntity) throws ExceptionType;
+    VoidType attachEntity(@NotNull EntityReference sourceEntity,
+                          @NotNull EntityReference destinationEntity,
+                          EntityReference contactEntity) throws ExceptionType;
 
-    void detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
+    VoidType detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
         throws ExceptionType;
 
-    void deleteEntity(@NotNull EntityReference entity) throws ExceptionType;
+    VoidType deleteEntity(@NotNull EntityReference entity) throws ExceptionType;
 
     @NotNull
-    CollectionType getEntities(@NotNull EntityType type) throws ExceptionType;
+    CollectionType getEntities(@NotNull RecordType type) throws ExceptionType;
 
     Object getServerTime() throws ExceptionType;
 
-    void updateInviteeStatus(@NotNull EntityReference entity, @NotNull EventAttendeeStatus status)
-        throws ExceptionType;
+    VoidType updateInviteeStatus(@NotNull EntityReference entity,
+                                 @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
-    CollectionType getCustomizationId(@NotNull EntityType type, boolean includeInactives)
+    CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
         throws ExceptionType;
 
     CollectionType getItemAvailability() throws ExceptionType;
@@ -60,6 +71,16 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception>
                                                @NotNull EntityId fromSubsidiary,
                                                EntityId toSubsidiary) throws ExceptionType;
 
-    CollectionType getSavedSearch(@NotNull EntityType type) throws ExceptionType;
+    CollectionType getSavedSearch(@NotNull RecordType type) throws ExceptionType;
+
+    Object checkAsyncStatus(@NotNull String jobId) throws ExceptionType;
+
+    Object getAsyncResult(@NotNull String jobId, int pageIndex) throws ExceptionType;
+
+    // TODO
+    Object initialize() throws ExceptionType;
+
+    // TODO
+    Object initializeList() throws ExceptionType;
 
 }

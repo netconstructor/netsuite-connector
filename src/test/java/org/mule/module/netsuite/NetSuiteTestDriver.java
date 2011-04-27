@@ -14,16 +14,22 @@
 
 package org.mule.module.netsuite;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+
 import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.netsuite.api.model.entity.EntityType;
+import org.mule.module.netsuite.api.NetSuiteClient;
+
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Calendar;
+import java.util.List;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class NetSuiteTestDriver
 {
@@ -33,10 +39,10 @@ public class NetSuiteTestDriver
     public void setup() throws InitialisationException
     {
         connector = new NetSuiteCloudConnector();
-        connector.setAddress("https://webservices.netsuite.com/wsdl/v2010_2_0");
-        connector.setAccount("lala");
-        connector.setEmail("juan+netsuite@zaubersoftware.com");
-        connector.setPassword("lala1234");
+        connector.setAddress("https://webservices.netsuite.com/services/NetSuitePort_2010_2");
+        connector.setAccount("");
+        connector.setEmail("");
+        connector.setPassword("");
         connector.setRoleId("3");
         connector.initialise();
     }
@@ -50,7 +56,87 @@ public class NetSuiteTestDriver
     @Test
     public void getEntities() throws Exception
     {
-        assertFalse(connector.getEntities(EntityType.ACCOUNT).isEmpty());
+        assertFalse(connector.getEntities(RecordType.CURRENCY).isEmpty());
+    }
+
+    @Test
+    public void attachAndDetachEntity()
+    {
+        connector.attachEntity(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null,
+            null, null, null);
+        connector.detachEntity(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null);
+    }
+
+    @Test
+    public void deleteEntity()
+    {
+        connector.deleteEntity(RecordType.CUSTOMER, "8", null);
+    }
+
+    @Test
+    public void getBudgetExchangeRate()
+    {
+        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate("10", null, "65", null, null, null);
+        assertNotNull(budgetExchangeRate);
+    }
+
+    // public NetSuiteClient<List<Object>, RuntimeException, Void> getClient()
+    // {
+    // return connector.getClient();
+    // }
+    //
+    // public List<Object> getConsolidatedExchangeRate(String periodInternalId,
+    // String periodExternalId,
+    // String fromSubsidiaryInternalId,
+    // String fromSubsidiaryExternalId,
+    // String toSubsidiaryInternalId,
+    // String toSubsidiaryExternalId)
+    // {
+    // return connector.getConsolidatedExchangeRate(periodInternalId,
+    // periodExternalId,
+    // fromSubsidiaryInternalId, fromSubsidiaryExternalId, toSubsidiaryInternalId,
+    // toSubsidiaryExternalId);
+    // }
+    //
+    // public List<Object> getCustomizationId(RecordType type, boolean
+    // includeInactives)
+    // {
+    // return connector.getCustomizationId(type, includeInactives);
+    // }
+    //
+    // public List<Object> getDeletedEntity(RecordType type, String whenExpression)
+    // {
+    // return connector.getDeletedEntity(type, whenExpression);
+    // }
+    //
+    // public List<Object> getEntities(RecordType type)
+    // {
+    // return connector.getEntities(type);
+    // }
+
+    @Test
+    public void getEntity()
+    {
+        connector.getEntity(RecordType.CAMPAIGN, null, "8875");
+    }
+
+    @Test
+    public void GetItemAvailability()
+    {
+        assertNotNull(connector.GetItemAvailability());
+    }
+
+    @Test
+    public void getSavedSearch()
+    {
+        connector.getSavedSearch(RecordType.CONTACT);
+    }
+
+    @Test
+    public void updateInviteeStatus()
+    {
+        connector.updateInviteeStatus(RecordType.EMPLOYEE, null, "980",
+            CalendarEventAttendeeResponse.DECLINED);
     }
 
 }

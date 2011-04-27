@@ -15,7 +15,6 @@ import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.rmi.RemoteException;
 import java.util.List;
 
 import org.springframework.core.annotation.AnnotationUtils;
@@ -29,15 +28,15 @@ public final class NetSuiteClientAdaptor
     }
 
     @SuppressWarnings("unchecked")
-    public static NetSuiteClient<List<Object>, RuntimeException> adapt(final NetSuiteClient<?, ?> client)
+    public static NetSuiteClient<List<Object>, RuntimeException, Void> adapt(final NetSuiteClient<?, ?, ?> client)
     {
-        return (NetSuiteClient<List<Object>, RuntimeException>) Proxy.newProxyInstance(
-            NetSuiteClientAdaptor.class.getClassLoader(), new Class[]{NetSuiteClient.class},
+        return (NetSuiteClient<List<Object>, RuntimeException, Void>) Proxy.newProxyInstance(
+            NetSuiteClientAdaptor.class.getClassLoader(), new Class[]{SoapNetSuiteClient.class},
             new InvocationHandler()
             {
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable
                 {
-                    NetSuiteOperation operationMetadata = AnnotationUtils.getAnnotation(method,
+                    NetSuiteOperation operationMetadata = AnnotationUtils.findAnnotation(method,
                         NetSuiteOperation.class);
                     if (operationMetadata == null)
                     {
@@ -70,7 +69,8 @@ public final class NetSuiteClientAdaptor
     private static Object adaptReturnType(Object returnValue, NetSuiteOperation operationMetadata)
         throws Throwable
     {
-        return operationMetadata.resultType().adapt(returnValue, operationMetadata.resultName());
+        return operationMetadata.resultType().adapt(returnValue, operationMetadata.responseName(),
+            operationMetadata.resultName());
     }
 
     // private static abstract class RetryingInterceptor implements Interceptor

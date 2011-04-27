@@ -13,18 +13,19 @@ package org.mule.module.netsuite.api.annotation;
 import static org.apache.commons.beanutils.MethodUtils.invokeExactMethod;
 
 import org.mule.module.netsuite.api.NetSuiteGenericException;
-import org.mule.module.netsuite.api.internal.Status;
+
+import com.netsuite.webservices.platform.core_2010_2.Status;
 
 import java.util.Arrays;
 import java.util.List;
 
 public enum ReturnType
 {
-    
+
     VOID
     {
         @Override
-        public Object adaptImpl(Object returnValue, String recordName) throws Throwable
+        public Object adaptImpl(Object result, String recordName) throws Throwable
         {
             return null;
         }
@@ -32,19 +33,19 @@ public enum ReturnType
     RECORD
     {
         @Override
-        public Object adaptImpl(Object returnValue, String recordName) throws Throwable
+        public Object adaptImpl(Object result, String recordName) throws Throwable
         {
-            return invokeExactMethod(returnValue, "get" + recordName, EMPTY_ARRAY);
+            return invokeExactMethod(result, "get" + recordName, EMPTY_ARRAY);
         }
     },
     LIST
     {
+        @SuppressWarnings("unchecked")
         @Override
-        public List<Object> adaptImpl(Object returnValue, String recordName) throws Throwable
+        public List<Object> adaptImpl(Object result, String recordName) throws Throwable
         {
-            return Arrays.asList( //
-            (Object[]) invokeExactMethod(invokeExactMethod(returnValue, "get" + recordName + "List",
-                EMPTY_ARRAY), "get" + recordName, EMPTY_ARRAY));
+            return (List<Object>) invokeExactMethod(invokeExactMethod(result, "get" + recordName + "List",
+                EMPTY_ARRAY), "get" + recordName, EMPTY_ARRAY);
         }
 
     };
@@ -53,14 +54,14 @@ public enum ReturnType
 
     protected abstract Object adaptImpl(Object returnValue, String recordName) throws Throwable;
 
-    public Object adapt(Object returnValue, String recordName) throws Throwable
+    public Object adapt(Object returnValue, String responseName, String resultName) throws Throwable
     {
-        Status status = (Status) invokeExactMethod(returnValue, "getStatus", EMPTY_ARRAY);
+        Object result = invokeExactMethod(returnValue, "get" + responseName, EMPTY_ARRAY);
+        Status status = (Status) invokeExactMethod(result, "getStatus", EMPTY_ARRAY);
         if (status.isIsSuccess())
         {
-            return adaptImpl(returnValue, recordName);
+            return adaptImpl(result, resultName);
         }
-        throw new NetSuiteGenericException("Request failed. Details:"
-                                           + Arrays.toString(status.getStatusDetail()));
+        throw new NetSuiteGenericException("Request failed. Details:" + status.getStatusDetail());
     }
 }

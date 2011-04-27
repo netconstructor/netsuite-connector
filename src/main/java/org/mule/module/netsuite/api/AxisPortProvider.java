@@ -11,15 +11,14 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.internal.NetSuitePortType;
+import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
 import java.rmi.RemoteException;
 
 public interface AxisPortProvider
 {
-
     NetSuitePortType getPort() throws RemoteException;
 
-    NetSuitePortType getAuthenticatedPort() throws RemoteException;
+    NetSuitePortType getAuthenticatedPort() throws RemoteException, Exception;
 
 }

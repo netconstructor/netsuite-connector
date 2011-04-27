@@ -19,6 +19,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface NetSuiteOperation
 {
+    String responseName() default "WriteResponse";
+
     String resultName() default "";
 
     ReturnType resultType() default ReturnType.VOID;

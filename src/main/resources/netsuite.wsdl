@@ -335,6 +335,9 @@
         <part name="parameters" element="platformMsgs:getDeletedResponse"/>
     </message>
     <portType name="NetSuitePortType">
+        <jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+        	<jaxws:enableWrapperStyle>true</jaxws:enableWrapperStyle>
+    	</jaxws:bindings>
         <operation name="login">
             <input name="loginRequest" message="tns:loginRequest"/>
             <output name="loginResponse" message="tns:loginResponse"/>

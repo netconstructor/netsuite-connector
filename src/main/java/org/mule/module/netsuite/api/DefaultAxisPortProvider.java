@@ -10,17 +10,20 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.internal.NetSuitePortType;
-import org.mule.module.netsuite.api.internal.NetSuiteServiceLocator;
-import org.mule.module.netsuite.api.internal.Passport;
-import org.mule.module.netsuite.api.internal.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.Passport;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.messages_2010_2.LoginRequest;
+import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
 import java.rmi.RemoteException;
 
 import javax.validation.constraints.NotNull;
-import javax.xml.rpc.ServiceException;
+import javax.xml.ws.BindingProvider;
 
 import org.apache.commons.lang.Validate;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 public class DefaultAxisPortProvider implements AxisPortProvider
 {
@@ -57,26 +60,28 @@ public class DefaultAxisPortProvider implements AxisPortProvider
         this.roleId = roleId;
     }
 
-    public NetSuitePortType getPort() throws RemoteException
+    private JaxWsProxyFactoryBean getProxyFactory(final Class clazz, final String address)
     {
-        NetSuiteServiceLocator serviceLocator = new NetSuiteServiceLocator();
-        serviceLocator.setNetSuitePortEndpointAddress(address);
-        serviceLocator.setMaintainSession(true);
-        try
-        {
-            return serviceLocator.getNetSuitePort();
-        }
-        catch (ServiceException e)
-        {
-            throw new RemoteException("A Service exception occured while trying to create the port", e);
-        }
+        final JaxWsProxyFactoryBean ret = new JaxWsProxyFactoryBean();
+        ret.getInInterceptors().add(new LoggingInInterceptor());
+        ret.getOutInterceptors().add(new LoggingOutInterceptor());
+        ret.setServiceClass(clazz);
+        ret.setAddress(address);
+        return ret;
     }
 
-    public NetSuitePortType getAuthenticatedPort() throws RemoteException
+    public NetSuitePortType getPort() throws RemoteException
+    {
+        final JaxWsProxyFactoryBean factory = getProxyFactory(NetSuitePortType.class, address);
+
+        return (NetSuitePortType) factory.create();
+    }
+
+    public NetSuitePortType getAuthenticatedPort() throws RemoteException, Exception
     {
         NetSuitePortType port = getPort();
-        
-        port.login(new Passport(email, password, account, new RecordRef(null, roleId, null, null)));
+        ((BindingProvider) port).getRequestContext().put(BindingProvider.SESSION_MAINTAIN_PROPERTY, true);
+        port.login(new LoginRequest(new Passport(email, password, account, new RecordRef(null, roleId, null))));
         return port;
     }
 

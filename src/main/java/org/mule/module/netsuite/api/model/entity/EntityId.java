@@ -10,7 +10,7 @@
 
 package org.mule.module.netsuite.api.model.entity;
 
-import org.mule.module.netsuite.api.internal.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 
 import org.apache.commons.lang.Validate;
 

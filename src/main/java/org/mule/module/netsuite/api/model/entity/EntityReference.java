@@ -10,7 +10,8 @@
 
 package org.mule.module.netsuite.api.model.entity;
 
-import org.mule.module.netsuite.api.internal.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import javax.validation.constraints.NotNull;
 
@@ -19,9 +20,9 @@ import org.apache.commons.lang.Validate;
 public class EntityReference
 {
     private final EntityId id;
-    private final EntityType type;
+    private final RecordType type;
 
-    public EntityReference(@NotNull EntityId id, @NotNull EntityType type)
+    public EntityReference(@NotNull EntityId id, @NotNull RecordType type)
     {
         Validate.notNull(id);
         Validate.notNull(type);
@@ -33,7 +34,7 @@ public class EntityReference
     public RecordRef createRef()
     {
         RecordRef recordRef = id.createRef();
-        recordRef.setType(type.getType());
+        recordRef.setType(type);
         return recordRef;
     }
 

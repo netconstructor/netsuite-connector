@@ -12,33 +12,58 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
-import org.mule.module.netsuite.api.internal.AttachBasicReference;
-import org.mule.module.netsuite.api.internal.AttachContactReference;
-import org.mule.module.netsuite.api.internal.BudgetExchangeRateFilter;
-import org.mule.module.netsuite.api.internal.ConsolidatedExchangeRateFilter;
-import org.mule.module.netsuite.api.internal.CustomizationType;
-import org.mule.module.netsuite.api.internal.DetachBasicReference;
-import org.mule.module.netsuite.api.internal.GetAllRecord;
-import org.mule.module.netsuite.api.internal.GetAllRecordType;
-import org.mule.module.netsuite.api.internal.GetCustomizationType;
-import org.mule.module.netsuite.api.internal.GetDeletedFilter;
-import org.mule.module.netsuite.api.internal.GetSavedSearchRecord;
-import org.mule.module.netsuite.api.internal.ItemAvailabilityFilter;
-import org.mule.module.netsuite.api.internal.NetSuitePortType;
-import org.mule.module.netsuite.api.internal.RecordRef;
-import org.mule.module.netsuite.api.internal.SearchRecordType;
-import org.mule.module.netsuite.api.internal.UpdateInviteeStatusReference;
 import org.mule.module.netsuite.api.model.entity.EntityId;
 import org.mule.module.netsuite.api.model.entity.EntityReference;
-import org.mule.module.netsuite.api.model.entity.EntityType;
-import org.mule.module.netsuite.api.model.event.EventAttendeeStatus;
 
-import java.rmi.RemoteException;
+import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
+import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
+import com.netsuite.webservices.platform.core_2010_2.BudgetExchangeRateFilter;
+import com.netsuite.webservices.platform.core_2010_2.ConsolidatedExchangeRateFilter;
+import com.netsuite.webservices.platform.core_2010_2.CustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.DetachBasicReference;
+import com.netsuite.webservices.platform.core_2010_2.GetAllRecord;
+import com.netsuite.webservices.platform.core_2010_2.GetDeletedFilter;
+import com.netsuite.webservices.platform.core_2010_2.GetSavedSearchRecord;
+import com.netsuite.webservices.platform.core_2010_2.ItemAvailabilityFilter;
+import com.netsuite.webservices.platform.core_2010_2.Record;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.UpdateInviteeStatusReference;
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
+import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
+import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
+import com.netsuite.webservices.platform.messages_2010_2.CheckAsyncStatusRequest;
+import com.netsuite.webservices.platform.messages_2010_2.DeleteRequest;
+import com.netsuite.webservices.platform.messages_2010_2.DetachRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetAllRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetAsyncResultRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetBudgetExchangeRateRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetConsolidatedExchangeRateRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetCustomizationIdRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetDeletedRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetItemAvailabilityRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetSavedSearchRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetServerTimeRequest;
+import com.netsuite.webservices.platform.messages_2010_2.InitializeListRequest;
+import com.netsuite.webservices.platform.messages_2010_2.InitializeRequest;
+import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest;
+import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
+import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
+
+import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.LazyDynaMap;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
-public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
+
+public class AxisNetSuiteClient implements SoapNetSuiteClient
 {
     private final AxisPortProvider portProvider;
 
@@ -48,134 +73,166 @@ public class AxisNetSuiteClient implements NetSuiteClient<Object, Exception>
         this.portProvider = portProvider;
     }
 
-    private void update()
+    public Object update(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
-        // TODO Auto-generated method stub
+        return getAuthenticatedPort().update(new UpdateRequest(createRecord(recordType, recordAttributes)));
     }
 
-    private void add()
+    public Object add(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
-        // getAuthenticatedPort().add(nre Record);
+        return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    @NetSuiteOperation
-    public void attachEntity(@NotNull EntityReference sourceEntity,
-                             @NotNull EntityReference destinationEntity,
-                             EntityReference contactEntity) throws Exception
+    public void find() throws Exception
+    {
+    }
+
+    private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
+    {
+        Record record = (Record) Class.forName(StringUtils.capitalize(recordType.value())).newInstance();
+        BeanUtils.copyProperties(record, new LazyDynaMap(recordAttributes));
+        return record;
+    }
+
+    public Object attachEntity(@NotNull EntityReference sourceEntity,
+                               @NotNull EntityReference destinationEntity,
+                               EntityReference contactEntity) throws Exception
     {
         Validate.notNull(sourceEntity);
         Validate.notNull(destinationEntity);
 
         if (contactEntity == null)
         {
-            getAuthenticatedPort().attach(
-                new AttachBasicReference(destinationEntity.createRef(), sourceEntity.createRef()));
+            return getAuthenticatedPort().attach(
+                new AttachRequest(new AttachBasicReference(destinationEntity.createRef(),
+                    sourceEntity.createRef())));
         }
         else
         {
-            getAuthenticatedPort().attach(
-                new AttachContactReference(destinationEntity.createRef(), contactEntity.createRef(),
-                    sourceEntity.createRef()));
+            return getAuthenticatedPort().attach(
+                new AttachRequest(new AttachContactReference(destinationEntity.createRef(),
+                    sourceEntity.createRef(), contactEntity.createRef())));
         }
     }
 
-    @NetSuiteOperation
-    public void deleteEntity(EntityReference entity) throws Exception
+    public Object deleteEntity(EntityReference entity) throws Exception
     {
         // TODO use customRecordRef?
-        getAuthenticatedPort().delete(entity.createRef());
+        return getAuthenticatedPort().delete(new DeleteRequest(entity.createRef()));
     }
 
-    @NetSuiteOperation
-    public void detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
-        throws Exception
+    public Object detachEntity(@NotNull EntityReference sourceEntity,
+                               @NotNull EntityReference destinationEntity) throws Exception
     {
-        // TODO test arguments order, seems inconsistent
-        getAuthenticatedPort().detach(
-            new DetachBasicReference(sourceEntity.createRef(), destinationEntity.createRef()));
+        return getAuthenticatedPort().detach(
+            new DetachRequest(new DetachBasicReference(destinationEntity.createRef(),
+                sourceEntity.createRef())));
     }
 
-    @NetSuiteOperation(resultName = "DeletedRecord", resultType = ReturnType.LIST)
-    public Object getDeletedEntity(EntityType type, String whenExpression) throws Exception
+    public Object getDeletedEntity(RecordType type, String whenExpression) throws Exception
     {
-        return getAuthenticatedPort().getDeleted(new GetDeletedFilter(/* TODO */));
+        return getAuthenticatedPort().getDeleted(new GetDeletedRequest(new GetDeletedFilter(/* TODO */)));
     }
 
-    @NetSuiteOperation(resultName = "Record", resultType = ReturnType.RECORD)
     public Object getEntity(EntityReference entity) throws Exception
     {
-        return getAuthenticatedPort().get(entity.createRef());
+        return getAuthenticatedPort().get(new GetRequest(entity.createRef()));
     }
 
-    @NetSuiteOperation(resultName = "Record", resultType = ReturnType.RECORD)
-    public Object getEntities(EntityType type) throws Exception
+    public Object getEntities(RecordType type) throws Exception
     {
         return getAuthenticatedPort().getAll(
-            new GetAllRecord(GetAllRecordType.fromValue(type.getType().getValue())));
+            new GetAllRequest(new GetAllRecord(GetAllRecordType.fromValue(type.value()))));
     }
 
-    @NetSuiteOperation(resultName = "BudgetExchangeRate", resultType = ReturnType.LIST)
     public Object getBudgetExchangeRate(@NotNull EntityId period,
-                                  @NotNull EntityId fromSubsidiary,
-                                  EntityId toSubsidiary) throws Exception
+                                        @NotNull EntityId fromSubsidiary,
+                                        EntityId toSubsidiary) throws Exception
     {
         Validate.notNull(period);
         Validate.notNull(fromSubsidiary);
         return getAuthenticatedPort().getBudgetExchangeRate(
-            new BudgetExchangeRateFilter(period.createRef(), fromSubsidiary.createRef(),
-                createRefNullSafe(toSubsidiary)));
+            new GetBudgetExchangeRateRequest(new BudgetExchangeRateFilter(period.createRef(),
+                fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    @NetSuiteOperation(resultName = "ConsolidatedExchangeRate", resultType = ReturnType.LIST)
     public Object getConsolidatedExchangeRate(@NotNull EntityId period,
                                               @NotNull EntityId fromSubsidiary,
                                               EntityId toSubsidiary) throws Exception
     {
         return getAuthenticatedPort().getConsolidatedExchangeRate(
-            new ConsolidatedExchangeRateFilter(period.createRef(), fromSubsidiary.createRef(),
-                createRefNullSafe(toSubsidiary)));
+            new GetConsolidatedExchangeRateRequest(new ConsolidatedExchangeRateFilter(period.createRef(),
+                fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    @NetSuiteOperation(resultName = "CustomizationRef", resultType = ReturnType.LIST)
-    public Object getCustomizationId(@NotNull EntityType type, boolean includeInactives) throws Exception
+    public Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception
     {
         Validate.notNull(type);
         return getAuthenticatedPort().getCustomizationId(
-            new CustomizationType(GetCustomizationType.fromValue(type.getType().getValue())),
-            includeInactives);
+            new GetCustomizationIdRequest(
+                new CustomizationType(GetCustomizationType.fromValue(type.value())), includeInactives));
     }
 
-    @NetSuiteOperation(resultName = "ItemAvailability", resultType = ReturnType.LIST)
     public Object getItemAvailability() throws Exception
     {
-        return getAuthenticatedPort().getItemAvailability(new ItemAvailabilityFilter(/* TODO */));
+        return getAuthenticatedPort().getItemAvailability(
+            new GetItemAvailabilityRequest(new ItemAvailabilityFilter(/* TODO */)));
     }
 
-    @NetSuiteOperation(resultName = "RecordRef", resultType = ReturnType.LIST)
-    public Object getSavedSearch(@NotNull EntityType type) throws Exception
+    public Object getSavedSearch(@NotNull RecordType type) throws Exception
     {
         Validate.notNull(type);
         return getAuthenticatedPort().getSavedSearch(
-            new GetSavedSearchRecord(SearchRecordType.fromValue(type.getType().getValue())));
+            new GetSavedSearchRequest(new GetSavedSearchRecord(SearchRecordType.fromValue(type.value()))));
     }
 
-    @NetSuiteOperation(resultName = "ServerTime", resultType = ReturnType.RECORD)
     public Object getServerTime() throws Exception
     {
-        return getAuthenticatedPort().getServerTime();
+        return getAuthenticatedPort().getServerTime(new GetServerTimeRequest());
     }
 
-    @NetSuiteOperation
-    public void updateInviteeStatus(@NotNull EntityReference entity, @NotNull EventAttendeeStatus status)
-        throws Exception
+    public Object updateInviteeStatus(@NotNull EntityReference entity,
+                                      @NotNull CalendarEventAttendeeResponse status) throws Exception
     {
         Validate.notNull(entity);
         Validate.notNull(status);
-        getAuthenticatedPort().updateInviteeStatus(
-            new UpdateInviteeStatusReference(entity.createRef(), status.getCalendarEventAttendeeResponse()));
+        return getAuthenticatedPort().updateInviteeStatus(
+            new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(entity.createRef(), status)));
     }
 
-    public NetSuitePortType getAuthenticatedPort() throws RemoteException
+    @NetSuiteOperation(resultName = "AsyncStatus", resultType = ReturnType.RECORD)
+    public Object checkAsyncStatus(String jobId) throws Exception
+    {
+        Validate.notEmpty(jobId);
+        return getAuthenticatedPort().checkAsyncStatus(new CheckAsyncStatusRequest(jobId));
+    }
+
+    @NetSuiteOperation(resultName = "AsyncResult", resultType = ReturnType.RECORD)
+    public Object getAsyncResult(String jobId, int pageIndex) throws Exception
+    {
+        Validate.notEmpty(jobId);
+        return getAuthenticatedPort().getAsyncResult(new GetAsyncResultRequest(jobId, pageIndex));
+    }
+
+    /*
+     * initialize / initializeList
+     * [https://system.netsuite.com/help/helpcenter/en_US/Output/Help/
+     * SuiteFlex/WebServices/STP_initializeinitializelist.html] • Use to emulate the
+     * UI workflow by pre-populating fields on transaction line items with values
+     * from a related record. The init
+     */
+
+    public Object initialize() throws Exception
+    {
+        return getAuthenticatedPort().initialize(new InitializeRequest());
+    }
+
+    public Object initializeList() throws Exception
+    {
+        return getAuthenticatedPort().initializeList(new InitializeListRequest());
+    }
+
+    public NetSuitePortType getAuthenticatedPort() throws Exception
     {
         return portProvider.getAuthenticatedPort();
     }

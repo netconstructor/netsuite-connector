@@ -10,15 +10,11 @@
 
 package org.mule.module.netsuite;
 
-import org.mule.module.netsuite.api.model.entity.EntityId;
 import org.mule.module.netsuite.api.model.entity.EntityReference;
-import org.mule.module.netsuite.api.model.entity.EntityType;
-import org.mule.module.netsuite.api.model.entity.EntityId.ExternalId;
-import org.mule.module.netsuite.api.model.entity.EntityId.InternalId;
+
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import javax.validation.constraints.NotNull;
-
-import org.apache.commons.lang.Validate;
 
 /**
  * Utility class for creating {@link EntityReferences} from connector arguments
@@ -29,17 +25,17 @@ public final class EntityReferences
     {
     }
 
-    public static EntityReference from(@NotNull EntityType entityType, String internalId, String externalId)
+    public static EntityReference from(@NotNull RecordType entityType, String internalId, String externalId)
     {
         return new EntityReference(EntityIds.from(internalId, externalId), entityType);
     }
 
-    public static EntityReference nulSafeFrom(EntityType contanctEntityType,
+    public static EntityReference nulSafeFrom(RecordType contanctRecordType,
                                               String contanctInternalId,
                                               String contanctExternalId)
     {
-        return contanctEntityType != null
-                                         ? from(contanctEntityType, contanctInternalId, contanctExternalId)
+        return contanctRecordType != null
+                                         ? from(contanctRecordType, contanctInternalId, contanctExternalId)
                                          : null;
     }
 

@@ -10,39 +10,44 @@
 
 package org.mule.module.netsuite.api;
 
+import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-import static org.junit.Assert.*;
-import org.mule.module.netsuite.api.internal.GetServerTimeResult;
-import org.mule.module.netsuite.api.internal.Status;
-import org.mule.module.netsuite.api.internal.StatusDetail;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import com.netsuite.webservices.platform.core_2010_2.GetServerTimeResult;
+import com.netsuite.webservices.platform.core_2010_2.Status;
+import com.netsuite.webservices.platform.core_2010_2.StatusDetail;
+import com.netsuite.webservices.platform.messages_2010_2.GetServerTimeResponse;
+
+import java.util.Collections;
 import java.util.List;
+
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class NetSuiteClientAdaptorUnitTest
 {
-    private NetSuiteClient<Object, Exception> mock;
-    private NetSuiteClient<List<Object>, RuntimeException> client;
+    private NetSuiteClient<Object, Exception, Object> mock;
+    private NetSuiteClient<List<Object>, RuntimeException, Void> client;
 
-    @SuppressWarnings("unchecked")
     @Before
     public void setup()
     {
-        mock = mock(NetSuiteClient.class);
+        mock = mock(SoapNetSuiteClient.class);
         client = NetSuiteClientAdaptor.adapt(mock);
     }
 
     @Test
     public void testAdaptReturnType() throws Exception
     {
-        Calendar calendar = new GregorianCalendar();
+        XMLGregorianCalendar calendar = newCalendar();
         when(mock.getServerTime()).thenReturn(
-            new GetServerTimeResult(new Status(new StatusDetail[0], true), calendar));
+            new GetServerTimeResponse(new GetServerTimeResult(new Status(
+                Collections.<StatusDetail> emptyList(), true), calendar)));
 
         assertSame(calendar, client.getServerTime());
     }
@@ -50,10 +55,16 @@ public class NetSuiteClientAdaptorUnitTest
     @Test(expected = NetSuiteGenericException.class)
     public void testAdaptReturnTypeIsError() throws Exception
     {
-        Calendar calendar = new GregorianCalendar();
+        XMLGregorianCalendar calendar = newCalendar();
         when(mock.getServerTime()).thenReturn(
-            new GetServerTimeResult(new Status(new StatusDetail[0], false), calendar));
+            new GetServerTimeResponse(new GetServerTimeResult(new Status(
+                Collections.<StatusDetail> emptyList(), false), calendar)));
         client.getServerTime();
+    }
+
+    private XMLGregorianCalendar newCalendar() throws DatatypeConfigurationException
+    {
+        return DatatypeFactory.newInstance().newXMLGregorianCalendar();
     }
 
 }
