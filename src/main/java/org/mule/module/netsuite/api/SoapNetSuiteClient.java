@@ -12,47 +12,56 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
-import org.mule.module.netsuite.api.model.entity.EntityId;
-import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.RecordId;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+
+import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
 public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Object>
 {
+    @NetSuiteOperation
+    Object updateRecord(@NotNull RecordReference recordReference,
+                          @NotNull Map<String, Object> recordAttributes) throws Exception;
 
     @NetSuiteOperation
-    Object attachEntity(@NotNull EntityReference sourceEntity,
-                        @NotNull EntityReference destinationEntity,
-                        EntityReference contactEntity) throws Exception;
+    Object addRecord(@NotNull RecordType recordType, @NotNull  Map<String, Object> recordAttributes) throws Exception;
+
+    
+    @NetSuiteOperation
+    Object attachRecord(@NotNull RecordReference sourceEntity,
+                        @NotNull RecordReference destinationEntity,
+                        RecordReference contactEntity) throws Exception;
 
     @NetSuiteOperation
-    Object deleteEntity(EntityReference entity) throws Exception;
+    Object deleteRecord(RecordReference entity) throws Exception;
 
     @NetSuiteOperation
-    Object detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
+    Object detachRecord(@NotNull RecordReference sourceEntity, @NotNull RecordReference destinationEntity)
         throws Exception;
 
     @NetSuiteOperation(responseName = "GetDeletedResult", resultName = "DeletedRecord", resultType = ReturnType.LIST)
-    Object getDeletedEntity(RecordType type, String whenExpression) throws Exception;
+    Object getDeletedRecord(RecordType type, String whenExpression) throws Exception;
 
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
-    Object getEntity(EntityReference entity) throws Exception;
+    Object getRecord(RecordReference entity) throws Exception;
 
     @NetSuiteOperation(responseName = "GetAllResult", resultName = "Record", resultType = ReturnType.LIST)
-    Object getEntities(RecordType type) throws Exception;
+    Object getRecords(RecordType type) throws Exception;
 
     @NetSuiteOperation(responseName = "GetBudgetExchangeRateResult", resultName = "BudgetExchangeRate", resultType = ReturnType.LIST)
-    Object getBudgetExchangeRate(@NotNull EntityId period,
-                                 @NotNull EntityId fromSubsidiary,
-                                 EntityId toSubsidiary) throws Exception;
+    Object getBudgetExchangeRate(@NotNull RecordId period,
+                                 @NotNull RecordId fromSubsidiary,
+                                 RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetConsolidatedExchangeRateResult", resultName = "ConsolidatedExchangeRate", resultType = ReturnType.LIST)
-    Object getConsolidatedExchangeRate(@NotNull EntityId period,
-                                       @NotNull EntityId fromSubsidiary,
-                                       EntityId toSubsidiary) throws Exception;
+    Object getConsolidatedExchangeRate(@NotNull RecordId period,
+                                       @NotNull RecordId fromSubsidiary,
+                                       RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetCustomizationIdResult", resultName = "CustomizationRef", resultType = ReturnType.LIST)
     Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception;
@@ -67,7 +76,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object getServerTime() throws Exception;
 
     @NetSuiteOperation
-    Object updateInviteeStatus(@NotNull EntityReference entity, @NotNull CalendarEventAttendeeResponse status)
+    Object updateInviteeStatus(@NotNull RecordReference entity, @NotNull CalendarEventAttendeeResponse status)
         throws Exception;
 
 }

@@ -10,7 +10,7 @@
 
 package org.mule.module.netsuite;
 
-import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
@@ -25,12 +25,12 @@ public final class EntityReferences
     {
     }
 
-    public static EntityReference from(@NotNull RecordType entityType, String internalId, String externalId)
+    public static RecordReference from(@NotNull RecordType entityType, String internalId, String externalId)
     {
-        return new EntityReference(EntityIds.from(internalId, externalId), entityType);
+        return new RecordReference(RecordIds.from(internalId, externalId), entityType);
     }
 
-    public static EntityReference nulSafeFrom(RecordType contanctRecordType,
+    public static RecordReference nulSafeFrom(RecordType contanctRecordType,
                                               String contanctInternalId,
                                               String contanctExternalId)
     {

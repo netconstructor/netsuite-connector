@@ -19,7 +19,7 @@ import static org.mule.module.netsuite.EntityReferences.nulSafeFrom;
 
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.netsuite.api.AxisNetSuiteClient;
+import org.mule.module.netsuite.api.CxfNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultAxisPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
@@ -53,7 +53,7 @@ public class NetSuiteCloudConnector implements Initialisable
     private String roleId;
 
     @Operation
-    public void attachEntity(@Parameter(optional = false) RecordType sourceRecordType,
+    public void attachRecord(@Parameter(optional = false) RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
                              @Parameter(optional = true) String sourceExternalId,
                              @Parameter(optional = false) RecordType destinationRecordType,
@@ -63,29 +63,29 @@ public class NetSuiteCloudConnector implements Initialisable
                              @Parameter(optional = true) String contanctInternalId,
                              @Parameter(optional = true) String contanctExternalId)
     {
-        client.attachEntity( //
+        client.attachRecord( //
             from(sourceRecordType, sourceInternalId, sourceExternalId), //
             from(destinationRecordType, destinationInternalId, destinationExternalId), // 
             nulSafeFrom(contanctRecordType, contanctInternalId, contanctExternalId));
     }
 
     @Operation
-    public void deleteEntity(@Parameter RecordType entityType,
+    public void deleteRecord(@Parameter RecordType recordType,
                              @Parameter(optional = true) String internalId,
                              @Parameter(optional = true) String externalId)
     {
-        client.deleteEntity(from(entityType, internalId, externalId));
+        client.deleteRecord(from(recordType, internalId, externalId));
     }
 
     @Operation
-    public void detachEntity(@Parameter RecordType sourceRecordType,
+    public void detachRecord(@Parameter RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
                              @Parameter(optional = true) String sourceExternalId,
                              @Parameter RecordType destinationRecordType,
                              @Parameter(optional = true) String destinationInternalId,
                              @Parameter(optional = true) String destinationExternalId)
     {
-        client.detachEntity(//
+        client.detachRecord(//
             from(sourceRecordType, sourceInternalId, sourceExternalId),// 
             from(destinationRecordType, destinationInternalId, destinationExternalId));
     }
@@ -99,9 +99,9 @@ public class NetSuiteCloudConnector implements Initialisable
                                               @Parameter(optional = true) String toSubsidiaryExternalId)
     {
         return client.getBudgetExchangeRate(//
-            EntityIds.from(periodInternalId, periodExternalId), // 
-            EntityIds.from(fromSubsidiaryInternalId, fromSubsidiaryExternalId), //
-            EntityIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
+            RecordIds.from(periodInternalId, periodExternalId), // 
+            RecordIds.from(fromSubsidiaryInternalId, fromSubsidiaryExternalId), //
+            RecordIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
     }
 
     @Operation
@@ -113,9 +113,9 @@ public class NetSuiteCloudConnector implements Initialisable
                                                     @Parameter(optional = true) String toSubsidiaryExternalId)
     {
         return client.getConsolidatedExchangeRate(//
-            EntityIds.from(periodInternalId, periodExternalId), // 
-            EntityIds.from(fromSubsidiaryInternalId, fromSubsidiaryExternalId), //
-            EntityIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
+            RecordIds.from(periodInternalId, periodExternalId), // 
+            RecordIds.from(fromSubsidiaryInternalId, fromSubsidiaryExternalId), //
+            RecordIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
     }
 
     @Operation
@@ -126,23 +126,23 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public List<Object> getDeletedEntity(@Parameter RecordType type, @Parameter String whenExpression)
+    public List<Object> getDeletedRecord(@Parameter RecordType type, @Parameter String whenExpression)
     {
-        return client.getDeletedEntity(type, whenExpression);
+        return client.getDeletedRecord(type, whenExpression);
     }
 
     @Operation
-    public List<Object> getEntities(@Parameter RecordType type)
+    public List<Object> getRecords(@Parameter RecordType type)
     {
-        return client.getEntities(type);
+        return client.getRecords(type);
     }
 
     @Operation
-    public Object getEntity(@Parameter RecordType entityType,
+    public Object getRecord(@Parameter RecordType recordType,
                             @Parameter(optional = true) String internalId,
                             @Parameter(optional = true) String externalId)
     {
-        return client.getEntity(from(entityType, internalId, externalId));
+        return client.getRecord(from(recordType, internalId, externalId));
     }
 
     @Operation
@@ -164,19 +164,19 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public void updateInviteeStatus(@Parameter RecordType entityType,
+    public void updateInviteeStatus(@Parameter RecordType recordType,
                                     @Parameter(optional = true) String internalId,
                                     @Parameter(optional = true) String externalId,
                                     @Parameter CalendarEventAttendeeResponse status)
     {
-        client.updateInviteeStatus(from(entityType, internalId, externalId), status);
+        client.updateInviteeStatus(from(recordType, internalId, externalId), status);
     }
 
     public void initialise() throws InitialisationException
     {
         if (client == null)
         {
-            setClient(new AxisNetSuiteClient(new DefaultAxisPortProvider(address, email, password, account,
+            setClient(new CxfNetSuiteClient(new DefaultAxisPortProvider(address, email, password, account,
                 roleId)));
         }
     }

@@ -10,13 +10,11 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.model.entity.EntityId;
-import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.RecordId;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
-import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 
 import java.util.Map;
 
@@ -29,33 +27,37 @@ import javax.validation.constraints.NotNull;
  */
 public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
-    void find() throws ExceptionType;
+    // TODO date language
+    // TODO condition langage
+    void findRecord() throws ExceptionType;
 
-    VoidType update(RecordType recordType, Map<String, Object> recordAttributes) throws Exception;
+    VoidType updateRecord(@NotNull RecordReference recordReference,
+                          @NotNull Map<String, Object> recordAttributes) throws Exception;
 
-    VoidType add(RecordType recordType, Map<String, Object> recordAttributes) throws Exception;
+    VoidType addRecord(@NotNull RecordType recordType, @NotNull Map<String, Object> recordAttributes)
+        throws Exception;
 
-    Object getEntity(@NotNull EntityReference sourceEntity) throws ExceptionType;
-
-    @NotNull
-    CollectionType getDeletedEntity(@NotNull RecordType type, @NotNull String whenExpression)
-        throws ExceptionType;
-
-    VoidType attachEntity(@NotNull EntityReference sourceEntity,
-                          @NotNull EntityReference destinationEntity,
-                          EntityReference contactEntity) throws ExceptionType;
-
-    VoidType detachEntity(@NotNull EntityReference sourceEntity, @NotNull EntityReference destinationEntity)
-        throws ExceptionType;
-
-    VoidType deleteEntity(@NotNull EntityReference entity) throws ExceptionType;
+    Object getRecord(@NotNull RecordReference sourceEntity) throws ExceptionType;
 
     @NotNull
-    CollectionType getEntities(@NotNull RecordType type) throws ExceptionType;
+    CollectionType getDeletedRecord(@NotNull RecordType type, @NotNull String whenExpression)
+        throws ExceptionType;
+
+    VoidType attachRecord(@NotNull RecordReference sourceEntity,
+                          @NotNull RecordReference destinationEntity,
+                          RecordReference contactEntity) throws ExceptionType;
+
+    VoidType detachRecord(@NotNull RecordReference sourceEntity, @NotNull RecordReference destinationEntity)
+        throws ExceptionType;
+
+    VoidType deleteRecord(@NotNull RecordReference entity) throws ExceptionType;
+
+    @NotNull
+    CollectionType getRecords(@NotNull RecordType type) throws ExceptionType;
 
     Object getServerTime() throws ExceptionType;
 
-    VoidType updateInviteeStatus(@NotNull EntityReference entity,
+    VoidType updateInviteeStatus(@NotNull RecordReference entity,
                                  @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
     CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
@@ -63,13 +65,13 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     CollectionType getItemAvailability() throws ExceptionType;
 
-    CollectionType getBudgetExchangeRate(@NotNull EntityId period,
-                                         @NotNull EntityId fromSubsidiary,
-                                         EntityId toSubsidiary) throws ExceptionType;
+    CollectionType getBudgetExchangeRate(@NotNull RecordId period,
+                                         @NotNull RecordId fromSubsidiary,
+                                         RecordId toSubsidiary) throws ExceptionType;
 
-    CollectionType getConsolidatedExchangeRate(@NotNull EntityId period,
-                                               @NotNull EntityId fromSubsidiary,
-                                               EntityId toSubsidiary) throws ExceptionType;
+    CollectionType getConsolidatedExchangeRate(@NotNull RecordId period,
+                                               @NotNull RecordId fromSubsidiary,
+                                               RecordId toSubsidiary) throws ExceptionType;
 
     CollectionType getSavedSearch(@NotNull RecordType type) throws ExceptionType;
 

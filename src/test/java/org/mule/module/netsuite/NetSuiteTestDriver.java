@@ -33,6 +33,7 @@ import static org.junit.Assert.*;
 
 public class NetSuiteTestDriver
 {
+    //FIXME the file path of the wsdl is embedded in the generated classes
     private NetSuiteCloudConnector connector;
 
     @Before
@@ -40,9 +41,9 @@ public class NetSuiteTestDriver
     {
         connector = new NetSuiteCloudConnector();
         connector.setAddress("https://webservices.netsuite.com/services/NetSuitePort_2010_2");
-        connector.setAccount("");
-        connector.setEmail("");
-        connector.setPassword("");
+        connector.setAccount(System.getenv("netsuiteAccount"));
+        connector.setEmail(System.getenv("netsuiteEmail"));
+        connector.setPassword(System.getenv("netsuitePassword"));
         connector.setRoleId("3");
         connector.initialise();
     }
@@ -56,21 +57,21 @@ public class NetSuiteTestDriver
     @Test
     public void getEntities() throws Exception
     {
-        assertFalse(connector.getEntities(RecordType.CURRENCY).isEmpty());
+        assertFalse(connector.getRecords(RecordType.CURRENCY).isEmpty());
     }
 
     @Test
     public void attachAndDetachEntity()
     {
-        connector.attachEntity(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null,
+        connector.attachRecord(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null,
             null, null, null);
-        connector.detachEntity(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null);
+        connector.detachRecord(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null);
     }
 
     @Test
     public void deleteEntity()
     {
-        connector.deleteEntity(RecordType.CUSTOMER, "8", null);
+        connector.deleteRecord(RecordType.CUSTOMER, "8", null);
     }
 
     @Test
@@ -117,7 +118,7 @@ public class NetSuiteTestDriver
     @Test
     public void getEntity()
     {
-        connector.getEntity(RecordType.CAMPAIGN, null, "8875");
+        connector.getRecord(RecordType.CAMPAIGN, null, "8875");
     }
 
     @Test

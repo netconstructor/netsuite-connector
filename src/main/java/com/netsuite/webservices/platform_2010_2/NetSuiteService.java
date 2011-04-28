@@ -23,7 +23,7 @@ import javax.xml.ws.WebServiceFeature;
 
 
 @WebServiceClient(name = "NetSuiteService", 
-                  wsdlLocation = "file:/home/franco/mule/netsuite/src/main/resources/netsuite.wsdl",
+                  wsdlLocation = "https://webservices.netsuite.com/wsdl/v2010_2_0/netsuite.wsdl",
                   targetNamespace = "urn:platform_2010_2.webservices.netsuite.com") 
 public class NetSuiteService extends Service {
 
@@ -33,9 +33,9 @@ public class NetSuiteService extends Service {
     static {
         URL url = null;
         try {
-            url = new URL("file:/home/franco/mule/netsuite/src/main/resources/netsuite.wsdl");
+            url = new URL("https://webservices.netsuite.com/wsdl/v2010_2_0/netsuite.wsdl");
         } catch (MalformedURLException e) {
-            System.err.println("Can not initialize the default wsdl from file:/home/franco/mule/netsuite/src/main/resources/netsuite.wsdl");
+            System.err.println("Can not initialize the default wsdl from https://webservices.netsuite.com/wsdl/v2010_2_0/netsuite.wsdl");
             // e.printStackTrace();
         }
         WSDL_LOCATION = url;

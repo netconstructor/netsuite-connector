@@ -12,8 +12,8 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
-import org.mule.module.netsuite.api.model.entity.EntityId;
-import org.mule.module.netsuite.api.model.entity.EntityReference;
+import org.mule.module.netsuite.api.model.entity.RecordId;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
@@ -54,6 +54,7 @@ import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequ
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -63,27 +64,30 @@ import org.apache.commons.beanutils.LazyDynaMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
-public class AxisNetSuiteClient implements SoapNetSuiteClient
+public class CxfNetSuiteClient implements SoapNetSuiteClient
 {
-    private final AxisPortProvider portProvider;
+    private final CxfPortProvider portProvider;
 
-    public AxisNetSuiteClient(@NotNull AxisPortProvider portProvider)
+    public CxfNetSuiteClient(@NotNull CxfPortProvider portProvider)
     {
         Validate.notNull(portProvider);
         this.portProvider = portProvider;
     }
 
-    public Object update(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
+    public Object updateRecord(RecordReference recordReference, Map<String, Object> recordAttributes)
+        throws Exception
     {
-        return getAuthenticatedPort().update(new UpdateRequest(createRecord(recordType, recordAttributes)));
+        return getAuthenticatedPort().update(
+            new UpdateRequest(createRecord(recordReference.getType(), recordReference.getId().populate(
+                new HashMap<String, Object>(recordAttributes)))));
     }
 
-    public Object add(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
+    public Object addRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
         return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    public void find() throws Exception
+    public void findRecord() throws Exception
     {
     }
 
@@ -94,9 +98,9 @@ public class AxisNetSuiteClient implements SoapNetSuiteClient
         return record;
     }
 
-    public Object attachEntity(@NotNull EntityReference sourceEntity,
-                               @NotNull EntityReference destinationEntity,
-                               EntityReference contactEntity) throws Exception
+    public Object attachRecord(@NotNull RecordReference sourceEntity,
+                               @NotNull RecordReference destinationEntity,
+                               RecordReference contactEntity) throws Exception
     {
         Validate.notNull(sourceEntity);
         Validate.notNull(destinationEntity);
@@ -115,39 +119,39 @@ public class AxisNetSuiteClient implements SoapNetSuiteClient
         }
     }
 
-    public Object deleteEntity(EntityReference entity) throws Exception
+    public Object deleteRecord(RecordReference entity) throws Exception
     {
         // TODO use customRecordRef?
         return getAuthenticatedPort().delete(new DeleteRequest(entity.createRef()));
     }
 
-    public Object detachEntity(@NotNull EntityReference sourceEntity,
-                               @NotNull EntityReference destinationEntity) throws Exception
+    public Object detachRecord(@NotNull RecordReference sourceEntity,
+                               @NotNull RecordReference destinationEntity) throws Exception
     {
         return getAuthenticatedPort().detach(
             new DetachRequest(new DetachBasicReference(destinationEntity.createRef(),
                 sourceEntity.createRef())));
     }
 
-    public Object getDeletedEntity(RecordType type, String whenExpression) throws Exception
+    public Object getDeletedRecord(RecordType type, String whenExpression) throws Exception
     {
         return getAuthenticatedPort().getDeleted(new GetDeletedRequest(new GetDeletedFilter(/* TODO */)));
     }
 
-    public Object getEntity(EntityReference entity) throws Exception
+    public Object getRecord(RecordReference entity) throws Exception
     {
         return getAuthenticatedPort().get(new GetRequest(entity.createRef()));
     }
 
-    public Object getEntities(RecordType type) throws Exception
+    public Object getRecords(RecordType type) throws Exception
     {
         return getAuthenticatedPort().getAll(
             new GetAllRequest(new GetAllRecord(GetAllRecordType.fromValue(type.value()))));
     }
 
-    public Object getBudgetExchangeRate(@NotNull EntityId period,
-                                        @NotNull EntityId fromSubsidiary,
-                                        EntityId toSubsidiary) throws Exception
+    public Object getBudgetExchangeRate(@NotNull RecordId period,
+                                        @NotNull RecordId fromSubsidiary,
+                                        RecordId toSubsidiary) throws Exception
     {
         Validate.notNull(period);
         Validate.notNull(fromSubsidiary);
@@ -156,9 +160,9 @@ public class AxisNetSuiteClient implements SoapNetSuiteClient
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    public Object getConsolidatedExchangeRate(@NotNull EntityId period,
-                                              @NotNull EntityId fromSubsidiary,
-                                              EntityId toSubsidiary) throws Exception
+    public Object getConsolidatedExchangeRate(@NotNull RecordId period,
+                                              @NotNull RecordId fromSubsidiary,
+                                              RecordId toSubsidiary) throws Exception
     {
         return getAuthenticatedPort().getConsolidatedExchangeRate(
             new GetConsolidatedExchangeRateRequest(new ConsolidatedExchangeRateFilter(period.createRef(),
@@ -191,7 +195,7 @@ public class AxisNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getServerTime(new GetServerTimeRequest());
     }
 
-    public Object updateInviteeStatus(@NotNull EntityReference entity,
+    public Object updateInviteeStatus(@NotNull RecordReference entity,
                                       @NotNull CalendarEventAttendeeResponse status) throws Exception
     {
         Validate.notNull(entity);
@@ -237,7 +241,7 @@ public class AxisNetSuiteClient implements SoapNetSuiteClient
         return portProvider.getAuthenticatedPort();
     }
 
-    private RecordRef createRefNullSafe(EntityId toSubsidiary)
+    private RecordRef createRefNullSafe(RecordId toSubsidiary)
     {
         return toSubsidiary != null ? toSubsidiary.createRef() : null;
     }

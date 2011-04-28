@@ -21,7 +21,7 @@
                           http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd">
 
 	<netsuite:config address="127.0.0.1" email="foo@bar.com"
-		password="1234" account="myaccount" />
+		password="1234" account="myaccount" roleId="3" />
 	<!--
 		Declare one flow like this one per element you add in your schema. See
 		the comment in NetSuiteNamespaceHandlerTestCase for an example how to
@@ -38,7 +38,7 @@
 	<flow name="attachEntity">
 		<inbound-endpoint address="vm://attachEntity"
 			exchange-pattern="request-response" />
-		<netsuite:attach-entity sourceEntityType="BUDGET"
+		<netsuite:attach-record sourceEntityType="BUDGET"
 			sourceExternalId="500" destinationInternalId="1590"
 			destinationEntityType="ACCOUNT" />
 	</flow>
@@ -47,13 +47,13 @@
 	<flow name="deleteEntity">
 		<inbound-endpoint address="vm://deleteEntity"
 			exchange-pattern="request-response" />
-		<netsuite:delete-entity entityType="CONTACT" externalId="986"/>
+		<netsuite:delete-record recordType="CONTACT" externalId="986"/>
 	</flow>
 
 	<flow name="detachEntity">
 		<inbound-endpoint address="vm://detachEntity"
 			exchange-pattern="request-response" />
-		<netsuite:detach-entity destinationEntityType="ACCOUNT" destinationExternalId="96" sourceEntityType="ACCOUNT" sourceInternalId="16"/>
+		<netsuite:detach-record destinationEntityType="ACCOUNT" destinationExternalId="96" sourceEntityType="ACCOUNT" sourceInternalId="16"/>
 	</flow>
 
 	<flow name="getBudgetExchangeRate">
@@ -78,7 +78,7 @@
 	<flow name="getDeletedEntity">
 		<inbound-endpoint address="vm://getDeletedEntity"
 			exchange-pattern="request-response" />
-		<netsuite:get-deleted-entity type="CUSTOMER_PAYMENT" whenExpression="expresion here"/>
+		<netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="expresion here"/>
 	</flow>
 
 	<flow name="getEntities">
@@ -90,7 +90,7 @@
 	<flow name="getEntity">
 		<inbound-endpoint address="vm://getEntity"
 			exchange-pattern="request-response" />
-		<netsuite:get-entity entityType="CREDIT_MEMO" externalId="982"/>
+		<netsuite:get-record recordType="CREDIT_MEMO" externalId="982"/>
 	</flow>
 
 	<flow name="getItemAvailability">

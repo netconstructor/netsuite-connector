@@ -10,11 +10,16 @@
 
 package org.mule.module.netsuite.api.annotation;
 
+import org.mule.module.netsuite.api.SoapNetSuiteClient;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Metadata of a {@link SoapNetSuiteClient} Method
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface NetSuiteOperation

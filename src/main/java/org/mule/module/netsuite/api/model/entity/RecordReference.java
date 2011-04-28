@@ -17,12 +17,12 @@ import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang.Validate;
 
-public class EntityReference
+public class RecordReference
 {
-    private final EntityId id;
+    private final RecordId id;
     private final RecordType type;
 
-    public EntityReference(@NotNull EntityId id, @NotNull RecordType type)
+    public RecordReference(@NotNull RecordId id, @NotNull RecordType type)
     {
         Validate.notNull(id);
         Validate.notNull(type);
@@ -36,6 +36,16 @@ public class EntityReference
         RecordRef recordRef = id.createRef();
         recordRef.setType(type);
         return recordRef;
+    }
+    
+    public RecordType getType()
+    {
+        return type;
+    }
+
+    public RecordId getId()
+    {
+        return id;
     }
 
 }
