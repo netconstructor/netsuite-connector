@@ -10,6 +10,7 @@
 
 package org.mule.module.netsuite;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -18,14 +19,14 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import org.junit.Test;
 
-public class EntityReferencesUnitTest
+public class RecordReferencesUnitTest
 {
 
     @Test
     public void testFromInternalId()
     {
         String internalId = "A123";
-        RecordRef ref = EntityReferences.from(RecordType.ACCOUNT, internalId, null).createRef();
+        RecordRef ref = RecordReferences.from(RecordType.ACCOUNT, internalId, null).createRef();
         assertEquals(internalId, ref.getInternalId());
         assertEquals(RecordType.ACCOUNT, ref.getType());
         assertNull(ref.getExternalId());
@@ -35,7 +36,7 @@ public class EntityReferencesUnitTest
     public void testFromExternalId()
     {
         String externalId = "A123";
-        RecordRef ref = EntityReferences.from(RecordType.ACCOUNT, null, externalId).createRef();
+        RecordRef ref = RecordReferences.from(RecordType.ACCOUNT, null, externalId).createRef();
         assertEquals(externalId, ref.getExternalId());
         assertNull(ref.getInternalId());
     }
@@ -43,19 +44,37 @@ public class EntityReferencesUnitTest
     @Test(expected = IllegalArgumentException.class)
     public void testFromBadInputId()
     {
-        EntityReferences.from(RecordType.ACCOUNT, null, null);
+        RecordReferences.from(RecordType.ACCOUNT, null, null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testFromBadInputType()
     {
-        EntityReferences.from(null, "A126", null);
+        RecordReferences.from(null, "A126", null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testFromTwoIds()
     {
-        EntityReferences.from(RecordType.ASSEMBLY_UNBUILD, "A126", "EFR5");
+        RecordReferences.from(RecordType.ASSEMBLY_UNBUILD, "A126", "EFR5");
+    }
+
+    @Test
+    public void nullSafeFromNull() throws Exception
+    {
+        assertNull(RecordReferences.nulSafeFrom(null, null, null));
+    }
+    
+    @Test
+    public void nullSafeFromNotNull() throws Exception
+    {
+        assertNotNull(RecordReferences.nulSafeFrom(RecordType.ASSEMBLY_UNBUILD, "A126", null));
+    }
+    
+    @Test(expected=IllegalArgumentException.class)
+    public void nullSafeFromNotIllegalArgument() throws Exception
+    {
+        RecordReferences.nulSafeFrom(null, "A126", null);
     }
 
 }

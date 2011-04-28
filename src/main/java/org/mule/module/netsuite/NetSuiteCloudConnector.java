@@ -14,8 +14,8 @@
 
 package org.mule.module.netsuite;
 
-import static org.mule.module.netsuite.EntityReferences.from;
-import static org.mule.module.netsuite.EntityReferences.nulSafeFrom;
+import static org.mule.module.netsuite.RecordReferences.from;
+import static org.mule.module.netsuite.RecordReferences.nulSafeFrom;
 
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;

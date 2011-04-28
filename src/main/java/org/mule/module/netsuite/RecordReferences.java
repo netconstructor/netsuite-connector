@@ -16,12 +16,14 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import javax.validation.constraints.NotNull;
 
+import org.apache.commons.lang.Validate;
+
 /**
- * Utility class for creating {@link EntityReferences} from connector arguments
+ * Utility class for creating {@link RecordReferences} from connector arguments
  */
-public final class EntityReferences
+public final class RecordReferences
 {
-    private EntityReferences()
+    private RecordReferences()
     {
     }
 
@@ -30,13 +32,16 @@ public final class EntityReferences
         return new RecordReference(RecordIds.from(internalId, externalId), entityType);
     }
 
-    public static RecordReference nulSafeFrom(RecordType contanctRecordType,
-                                              String contanctInternalId,
-                                              String contanctExternalId)
+    public static RecordReference nulSafeFrom(RecordType recordType, String internalId, String externalId)
     {
-        return contanctRecordType != null
-                                         ? from(contanctRecordType, contanctInternalId, contanctExternalId)
-                                         : null;
+        return recordType != null ? from(recordType, internalId, externalId)// 
+                                 : fromNull(externalId, internalId);
+    }
+
+    private static RecordReference fromNull(String externalId, String internalId)
+    {
+        Validate.isTrue(externalId == null && internalId == null, "Must specify recordType");
+        return null;
     }
 
 }

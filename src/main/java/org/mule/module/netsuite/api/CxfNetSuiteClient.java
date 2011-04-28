@@ -97,31 +97,30 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return record;
     }
 
-    public Object attachRecord(@NotNull RecordReference sourceEntity,
-                               @NotNull RecordReference destinationEntity,
+    public Object attachRecord(@NotNull RecordReference sourceRecord,
+                               @NotNull RecordReference destinationRecord,
                                RecordReference contactEntity) throws Exception
     {
-        Validate.notNull(sourceEntity);
-        Validate.notNull(destinationEntity);
+        Validate.notNull(sourceRecord);
+        Validate.notNull(destinationRecord);
 
         if (contactEntity == null)
         {
             return getAuthenticatedPort().attach(
-                new AttachRequest(new AttachBasicReference(destinationEntity.createRef(),
-                    sourceEntity.createRef())));
+                new AttachRequest(new AttachBasicReference(destinationRecord.createRef(),
+                    sourceRecord.createRef())));
         }
         else
         {
             return getAuthenticatedPort().attach(
-                new AttachRequest(new AttachContactReference(destinationEntity.createRef(),
-                    sourceEntity.createRef(), contactEntity.createRef())));
+                new AttachRequest(new AttachContactReference(destinationRecord.createRef(),
+                    sourceRecord.createRef(), contactEntity.createRef())));
         }
     }
 
-    public Object deleteRecord(RecordReference entity) throws Exception
+    public Object deleteRecord(RecordReference record) throws Exception
     {
-        // TODO use customRecordRef?
-        return getAuthenticatedPort().delete(new DeleteRequest(entity.createRef()));
+        return getAuthenticatedPort().delete(new DeleteRequest(record.createRef()));
     }
 
     public Object detachRecord(@NotNull RecordReference sourceEntity,
@@ -137,9 +136,9 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getDeleted(new GetDeletedRequest(new GetDeletedFilter(/* TODO */)));
     }
 
-    public Object getRecord(RecordReference entity) throws Exception
+    public Object getRecord(RecordReference record) throws Exception
     {
-        return getAuthenticatedPort().get(new GetRequest(entity.createRef()));
+        return getAuthenticatedPort().get(new GetRequest(record.createRef()));
     }
 
     public Object getRecords(RecordType type) throws Exception
@@ -194,13 +193,13 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getServerTime(new GetServerTimeRequest());
     }
 
-    public Object updateInviteeStatus(@NotNull RecordReference entity,
+    public Object updateInviteeStatus(@NotNull RecordReference record,
                                       @NotNull CalendarEventAttendeeResponse status) throws Exception
     {
-        Validate.notNull(entity);
+        Validate.notNull(record);
         Validate.notNull(status);
         return getAuthenticatedPort().updateInviteeStatus(
-            new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(entity.createRef(), status)));
+            new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(record.createRef(), status)));
     }
 
     @NetSuiteOperation(resultName = "AsyncStatus", resultType = ReturnType.RECORD)
