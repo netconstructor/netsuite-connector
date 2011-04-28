@@ -35,25 +35,25 @@
 	</flow>
 
 
-	<flow name="attachEntity">
-		<inbound-endpoint address="vm://attachEntity"
+	<flow name="attachRecord">
+		<inbound-endpoint address="vm://attachRecord"
 			exchange-pattern="request-response" />
-		<netsuite:attach-record sourceEntityType="BUDGET"
+		<netsuite:attach-record sourceRecordType="BUDGET"
 			sourceExternalId="500" destinationInternalId="1590"
-			destinationEntityType="ACCOUNT" />
+			destinationRecordType="ACCOUNT" />
 	</flow>
 
 
-	<flow name="deleteEntity">
-		<inbound-endpoint address="vm://deleteEntity"
+	<flow name="deleteRecord">
+		<inbound-endpoint address="vm://deleteRecord"
 			exchange-pattern="request-response" />
 		<netsuite:delete-record recordType="CONTACT" externalId="986"/>
 	</flow>
 
-	<flow name="detachEntity">
-		<inbound-endpoint address="vm://detachEntity"
+	<flow name="detachRecord">
+		<inbound-endpoint address="vm://detachRecord"
 			exchange-pattern="request-response" />
-		<netsuite:detach-record destinationEntityType="ACCOUNT" destinationExternalId="96" sourceEntityType="ACCOUNT" sourceInternalId="16"/>
+		<netsuite:detach-record destinationRecordType="ACCOUNT" destinationExternalId="96" sourceRecordType="ACCOUNT" sourceInternalId="16"/>
 	</flow>
 
 	<flow name="getBudgetExchangeRate">
@@ -75,20 +75,20 @@
 	</flow>
 
 
-	<flow name="getDeletedEntity">
-		<inbound-endpoint address="vm://getDeletedEntity"
+	<flow name="getDeletedRecord">
+		<inbound-endpoint address="vm://getDeletedRecord"
 			exchange-pattern="request-response" />
 		<netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="expresion here"/>
 	</flow>
 
-	<flow name="getEntities">
-		<inbound-endpoint address="vm://getEntities"
+	<flow name="getRecords">
+		<inbound-endpoint address="vm://getRecords"
 			exchange-pattern="request-response" />
-		<netsuite:get-entities type="ENTITY_CUSTOM_FIELD"/>
+		<netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>
 	</flow>
 
-	<flow name="getEntity">
-		<inbound-endpoint address="vm://getEntity"
+	<flow name="getRecord">
+		<inbound-endpoint address="vm://getRecord"
 			exchange-pattern="request-response" />
 		<netsuite:get-record recordType="CREDIT_MEMO" externalId="982"/>
 	</flow>

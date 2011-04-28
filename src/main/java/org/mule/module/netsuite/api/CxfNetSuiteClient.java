@@ -61,7 +61,6 @@ import javax.validation.constraints.NotNull;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.LazyDynaMap;
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
 public class CxfNetSuiteClient implements SoapNetSuiteClient
@@ -93,7 +92,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
-        Record record = (Record) Class.forName(StringUtils.capitalize(recordType.value())).newInstance();
+        Record record = recordType.getRecordClass().newInstance();
         BeanUtils.copyProperties(record, new LazyDynaMap(recordAttributes));
         return record;
     }

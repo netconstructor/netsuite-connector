@@ -1,6 +1,128 @@
 
 package com.netsuite.webservices.platform.core_2010_2.types;
 
+import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEvent;
+import com.netsuite.webservices.activities.scheduling_2010_2.PhoneCall;
+import com.netsuite.webservices.activities.scheduling_2010_2.ProjectTask;
+import com.netsuite.webservices.activities.scheduling_2010_2.Task;
+import com.netsuite.webservices.documents.filecabinet_2010_2.File;
+import com.netsuite.webservices.documents.filecabinet_2010_2.Folder;
+import com.netsuite.webservices.general.communication_2010_2.Message;
+import com.netsuite.webservices.general.communication_2010_2.Note;
+import com.netsuite.webservices.lists.accounting_2010_2.Account;
+import com.netsuite.webservices.lists.accounting_2010_2.AccountingPeriod;
+import com.netsuite.webservices.lists.accounting_2010_2.AssemblyItem;
+import com.netsuite.webservices.lists.accounting_2010_2.Bin;
+import com.netsuite.webservices.lists.accounting_2010_2.BudgetCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.Classification;
+import com.netsuite.webservices.lists.accounting_2010_2.ContactCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.ContactRole;
+import com.netsuite.webservices.lists.accounting_2010_2.Currency;
+import com.netsuite.webservices.lists.accounting_2010_2.CustomerCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.Department;
+import com.netsuite.webservices.lists.accounting_2010_2.DescriptionItem;
+import com.netsuite.webservices.lists.accounting_2010_2.DiscountItem;
+import com.netsuite.webservices.lists.accounting_2010_2.DownloadItem;
+import com.netsuite.webservices.lists.accounting_2010_2.ExpenseCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.GiftCertificate;
+import com.netsuite.webservices.lists.accounting_2010_2.GiftCertificateItem;
+import com.netsuite.webservices.lists.accounting_2010_2.InventoryItem;
+import com.netsuite.webservices.lists.accounting_2010_2.KitItem;
+import com.netsuite.webservices.lists.accounting_2010_2.LeadSource;
+import com.netsuite.webservices.lists.accounting_2010_2.Location;
+import com.netsuite.webservices.lists.accounting_2010_2.LotNumberedAssemblyItem;
+import com.netsuite.webservices.lists.accounting_2010_2.LotNumberedInventoryItem;
+import com.netsuite.webservices.lists.accounting_2010_2.MarkupItem;
+import com.netsuite.webservices.lists.accounting_2010_2.NonInventoryPurchaseItem;
+import com.netsuite.webservices.lists.accounting_2010_2.NonInventoryResaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.NonInventorySaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.NoteType;
+import com.netsuite.webservices.lists.accounting_2010_2.OtherChargePurchaseItem;
+import com.netsuite.webservices.lists.accounting_2010_2.OtherChargeResaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.OtherChargeSaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.PartnerCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.PaymentItem;
+import com.netsuite.webservices.lists.accounting_2010_2.PaymentMethod;
+import com.netsuite.webservices.lists.accounting_2010_2.PriceLevel;
+import com.netsuite.webservices.lists.accounting_2010_2.SalesRole;
+import com.netsuite.webservices.lists.accounting_2010_2.SalesTaxItem;
+import com.netsuite.webservices.lists.accounting_2010_2.SerializedAssemblyItem;
+import com.netsuite.webservices.lists.accounting_2010_2.SerializedInventoryItem;
+import com.netsuite.webservices.lists.accounting_2010_2.ServicePurchaseItem;
+import com.netsuite.webservices.lists.accounting_2010_2.ServiceResaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.ServiceSaleItem;
+import com.netsuite.webservices.lists.accounting_2010_2.State;
+import com.netsuite.webservices.lists.accounting_2010_2.Subsidiary;
+import com.netsuite.webservices.lists.accounting_2010_2.SubtotalItem;
+import com.netsuite.webservices.lists.accounting_2010_2.TaxGroup;
+import com.netsuite.webservices.lists.accounting_2010_2.TaxType;
+import com.netsuite.webservices.lists.accounting_2010_2.Term;
+import com.netsuite.webservices.lists.accounting_2010_2.UnitsType;
+import com.netsuite.webservices.lists.accounting_2010_2.VendorCategory;
+import com.netsuite.webservices.lists.accounting_2010_2.WinLossReason;
+import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.lists.marketing_2010_2.Campaign;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignAudience;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignCategory;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignChannel;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignFamily;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignOffer;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignResponse;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignSearchEngine;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignSubscription;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignVertical;
+import com.netsuite.webservices.lists.marketing_2010_2.PromotionCode;
+import com.netsuite.webservices.lists.support_2010_2.Issue;
+import com.netsuite.webservices.lists.support_2010_2.Solution;
+import com.netsuite.webservices.lists.support_2010_2.SupportCase;
+import com.netsuite.webservices.lists.support_2010_2.SupportCaseIssue;
+import com.netsuite.webservices.lists.support_2010_2.SupportCaseOrigin;
+import com.netsuite.webservices.lists.support_2010_2.SupportCasePriority;
+import com.netsuite.webservices.lists.support_2010_2.SupportCaseStatus;
+import com.netsuite.webservices.lists.support_2010_2.SupportCaseType;
+import com.netsuite.webservices.lists.support_2010_2.Topic;
+import com.netsuite.webservices.platform.core_2010_2.Record;
+import com.netsuite.webservices.setup.customization_2010_2.CrmCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.CustomList;
+import com.netsuite.webservices.setup.customization_2010_2.CustomRecord;
+import com.netsuite.webservices.setup.customization_2010_2.CustomRecordCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.CustomRecordType;
+import com.netsuite.webservices.setup.customization_2010_2.EntityCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.ItemCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.ItemNumberCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.ItemOptionCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.OtherCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.TransactionBodyCustomField;
+import com.netsuite.webservices.setup.customization_2010_2.TransactionColumnCustomField;
+import com.netsuite.webservices.transactions.bank_2010_2.Check;
+import com.netsuite.webservices.transactions.customers_2010_2.CashRefund;
+import com.netsuite.webservices.transactions.customers_2010_2.CreditMemo;
+import com.netsuite.webservices.transactions.customers_2010_2.CustomerDeposit;
+import com.netsuite.webservices.transactions.customers_2010_2.CustomerPayment;
+import com.netsuite.webservices.transactions.customers_2010_2.CustomerRefund;
+import com.netsuite.webservices.transactions.customers_2010_2.DepositApplication;
+import com.netsuite.webservices.transactions.customers_2010_2.ReturnAuthorization;
+import com.netsuite.webservices.transactions.employees_2010_2.ExpenseReport;
+import com.netsuite.webservices.transactions.employees_2010_2.TimeBill;
+import com.netsuite.webservices.transactions.financial_2010_2.Budget;
+import com.netsuite.webservices.transactions.general_2010_2.InterCompanyJournalEntry;
+import com.netsuite.webservices.transactions.general_2010_2.JournalEntry;
+import com.netsuite.webservices.transactions.inventory_2010_2.AssemblyBuild;
+import com.netsuite.webservices.transactions.inventory_2010_2.AssemblyUnbuild;
+import com.netsuite.webservices.transactions.inventory_2010_2.InterCompanyTransferOrder;
+import com.netsuite.webservices.transactions.inventory_2010_2.InventoryAdjustment;
+import com.netsuite.webservices.transactions.inventory_2010_2.TransferOrder;
+import com.netsuite.webservices.transactions.purchases_2010_2.ItemReceipt;
+import com.netsuite.webservices.transactions.purchases_2010_2.PurchaseOrder;
+import com.netsuite.webservices.transactions.purchases_2010_2.VendorBill;
+import com.netsuite.webservices.transactions.purchases_2010_2.VendorPayment;
+import com.netsuite.webservices.transactions.sales_2010_2.CashSale;
+import com.netsuite.webservices.transactions.sales_2010_2.Estimate;
+import com.netsuite.webservices.transactions.sales_2010_2.Invoice;
+import com.netsuite.webservices.transactions.sales_2010_2.ItemFulfillment;
+import com.netsuite.webservices.transactions.sales_2010_2.Opportunity;
+import com.netsuite.webservices.transactions.sales_2010_2.SalesOrder;
+
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
@@ -152,271 +274,276 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "RecordType", namespace = "urn:types.core_2010_2.platform.webservices.netsuite.com")
 @XmlEnum
 public enum RecordType {
+    // REGEXP for associating RecordTypes and Classes:
+    // find: ([A-Z])([A-Z_]+)\("(.)(.+)"\),
+    // replace: $1$2\("$3$4"\, $1$4\.class),
 
     @XmlEnumValue("account")
-    ACCOUNT("account"),
+    ACCOUNT("account", Account.class),
     @XmlEnumValue("accountingPeriod")
-    ACCOUNTING_PERIOD("accountingPeriod"),
+    ACCOUNTING_PERIOD("accountingPeriod", AccountingPeriod.class),
     @XmlEnumValue("assemblyBuild")
-    ASSEMBLY_BUILD("assemblyBuild"),
+    ASSEMBLY_BUILD("assemblyBuild", AssemblyBuild.class),
     @XmlEnumValue("assemblyUnbuild")
-    ASSEMBLY_UNBUILD("assemblyUnbuild"),
+    ASSEMBLY_UNBUILD("assemblyUnbuild", AssemblyUnbuild.class),
     @XmlEnumValue("assemblyItem")
-    ASSEMBLY_ITEM("assemblyItem"),
+    ASSEMBLY_ITEM("assemblyItem", AssemblyItem.class),
     @XmlEnumValue("bin")
-    BIN("bin"),
+    BIN("bin", Bin.class),
     @XmlEnumValue("budget")
-    BUDGET("budget"),
+    BUDGET("budget", Budget.class),
     @XmlEnumValue("budgetCategory")
-    BUDGET_CATEGORY("budgetCategory"),
+    BUDGET_CATEGORY("budgetCategory", BudgetCategory.class),
     @XmlEnumValue("calendarEvent")
-    CALENDAR_EVENT("calendarEvent"),
+    CALENDAR_EVENT("calendarEvent", CalendarEvent.class),
     @XmlEnumValue("campaign")
-    CAMPAIGN("campaign"),
+    CAMPAIGN("campaign", Campaign.class),
     @XmlEnumValue("campaignAudience")
-    CAMPAIGN_AUDIENCE("campaignAudience"),
+    CAMPAIGN_AUDIENCE("campaignAudience", CampaignAudience.class),
     @XmlEnumValue("campaignCategory")
-    CAMPAIGN_CATEGORY("campaignCategory"),
+    CAMPAIGN_CATEGORY("campaignCategory", CampaignCategory.class),
     @XmlEnumValue("campaignChannel")
-    CAMPAIGN_CHANNEL("campaignChannel"),
+    CAMPAIGN_CHANNEL("campaignChannel", CampaignChannel.class),
     @XmlEnumValue("campaignFamily")
-    CAMPAIGN_FAMILY("campaignFamily"),
+    CAMPAIGN_FAMILY("campaignFamily", CampaignFamily.class),
     @XmlEnumValue("campaignOffer")
-    CAMPAIGN_OFFER("campaignOffer"),
+    CAMPAIGN_OFFER("campaignOffer", CampaignOffer.class),
     @XmlEnumValue("campaignResponse")
-    CAMPAIGN_RESPONSE("campaignResponse"),
+    CAMPAIGN_RESPONSE("campaignResponse", CampaignResponse.class),
     @XmlEnumValue("campaignSearchEngine")
-    CAMPAIGN_SEARCH_ENGINE("campaignSearchEngine"),
+    CAMPAIGN_SEARCH_ENGINE("campaignSearchEngine", CampaignSearchEngine.class),
     @XmlEnumValue("campaignSubscription")
-    CAMPAIGN_SUBSCRIPTION("campaignSubscription"),
+    CAMPAIGN_SUBSCRIPTION("campaignSubscription", CampaignSubscription.class),
     @XmlEnumValue("campaignVertical")
-    CAMPAIGN_VERTICAL("campaignVertical"),
+    CAMPAIGN_VERTICAL("campaignVertical", CampaignVertical.class),
     @XmlEnumValue("cashRefund")
-    CASH_REFUND("cashRefund"),
+    CASH_REFUND("cashRefund", CashRefund.class),
     @XmlEnumValue("cashSale")
-    CASH_SALE("cashSale"),
+    CASH_SALE("cashSale", CashSale.class),
     @XmlEnumValue("check")
-    CHECK("check"),
+    CHECK("check", Check.class),
     @XmlEnumValue("classification")
-    CLASSIFICATION("classification"),
+    CLASSIFICATION("classification", Classification.class),
     @XmlEnumValue("contact")
-    CONTACT("contact"),
+    CONTACT("contact", null),//Contact.class),
     @XmlEnumValue("contactCategory")
-    CONTACT_CATEGORY("contactCategory"),
+    CONTACT_CATEGORY("contactCategory", ContactCategory.class),
     @XmlEnumValue("contactRole")
-    CONTACT_ROLE("contactRole"),
+    CONTACT_ROLE("contactRole", ContactRole.class),
     @XmlEnumValue("creditMemo")
-    CREDIT_MEMO("creditMemo"),
+    CREDIT_MEMO("creditMemo", CreditMemo.class),
     @XmlEnumValue("crmCustomField")
-    CRM_CUSTOM_FIELD("crmCustomField"),
+    CRM_CUSTOM_FIELD("crmCustomField", CrmCustomField.class),
     @XmlEnumValue("currency")
-    CURRENCY("currency"),
+    CURRENCY("currency", Currency.class),
     @XmlEnumValue("customList")
-    CUSTOM_LIST("customList"),
+    CUSTOM_LIST("customList", CustomList.class),
     @XmlEnumValue("customRecord")
-    CUSTOM_RECORD("customRecord"),
+    CUSTOM_RECORD("customRecord", CustomRecord.class),
     @XmlEnumValue("customRecordCustomField")
-    CUSTOM_RECORD_CUSTOM_FIELD("customRecordCustomField"),
+    CUSTOM_RECORD_CUSTOM_FIELD("customRecordCustomField", CustomRecordCustomField.class),
     @XmlEnumValue("customRecordType")
-    CUSTOM_RECORD_TYPE("customRecordType"),
+    CUSTOM_RECORD_TYPE("customRecordType", CustomRecordType.class),
     @XmlEnumValue("customer")
-    CUSTOMER("customer"),
+    CUSTOMER("customer",null),// Customer.class),
     @XmlEnumValue("customerCategory")
-    CUSTOMER_CATEGORY("customerCategory"),
+    CUSTOMER_CATEGORY("customerCategory", CustomerCategory.class),
     @XmlEnumValue("customerDeposit")
-    CUSTOMER_DEPOSIT("customerDeposit"),
+    CUSTOMER_DEPOSIT("customerDeposit", CustomerDeposit.class),
     @XmlEnumValue("customerPayment")
-    CUSTOMER_PAYMENT("customerPayment"),
+    CUSTOMER_PAYMENT("customerPayment", CustomerPayment.class),
     @XmlEnumValue("customerRefund")
-    CUSTOMER_REFUND("customerRefund"),
+    CUSTOMER_REFUND("customerRefund", CustomerRefund.class),
     @XmlEnumValue("customerStatus")
-    CUSTOMER_STATUS("customerStatus"),
+    CUSTOMER_STATUS("customerStatus", null),//CustomerStatus.class),
     @XmlEnumValue("depositApplication")
-    DEPOSIT_APPLICATION("depositApplication"),
+    DEPOSIT_APPLICATION("depositApplication", DepositApplication.class),
     @XmlEnumValue("department")
-    DEPARTMENT("department"),
+    DEPARTMENT("department", Department.class),
     @XmlEnumValue("descriptionItem")
-    DESCRIPTION_ITEM("descriptionItem"),
+    DESCRIPTION_ITEM("descriptionItem", DescriptionItem.class),
     @XmlEnumValue("discountItem")
-    DISCOUNT_ITEM("discountItem"),
+    DISCOUNT_ITEM("discountItem", DiscountItem.class),
     @XmlEnumValue("downloadItem")
-    DOWNLOAD_ITEM("downloadItem"),
+    DOWNLOAD_ITEM("downloadItem", DownloadItem.class),
     @XmlEnumValue("employee")
-    EMPLOYEE("employee"),
+    EMPLOYEE("employee", Employee.class),
     @XmlEnumValue("entityCustomField")
-    ENTITY_CUSTOM_FIELD("entityCustomField"),
+    ENTITY_CUSTOM_FIELD("entityCustomField", EntityCustomField.class),
     @XmlEnumValue("entityGroup")
-    ENTITY_GROUP("entityGroup"),
+    ENTITY_GROUP("entityGroup", null),//EntityGroup.class),
     @XmlEnumValue("estimate")
-    ESTIMATE("estimate"),
+    ESTIMATE("estimate", Estimate.class),
     @XmlEnumValue("expenseCategory")
-    EXPENSE_CATEGORY("expenseCategory"),
+    EXPENSE_CATEGORY("expenseCategory", ExpenseCategory.class),
     @XmlEnumValue("expenseReport")
-    EXPENSE_REPORT("expenseReport"),
+    EXPENSE_REPORT("expenseReport", ExpenseReport.class),
     @XmlEnumValue("file")
-    FILE("file"),
+    FILE("file", File.class),
     @XmlEnumValue("folder")
-    FOLDER("folder"),
+    FOLDER("folder", Folder.class),
     @XmlEnumValue("giftCertificate")
-    GIFT_CERTIFICATE("giftCertificate"),
+    GIFT_CERTIFICATE("giftCertificate", GiftCertificate.class),
     @XmlEnumValue("giftCertificateItem")
-    GIFT_CERTIFICATE_ITEM("giftCertificateItem"),
+    GIFT_CERTIFICATE_ITEM("giftCertificateItem", GiftCertificateItem.class),
     @XmlEnumValue("interCompanyJournalEntry")
-    INTER_COMPANY_JOURNAL_ENTRY("interCompanyJournalEntry"),
+    INTER_COMPANY_JOURNAL_ENTRY("interCompanyJournalEntry", InterCompanyJournalEntry.class),
     @XmlEnumValue("interCompanyTransferOrder")
-    INTER_COMPANY_TRANSFER_ORDER("interCompanyTransferOrder"),
+    INTER_COMPANY_TRANSFER_ORDER("interCompanyTransferOrder", InterCompanyTransferOrder.class),
     @XmlEnumValue("inventoryAdjustment")
-    INVENTORY_ADJUSTMENT("inventoryAdjustment"),
+    INVENTORY_ADJUSTMENT("inventoryAdjustment", InventoryAdjustment.class),
     @XmlEnumValue("inventoryItem")
-    INVENTORY_ITEM("inventoryItem"),
+    INVENTORY_ITEM("inventoryItem", InventoryItem.class),
     @XmlEnumValue("invoice")
-    INVOICE("invoice"),
+    INVOICE("invoice", Invoice.class),
     @XmlEnumValue("itemCustomField")
-    ITEM_CUSTOM_FIELD("itemCustomField"),
+    ITEM_CUSTOM_FIELD("itemCustomField", ItemCustomField.class),
     @XmlEnumValue("itemFulfillment")
-    ITEM_FULFILLMENT("itemFulfillment"),
+    ITEM_FULFILLMENT("itemFulfillment", ItemFulfillment.class),
     @XmlEnumValue("itemNumberCustomField")
-    ITEM_NUMBER_CUSTOM_FIELD("itemNumberCustomField"),
+    ITEM_NUMBER_CUSTOM_FIELD("itemNumberCustomField", ItemNumberCustomField.class),
     @XmlEnumValue("itemOptionCustomField")
-    ITEM_OPTION_CUSTOM_FIELD("itemOptionCustomField"),
+    ITEM_OPTION_CUSTOM_FIELD("itemOptionCustomField", ItemOptionCustomField.class),
     @XmlEnumValue("issue")
-    ISSUE("issue"),
+    ISSUE("issue", Issue.class),
     @XmlEnumValue("job")
-    JOB("job"),
+    JOB("job", null),//Job.class),
     @XmlEnumValue("jobStatus")
-    JOB_STATUS("jobStatus"),
+    JOB_STATUS("jobStatus", null),//JobStatus.class),
     @XmlEnumValue("jobType")
-    JOB_TYPE("jobType"),
+    JOB_TYPE("jobType",null),// JobType.class),
     @XmlEnumValue("itemReceipt")
-    ITEM_RECEIPT("itemReceipt"),
+    ITEM_RECEIPT("itemReceipt", ItemReceipt.class),
     @XmlEnumValue("journalEntry")
-    JOURNAL_ENTRY("journalEntry"),
+    JOURNAL_ENTRY("journalEntry", JournalEntry.class),
     @XmlEnumValue("kitItem")
-    KIT_ITEM("kitItem"),
+    KIT_ITEM("kitItem", KitItem.class),
     @XmlEnumValue("leadSource")
-    LEAD_SOURCE("leadSource"),
+    LEAD_SOURCE("leadSource", LeadSource.class),
     @XmlEnumValue("location")
-    LOCATION("location"),
+    LOCATION("location", Location.class),
     @XmlEnumValue("lotNumberedInventoryItem")
-    LOT_NUMBERED_INVENTORY_ITEM("lotNumberedInventoryItem"),
+    LOT_NUMBERED_INVENTORY_ITEM("lotNumberedInventoryItem", LotNumberedInventoryItem.class),
     @XmlEnumValue("lotNumberedAssemblyItem")
-    LOT_NUMBERED_ASSEMBLY_ITEM("lotNumberedAssemblyItem"),
+    LOT_NUMBERED_ASSEMBLY_ITEM("lotNumberedAssemblyItem", LotNumberedAssemblyItem.class),
     @XmlEnumValue("markupItem")
-    MARKUP_ITEM("markupItem"),
+    MARKUP_ITEM("markupItem", MarkupItem.class),
     @XmlEnumValue("message")
-    MESSAGE("message"),
+    MESSAGE("message", Message.class),
     @XmlEnumValue("nonInventoryPurchaseItem")
-    NON_INVENTORY_PURCHASE_ITEM("nonInventoryPurchaseItem"),
+    NON_INVENTORY_PURCHASE_ITEM("nonInventoryPurchaseItem", NonInventoryPurchaseItem.class),
     @XmlEnumValue("nonInventoryResaleItem")
-    NON_INVENTORY_RESALE_ITEM("nonInventoryResaleItem"),
+    NON_INVENTORY_RESALE_ITEM("nonInventoryResaleItem", NonInventoryResaleItem.class),
     @XmlEnumValue("nonInventorySaleItem")
-    NON_INVENTORY_SALE_ITEM("nonInventorySaleItem"),
+    NON_INVENTORY_SALE_ITEM("nonInventorySaleItem", NonInventorySaleItem.class),
     @XmlEnumValue("note")
-    NOTE("note"),
+    NOTE("note", Note.class),
     @XmlEnumValue("noteType")
-    NOTE_TYPE("noteType"),
+    NOTE_TYPE("noteType", NoteType.class),
     @XmlEnumValue("opportunity")
-    OPPORTUNITY("opportunity"),
+    OPPORTUNITY("opportunity", Opportunity.class),
     @XmlEnumValue("otherChargePurchaseItem")
-    OTHER_CHARGE_PURCHASE_ITEM("otherChargePurchaseItem"),
+    OTHER_CHARGE_PURCHASE_ITEM("otherChargePurchaseItem", OtherChargePurchaseItem.class),
     @XmlEnumValue("otherChargeResaleItem")
-    OTHER_CHARGE_RESALE_ITEM("otherChargeResaleItem"),
+    OTHER_CHARGE_RESALE_ITEM("otherChargeResaleItem", OtherChargeResaleItem.class),
     @XmlEnumValue("otherChargeSaleItem")
-    OTHER_CHARGE_SALE_ITEM("otherChargeSaleItem"),
+    OTHER_CHARGE_SALE_ITEM("otherChargeSaleItem", OtherChargeSaleItem.class),
     @XmlEnumValue("otherCustomField")
-    OTHER_CUSTOM_FIELD("otherCustomField"),
+    OTHER_CUSTOM_FIELD("otherCustomField", OtherCustomField.class),
     @XmlEnumValue("partner")
-    PARTNER("partner"),
+    PARTNER("partner", null),//Partner.class),
     @XmlEnumValue("partnerCategory")
-    PARTNER_CATEGORY("partnerCategory"),
+    PARTNER_CATEGORY("partnerCategory", PartnerCategory.class),
     @XmlEnumValue("paymentItem")
-    PAYMENT_ITEM("paymentItem"),
+    PAYMENT_ITEM("paymentItem", PaymentItem.class),
     @XmlEnumValue("paymentMethod")
-    PAYMENT_METHOD("paymentMethod"),
+    PAYMENT_METHOD("paymentMethod", PaymentMethod.class),
     @XmlEnumValue("phoneCall")
-    PHONE_CALL("phoneCall"),
+    PHONE_CALL("phoneCall", PhoneCall.class),
     @XmlEnumValue("priceLevel")
-    PRICE_LEVEL("priceLevel"),
+    PRICE_LEVEL("priceLevel", PriceLevel.class),
     @XmlEnumValue("projectTask")
-    PROJECT_TASK("projectTask"),
+    PROJECT_TASK("projectTask", ProjectTask.class),
     @XmlEnumValue("promotionCode")
-    PROMOTION_CODE("promotionCode"),
+    PROMOTION_CODE("promotionCode", PromotionCode.class),
     @XmlEnumValue("purchaseOrder")
-    PURCHASE_ORDER("purchaseOrder"),
+    PURCHASE_ORDER("purchaseOrder", PurchaseOrder.class),
     @XmlEnumValue("returnAuthorization")
-    RETURN_AUTHORIZATION("returnAuthorization"),
+    RETURN_AUTHORIZATION("returnAuthorization", ReturnAuthorization.class),
     @XmlEnumValue("salesOrder")
-    SALES_ORDER("salesOrder"),
+    SALES_ORDER("salesOrder", SalesOrder.class),
     @XmlEnumValue("salesRole")
-    SALES_ROLE("salesRole"),
+    SALES_ROLE("salesRole", SalesRole.class),
     @XmlEnumValue("salesTaxItem")
-    SALES_TAX_ITEM("salesTaxItem"),
+    SALES_TAX_ITEM("salesTaxItem", SalesTaxItem.class),
     @XmlEnumValue("serializedInventoryItem")
-    SERIALIZED_INVENTORY_ITEM("serializedInventoryItem"),
+    SERIALIZED_INVENTORY_ITEM("serializedInventoryItem", SerializedInventoryItem.class),
     @XmlEnumValue("serializedAssemblyItem")
-    SERIALIZED_ASSEMBLY_ITEM("serializedAssemblyItem"),
+    SERIALIZED_ASSEMBLY_ITEM("serializedAssemblyItem", SerializedAssemblyItem.class),
     @XmlEnumValue("servicePurchaseItem")
-    SERVICE_PURCHASE_ITEM("servicePurchaseItem"),
+    SERVICE_PURCHASE_ITEM("servicePurchaseItem", ServicePurchaseItem.class),
     @XmlEnumValue("serviceResaleItem")
-    SERVICE_RESALE_ITEM("serviceResaleItem"),
+    SERVICE_RESALE_ITEM("serviceResaleItem", ServiceResaleItem.class),
     @XmlEnumValue("serviceSaleItem")
-    SERVICE_SALE_ITEM("serviceSaleItem"),
+    SERVICE_SALE_ITEM("serviceSaleItem", ServiceSaleItem.class),
     @XmlEnumValue("solution")
-    SOLUTION("solution"),
+    SOLUTION("solution", Solution.class),
     @XmlEnumValue("siteCategory")
-    SITE_CATEGORY("siteCategory"),
+    SITE_CATEGORY("siteCategory", null),//SiteCategory.class),
     @XmlEnumValue("state")
-    STATE("state"),
+    STATE("state", State.class),
     @XmlEnumValue("subsidiary")
-    SUBSIDIARY("subsidiary"),
+    SUBSIDIARY("subsidiary", Subsidiary.class),
     @XmlEnumValue("subtotalItem")
-    SUBTOTAL_ITEM("subtotalItem"),
+    SUBTOTAL_ITEM("subtotalItem", SubtotalItem.class),
     @XmlEnumValue("supportCase")
-    SUPPORT_CASE("supportCase"),
+    SUPPORT_CASE("supportCase", SupportCase.class),
     @XmlEnumValue("supportCaseIssue")
-    SUPPORT_CASE_ISSUE("supportCaseIssue"),
+    SUPPORT_CASE_ISSUE("supportCaseIssue", SupportCaseIssue.class),
     @XmlEnumValue("supportCaseOrigin")
-    SUPPORT_CASE_ORIGIN("supportCaseOrigin"),
+    SUPPORT_CASE_ORIGIN("supportCaseOrigin", SupportCaseOrigin.class),
     @XmlEnumValue("supportCasePriority")
-    SUPPORT_CASE_PRIORITY("supportCasePriority"),
+    SUPPORT_CASE_PRIORITY("supportCasePriority", SupportCasePriority.class),
     @XmlEnumValue("supportCaseStatus")
-    SUPPORT_CASE_STATUS("supportCaseStatus"),
+    SUPPORT_CASE_STATUS("supportCaseStatus", SupportCaseStatus.class),
     @XmlEnumValue("supportCaseType")
-    SUPPORT_CASE_TYPE("supportCaseType"),
+    SUPPORT_CASE_TYPE("supportCaseType", SupportCaseType.class),
     @XmlEnumValue("task")
-    TASK("task"),
+    TASK("task", Task.class),
     @XmlEnumValue("taxGroup")
-    TAX_GROUP("taxGroup"),
+    TAX_GROUP("taxGroup", TaxGroup.class),
     @XmlEnumValue("taxType")
-    TAX_TYPE("taxType"),
+    TAX_TYPE("taxType", TaxType.class),
     @XmlEnumValue("term")
-    TERM("term"),
+    TERM("term", Term.class),
     @XmlEnumValue("timeBill")
-    TIME_BILL("timeBill"),
+    TIME_BILL("timeBill", TimeBill.class),
     @XmlEnumValue("topic")
-    TOPIC("topic"),
+    TOPIC("topic", Topic.class),
     @XmlEnumValue("transferOrder")
-    TRANSFER_ORDER("transferOrder"),
+    TRANSFER_ORDER("transferOrder", TransferOrder.class),
     @XmlEnumValue("transactionBodyCustomField")
-    TRANSACTION_BODY_CUSTOM_FIELD("transactionBodyCustomField"),
+    TRANSACTION_BODY_CUSTOM_FIELD("transactionBodyCustomField", TransactionBodyCustomField.class),
     @XmlEnumValue("transactionColumnCustomField")
-    TRANSACTION_COLUMN_CUSTOM_FIELD("transactionColumnCustomField"),
+    TRANSACTION_COLUMN_CUSTOM_FIELD("transactionColumnCustomField", TransactionColumnCustomField.class),
     @XmlEnumValue("unitsType")
-    UNITS_TYPE("unitsType"),
+    UNITS_TYPE("unitsType", UnitsType.class),
     @XmlEnumValue("vendor")
-    VENDOR("vendor"),
+    VENDOR("vendor", null),//Vendor.class),
     @XmlEnumValue("vendorCategory")
-    VENDOR_CATEGORY("vendorCategory"),
+    VENDOR_CATEGORY("vendorCategory", VendorCategory.class),
     @XmlEnumValue("vendorBill")
-    VENDOR_BILL("vendorBill"),
+    VENDOR_BILL("vendorBill", VendorBill.class),
     @XmlEnumValue("vendorPayment")
-    VENDOR_PAYMENT("vendorPayment"),
+    VENDOR_PAYMENT("vendorPayment", VendorPayment.class),
     @XmlEnumValue("winLossReason")
-    WIN_LOSS_REASON("winLossReason");
+    WIN_LOSS_REASON("winLossReason", WinLossReason.class);
     private final String value;
+    private final Class<? extends Record> recordClass;
 
-    RecordType(String v) {
+    RecordType(String v, Class<? extends Record> recordClass) {
         value = v;
+        this.recordClass = recordClass;
     }
 
     public String value() {
@@ -430,6 +557,11 @@ public enum RecordType {
             }
         }
         throw new IllegalArgumentException(v);
+    }
+    
+    public Class<? extends Record> getRecordClass()
+    {
+        return recordClass;
     }
 
 }

@@ -20,7 +20,7 @@ import static org.mule.module.netsuite.EntityReferences.nulSafeFrom;
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.CxfNetSuiteClient;
-import org.mule.module.netsuite.api.DefaultAxisPortProvider;
+import org.mule.module.netsuite.api.DefaultCxfPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
 import org.mule.tools.cloudconnect.annotations.Connector;
@@ -176,7 +176,7 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         if (client == null)
         {
-            setClient(new CxfNetSuiteClient(new DefaultAxisPortProvider(address, email, password, account,
+            setClient(new CxfNetSuiteClient(new DefaultCxfPortProvider(address, email, password, account,
                 roleId)));
         }
     }

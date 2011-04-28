@@ -25,7 +25,7 @@ import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-public class DefaultAxisPortProvider implements CxfPortProvider
+public class DefaultCxfPortProvider implements CxfPortProvider
 {
     private final String address;
     private final String email;
@@ -42,7 +42,7 @@ public class DefaultAxisPortProvider implements CxfPortProvider
      * @param account
      * @param roleId
      */
-    public DefaultAxisPortProvider(@NotNull String address,
+    public DefaultCxfPortProvider(@NotNull String address,
                                    @NotNull String email,
                                    @NotNull String password,
                                    @NotNull String account,
