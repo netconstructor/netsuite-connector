@@ -10,6 +10,8 @@
 
 package org.mule.module.netsuite.api.model.expression.date;
 
+import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
+
 import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDate;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
@@ -30,18 +32,11 @@ public class DateExpressionBuilder
 {
     private static final String ISO_DATE_FORMAT = "yyyy-MM-dd";
     private SearchDateField searchDateField = new SearchDateField();
-    private static final DatatypeFactory DATATYPE_FACTORY;
+    private XmlGregorianCalendarFactory xmlGregorianCalendarFactory;
 
-    static
+    public DateExpressionBuilder(XmlGregorianCalendarFactory xmlGregorianCalendarFactory)
     {
-        try
-        {
-            DATATYPE_FACTORY = DatatypeFactory.newInstance();
-        }
-        catch (DatatypeConfigurationException e)
-        {
-            throw new UnhandledException(e);
-        }
+        this.xmlGregorianCalendarFactory = xmlGregorianCalendarFactory;
     }
 
     public void setOperation(String opertion)
@@ -119,11 +114,9 @@ public class DateExpressionBuilder
         return new IllegalArgumentException(e.getMessage());
     }
 
-    private XMLGregorianCalendar toXmlCalendar(Date parse)
+    public XMLGregorianCalendar toXmlCalendar(Date parse)
     {
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.setTime(parse);
-        return DATATYPE_FACTORY.newXMLGregorianCalendar(calendar);
+        return xmlGregorianCalendarFactory.toXmlCalendar(parse);
     }
 
 }

@@ -46,6 +46,7 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -91,7 +92,7 @@ public class NetSuiteTestDriver
     @Test
     public void attachAndDetachEntity()
     {
- 
+
         RecordRef employee = null, campaign = null;
         try
         {
@@ -155,7 +156,7 @@ public class NetSuiteTestDriver
     {
         // TODO perhaps it would be also a good ide to expose a more object oriented
         // instead of string oriented date query
-        Calendar serverTime = connector.GetServerTime();
+        Date serverTime = connector.GetServerTime();
         RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
         {
             {
@@ -165,9 +166,8 @@ public class NetSuiteTestDriver
             }
         });
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), null);
-        connector.getDeletedRecord(RecordType.EMPLOYEE,
-            "after(dateTime('" + new SimpleDateFormat("HH:mm:ss").format(serverTime.getTime())
-                            + "','HH:mm:ss'))");
+        connector.getDeletedRecord(RecordType.EMPLOYEE, // 
+            "after(dateTime('" + new SimpleDateFormat("HH:mm:ss").format(serverTime) + "','HH:mm:ss'))");
     }
 
     @Test
@@ -192,7 +192,7 @@ public class NetSuiteTestDriver
     @Test
     public void getItemAvailability()
     {
-        assertNotNull(connector.GetItemAvailability());
+        assertNotNull(connector.getItemAvailability(RecordType.JOB, "150", null, null));
     }
 
     @Test

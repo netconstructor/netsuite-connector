@@ -12,6 +12,8 @@ package org.mule.module.netsuite.api.model.expression.date;
 
 import static org.junit.Assert.*;
 
+import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
+
 import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDate;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
@@ -28,17 +30,17 @@ public class DateExpressionParserUnitTest
     @Test
     public void testParsePredefinedCanParse()
     {
-        DateExpressionParser.parse("within(thisBusinessWeek)");
-        DateExpressionParser.parse("onOrAfter(today)");
-        DateExpressionParser.parse("notAfter(tomorrow)");
-        DateExpressionParser.parse("before(nextMonth)");
-        DateExpressionParser.parse("notBefore(lastWeek)");
+        parse("within(thisBusinessWeek)");
+        parse("onOrAfter(today)");
+        parse("notAfter(tomorrow)");
+        parse("before(nextMonth)");
+        parse("notBefore(lastWeek)");
     }
     
     @Test
     public void testParsePredefined()
     {
-        SearchDateField field = DateExpressionParser.parse("notAfter(tomorrow)");
+        SearchDateField field = parse("notAfter(tomorrow)");
         assertSame(SearchDateFieldOperator.NOT_AFTER, field.getOperator());
         assertNull(field.getSearchValue2());
         assertNull(field.getSearchValue());
@@ -49,7 +51,7 @@ public class DateExpressionParserUnitTest
     @Test
     public void testParseIsoDate()
     {
-        SearchDateField field = DateExpressionParser.parse("after(isoDate(2005-5-9))");
+        SearchDateField field = parse("after(isoDate(2005-5-9))");
         assertSame(SearchDateFieldOperator.AFTER, field.getOperator());
         assertNull(field.getSearchValue2());
         assertNull(field.getPredefinedSearchValue());
@@ -61,19 +63,24 @@ public class DateExpressionParserUnitTest
     @Test
     public void testParseDateTimeWithFormatCanParse()
     {
-        DateExpressionParser.parse("after(dateTime('15:14:10', 'HH:mm:ss'))");
+        parse("after(dateTime('15:14:10', 'HH:mm:ss'))");
     }
 
     @Test
     public void testParseIsoDateRangeCanParse()
     {
-        DateExpressionParser.parse("within(isoDateRange(2005-5-9, 2009-20-6))");
+        parse("within(isoDateRange(2005-5-9, 2009-20-6))");
     }
     
     @Test
     public void testParseDateTimeRangeCanParse()
     {
-        DateExpressionParser.parse("within(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))");
+        parse("within(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))");
+    }
+
+    private SearchDateField parse(String expression)
+    {
+        return DateExpressionParser.parse(expression, XmlGregorianCalendarFactory.newInstance());
     }
 
 }

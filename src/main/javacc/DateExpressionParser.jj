@@ -11,17 +11,24 @@ PARSER_BEGIN(DateExpressionParser)
     * @author flbulgarelli*/
    public class DateExpressionParser {
    
-     private DateExpressionBuilder builder = new DateExpressionBuilder(); 
+     private DateExpressionBuilder builder; 
    
-     public static SearchDateField parse(String expression)  {
+     public static SearchDateField parse(String expression, org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory calendarFactory)  {
        //TODO support for empty/notEmpty?
        org.apache.commons.lang.Validate.notEmpty(expression);
+       org.apache.commons.lang.Validate.notNull(calendarFactory);
         try{
-          return new DateExpressionParser(new ByteArrayInputStream(expression.getBytes())).start();
+          return new DateExpressionParser(new ByteArrayInputStream(expression.getBytes())).withCalendarFactory(calendarFactory).start();
       } catch(ParseException e){
          throw new IllegalArgumentException("Syntax error in date expression " + expression, e);
       }
     } 
+    
+    public DateExpressionParser withCalendarFactory(org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory calendarFactory) {
+    	builder = new DateExpressionBuilder(calendarFactory);
+    	return this;
+    }
+    
 }
    
 PARSER_END(DateExpressionParser)

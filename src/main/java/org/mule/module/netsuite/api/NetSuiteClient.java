@@ -16,6 +16,7 @@ import org.mule.module.netsuite.api.model.entity.RecordReference;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
+import java.util.Date;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -50,20 +51,21 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     VoidType detachRecord(@NotNull RecordReference sourceEntity, @NotNull RecordReference destinationEntity)
         throws ExceptionType;
 
-    VoidType deleteRecord(@NotNull RecordReference entity) throws ExceptionType;
+    VoidType deleteRecord(@NotNull RecordReference recordReference) throws ExceptionType;
 
     @NotNull
     CollectionType getRecords(@NotNull RecordType type) throws ExceptionType;
 
     Object getServerTime() throws ExceptionType;
 
-    VoidType updateInviteeStatus(@NotNull RecordReference entity,
+    VoidType updateInviteeStatus(@NotNull RecordReference recordReference,
                                  @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
     CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
         throws ExceptionType;
 
-    CollectionType getItemAvailability() throws ExceptionType;
+    CollectionType getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
+        throws ExceptionType;
 
     CollectionType getBudgetExchangeRate(@NotNull RecordId period,
                                          @NotNull RecordId fromSubsidiary,

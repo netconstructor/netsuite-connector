@@ -35,9 +35,11 @@ import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendee
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
@@ -150,9 +152,12 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public List<Object> GetItemAvailability()
+    public List<Object> getItemAvailability(@Parameter RecordType recordType,
+                                            @Parameter(optional = true) String internalId,
+                                            @Parameter(optional = true) String externalId,
+                                            @Parameter(optional = true) Date ifNotModifiedSince)
     {
-        return client.getItemAvailability();
+        return client.getItemAvailability(from(recordType, internalId, externalId), ifNotModifiedSince);
     }
 
     @Operation
@@ -162,9 +167,9 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public Calendar GetServerTime()
+    public Date GetServerTime()
     {
-        return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar();
+        return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar().getTime();
     }
     
     @Operation
@@ -196,16 +201,11 @@ public class NetSuiteCloudConnector implements Initialisable
         return client.getAsyncResult(jobId, pageIndex);
     }
 
-    public List<Object> getItemAvailability() 
-    {
-        return client.getItemAvailability();
-    }
-
     public Object initialize() 
     {
         return client.initialize();
     }
-
+//TODO add new operations
     public Object initializeList() 
     {
         return client.initializeList();

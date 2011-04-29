@@ -96,7 +96,7 @@
 	<flow name="getItemAvailability">
 		<inbound-endpoint address="vm://getItemAvailability"
 			exchange-pattern="request-response" />
-		<netsuite:get-item-availability/>
+		<netsuite:get-item-availability recordType="ACCOUNT" externalId="489"/>
 	</flow>
 
 	<flow name="getSavedSearch">

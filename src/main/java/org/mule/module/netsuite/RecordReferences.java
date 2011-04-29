@@ -27,9 +27,9 @@ public final class RecordReferences
     {
     }
 
-    public static RecordReference from(@NotNull RecordType entityType, String internalId, String externalId)
+    public static RecordReference from(@NotNull RecordType recordType, String internalId, String externalId)
     {
-        return new RecordReference(RecordIds.from(internalId, externalId), entityType);
+        return new RecordReference(RecordIds.from(internalId, externalId), recordType);
     }
 
     public static RecordReference nulSafeFrom(RecordType recordType, String internalId, String externalId)

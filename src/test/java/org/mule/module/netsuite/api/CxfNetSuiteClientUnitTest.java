@@ -10,7 +10,6 @@
 
 package org.mule.module.netsuite.api;
 
-import static org.junit.Assert.fail;
 import static org.mockito.Matchers.argThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -23,17 +22,15 @@ import com.netsuite.webservices.lists.accounting_2010_2.Account;
 import com.netsuite.webservices.lists.accounting_2010_2.Bin;
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
-import com.netsuite.webservices.platform.core_2010_2.GetDeletedFilter;
+import com.netsuite.webservices.platform.core_2010_2.ItemAvailabilityFilter;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
-import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
 import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchDate;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
 import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetDeletedRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetItemAvailabilityRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
@@ -43,7 +40,6 @@ import java.util.HashMap;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class CxfNetSuiteClientUnitTest
@@ -149,7 +145,7 @@ public class CxfNetSuiteClientUnitTest
     {
         client.attachRecord(
             //
-            new RecordReference(new RecordId.ExternalId("968"), RecordType.BUDGET),//
+            new RecordReference(new RecordId.ExternalId("968"), RecordType.BUDGET), //
             new RecordReference(new RecordId.InternalId("100"), RecordType.CUSTOMER_STATUS),
             new RecordReference(new RecordId.InternalId("10"), RecordType.CAMPAIGN_OFFER));
         verify(port).attach(argThat(new Matcher<AttachRequest>()
@@ -160,13 +156,25 @@ public class CxfNetSuiteClientUnitTest
                 return r.getAttachReference() instanceof AttachContactReference;
             }
         }));
-    }// TODO move cxf files to another dir
+    }
+
+    // TODO move cxf files to another dir
 
     @Test
     public void getItemAvailability() throws Exception
     {
-        client.getItemAvailability();
-        fail();
+        client.getItemAvailability(new RecordReference(new RecordId.ExternalId("489"), RecordType.BIN), null);
+        verify(port).getItemAvailability(argThat(new Matcher<GetItemAvailabilityRequest>()
+        {
+            public boolean matches(Object item)
+            {
+                GetItemAvailabilityRequest r = (GetItemAvailabilityRequest) item;
+                ItemAvailabilityFilter filter = r.getItemAvailabilityFilter();
+                return filter.getItem().getRecordRef().size() == 1
+                       && filter.getItem().getRecordRef().get(0).getExternalId().equals("489")
+                       && filter.getLastQtyAvailableChange() == null;
+            }
+        }));
     }
 
     @Test
