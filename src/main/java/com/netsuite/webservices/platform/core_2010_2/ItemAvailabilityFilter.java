@@ -50,6 +50,16 @@ public class ItemAvailabilityFilter {
     protected RecordRefList item;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar lastQtyAvailableChange;
+    
+    public ItemAvailabilityFilter()
+    {
+    }
+
+    public ItemAvailabilityFilter(RecordRefList item, XMLGregorianCalendar lastQtyAvailableChange)
+    {
+        this.item = item;
+        this.lastQtyAvailableChange = lastQtyAvailableChange;
+    }
 
     /**
      * Gets the value of the item property.

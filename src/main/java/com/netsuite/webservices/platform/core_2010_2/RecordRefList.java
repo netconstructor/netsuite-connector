@@ -45,6 +45,15 @@ import javax.xml.bind.annotation.XmlType;
 public class RecordRefList {
 
     protected List<RecordRef> recordRef;
+    
+    public RecordRefList()
+    {
+    }
+
+    public RecordRefList(List<RecordRef> recordRef)
+    {
+        this.recordRef = recordRef;
+    }
 
     /**
      * Gets the value of the recordRef property.
