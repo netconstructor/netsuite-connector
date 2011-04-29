@@ -46,6 +46,15 @@ public class InitializeRequest {
 
     @XmlElement(required = true)
     protected InitializeRecord initializeRecord;
+    
+    public InitializeRequest()
+    {
+    }
+
+    public InitializeRequest(InitializeRecord initializeRecord)
+    {
+        this.initializeRecord = initializeRecord;
+    }
 
     /**
      * Gets the value of the initializeRecord property.

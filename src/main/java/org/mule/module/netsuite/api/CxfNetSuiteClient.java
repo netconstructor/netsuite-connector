@@ -26,6 +26,7 @@ import com.netsuite.webservices.platform.core_2010_2.DetachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.GetAllRecord;
 import com.netsuite.webservices.platform.core_2010_2.GetDeletedFilter;
 import com.netsuite.webservices.platform.core_2010_2.GetSavedSearchRecord;
+import com.netsuite.webservices.platform.core_2010_2.InitializeRecord;
 import com.netsuite.webservices.platform.core_2010_2.ItemAvailabilityFilter;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
@@ -36,6 +37,7 @@ import com.netsuite.webservices.platform.core_2010_2.UpdateInviteeStatusReferenc
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
@@ -54,8 +56,9 @@ import com.netsuite.webservices.platform.messages_2010_2.GetItemAvailabilityRequ
 import com.netsuite.webservices.platform.messages_2010_2.GetRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetSavedSearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetServerTimeRequest;
-import com.netsuite.webservices.platform.messages_2010_2.InitializeListRequest;
 import com.netsuite.webservices.platform.messages_2010_2.InitializeRequest;
+import com.netsuite.webservices.platform.messages_2010_2.SearchPreferences;
+import com.netsuite.webservices.platform.messages_2010_2.SearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
@@ -73,8 +76,13 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.LazyDynaMap;
 import org.apache.commons.lang.Validate;
 
+/**
+ * Implementation of the {@link SoapNetSuiteClient} that uses CXF generated-based
+ * interface
+ */
 public class CxfNetSuiteClient implements SoapNetSuiteClient
 {
+
     private final CxfPortProvider portProvider;
     private final XmlGregorianCalendarFactory xmlGregorianCalendarFactory = XmlGregorianCalendarFactory.newInstance();
 
@@ -97,8 +105,9 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    public void findRecord() throws Exception
+    public Object findRecord() throws Exception
     {
+        return getAuthenticatedPort().search(new SearchRequest());
     }
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
@@ -236,22 +245,13 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getAsyncResult(new GetAsyncResultRequest(jobId, pageIndex));
     }
 
-    /*
-     * initialize / initializeList
-     * [https://system.netsuite.com/help/helpcenter/en_US/Output/Help/
-     * SuiteFlex/WebServices/STP_initializeinitializelist.html] • Use to emulate the
-     * UI workflow by pre-populating fields on transaction line items with values
-     * from a related record. The init
-     */
-
-    public Object initialize() throws Exception
+    public Object initialize(RecordType type, RecordReference recordReference) throws Exception
     {
-        return getAuthenticatedPort().initialize(new InitializeRequest());
-    }
-
-    public Object initializeList() throws Exception
-    {
-        return getAuthenticatedPort().initializeList(new InitializeListRequest());
+        Validate.notNull(type);
+        Validate.notNull(recordReference);
+        return getAuthenticatedPort().initialize(
+            new InitializeRequest(new InitializeRecord(InitializeType.fromValue(type.value()),
+                recordReference.createInitializeRef(), null)));
     }
 
     public NetSuitePortType getAuthenticatedPort() throws Exception
@@ -273,11 +273,10 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
     {
         return new RecordRefList(Collections.singletonList(recordReference.createRef()));
     }
-    
+
     private SearchDateField parse(String whenExpression)
     {
         return DateExpressionParser.parse(whenExpression, xmlGregorianCalendarFactory);
     }
-
 
 }

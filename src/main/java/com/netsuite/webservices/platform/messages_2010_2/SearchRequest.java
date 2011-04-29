@@ -46,6 +46,16 @@ public class SearchRequest {
 
     @XmlElement(required = true)
     protected SearchRecord searchRecord;
+    
+    
+    public SearchRequest()
+    {
+    }
+
+    public SearchRequest(SearchRecord searchRecord)
+    {
+        this.searchRecord = searchRecord;
+    }
 
     /**
      * Gets the value of the searchRecord property.

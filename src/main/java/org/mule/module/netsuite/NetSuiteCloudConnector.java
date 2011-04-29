@@ -30,6 +30,8 @@ import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Date;
@@ -203,15 +205,12 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     @Operation
-    public Object initialize()
+    public Object initialize(@Parameter RecordType type,
+                             @Parameter RecordType recordType,
+                             @Parameter(optional = true) String internalId,
+                             @Parameter(optional = true) String externalId)
     {
-        return client.initialize();
-    }
-
-    @Operation
-    public Object initializeList()
-    {
-        return client.initializeList();
+        return client.initialize(type, from(recordType, internalId, externalId));
     }
 
     public void initialise() throws InitialisationException

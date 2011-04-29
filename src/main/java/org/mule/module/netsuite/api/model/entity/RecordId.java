@@ -10,6 +10,7 @@
 
 package org.mule.module.netsuite.api.model.entity;
 
+import com.netsuite.webservices.platform.core_2010_2.InitializeRef;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 
 import java.util.Map;
@@ -19,6 +20,9 @@ import org.apache.commons.lang.Validate;
 public interface RecordId
 {
     RecordRef createRef();
+
+    InitializeRef createInitializeRef();
+
     Map<String, Object> populate(Map<String, Object> recordAttributes);
 
     abstract class AbstractId implements RecordId
@@ -37,8 +41,15 @@ public interface RecordId
             populate(recordRef);
             return recordRef;
         }
+        
+        public InitializeRef createInitializeRef()
+        {
+            InitializeRef ref = new InitializeRef();
+            populate(ref);
+            return ref;
+        }
 
-        abstract void populate(RecordRef recordRef);
+        abstract void populate(NetsuiteReference recordRef);
 
         public String getId()
         {
@@ -54,11 +65,11 @@ public interface RecordId
             super(id);
         }
 
-        public void populate(RecordRef recordRef)
+        public void populate(NetsuiteReference recordRef)
         {
             recordRef.setExternalId(getId());
         }
-        
+
         public Map<String, Object> populate(Map<String, Object> recordAttributes)
         {
             recordAttributes.put("externalId", getId());
@@ -74,17 +85,16 @@ public interface RecordId
             super(id);
         }
 
-        public void populate(RecordRef recordRef)
+        public void populate(NetsuiteReference recordRef)
         {
             recordRef.setInternalId(getId());
         }
-        
+
         public Map<String, Object> populate(Map<String, Object> recordAttributes)
         {
             recordAttributes.put("internalId", getId());
             return recordAttributes;
         }
     }
-
 
 }

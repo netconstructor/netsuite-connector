@@ -10,7 +10,9 @@
 
 package org.mule.module.netsuite.api.model.entity;
 
+import com.netsuite.webservices.platform.core_2010_2.InitializeRef;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeRefType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import javax.validation.constraints.NotNull;
@@ -38,6 +40,14 @@ public class RecordReference
         return recordRef;
     }
     
+    public InitializeRef createInitializeRef()
+    {
+        InitializeRef initializeRef = id.createInitializeRef();
+        initializeRef.setType(InitializeRefType.fromValue(type.value()));
+        return initializeRef;
+    }
+    
+    
     public RecordType getType()
     {
         return type;
@@ -47,5 +57,6 @@ public class RecordReference
     {
         return id;
     }
+
 
 }

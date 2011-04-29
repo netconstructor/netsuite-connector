@@ -53,6 +53,17 @@ public class InitializeRecord {
     @XmlElement(required = true)
     protected InitializeRef reference;
     protected InitializeAuxRef auxReference;
+    
+    public InitializeRecord()
+    {
+    }
+    
+    public InitializeRecord(InitializeType type, InitializeRef reference, InitializeAuxRef auxReference)
+    {
+        this.type = type;
+        this.reference = reference;
+        this.auxReference = auxReference;
+    }
 
     /**
      * Gets the value of the type property.

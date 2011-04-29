@@ -11,6 +11,8 @@
 
 package com.netsuite.webservices.platform.core_2010_2;
 
+import org.mule.module.netsuite.api.model.entity.NetsuiteReference;
+
 import com.netsuite.webservices.platform.core_2010_2.types.InitializeRefType;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -41,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InitializeRef")
 public class InitializeRef
-    extends BaseRef
+    extends BaseRef implements NetsuiteReference
 {
 
     @XmlAttribute(name = "type")

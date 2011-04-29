@@ -41,6 +41,7 @@ import com.netsuite.webservices.platform.core_2010_2.CustomFieldList;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.RecordRefList;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.text.DateFormat;
@@ -92,7 +93,7 @@ public class NetSuiteTestDriver
     @Test
     public void attachAndDetachEntity()
     {
-
+        //TODO file attachements?
         RecordRef employee = null, campaign = null;
         try
         {
@@ -188,7 +189,7 @@ public class NetSuiteTestDriver
             connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
         }
     }
-
+    
     @Test
     public void getItemAvailability()
     {

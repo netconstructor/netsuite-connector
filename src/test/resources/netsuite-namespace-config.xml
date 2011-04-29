@@ -106,4 +106,12 @@
 	</flow>
 
 
+	<flow name="initialize">
+		<inbound-endpoint address="vm://initialize"
+			exchange-pattern="request-response" />
+		<netsuite:initialize type="INVOICE" internalId="1467"
+			recordType="SALES_ORDER" /> 
+	</flow>
+
+
 </mule>
