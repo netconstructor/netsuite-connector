@@ -15,9 +15,12 @@ import static org.apache.commons.beanutils.MethodUtils.invokeExactMethod;
 import org.mule.module.netsuite.api.NetSuiteGenericException;
 
 import com.netsuite.webservices.platform.core_2010_2.Status;
+import com.netsuite.webservices.platform.core_2010_2.StatusDetail;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public enum ReturnType
 {
@@ -62,6 +65,15 @@ public enum ReturnType
         {
             return adaptImpl(result, resultName);
         }
-        throw new NetSuiteGenericException("Request failed. Details:" + status.getStatusDetail());
+        throw new NetSuiteGenericException("Request failed. Details: " + getStatusDetails(status));
+    }
+
+    private String getStatusDetails(Status status)
+    {
+        if (status.getStatusDetail().isEmpty())
+        {
+            return "<no details>";
+        }
+        return ToStringBuilder.reflectionToString(status.getStatusDetail().get(0));
     }
 }

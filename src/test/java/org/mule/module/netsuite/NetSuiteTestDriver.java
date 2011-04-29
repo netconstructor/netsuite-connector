@@ -20,20 +20,48 @@ import static org.junit.Assert.assertThat;
 
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.NetSuiteClient;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 
+import com.netsuite.webservices.general.communication_2010_2.types.NoteDirection;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeAddressbookList;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeEmergencyContactList;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeHrEducationList;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeRolesList;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeSubscriptionsList;
+import com.netsuite.webservices.lists.employees_2010_2.types.EmployeeCommissionPaymentPreference;
+import com.netsuite.webservices.lists.employees_2010_2.types.EmployeePayFrequency;
+import com.netsuite.webservices.lists.employees_2010_2.types.EmployeeUseTimeData;
+import com.netsuite.webservices.lists.employees_2010_2.types.Gender;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignDirectMailList;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignEmailList;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignEventList;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignEventResponseList;
+import com.netsuite.webservices.platform.common_2010_2.types.GlobalSubscriptionStatus;
+import com.netsuite.webservices.platform.core_2010_2.CustomFieldList;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.RecordRefList;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+@SuppressWarnings("serial")
 public class NetSuiteTestDriver
 {
-    //FIXME the file path of the wsdl is embedded in the generated classes
+    // FIXME the file path of the wsdl is embedded in the generated classes
     private NetSuiteCloudConnector connector;
 
     @Before
@@ -55,7 +83,7 @@ public class NetSuiteTestDriver
     }
 
     @Test
-    public void getEntities() throws Exception
+    public void getRecords() throws Exception
     {
         assertFalse(connector.getRecords(RecordType.CURRENCY).isEmpty());
     }
@@ -63,15 +91,40 @@ public class NetSuiteTestDriver
     @Test
     public void attachAndDetachEntity()
     {
-        connector.attachRecord(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null,
-            null, null, null);
-        connector.detachRecord(RecordType.CUSTOMER, "100", null, RecordType.CUSTOMER_STATUS, "45", null);
-    }
+ 
+        RecordRef employee = null, campaign = null;
+        try
+        {
+            employee = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
+            {
+                {
+                    put("firstName", "John");
+                    put("lastName", "Doe");
+                }
+            });
+            campaign = connector.addRecord(RecordType.CONTACT, new HashMap<String, Object>()
+            {
+                {
+                    put("title", "The Campaignola");
 
-    @Test
-    public void deleteEntity()
-    {
-        connector.deleteRecord(RecordType.CUSTOMER, "8", null);
+                }
+            });
+            connector.attachRecord(RecordType.EMPLOYEE, employee.getInternalId(), null, RecordType.CAMPAIGN,
+                campaign.getInternalId(), null, null, null, null);
+            connector.detachRecord(RecordType.EMPLOYEE, employee.getInternalId(), null, RecordType.CAMPAIGN,
+                campaign.getInternalId(), null);
+        }
+        finally
+        {
+            if (employee != null)
+            {
+                connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), null);
+            }
+            if (campaign != null)
+            {
+                connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+            }
+        }
     }
 
     @Test
@@ -81,48 +134,63 @@ public class NetSuiteTestDriver
         assertNotNull(budgetExchangeRate);
     }
 
-    // public NetSuiteClient<List<Object>, RuntimeException, Void> getClient()
-    // {
-    // return connector.getClient();
-    // }
-    //
-    // public List<Object> getConsolidatedExchangeRate(String periodInternalId,
-    // String periodExternalId,
-    // String fromSubsidiaryInternalId,
-    // String fromSubsidiaryExternalId,
-    // String toSubsidiaryInternalId,
-    // String toSubsidiaryExternalId)
-    // {
-    // return connector.getConsolidatedExchangeRate(periodInternalId,
-    // periodExternalId,
-    // fromSubsidiaryInternalId, fromSubsidiaryExternalId, toSubsidiaryInternalId,
-    // toSubsidiaryExternalId);
-    // }
-    //
-    // public List<Object> getCustomizationId(RecordType type, boolean
-    // includeInactives)
-    // {
-    // return connector.getCustomizationId(type, includeInactives);
-    // }
-    //
-    // public List<Object> getDeletedEntity(RecordType type, String whenExpression)
-    // {
-    // return connector.getDeletedEntity(type, whenExpression);
-    // }
-    //
-    // public List<Object> getEntities(RecordType type)
-    // {
-    // return connector.getEntities(type);
-    // }
-
     @Test
-    public void getEntity()
+    public void getConsolidatedExchangeRate()
     {
-        connector.getRecord(RecordType.CAMPAIGN, null, "8875");
+        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRate("10", null, "65", null,
+            null, null);
+        assertNotNull(consolidatedExchangeRate);
+        // TODO
+    }
+
+    public void getCustomizationId()
+    {
+        List<Object> customizations = connector.getCustomizationId(RecordType.CALENDAR_EVENT, false);
+        assertNotNull(customizations);
+        // TODO test more in depth
     }
 
     @Test
-    public void GetItemAvailability()
+    public void getDeletedEntity()
+    {
+        // TODO perhaps it would be also a good ide to expose a more object oriented
+        // instead of string oriented date query
+        Calendar serverTime = connector.GetServerTime();
+        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
+        {
+            {
+                put("fax", "159-945-56");
+                put("firstName", "John");
+                put("lastName", "Doe");
+            }
+        });
+        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), null);
+        connector.getDeletedRecord(RecordType.EMPLOYEE,
+            "after(dateTime('" + new SimpleDateFormat("HH:mm:ss").format(serverTime.getTime())
+                            + "','HH:mm:ss'))");
+    }
+
+    @Test
+    public void getRecord()
+    {
+        RecordRef campaign = connector.addRecord(RecordType.CAMPAIGN, new HashMap<String, Object>()
+        {
+            {
+                put("title", "The Campagniola");
+            }
+        });
+        try
+        {
+            connector.getRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+        }
+        finally
+        {
+            connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+        }
+    }
+
+    @Test
+    public void getItemAvailability()
     {
         assertNotNull(connector.GetItemAvailability());
     }

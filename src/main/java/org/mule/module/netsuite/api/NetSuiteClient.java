@@ -34,8 +34,8 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     VoidType updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;
 
-    VoidType addRecord(@NotNull RecordType recordType, @NotNull Map<String, Object> recordAttributes)
-        throws Exception;
+    Object addRecord(@NotNull RecordType recordType, @NotNull Map<String, Object> recordAttributes)
+        throws ExceptionType;
 
     Object getRecord(@NotNull RecordReference sourceEntity) throws ExceptionType;
 

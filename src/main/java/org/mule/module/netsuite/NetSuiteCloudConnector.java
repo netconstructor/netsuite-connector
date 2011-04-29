@@ -23,16 +23,20 @@ import org.mule.module.netsuite.api.CxfNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultCxfPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
+import org.mule.module.netsuite.api.model.entity.RecordId;
+import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.tools.cloudconnect.annotations.Connector;
 import org.mule.tools.cloudconnect.annotations.Operation;
 import org.mule.tools.cloudconnect.annotations.Parameter;
 import org.mule.tools.cloudconnect.annotations.Property;
 
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
@@ -162,7 +166,7 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar();
     }
-
+    
     @Operation
     public void updateInviteeStatus(@Parameter RecordType recordType,
                                     @Parameter(optional = true) String internalId,
@@ -170,6 +174,41 @@ public class NetSuiteCloudConnector implements Initialisable
                                     @Parameter CalendarEventAttendeeResponse status)
     {
         client.updateInviteeStatus(from(recordType, internalId, externalId), status);
+    }
+    
+    public RecordRef addRecord(RecordType recordType, Map<String, Object> recordAttributes) 
+    {
+        return ((RecordRef) client.addRecord(recordType, recordAttributes));
+    }
+
+    public Object checkAsyncStatus(String jobId) 
+    {
+        return client.checkAsyncStatus(jobId);
+    }
+
+    public void findRecord() 
+    {
+        client.findRecord();
+    }
+
+    public Object getAsyncResult(String jobId, int pageIndex) 
+    {
+        return client.getAsyncResult(jobId, pageIndex);
+    }
+
+    public List<Object> getItemAvailability() 
+    {
+        return client.getItemAvailability();
+    }
+
+    public Object initialize() 
+    {
+        return client.initialize();
+    }
+
+    public Object initializeList() 
+    {
+        return client.initializeList();
     }
 
     public void initialise() throws InitialisationException

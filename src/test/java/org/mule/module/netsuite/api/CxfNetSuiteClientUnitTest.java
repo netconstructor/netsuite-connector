@@ -128,7 +128,7 @@ public class CxfNetSuiteClientUnitTest
     public void attachRecordBasic() throws Exception
     {
         client.attachRecord(//
-            new RecordReference(new RecordId.ExternalId("968"), RecordType.BUDGET),//
+            new RecordReference(new RecordId.ExternalId("968"), RecordType.BUDGET), //
             new RecordReference(new RecordId.InternalId("100"), RecordType.CUSTOMER_STATUS), null);
 
         verify(port).attach(argThat(new Matcher<AttachRequest>()
@@ -162,10 +162,10 @@ public class CxfNetSuiteClientUnitTest
         }));
     }// TODO move cxf files to another dir
 
-    @Ignore
     @Test
     public void getItemAvailability() throws Exception
     {
+        client.getItemAvailability();
         fail();
     }
 

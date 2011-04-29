@@ -19,7 +19,7 @@ PARSER_BEGIN(DateExpressionParser)
         try{
           return new DateExpressionParser(new ByteArrayInputStream(expression.getBytes())).start();
       } catch(ParseException e){
-         throw new IllegalArgumentException("Syntax error in date expression", e);
+         throw new IllegalArgumentException("Syntax error in date expression " + expression, e);
       }
     } 
 }

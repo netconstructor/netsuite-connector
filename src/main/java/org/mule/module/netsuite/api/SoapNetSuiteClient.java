@@ -28,7 +28,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;
 
-    @NetSuiteOperation
+    @NetSuiteOperation(resultName = "BaseRef", resultType = ReturnType.RECORD)
     Object addRecord(@NotNull RecordType recordType, @NotNull  Map<String, Object> recordAttributes) throws Exception;
 
     
