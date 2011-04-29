@@ -31,6 +31,19 @@
 		</extensions>
 		<plugins>
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>javacc-maven-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>javacc</id>
+						<goals>
+							<goal>javacc</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
@@ -82,29 +95,17 @@
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
-<!--        <plugin>
-				<groupId>org.apache.cxf</groupId>
+			<!--
+				<plugin> <groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>${cxf.version}</version>
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-						<configuration>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>src/main/resources/netsuite.wsdl</wsdl>
-									<wsdl>https://webservices.netsuite.com/wsdl/v2010_2_0/netsuite.wsdl</wsdl>
-									<autoNameResolution>true</autoNameResolution>
-								</wsdlOption>
-							</wsdlOptions>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin> -->
+				<version>${cxf.version}</version> <executions> <execution>
+				<id>generate-sources</id> <phase>generate-sources</phase> <goals>
+				<goal>wsdl2java</goal> </goals> <configuration> <wsdlOptions>
+				<wsdlOption> <wsdl>src/main/resources/netsuite.wsdl</wsdl>
+				<wsdl>https://webservices.netsuite.com/wsdl/v2010_2_0/netsuite.wsdl</wsdl>
+				<autoNameResolution>true</autoNameResolution> </wsdlOption>
+				</wsdlOptions> </configuration> </execution> </executions> </plugin>
+			-->
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
@@ -230,11 +231,11 @@
 			<version>${cloudconnect.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.mule.transports</groupId>
-            <artifactId>mule-transport-vm</artifactId>
-            <version>${mule.version}</version>
-            <scope>test</scope>
-        </dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-vm</artifactId>
+			<version>${mule.version}</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- CXF dependencies -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>

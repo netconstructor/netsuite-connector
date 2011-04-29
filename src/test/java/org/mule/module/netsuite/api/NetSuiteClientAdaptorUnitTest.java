@@ -29,6 +29,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test for {@link NetSuiteClientAdaptor}
+ * @author flbulgarelli
+ */
 public class NetSuiteClientAdaptorUnitTest
 {
     private NetSuiteClient<Object, Exception, Object> mock;

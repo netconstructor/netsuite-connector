@@ -14,6 +14,7 @@ import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
+import org.mule.module.netsuite.api.model.expression.date.DateExpressionParser;
 
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
@@ -27,11 +28,14 @@ import com.netsuite.webservices.platform.core_2010_2.GetSavedSearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.ItemAvailabilityFilter;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
+import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.UpdateInviteeStatusReference;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
 import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
@@ -54,6 +58,7 @@ import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequ
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -133,7 +138,10 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     public Object getDeletedRecord(RecordType type, String whenExpression) throws Exception
     {
-        return getAuthenticatedPort().getDeleted(new GetDeletedRequest(new GetDeletedFilter(/* TODO */)));
+        GetDeletedFilter filter = new GetDeletedFilter();
+        filter.setDeletedDate(DateExpressionParser.parse(whenExpression));
+        filter.setType(new SearchEnumMultiSelectField(Arrays.asList(type.value()), SearchEnumMultiSelectFieldOperator.ANY_OF));
+        return getAuthenticatedPort().getDeleted(new GetDeletedRequest(filter));
     }
 
     public Object getRecord(RecordReference record) throws Exception

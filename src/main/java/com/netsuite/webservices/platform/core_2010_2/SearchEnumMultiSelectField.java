@@ -51,6 +51,16 @@ public class SearchEnumMultiSelectField {
     protected List<String> searchValue;
     @XmlAttribute(name = "operator")
     protected SearchEnumMultiSelectFieldOperator operator;
+    
+    public SearchEnumMultiSelectField()
+    {
+    }
+
+    public SearchEnumMultiSelectField(List<String> searchValue, SearchEnumMultiSelectFieldOperator operator)
+    {
+        this.searchValue = searchValue;
+        this.operator = operator;
+    }
 
     /**
      * Gets the value of the searchValue property.

@@ -1,0 +1,127 @@
+options {
+   STATIC = false ;
+}
+PARSER_BEGIN(DateExpressionParser)
+    package org.mule.module.netsuite.api.model.expression.date;
+    import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
+    import  java.io.ByteArrayInputStream;
+
+   /**
+    * A predicate-like syntax parser for date expressions
+    * @author flbulgarelli*/
+   public class DateExpressionParser {
+   
+     private DateExpressionBuilder builder = new DateExpressionBuilder(); 
+   
+     public static SearchDateField parse(String expression)  {
+       //TODO support for empty/notEmpty?
+       org.apache.commons.lang.Validate.notEmpty(expression);
+        try{
+          return new DateExpressionParser(new ByteArrayInputStream(expression.getBytes())).start();
+      } catch(ParseException e){
+         throw new IllegalArgumentException("Syntax error in date expression", e);
+      }
+    } 
+}
+   
+PARSER_END(DateExpressionParser)
+
+
+SKIP : { " " | "\n" | "\r" | "\t" }
+
+TOKEN : { < COMMA : "," > }
+
+TOKEN : { < OPEN_PAR : "(" > }
+TOKEN : { < CLOSE_PAR : ")" > }
+
+TOKEN : { < OP : "within" | "onOrBefore" | "onOrAfter" | "on" | "notWithin" | "notOnOrBefore" | "notOnOrAfter" | "notOn" | "after" | "before" | "notAfter" | "notBefore"  > }
+TOKEN : { < PREDEFINED_SEARCH_VALUE : "today" | "thisWeek" | "thisBusinessWeek" | "thisMonth" |"thisYear" | "yesterday" | "twoDaysAgo" | "lastWeek" | "lastMonth" | "threeMonthAgo" |"tomorrow" | "nextMonth"  | "nextWeek"  > }
+TOKEN : { < ISO_DATE_SEARCH_VALUE :  "isoDate" > }
+TOKEN : { < ISO_DATE_RANGE_SEARCH_VALUE :  "isoDateRange" > }
+
+TOKEN : { < DATE_TIME_SEARCH_VALUE :  "dateTime" > }
+TOKEN : { < DATE_TIME_RANGE_SEARCH_VALUE :  "dateTimeRange" > }
+
+TOKEN : { < DATE : (["0"-"9","a"-"z","A"-"Z","-",":"])+ > }
+TOKEN : { < STRING : "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
+
+
+
+SearchDateField start() : 
+{ }
+{ 
+  operation()
+  <OPEN_PAR>
+  searchValue()
+  <CLOSE_PAR> 
+  {return builder.build();}
+}
+
+void operation() :
+{ Token operation;}
+{
+  operation = < OP >
+  { builder.setOperation(operation.image); }
+}
+
+void searchValue() :
+{}
+{
+   predefinedSearchValue() | dateSearchValue() | rangeSearchValue() | dateWithFormatSearchValue() | rangeWithFormatSearchValue()
+}
+
+void predefinedSearchValue() :
+{ Token predefinedSearchValue; }
+{
+   predefinedSearchValue = < PREDEFINED_SEARCH_VALUE >
+   { builder.setPredefinedSearchValue(predefinedSearchValue.image); } 
+}
+
+void dateSearchValue() :
+{ Token date; }
+{
+   < ISO_DATE_SEARCH_VALUE >
+   < OPEN_PAR >
+   date =  < DATE > 
+   <CLOSE_PAR> 
+   { builder.setDateSearchValue(date.image); } 
+}
+
+void rangeSearchValue() :
+{ Token minDate, maxDate; }
+{
+   < ISO_DATE_RANGE_SEARCH_VALUE >
+   < OPEN_PAR >
+   minDate =  < DATE >
+   < COMMA >
+   maxDate =  < DATE > 
+   <CLOSE_PAR> 
+   { builder.setRangeSearchValue(minDate.image, maxDate.image); } 
+}
+
+void dateWithFormatSearchValue() :
+{ Token date, format; }
+{
+   < DATE_TIME_SEARCH_VALUE >
+   < OPEN_PAR >
+   date =  < STRING >
+   < COMMA >
+   format =  < STRING > 
+   <CLOSE_PAR> 
+   { builder.setDateSearchValue(date.image, format.image); } 
+}
+
+void rangeWithFormatSearchValue() :
+{ Token minDate, maxDate, format; } 
+{
+   < DATE_TIME_RANGE_SEARCH_VALUE >
+   < OPEN_PAR >
+   minDate =  < STRING > 
+   < COMMA >
+   maxDate =  < STRING > 
+   < COMMA >
+   format =  < STRING > 
+   <CLOSE_PAR> 
+   { builder.setRangeSearchValue(minDate.image, maxDate.image, format.image); } 
+}
+

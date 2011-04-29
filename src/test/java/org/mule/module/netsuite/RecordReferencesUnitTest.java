@@ -10,8 +10,8 @@
 
 package org.mule.module.netsuite;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
@@ -19,6 +19,11 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import org.junit.Test;
 
+/**
+ * Test for {@link RecordReferences}
+ * 
+ * @author flbulgarelli
+ */
 public class RecordReferencesUnitTest
 {
 
@@ -64,14 +69,14 @@ public class RecordReferencesUnitTest
     {
         assertNull(RecordReferences.nulSafeFrom(null, null, null));
     }
-    
+
     @Test
     public void nullSafeFromNotNull() throws Exception
     {
         assertNotNull(RecordReferences.nulSafeFrom(RecordType.ASSEMBLY_UNBUILD, "A126", null));
     }
-    
-    @Test(expected=IllegalArgumentException.class)
+
+    @Test(expected = IllegalArgumentException.class)
     public void nullSafeFromNotIllegalArgument() throws Exception
     {
         RecordReferences.nulSafeFrom(null, "A126", null);

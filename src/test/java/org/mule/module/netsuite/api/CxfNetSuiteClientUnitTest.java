@@ -23,13 +23,21 @@ import com.netsuite.webservices.lists.accounting_2010_2.Account;
 import com.netsuite.webservices.lists.accounting_2010_2.Bin;
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
+import com.netsuite.webservices.platform.core_2010_2.GetDeletedFilter;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
+import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchDate;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
 import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
+import com.netsuite.webservices.platform.messages_2010_2.GetDeletedRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import org.hamcrest.BaseMatcher;
@@ -152,7 +160,7 @@ public class CxfNetSuiteClientUnitTest
                 return r.getAttachReference() instanceof AttachContactReference;
             }
         }));
-    }
+    }// TODO move cxf files to another dir
 
     @Ignore
     @Test
@@ -161,11 +169,20 @@ public class CxfNetSuiteClientUnitTest
         fail();
     }
 
-    @Ignore
     @Test
     public void getDeletedRecord() throws Exception
     {
-        fail();
+        client.getDeletedRecord(RecordType.BUDGET, "within(isoDateRange(2010-1-6, 2011-2-9))");
+        verify(port).getDeleted(argThat(new Matcher<GetDeletedRequest>()
+        {
+            public boolean matches(Object item)
+            {
+                GetDeletedRequest r = (GetDeletedRequest) item;
+                SearchEnumMultiSelectField type = r.getGetDeletedFilter().getType();
+                return type.getOperator() == SearchEnumMultiSelectFieldOperator.ANY_OF
+                       && type.getSearchValue().equals(Arrays.asList("budget"));
+            }
+        }));
     }
 
     abstract class Matcher<T> extends BaseMatcher<T>
