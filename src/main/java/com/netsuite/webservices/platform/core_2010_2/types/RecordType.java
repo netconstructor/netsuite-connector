@@ -82,6 +82,15 @@ import com.netsuite.webservices.lists.marketing_2010_2.CampaignSearchEngine;
 import com.netsuite.webservices.lists.marketing_2010_2.CampaignSubscription;
 import com.netsuite.webservices.lists.marketing_2010_2.CampaignVertical;
 import com.netsuite.webservices.lists.marketing_2010_2.PromotionCode;
+import com.netsuite.webservices.lists.relationships_2010_2.Contact;
+import com.netsuite.webservices.lists.relationships_2010_2.Customer;
+import com.netsuite.webservices.lists.relationships_2010_2.CustomerStatus;
+import com.netsuite.webservices.lists.relationships_2010_2.EntityGroup;
+import com.netsuite.webservices.lists.relationships_2010_2.Job;
+import com.netsuite.webservices.lists.relationships_2010_2.JobStatus;
+import com.netsuite.webservices.lists.relationships_2010_2.JobType;
+import com.netsuite.webservices.lists.relationships_2010_2.Partner;
+import com.netsuite.webservices.lists.relationships_2010_2.Vendor;
 import com.netsuite.webservices.lists.support_2010_2.Issue;
 import com.netsuite.webservices.lists.support_2010_2.Solution;
 import com.netsuite.webservices.lists.support_2010_2.SupportCase;
@@ -91,6 +100,7 @@ import com.netsuite.webservices.lists.support_2010_2.SupportCasePriority;
 import com.netsuite.webservices.lists.support_2010_2.SupportCaseStatus;
 import com.netsuite.webservices.lists.support_2010_2.SupportCaseType;
 import com.netsuite.webservices.lists.support_2010_2.Topic;
+import com.netsuite.webservices.lists.website_2010_2.SiteCategory;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.setup.customization_2010_2.CrmCustomField;
 import com.netsuite.webservices.setup.customization_2010_2.CustomList;
@@ -335,7 +345,7 @@ public enum RecordType {
     @XmlEnumValue("classification")
     CLASSIFICATION("classification", Classification.class),
     @XmlEnumValue("contact")
-    CONTACT("contact", null),//Contact.class),
+    CONTACT("contact", Contact.class),
     @XmlEnumValue("contactCategory")
     CONTACT_CATEGORY("contactCategory", ContactCategory.class),
     @XmlEnumValue("contactRole")
@@ -355,7 +365,7 @@ public enum RecordType {
     @XmlEnumValue("customRecordType")
     CUSTOM_RECORD_TYPE("customRecordType", CustomRecordType.class),
     @XmlEnumValue("customer")
-    CUSTOMER("customer",null),// Customer.class),
+    CUSTOMER("customer", Customer.class),
     @XmlEnumValue("customerCategory")
     CUSTOMER_CATEGORY("customerCategory", CustomerCategory.class),
     @XmlEnumValue("customerDeposit")
@@ -365,7 +375,7 @@ public enum RecordType {
     @XmlEnumValue("customerRefund")
     CUSTOMER_REFUND("customerRefund", CustomerRefund.class),
     @XmlEnumValue("customerStatus")
-    CUSTOMER_STATUS("customerStatus", null),//CustomerStatus.class),
+    CUSTOMER_STATUS("customerStatus", CustomerStatus.class),
     @XmlEnumValue("depositApplication")
     DEPOSIT_APPLICATION("depositApplication", DepositApplication.class),
     @XmlEnumValue("department")
@@ -381,7 +391,7 @@ public enum RecordType {
     @XmlEnumValue("entityCustomField")
     ENTITY_CUSTOM_FIELD("entityCustomField", EntityCustomField.class),
     @XmlEnumValue("entityGroup")
-    ENTITY_GROUP("entityGroup", null),//EntityGroup.class),
+    ENTITY_GROUP("entityGroup", EntityGroup.class),
     @XmlEnumValue("estimate")
     ESTIMATE("estimate", Estimate.class),
     @XmlEnumValue("expenseCategory")
@@ -417,11 +427,11 @@ public enum RecordType {
     @XmlEnumValue("issue")
     ISSUE("issue", Issue.class),
     @XmlEnumValue("job")
-    JOB("job", null),//Job.class),
+    JOB("job", Job.class),
     @XmlEnumValue("jobStatus")
-    JOB_STATUS("jobStatus", null),//JobStatus.class),
+    JOB_STATUS("jobStatus", JobStatus.class),
     @XmlEnumValue("jobType")
-    JOB_TYPE("jobType",null),// JobType.class),
+    JOB_TYPE("jobType", JobType.class),
     @XmlEnumValue("itemReceipt")
     ITEM_RECEIPT("itemReceipt", ItemReceipt.class),
     @XmlEnumValue("journalEntry")
@@ -461,7 +471,7 @@ public enum RecordType {
     @XmlEnumValue("otherCustomField")
     OTHER_CUSTOM_FIELD("otherCustomField", OtherCustomField.class),
     @XmlEnumValue("partner")
-    PARTNER("partner", null),//Partner.class),
+    PARTNER("partner", Partner.class),
     @XmlEnumValue("partnerCategory")
     PARTNER_CATEGORY("partnerCategory", PartnerCategory.class),
     @XmlEnumValue("paymentItem")
@@ -498,8 +508,9 @@ public enum RecordType {
     SERVICE_SALE_ITEM("serviceSaleItem", ServiceSaleItem.class),
     @XmlEnumValue("solution")
     SOLUTION("solution", Solution.class),
-    @XmlEnumValue("siteCategory")
-    SITE_CATEGORY("siteCategory", null),//SiteCategory.class),
+    //XXX there are two classes with the same name
+    @XmlEnumValue("siteCategory") 
+    SITE_CATEGORY("siteCategory", SiteCategory.class),
     @XmlEnumValue("state")
     STATE("state", State.class),
     @XmlEnumValue("subsidiary")
@@ -539,7 +550,7 @@ public enum RecordType {
     @XmlEnumValue("unitsType")
     UNITS_TYPE("unitsType", UnitsType.class),
     @XmlEnumValue("vendor")
-    VENDOR("vendor", null),//Vendor.class),
+    VENDOR("vendor", Vendor.class),
     @XmlEnumValue("vendorCategory")
     VENDOR_CATEGORY("vendorCategory", VendorCategory.class),
     @XmlEnumValue("vendorBill")
