@@ -23,8 +23,6 @@ import org.mule.module.netsuite.api.CxfNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultCxfPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
-import org.mule.module.netsuite.api.model.entity.RecordId;
-import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.tools.cloudconnect.annotations.Connector;
 import org.mule.tools.cloudconnect.annotations.Operation;
 import org.mule.tools.cloudconnect.annotations.Parameter;
@@ -34,12 +32,10 @@ import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.constraints.NotNull;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
@@ -92,7 +88,7 @@ public class NetSuiteCloudConnector implements Initialisable
                              @Parameter(optional = true) String destinationExternalId)
     {
         client.detachRecord(//
-            from(sourceRecordType, sourceInternalId, sourceExternalId),// 
+            from(sourceRecordType, sourceInternalId, sourceExternalId), // 
             from(destinationRecordType, destinationInternalId, destinationExternalId));
     }
 
@@ -171,7 +167,7 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar().getTime();
     }
-    
+
     @Operation
     public void updateInviteeStatus(@Parameter RecordType recordType,
                                     @Parameter(optional = true) String internalId,
@@ -180,33 +176,40 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         client.updateInviteeStatus(from(recordType, internalId, externalId), status);
     }
-    
-    public RecordRef addRecord(RecordType recordType, Map<String, Object> recordAttributes) 
+
+    @Operation
+    public RecordRef addRecord(@Parameter RecordType recordType,
+                               @Parameter Map<String, Object> recordAttributes)
     {
         return ((RecordRef) client.addRecord(recordType, recordAttributes));
     }
 
-    public Object checkAsyncStatus(String jobId) 
+    @Operation
+    public Object checkAsyncStatus(@Parameter String jobId)
     {
         return client.checkAsyncStatus(jobId);
     }
 
-    public void findRecord() 
+    @Operation
+    public void findRecord()
     {
         client.findRecord();
     }
 
-    public Object getAsyncResult(String jobId, int pageIndex) 
+    @Operation
+    public Object getAsyncResult(@Parameter String jobId, @Parameter int pageIndex)
     {
         return client.getAsyncResult(jobId, pageIndex);
     }
 
-    public Object initialize() 
+    @Operation
+    public Object initialize()
     {
         return client.initialize();
     }
-//TODO add new operations
-    public Object initializeList() 
+
+    @Operation
+    public Object initializeList()
     {
         return client.initializeList();
     }
