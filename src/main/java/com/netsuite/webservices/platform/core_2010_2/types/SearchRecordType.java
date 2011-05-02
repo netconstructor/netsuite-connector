@@ -15,6 +15,49 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
+import org.apache.commons.lang.UnhandledException;
+
+import com.netsuite.webservices.platform.common_2010_2.AccountSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.AccountingPeriodSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.BinSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.BudgetSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.CalendarEventSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.CampaignSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.ClassificationSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.ContactSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.CustomRecordSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.CustomerSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.DepartmentSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.EmployeeSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.EntityGroupSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.FileSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.FolderSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.GiftCertificateSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.GroupMemberSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.IssueSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.ItemSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.JobSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.LocationSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.MessageSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.NoteSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.OpportunitySearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.PartnerSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.PhoneCallSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.PriceLevelSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.ProjectTaskSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.PromotionCodeSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.SalesRoleSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.SiteCategorySearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.SolutionSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.SubsidiarySearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.SupportCaseSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.TaskSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.TimeBillSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.TopicSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.TransactionSearchBasic;
+import com.netsuite.webservices.platform.common_2010_2.VendorSearchBasic;
+import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
+
 
 /**
  * <p>Java class for SearchRecordType.
@@ -72,88 +115,91 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum SearchRecordType {
 
+    
     @XmlEnumValue("account")
-    ACCOUNT("account"),
+    ACCOUNT("account", AccountSearchBasic.class),
     @XmlEnumValue("accountingPeriod")
-    ACCOUNTING_PERIOD("accountingPeriod"),
+    ACCOUNTING_PERIOD("accountingPeriod", AccountingPeriodSearchBasic.class),
     @XmlEnumValue("bin")
-    BIN("bin"),
+    BIN("bin", BinSearchBasic.class),
     @XmlEnumValue("budget")
-    BUDGET("budget"),
+    BUDGET("budget", BudgetSearchBasic.class),
     @XmlEnumValue("calendarEvent")
-    CALENDAR_EVENT("calendarEvent"),
+    CALENDAR_EVENT("calendarEvent", CalendarEventSearchBasic.class),
     @XmlEnumValue("campaign")
-    CAMPAIGN("campaign"),
+    CAMPAIGN("campaign", CampaignSearchBasic.class),
     @XmlEnumValue("classification")
-    CLASSIFICATION("classification"),
+    CLASSIFICATION("classification", ClassificationSearchBasic.class),
     @XmlEnumValue("contact")
-    CONTACT("contact"),
+    CONTACT("contact", ContactSearchBasic.class),
     @XmlEnumValue("customer")
-    CUSTOMER("customer"),
+    CUSTOMER("customer", CustomerSearchBasic.class),
     @XmlEnumValue("customRecord")
-    CUSTOM_RECORD("customRecord"),
+    CUSTOM_RECORD("customRecord", CustomRecordSearchBasic.class),
     @XmlEnumValue("department")
-    DEPARTMENT("department"),
+    DEPARTMENT("department", DepartmentSearchBasic.class),
     @XmlEnumValue("employee")
-    EMPLOYEE("employee"),
+    EMPLOYEE("employee", EmployeeSearchBasic.class),
     @XmlEnumValue("entityGroup")
-    ENTITY_GROUP("entityGroup"),
+    ENTITY_GROUP("entityGroup", EntityGroupSearchBasic.class),
     @XmlEnumValue("file")
-    FILE("file"),
+    FILE("file", FileSearchBasic.class),
     @XmlEnumValue("folder")
-    FOLDER("folder"),
+    FOLDER("folder", FolderSearchBasic.class),
     @XmlEnumValue("giftCertificate")
-    GIFT_CERTIFICATE("giftCertificate"),
+    GIFT_CERTIFICATE("giftCertificate", GiftCertificateSearchBasic.class),
     @XmlEnumValue("groupMember")
-    GROUP_MEMBER("groupMember"),
+    GROUP_MEMBER("groupMember", GroupMemberSearchBasic.class),
     @XmlEnumValue("item")
-    ITEM("item"),
+    ITEM("item", ItemSearchBasic.class),
     @XmlEnumValue("issue")
-    ISSUE("issue"),
+    ISSUE("issue", IssueSearchBasic.class),
     @XmlEnumValue("job")
-    JOB("job"),
+    JOB("job", JobSearchBasic.class),
     @XmlEnumValue("location")
-    LOCATION("location"),
+    LOCATION("location", LocationSearchBasic.class),
     @XmlEnumValue("message")
-    MESSAGE("message"),
+    MESSAGE("message", MessageSearchBasic.class),
     @XmlEnumValue("note")
-    NOTE("note"),
+    NOTE("note", NoteSearchBasic.class),
     @XmlEnumValue("opportunity")
-    OPPORTUNITY("opportunity"),
+    OPPORTUNITY("opportunity", OpportunitySearchBasic.class),
     @XmlEnumValue("partner")
-    PARTNER("partner"),
+    PARTNER("partner", PartnerSearchBasic.class),
     @XmlEnumValue("phoneCall")
-    PHONE_CALL("phoneCall"),
+    PHONE_CALL("phoneCall", PhoneCallSearchBasic.class),
     @XmlEnumValue("priceLevel")
-    PRICE_LEVEL("priceLevel"),
+    PRICE_LEVEL("priceLevel", PriceLevelSearchBasic.class),
     @XmlEnumValue("projectTask")
-    PROJECT_TASK("projectTask"),
+    PROJECT_TASK("projectTask", ProjectTaskSearchBasic.class),
     @XmlEnumValue("promotionCode")
-    PROMOTION_CODE("promotionCode"),
+    PROMOTION_CODE("promotionCode", PromotionCodeSearchBasic.class),
     @XmlEnumValue("salesRole")
-    SALES_ROLE("salesRole"),
+    SALES_ROLE("salesRole", SalesRoleSearchBasic.class),
     @XmlEnumValue("solution")
-    SOLUTION("solution"),
+    SOLUTION("solution", SolutionSearchBasic.class),
     @XmlEnumValue("siteCategory")
-    SITE_CATEGORY("siteCategory"),
+    SITE_CATEGORY("siteCategory", SiteCategorySearchBasic.class),
     @XmlEnumValue("subsidiary")
-    SUBSIDIARY("subsidiary"),
+    SUBSIDIARY("subsidiary", SubsidiarySearchBasic.class),
     @XmlEnumValue("supportCase")
-    SUPPORT_CASE("supportCase"),
+    SUPPORT_CASE("supportCase", SupportCaseSearchBasic.class),
     @XmlEnumValue("task")
-    TASK("task"),
+    TASK("task", TaskSearchBasic.class),
     @XmlEnumValue("timeBill")
-    TIME_BILL("timeBill"),
+    TIME_BILL("timeBill", TimeBillSearchBasic.class),
     @XmlEnumValue("topic")
-    TOPIC("topic"),
+    TOPIC("topic", TopicSearchBasic.class),
     @XmlEnumValue("transaction")
-    TRANSACTION("transaction"),
+    TRANSACTION("transaction", TransactionSearchBasic.class),
     @XmlEnumValue("vendor")
-    VENDOR("vendor");
+    VENDOR("vendor", VendorSearchBasic.class);
     private final String value;
+    private final Class<? extends SearchRecord> clazz;
 
-    SearchRecordType(String v) {
+    SearchRecordType(String v, Class<? extends SearchRecord> clazz) {
         value = v;
+        this.clazz = clazz;
     }
 
     public String value() {
@@ -167,6 +213,17 @@ public enum SearchRecordType {
             }
         }
         throw new IllegalArgumentException(v);
+    }
+
+    public SearchRecord newInstance()
+    {
+        try
+        {
+            return clazz.newInstance();
+        } catch (Exception e)
+        {
+            throw new UnhandledException(e);
+        }
     }
 
 }
