@@ -4,6 +4,7 @@ options {
 PARSER_BEGIN(FilterExpressionParser)
     package org.mule.module.netsuite.api.model.expression.filter;
     import com.netsuite.webservices.platform.core_2010_2.*;
+    import com.netsuite.webservices.platform.core_2010_2.types.*;
     import  java.io.ByteArrayInputStream;
 
    /**
@@ -13,20 +14,23 @@ PARSER_BEGIN(FilterExpressionParser)
    
      private FilterExpressionBuilder builder = new FilterExpressionBuilder(); 
    
-     public static SearchRecord parse(String expression)  {
+     public static SearchRecord parse(SearchRecordType targetRecordType, String expression)  {
        org.apache.commons.lang.Validate.notEmpty(expression);
         try{
-          return new FilterExpressionParser(new ByteArrayInputStream(expression.getBytes())).start();
+          return new FilterExpressionParser(new ByteArrayInputStream(expression.getBytes())).withTarget(targetRecordType).start();
       } catch(ParseException e){
          throw new IllegalArgumentException("Syntax error in date expression " + expression, e);
       }
     } 
-       
-       /*
-       TOKEN : { < UNARY_OP : "empty"| "notEmpty" > }
-TOKEN : { < BINARY_OP : "contains"| "doesNotContain"| "doesNotStartWith"| "is"| "isNot"| "startsWith"| "equalTo"| "greaterThan"| "greaterThanOrEqualTo"| "lessThan"| "lessThanOrEqualTo"| "notEqualTo" > }
-TOKEN : { < TERNARY_OP : "between"| "notBetween" > }
-       */
+    
+    public FilterExpressionParser withTarget(SearchRecordType target) {
+        builder.setTarget(target);
+        return this;
+    }
+    
+    private static String nullSafeImage(Token token) { 
+      return token != null ? token.image : null;
+    }
 }
    
 PARSER_END(FilterExpressionParser)
@@ -46,25 +50,30 @@ TOKEN : { < UNQUOTED_STRING : (["a"-"z","A"-"Z","0"-"9"])+ > }
 TOKEN : { < STRING : "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
 
 SearchRecord start() : 
-{ Token operation, target, attribute, arg0 = null, arg1 = null; }
+{ }
 { 
-  operation = < UNQUOTED_STRING >
+   expression() ( < COMMA > expression() )* 
+  {return builder.build();}
+}
+
+void expression() :
+{Token operation, attributeOrJoin, attribute = null, arg0 = null, arg1 = null; }
+{ operation = < UNQUOTED_STRING >
   < OPEN_PAR >
-  target = < UNQUOTED_STRING >
-  < DOT >
-  attribute = < UNQUOTED_STRING > 
+  attributeOrJoin = < UNQUOTED_STRING >
+  (< DOT >
+  attribute = < UNQUOTED_STRING >)? 
   (< COMMA >
   arg0 = < UNQUOTED_STRING >
   (< COMMA >
   arg1 = < UNQUOTED_STRING >)?)?
   < CLOSE_PAR > 
-  { builder.setOperation(operation.image);}
-  { builder.setTarget(target.image);}
-  { builder.setAttribute(attribute.image);}
-  { if(arg0 != null) builder.setFirstArg(arg0.image);}
-  { if(arg1 != null) builder.setSecondArg(arg1.image);}
-  {return builder.build();}
+  { 
+    if( attribute == null  ) 
+      builder.addSimpleExpression(operation.image, attributeOrJoin.image, nullSafeImage(arg0), nullSafeImage(arg1));
+    else
+      builder.addJoinedExpression(operation.image, attributeOrJoin.image, attribute.image, nullSafeImage(arg0), nullSafeImage(arg1));
+  }  
 }
-
 
 

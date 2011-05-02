@@ -17,46 +17,46 @@ import javax.xml.bind.annotation.XmlType;
 
 import org.apache.commons.lang.UnhandledException;
 
-import com.netsuite.webservices.platform.common_2010_2.AccountSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.AccountingPeriodSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.BinSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.BudgetSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.CalendarEventSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.CampaignSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.ClassificationSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.ContactSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.CustomRecordSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.CustomerSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.DepartmentSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.EmployeeSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.EntityGroupSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.FileSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.FolderSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.GiftCertificateSearchBasic;
+import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEventSearch;
+import com.netsuite.webservices.activities.scheduling_2010_2.PhoneCallSearch;
+import com.netsuite.webservices.activities.scheduling_2010_2.ProjectTaskSearch;
+import com.netsuite.webservices.activities.scheduling_2010_2.TaskSearch;
+import com.netsuite.webservices.documents.filecabinet_2010_2.FileSearch;
+import com.netsuite.webservices.documents.filecabinet_2010_2.FolderSearch;
+import com.netsuite.webservices.general.communication_2010_2.MessageSearch;
+import com.netsuite.webservices.general.communication_2010_2.NoteSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.AccountSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.AccountingPeriodSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.BinSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.ClassificationSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.DepartmentSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.GiftCertificateSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.ItemSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.LocationSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.PriceLevelSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.SalesRoleSearch;
+import com.netsuite.webservices.lists.accounting_2010_2.SubsidiarySearch;
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeSearch;
+import com.netsuite.webservices.lists.marketing_2010_2.CampaignSearch;
+import com.netsuite.webservices.lists.marketing_2010_2.PromotionCodeSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.ContactSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.CustomerSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.EntityGroupSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.JobSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.PartnerSearch;
+import com.netsuite.webservices.lists.relationships_2010_2.VendorSearch;
+import com.netsuite.webservices.lists.support_2010_2.IssueSearch;
+import com.netsuite.webservices.lists.support_2010_2.SolutionSearch;
+import com.netsuite.webservices.lists.support_2010_2.SupportCaseSearch;
+import com.netsuite.webservices.lists.support_2010_2.TopicSearch;
+import com.netsuite.webservices.lists.website_2010_2.SiteCategorySearch;
 import com.netsuite.webservices.platform.common_2010_2.GroupMemberSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.IssueSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.ItemSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.JobSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.LocationSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.MessageSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.NoteSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.OpportunitySearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.PartnerSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.PhoneCallSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.PriceLevelSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.ProjectTaskSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.PromotionCodeSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.SalesRoleSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.SiteCategorySearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.SolutionSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.SubsidiarySearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.SupportCaseSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.TaskSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.TimeBillSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.TopicSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.TransactionSearchBasic;
-import com.netsuite.webservices.platform.common_2010_2.VendorSearchBasic;
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
+import com.netsuite.webservices.setup.customization_2010_2.CustomRecordSearch;
+import com.netsuite.webservices.transactions.employees_2010_2.TimeBillSearch;
+import com.netsuite.webservices.transactions.financial_2010_2.BudgetSearch;
+import com.netsuite.webservices.transactions.sales_2010_2.OpportunitySearch;
+import com.netsuite.webservices.transactions.sales_2010_2.TransactionSearch;
 
 
 /**
@@ -117,83 +117,83 @@ public enum SearchRecordType {
 
     
     @XmlEnumValue("account")
-    ACCOUNT("account", AccountSearchBasic.class),
+    ACCOUNT("account", AccountSearch.class),
     @XmlEnumValue("accountingPeriod")
-    ACCOUNTING_PERIOD("accountingPeriod", AccountingPeriodSearchBasic.class),
+    ACCOUNTING_PERIOD("accountingPeriod", AccountingPeriodSearch.class),
     @XmlEnumValue("bin")
-    BIN("bin", BinSearchBasic.class),
+    BIN("bin", BinSearch.class),
     @XmlEnumValue("budget")
-    BUDGET("budget", BudgetSearchBasic.class),
+    BUDGET("budget", BudgetSearch.class),
     @XmlEnumValue("calendarEvent")
-    CALENDAR_EVENT("calendarEvent", CalendarEventSearchBasic.class),
+    CALENDAR_EVENT("calendarEvent", CalendarEventSearch.class),
     @XmlEnumValue("campaign")
-    CAMPAIGN("campaign", CampaignSearchBasic.class),
+    CAMPAIGN("campaign", CampaignSearch.class),
     @XmlEnumValue("classification")
-    CLASSIFICATION("classification", ClassificationSearchBasic.class),
+    CLASSIFICATION("classification", ClassificationSearch.class),
     @XmlEnumValue("contact")
-    CONTACT("contact", ContactSearchBasic.class),
+    CONTACT("contact", ContactSearch.class),
     @XmlEnumValue("customer")
-    CUSTOMER("customer", CustomerSearchBasic.class),
+    CUSTOMER("customer", CustomerSearch.class),
     @XmlEnumValue("customRecord")
-    CUSTOM_RECORD("customRecord", CustomRecordSearchBasic.class),
+    CUSTOM_RECORD("customRecord", CustomRecordSearch.class),
     @XmlEnumValue("department")
-    DEPARTMENT("department", DepartmentSearchBasic.class),
+    DEPARTMENT("department", DepartmentSearch.class),
     @XmlEnumValue("employee")
-    EMPLOYEE("employee", EmployeeSearchBasic.class),
+    EMPLOYEE("employee", EmployeeSearch.class),
     @XmlEnumValue("entityGroup")
-    ENTITY_GROUP("entityGroup", EntityGroupSearchBasic.class),
+    ENTITY_GROUP("entityGroup", EntityGroupSearch.class),
     @XmlEnumValue("file")
-    FILE("file", FileSearchBasic.class),
+    FILE("file", FileSearch.class),
     @XmlEnumValue("folder")
-    FOLDER("folder", FolderSearchBasic.class),
+    FOLDER("folder", FolderSearch.class),
     @XmlEnumValue("giftCertificate")
-    GIFT_CERTIFICATE("giftCertificate", GiftCertificateSearchBasic.class),
+    GIFT_CERTIFICATE("giftCertificate", GiftCertificateSearch.class),
     @XmlEnumValue("groupMember")
     GROUP_MEMBER("groupMember", GroupMemberSearchBasic.class),
     @XmlEnumValue("item")
-    ITEM("item", ItemSearchBasic.class),
+    ITEM("item", ItemSearch.class),
     @XmlEnumValue("issue")
-    ISSUE("issue", IssueSearchBasic.class),
+    ISSUE("issue", IssueSearch.class),
     @XmlEnumValue("job")
-    JOB("job", JobSearchBasic.class),
+    JOB("job", JobSearch.class),
     @XmlEnumValue("location")
-    LOCATION("location", LocationSearchBasic.class),
+    LOCATION("location", LocationSearch.class),
     @XmlEnumValue("message")
-    MESSAGE("message", MessageSearchBasic.class),
+    MESSAGE("message", MessageSearch.class),
     @XmlEnumValue("note")
-    NOTE("note", NoteSearchBasic.class),
+    NOTE("note", NoteSearch.class),
     @XmlEnumValue("opportunity")
-    OPPORTUNITY("opportunity", OpportunitySearchBasic.class),
+    OPPORTUNITY("opportunity", OpportunitySearch.class),
     @XmlEnumValue("partner")
-    PARTNER("partner", PartnerSearchBasic.class),
+    PARTNER("partner", PartnerSearch.class),
     @XmlEnumValue("phoneCall")
-    PHONE_CALL("phoneCall", PhoneCallSearchBasic.class),
+    PHONE_CALL("phoneCall", PhoneCallSearch.class),
     @XmlEnumValue("priceLevel")
-    PRICE_LEVEL("priceLevel", PriceLevelSearchBasic.class),
+    PRICE_LEVEL("priceLevel", PriceLevelSearch.class),
     @XmlEnumValue("projectTask")
-    PROJECT_TASK("projectTask", ProjectTaskSearchBasic.class),
+    PROJECT_TASK("projectTask", ProjectTaskSearch.class),
     @XmlEnumValue("promotionCode")
-    PROMOTION_CODE("promotionCode", PromotionCodeSearchBasic.class),
+    PROMOTION_CODE("promotionCode", PromotionCodeSearch.class),
     @XmlEnumValue("salesRole")
-    SALES_ROLE("salesRole", SalesRoleSearchBasic.class),
+    SALES_ROLE("salesRole", SalesRoleSearch.class),
     @XmlEnumValue("solution")
-    SOLUTION("solution", SolutionSearchBasic.class),
+    SOLUTION("solution", SolutionSearch.class),
     @XmlEnumValue("siteCategory")
-    SITE_CATEGORY("siteCategory", SiteCategorySearchBasic.class),
+    SITE_CATEGORY("siteCategory", SiteCategorySearch.class),
     @XmlEnumValue("subsidiary")
-    SUBSIDIARY("subsidiary", SubsidiarySearchBasic.class),
+    SUBSIDIARY("subsidiary", SubsidiarySearch.class),
     @XmlEnumValue("supportCase")
-    SUPPORT_CASE("supportCase", SupportCaseSearchBasic.class),
+    SUPPORT_CASE("supportCase", SupportCaseSearch.class),
     @XmlEnumValue("task")
-    TASK("task", TaskSearchBasic.class),
+    TASK("task", TaskSearch.class),
     @XmlEnumValue("timeBill")
-    TIME_BILL("timeBill", TimeBillSearchBasic.class),
+    TIME_BILL("timeBill", TimeBillSearch.class),
     @XmlEnumValue("topic")
-    TOPIC("topic", TopicSearchBasic.class),
+    TOPIC("topic", TopicSearch.class),
     @XmlEnumValue("transaction")
-    TRANSACTION("transaction", TransactionSearchBasic.class),
+    TRANSACTION("transaction", TransactionSearch.class),
     @XmlEnumValue("vendor")
-    VENDOR("vendor", VendorSearchBasic.class);
+    VENDOR("vendor", VendorSearch.class);
     private final String value;
     private final Class<? extends SearchRecord> clazz;
 
