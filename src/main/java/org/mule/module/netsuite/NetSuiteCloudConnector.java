@@ -80,6 +80,14 @@ public class NetSuiteCloudConnector implements Initialisable
      * Attaches a record to another one, optionally specifying a contact for the
      * attachment. Not all record type are supported as source, destination or
      * contact. Please consult NetSuite documentation.
+     * Example:
+     * 
+     * {@code <netsuite:attach-record 
+     *          sourceRecordType="BUDGET"
+     *          sourceId="500" 
+     *          sourceIdType="EXTERNAL" 
+     *          destinationId="1590"
+     *          destinationRecordType="ACCOUNT" />}
      * 
      * @param sourceRecordType the type of the target record to be attached
      * @param sourceId the id of the target record to be attached
@@ -111,6 +119,10 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Deletes a record
      * 
+     * Example:
+     * 
+     * {@code <netsuite:delete-record recordType="CONTACT" id="986" idType="EXTERNAL"/> }
+     *  
      * @param recordType the type of the record to delete
      * @param id the id of the record to delete
      * @param idType the type of id of the record to delete
@@ -125,7 +137,10 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Detaches a record
+     * Example:
      * 
+     * {@code <netsuite:detach-record destinationRecordType="ACCOUNT" destinationId="96" sourceRecordType="ACCOUNT" sourceId="16"/>}
+      
      * @param sourceRecordType the type of the target record to be detached
      * @param sourceId the id of the target record to be detached
      * @param sourceIdType the id type of the record to be detached
@@ -148,6 +163,9 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers the list of budget exchange rates
+     * Example:
+     * 
+     * {@code <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>}
      * 
      * @param periodId the id of the period 
      * @param periodIdType the period id type
@@ -173,7 +191,12 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers the list of consolidated exchange rates
-     * 
+     * Example:
+     * <netsuite:get-consolidated-exchange-rate
+     *       periodId="106" 
+     *       periodIdType="EXTERNAL" 
+     *       fromSubsidiaryId="5689"
+     *       toSubsidiaryId="4898" />
      * 
      * @param periodId the id of the period 
      * @param periodIdType the period id type
@@ -199,7 +222,8 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers the available customizations for a given record type
-     * 
+     * Example:
+     * {@code <netsuite:get-customization-id type="ACCOUNT"/>}
      * @param type the target record type
      * @param includeInactives if inactive customizations should also be returned
      * @return a list of CustomizationRef's
@@ -239,6 +263,9 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers all the record of a given type
+     * Example:
+     * 
+     * {@code <netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>}
      * @param type the target record type  
      * @return the list of Record's
      */
@@ -250,7 +277,8 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers a record given its id
-     * 
+     * Example:
+     * {@code <netsuite:get-record recordType="CREDIT_MEMO" id="982"/>}
      * @param recordType the target record type
      * @param id the target record id
      * @param idType the id type of the given record id
@@ -268,7 +296,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the availability for a given record reference.
      * If the Multi-Location Inventory feature is enabled, this operation returns results for all locations. 
      * For locations that do not have any items available, only location IDs and names are listed in results. 
+     * Example:
      * 
+     * {@code <netsuite:get-item-availability recordType="ACCOUNT" id="#[map-payload:recordId]"/>}
      * @param recordType the target record type
      * @param id the target record id
      * @param idType the id type of the given record id
@@ -287,7 +317,9 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Retrieves a list of existing saved searches for the given record type.
+     * Example:
      * 
+     * {@code <netsuite:get-saved-search type="ACCOUNT"/>}
      * @param type the target record type
      * @return the list of RecordRedf's 
      */
@@ -299,7 +331,9 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Answers the server time, resulting in more accurate and reliable sync'ing of data than using
-     * using local client time. 
+     * using local client time. Example:
+     * 
+     * {@code <netsuite:get-server-time />}
      *
      * @return the server time, as a Date
      */
@@ -310,8 +344,10 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Sets a new invitation status for a given event
-     *  
+     * Sets a new invitation status for a given event. Example:
+     * Example:
+     * 
+     * {@code <netsuite:update-invitee-status eventId="#[map-payload:eventId]" status="TENTATIVE"/>}
      * @param eventId the target event id
      * @param eventIdType the id type of the given eventId
      * @param status the new status to set
@@ -341,7 +377,15 @@ public class NetSuiteCloudConnector implements Initialisable
     }
     
     /**
-     * Updates an existing record
+     * Updates an existing record.
+     * Example:
+     * 
+     * {@code <netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
+     *       <netsuite:attributes>
+     *           <netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
+     *           <netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
+     *       </netsuite:attributes>
+     *   </netsuite:update-record>}
      * 
      * @param recordType the target record type to update
      * @param id the target record id
@@ -361,6 +405,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the status of an asynchronous Web services submission. When a jobId is
      * submitted, the status, percent complete, and estimated remaining duration are
      * returned.
+     * 
+     * Example:
+     * 
+     * {@code <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>}
      * 
      * @param jobId
      * @return the AsyncStatusResult for the given job
@@ -383,13 +431,15 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the results of an asynchronous web services submission. This operation
      * can be executed operation up to 20 times within a 30 day time period to
      * retrieve the results of an asynchronous job.
+     * Example:
+     * {@code <netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />}
      * 
      * @param jobId the id of the job
      * @param pageIndex the page number the the async result
      * @return the AsyncResult
      */
     @Operation
-    public AsyncResult getAsyncResult(@Parameter String jobId, @Parameter int pageIndex)
+    public AsyncResult getAsyncResult(@Parameter String jobId, /*TODO check if mandatory */ @Parameter int pageIndex)
     {
         return (AsyncResult) client.getAsyncResult(jobId, pageIndex);
     }
@@ -397,6 +447,9 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Populates fields on transaction line items with values from a related record,
      * in a similar way empty text boxes are prepopulated within the Netsuite UI
+     * Example:
+     * 
+     * {@code <netsuite:initialize type="INVOICE" id="#[map-payload:recordId]" recordType="SALES_ORDER" /> }
      * 
      * @param type the type of record whose defaults values are used to populate the
      *            target record

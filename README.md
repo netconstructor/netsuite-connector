@@ -46,7 +46,7 @@ Configuration
 
 You can configure the connector as follows:
 
-    <netsuite:config client="value" address="value" roleId="value" email="value" password="value" account="value"/>
+    <netsuite:config client="value" roleId="value" email="value" password="value" account="value"/>
 
 Here is detailed list of all the configuration attributes:
 
@@ -54,11 +54,11 @@ Here is detailed list of all the configuration attributes:
 |:-----------|:-----------|:---------|:--------------|
 |name|Give a name to this configuration so it can be later referenced by config-ref.|yes||
 |client||yes|
-|address||no|
-|roleId||no|
-|email||no|
-|password||no|
-|account||no|
+|roleId|The id of the role used to login in SuiteTalk, which determines the operations
+privileges|no|
+|email|The login email of both NetSuite UI and SuiteTalk|no|
+|password|The login password of both the NetSuite UI and SuiteTalk|no|
+|account|SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX|no|
 
 
 Attach Record
@@ -67,6 +67,16 @@ Attach Record
 Attaches a record to another one, optionally specifying a contact for the
 attachment. Not all record type are supported as source, destination or
 contact. Please consult NetSuite documentation.
+Example:
+
+
+
+     <netsuite:attach-record 
+             sourceRecordType="BUDGET"
+             sourceId="500" 
+             sourceIdType="EXTERNAL" 
+             destinationId="1590"
+             destinationRecordType="ACCOUNT" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -88,6 +98,12 @@ Delete Record
 
 Deletes a record
 
+Example:
+
+
+
+     <netsuite:delete-record recordType="CONTACT" id="986" idType="EXTERNAL"/> 
+
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
@@ -101,6 +117,11 @@ Detach Record
 -------------
 
 Detaches a record
+Example:
+
+
+
+     <netsuite:detach-record destinationRecordType="ACCOUNT" destinationId="96" sourceRecordType="ACCOUNT" sourceId="16"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -118,6 +139,11 @@ Get Budget Exchange Rate
 ------------------------
 
 Answers the list of budget exchange rates
+Example:
+
+
+
+     <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -137,6 +163,12 @@ Get Consolidated Exchange Rate
 ------------------------------
 
 Answers the list of consolidated exchange rates
+Example:
+<netsuite:get-consolidated-exchange-rate
+      periodId="106" 
+      periodIdType="EXTERNAL" 
+      fromSubsidiaryId="5689"
+      toSubsidiaryId="4898" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -156,6 +188,10 @@ Get Customization Id
 --------------------
 
 Answers the available customizations for a given record type
+Example:
+
+
+     <netsuite:get-customization-id type="ACCOUNT"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -176,17 +212,17 @@ Examples:
 
 
 
-
-
-
-
      <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
+           <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
+           <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
+           <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
+           <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
 |type|the type of the target deleted record to retrieve|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
-|whenExpression|a predicate-style date filtering expression, in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; | &lt;isoDate( &lt;isoDate&gt; )&gt; | &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; | &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; | &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite|no||
+|whenExpression|a predicate-style date filtering expression, in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; \| &lt;isoDate( &lt;isoDate&gt; )&gt; \| &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite|no||
 
 Returns list of deleted records that match the given date filtering expression
 
@@ -196,6 +232,11 @@ Get Records
 -----------
 
 Answers all the record of a given type
+Example:
+
+
+
+     <netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -210,6 +251,10 @@ Get Record
 ----------
 
 Answers a record given its id
+Example:
+
+
+     <netsuite:get-record recordType="CREDIT_MEMO" id="982"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -227,7 +272,12 @@ Get Item Availability
 
 Answers the availability for a given record reference.
 If the Multi-Location Inventory feature is enabled, this operation returns results for all locations. 
-For locations that do not have any items available, only location IDs and names are listed in results.
+For locations that do not have any items available, only location IDs and names are listed in results. 
+Example:
+
+
+
+     <netsuite:get-item-availability recordType="ACCOUNT" id="#[map-payload:recordId]"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -245,6 +295,11 @@ Get Saved Search
 ----------------
 
 Retrieves a list of existing saved searches for the given record type.
+Example:
+
+
+
+     <netsuite:get-saved-search type="ACCOUNT"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -259,7 +314,11 @@ Get Server Time
 ---------------
 
 Answers the server time, resulting in more accurate and reliable sync'ing of data than using
-using local client time.
+using local client time. Example:
+
+
+
+     <netsuite:get-server-time />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -272,14 +331,18 @@ Returns server time, as a Date
 Update Invitee Status
 ---------------------
 
-Sets a new invitation status for a given record
+Sets a new invitation status for a given event. Example:
+Example:
+
+
+
+     <netsuite:update-invitee-status eventId="#[map-payload:eventId]" status="TENTATIVE"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|recordType|the target record type|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
-|id|the target record id|no||
-|idType|the id type of the given record id|yes|INTERNAL|*INTERNAL*, *EXTERNAL*
+|eventId|the target event id|no||
+|eventIdType|the id type of the given eventId|yes|INTERNAL|*INTERNAL*, *EXTERNAL*
 |status|the new status to set|no||*ACCEPTED*, *DECLINED*, *NO_RESPONSE*, *TENTATIVE*
 
 
@@ -293,9 +356,34 @@ Creates a new record
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
 |recordType|the type of record to add|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
-|recordAttributes|the record attributes, as a string-object map|no||
+|attributes|the record attributes, as a string-object map|no||
 
 Returns RecordRef of the new record
+
+
+
+Update Record
+-------------
+
+Updates an existing record.
+Example:
+
+
+
+     <netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
+          <netsuite:attributes>
+              <netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
+              <netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
+          </netsuite:attributes>
+      </netsuite:update-record>
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|recordType|the target record type to update|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
+|id|the target record id|no||
+|idType|the id type of the given record id|yes|INTERNAL|*INTERNAL*, *EXTERNAL*
+|attributes|the record attributes, as a string-object map|no||
 
 
 
@@ -305,6 +393,12 @@ Check Async Status
 Answers the status of an asynchronous Web services submission. When a jobId is
 submitted, the status, percent complete, and estimated remaining duration are
 returned.
+
+Example:
+
+
+
+     <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -332,6 +426,10 @@ Get Async Result
 Answers the results of an asynchronous web services submission. This operation
 can be executed operation up to 20 times within a 30 day time period to
 retrieve the results of an asynchronous job.
+Example:
+
+
+     <netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -348,6 +446,11 @@ Initialize
 
 Populates fields on transaction line items with values from a related record,
 in a similar way empty text boxes are prepopulated within the Netsuite UI
+Example:
+
+
+
+     <netsuite:initialize type="INVOICE" id="#[map-payload:recordId]" recordType="SALES_ORDER" /> 
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -358,10 +461,6 @@ in a similar way empty text boxes are prepopulated within the Netsuite UI
 |idType|the id type of the given record id|yes|INTERNAL|*INTERNAL*, *EXTERNAL*
 
 Returns initialized Record
-
-
-
-
 
 
 

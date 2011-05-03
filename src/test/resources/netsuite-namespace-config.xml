@@ -115,4 +115,22 @@
 	</flow>
 
 
+	<flow name="getAsyncResult">
+		<inbound-endpoint address="vm://getAsyncResult"
+			exchange-pattern="request-response" />
+		<netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />
+	</flow>
+
+	<flow name="updateRecord">
+		<inbound-endpoint address="vm://updateRecord"
+			exchange-pattern="request-response" />
+		<netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
+			<netsuite:attributes>
+				<netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
+				<netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
+			</netsuite:attributes>
+		</netsuite:update-record>
+	</flow>
+
+
 </mule>
