@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Mule NetSuite Cloud Connector
+
+    Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+
+    The software in this package is published under the terms of the CPAL v1.0
+    license, a copy of which has been included with this distribution in the
+    LICENSE.txt file.
+
+-->
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+       xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+       xmlns:json="http://www.mulesoft.org/schema/mule/json"
+       xmlns:mongodb="http://www.mulesoft.org/schema/mule/mongodb"
+       xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+       xmlns:spring="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:http="http://www.mulesoft.org/schema/mule/http"
+    xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.1/mule-netsuite.xsd
+       http://www.mulesoft.org/schema/mule/core    http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
+       http://www.mulesoft.org/schema/mule/json    http://www.mulesoft.org/schema/mule/json/3.1/mule-json.xsd
+       http://www.mulesoft.org/schema/mule/mongodb http://www.mulesoft.org/schema/mule/mongodb/3.1/mule-mongodb.xsd
+       http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd 
+       http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.0/mule-http.xsd">
+       
+    <netsuite:config name="NetsuiteTest" 
+    	account="${netsuiteAccount}"
+		password="${netsuitePassword}" 
+		address="${netsuiteAddress}" 
+		email="${netsuiteEmail}"
+		roleId="${netsuiteRoleId}" />        
+  <mongodb:connector name="mongodb" database="${mongoDatabase}" hostname="${mongoHostname}" />
+
+ <flow name="GetPriceUpdates">
+ 	<description>Looks for product price updates in a mongo db</description>
+ 	<mongodb:outbound-endpoint 
+ 		collection="priceUpdates"  
+ 		query='{}' 
+ 		exchange-pattern="request-response"/>
+ </flow>
+ 
+ <flow name="UpdateProductPrice">
+ 	<description>Updates product prices based on price updates in mongodb</description>
+ 	<!-- FIXME -->
+	<netsuite:update-record recordType="EMPLOYEE" id="#[ognl:get('id')]">
+		<netsuite:attributes>
+			<netsuite:attribute key="officePhone" value="#[ognl:get('officePhone')]"/>
+			<netsuite:attribute key="homePhone" value="#[ognl:get('homePhone')]"/>
+			<netsuite:attribute key="mobilePhone" value="#[ognl:get('mobilePhone')]"/>
+		</netsuite:attributes>
+	</netsuite:update-record> 	
+ </flow>
+ 
+ <flow name="MainFlow">
+ 	<description>For each update in a mongodb, update the corresponding product in netsuite</description>
+ 	<http:inbound-endpoint host="localhost" port="9091" path="netsuite-demo-update-product" />
+ 	<flow-ref name="GetPriceUpdates"/>
+ 	<collection-splitter/>
+ 	<flow-ref name="UpdateProductPrice"/>
+ </flow>
+</mule>

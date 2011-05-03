@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Mule NetSuite Cloud Connector
+
+    Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+
+    The software in this package is published under the terms of the CPAL v1.0
+    license, a copy of which has been included with this distribution in the
+    LICENSE.txt file.
+
+-->
+
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+       xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+       xmlns:json="http://www.mulesoft.org/schema/mule/json"
+       xmlns:mongodb="http://www.mulesoft.org/schema/mule/mongodb"
+       xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+       xmlns:spring="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:http="http://www.mulesoft.org/schema/mule/http"
+    xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd
+       http://www.mulesoft.org/schema/mule/core    http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
+       http://www.mulesoft.org/schema/mule/json    http://www.mulesoft.org/schema/mule/json/3.1/mule-json.xsd
+       http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd
+       http://www.mulesoft.org/schema/mule/mongodb http://www.mulesoft.org/schema/mule/mongodb/3.1/mule-mongodb.xsd 
+       http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.0/mule-http.xsd">
+	
+    <netsuite:config name="NetsuiteTest" 
+    	account="${netsuiteAccount}"
+		password="${netsuitePassword}" 
+		address="${netsuiteAddress}" 
+		email="${netsuiteEmail}"
+		roleId="${netsuiteRoleId}" />     
+ 	<mongodb:connector name="mongodb" database="${mongoDatabase}" hostname="${mongoHostname}" />
+
+	<flow name="CreateRecordUpdatesFlow">	
+		<description>Creates some record update document in the mongodb</description>
+		<http:inbound-endpoint host="localhost" port="9090"
+			path="netsuite-demo-setup-create-price-updates" />
+		<scripting:component>
+			<scripting:script engine="groovy">
+					return [ "{ \"email\": \"chris@foobar.com\", \"officePhone\": "459-99865"}", 
+					         "{ \"email\": \"mary@foobar.com\", \"homePhone\": "126-650055" }", 
+					         "{ \"email\": \"john@foobar.com\", \"mobilePhone\": "359-5659-0100" }" ]
+            </scripting:script>
+			</scripting:component>
+		<collection-splitter/>
+		<mongodb:outbound-endpoint collection="priceUpdates"/>
+	</flow>
+	
+	<flow name="CreateRecordsFlow">
+		<description>Creates some employees in Netsuite for testing.
+		</description>
+		<http:inbound-endpoint host="localhost" port="9090" path="netsuite-demo-setup-add-records" />
+		<netsuite:add-record recordType="EMPLOYEE" >
+			<netsuite:attributes>
+				<netsuite:attribute key="firstName" value="Chris" />
+				<netsuite:attribute key="lastName" value="C" />
+				<netsuite:attribute key="email" value="chris@foobar.com" />
+			</netsuite:attributes>
+		</netsuite:add-record>
+		<netsuite:add-record recordType="EMPLOYEE" >
+			<netsuite:attributes>
+				<netsuite:attribute key="firstName" value="Mary" />
+				<netsuite:attribute key="lastName" value="M" />
+				<netsuite:attribute key="email" value="mary@foobar.com" />
+			</netsuite:attributes>
+		</netsuite:add-record>
+		<netsuite:add-record recordType="EMPLOYEE">
+			<netsuite:attributes>
+					<netsuite:attribute key="firstName" value="John" />
+				<netsuite:attribute key="lastName" value="J" />
+				<netsuite:attribute key="email" value="john@foobar.com" />
+			</netsuite:attributes>
+		</netsuite:add-record>
+	</flow>
+</mule>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.mule.demos</groupId>
+	<artifactId>mule-netsuite-demo-setup</artifactId>
+	<packaging>mule</packaging>
+	<name>Mule Netsuite Demo Setup</name>
+	<version>1.0</version>
+
+	<properties>
+		<muleVersion>3.1.0</muleVersion>
+		<ibeansVersion>1.1</ibeansVersion>
+		<mule.netsuite.version>1.0-SNAPSHOT</mule.netsuite.version>
+<!--		<mule.s3.version>1.0</mule.s3.version>-->
+	</properties>
+
+	<description>Example that setups netsuite, s3 and mongo environment for the rest of netsuite examples</description>
+	
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<finalName>${artifactId}</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.0-beta-1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireProperty>
+									<property>env.MULE_HOME</property>
+									<message>You must set MULE_HOME before building the demo.</message>
+								</requireProperty>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>ISO-8859-1</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>maven-mule-plugin</artifactId>
+				<version>1.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<inclusions>
+						<inclusion>
+							<groupId>org.mule.modules</groupId>
+							<artifactId>mule-module-netsuite</artifactId>
+						</inclusion>
+						<inclusion>
+							<groupId>org.mule.modules</groupId>
+							<artifactId>mule-module-s3</artifactId>
+						</inclusion>
+						<inclusion>
+                            <groupId>org.mule.transports</groupId>
+                            <artifactId>mule-transport-mongodb</artifactId>
+                        </inclusion>
+					</inclusions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<id>package-example</id>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<copy file="${project.build.directory}/${artifactId}.zip"
+									todir="${env.MULE_HOME}/apps" overwrite="true" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-netsuite</artifactId>
+			<version>${mule.netsuite.version}</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.mule.modules</groupId>-->
+<!--			<artifactId>mule-module-s3</artifactId>-->
+<!--			<version>${mule.s3.version}</version>-->
+<!--		</dependency>-->
+		<dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-mongodb</artifactId>
+            <version>3.1.0.1</version>
+        </dependency>
+		 <dependency>
+            <groupId>org.mule.tests</groupId>
+            <artifactId>mule-tests-functional</artifactId>
+            <version>${muleVersion}</version>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.ibeans</groupId>
+			<artifactId>ibeans-support</artifactId>
+			<version>${ibeansVersion}</version>
+		</dependency>
+		<dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-ognl</artifactId>
+            <version>${muleVersion}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-ibeans</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-scripting</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>muleforge-repo</id>
+			<name>MuleForge Repository</name>
+			<url>http://repository.muleforge.org</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>codehaus-repo</id>
+			<name>Codehaus Repository</name>
+			<url>http://dist.codehaus.org/mule/dependencies/maven2</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>ibeans-repo</id>
+			<name>iBeans Repository</name>
+			<url>http://repository.ibeans.muleforge.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+</project>
+
