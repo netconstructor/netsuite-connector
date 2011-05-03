@@ -30,7 +30,8 @@ import javax.validation.constraints.NotNull;
  */
 public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
-    Object findRecord() throws ExceptionType;
+    //TODO annotations
+    CollectionType findRecord(RecordType recordType, String expression) throws ExceptionType;
 
     VoidType updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;

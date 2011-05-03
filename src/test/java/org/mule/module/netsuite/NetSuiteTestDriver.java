@@ -16,49 +16,22 @@ package org.mule.module.netsuite;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.netsuite.api.NetSuiteClient;
-import org.mule.module.netsuite.api.model.entity.RecordReference;
-
-import com.netsuite.webservices.general.communication_2010_2.types.NoteDirection;
-import com.netsuite.webservices.lists.employees_2010_2.EmployeeAddressbookList;
-import com.netsuite.webservices.lists.employees_2010_2.EmployeeEmergencyContactList;
-import com.netsuite.webservices.lists.employees_2010_2.EmployeeHrEducationList;
-import com.netsuite.webservices.lists.employees_2010_2.EmployeeRolesList;
-import com.netsuite.webservices.lists.employees_2010_2.EmployeeSubscriptionsList;
-import com.netsuite.webservices.lists.employees_2010_2.types.EmployeeCommissionPaymentPreference;
-import com.netsuite.webservices.lists.employees_2010_2.types.EmployeePayFrequency;
-import com.netsuite.webservices.lists.employees_2010_2.types.EmployeeUseTimeData;
-import com.netsuite.webservices.lists.employees_2010_2.types.Gender;
-import com.netsuite.webservices.lists.marketing_2010_2.CampaignDirectMailList;
-import com.netsuite.webservices.lists.marketing_2010_2.CampaignEmailList;
-import com.netsuite.webservices.lists.marketing_2010_2.CampaignEventList;
-import com.netsuite.webservices.lists.marketing_2010_2.CampaignEventResponseList;
-import com.netsuite.webservices.platform.common_2010_2.types.GlobalSubscriptionStatus;
-import com.netsuite.webservices.platform.core_2010_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2010_2.RecordRef;
-import com.netsuite.webservices.platform.core_2010_2.RecordRefList;
-import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
-import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
-import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.mule.api.lifecycle.InitialisationException;
+
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 @SuppressWarnings("serial")
 public class NetSuiteTestDriver
@@ -188,6 +161,13 @@ public class NetSuiteTestDriver
         {
             connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
         }
+    }
+    
+    @Test
+    public void findRecord() throws Exception
+    {
+        assertNotNull(connector.findRecord(RecordType.CUSTOMER,
+                "isTrue(isGiveAccess), is(email, 'john.doe@foobar.com')"));
     }
     
     @Test

@@ -17,6 +17,12 @@ package org.mule.module.netsuite;
 import static org.mule.module.netsuite.RecordReferences.from;
 import static org.mule.module.netsuite.RecordReferences.nulSafeFrom;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.CxfNetSuiteClient;
@@ -30,15 +36,7 @@ import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
-import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
-import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.datatype.XMLGregorianCalendar;
 
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
 public class NetSuiteCloudConnector implements Initialisable
@@ -56,6 +54,18 @@ public class NetSuiteCloudConnector implements Initialisable
     @Property
     private String roleId;
 
+    /**
+     * 
+     * @param sourceRecordType
+     * @param sourceInternalId
+     * @param sourceExternalId
+     * @param destinationRecordType
+     * @param destinationInternalId
+     * @param destinationExternalId
+     * @param contanctRecordType
+     * @param contanctInternalId
+     * @param contanctExternalId
+     */
     @Operation
     public void attachRecord(@Parameter(optional = false) RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
@@ -73,6 +83,12 @@ public class NetSuiteCloudConnector implements Initialisable
             nulSafeFrom(contanctRecordType, contanctInternalId, contanctExternalId));
     }
 
+    /**
+     * 
+     * @param recordType
+     * @param internalId
+     * @param externalId
+     */
     @Operation
     public void deleteRecord(@Parameter RecordType recordType,
                              @Parameter(optional = true) String internalId,
@@ -81,6 +97,15 @@ public class NetSuiteCloudConnector implements Initialisable
         client.deleteRecord(from(recordType, internalId, externalId));
     }
 
+    /**
+     * 
+     * @param sourceRecordType
+     * @param sourceInternalId
+     * @param sourceExternalId
+     * @param destinationRecordType
+     * @param destinationInternalId
+     * @param destinationExternalId
+     */
     @Operation
     public void detachRecord(@Parameter RecordType sourceRecordType,
                              @Parameter(optional = true) String sourceInternalId,
@@ -94,6 +119,16 @@ public class NetSuiteCloudConnector implements Initialisable
             from(destinationRecordType, destinationInternalId, destinationExternalId));
     }
 
+    /**
+     * 
+     * @param periodInternalId
+     * @param periodExternalId
+     * @param fromSubsidiaryInternalId
+     * @param fromSubsidiaryExternalId
+     * @param toSubsidiaryInternalId
+     * @param toSubsidiaryExternalId
+     * @return
+     */
     @Operation
     public List<Object> getBudgetExchangeRate(@Parameter(optional = true) String periodInternalId,
                                               @Parameter(optional = true) String periodExternalId,
@@ -108,6 +143,16 @@ public class NetSuiteCloudConnector implements Initialisable
             RecordIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
     }
 
+    /**
+     * 
+     * @param periodInternalId
+     * @param periodExternalId
+     * @param fromSubsidiaryInternalId
+     * @param fromSubsidiaryExternalId
+     * @param toSubsidiaryInternalId
+     * @param toSubsidiaryExternalId
+     * @return
+     */
     @Operation
     public List<Object> getConsolidatedExchangeRate(@Parameter(optional = true) String periodInternalId,
                                                     @Parameter(optional = true) String periodExternalId,
@@ -122,6 +167,12 @@ public class NetSuiteCloudConnector implements Initialisable
             RecordIds.nullSafeFrom(toSubsidiaryInternalId, toSubsidiaryExternalId));
     }
 
+    /**
+     * 
+     * @param type
+     * @param includeInactives
+     * @return
+     */
     @Operation
     public List<Object> getCustomizationId(@Parameter RecordType type,
                                            @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
@@ -129,18 +180,36 @@ public class NetSuiteCloudConnector implements Initialisable
         return client.getCustomizationId(type, includeInactives);
     }
 
+    /**
+     * 
+     * @param type
+     * @param whenExpression
+     * @return
+     */
     @Operation
     public List<Object> getDeletedRecord(@Parameter RecordType type, @Parameter String whenExpression)
     {
         return client.getDeletedRecord(type, whenExpression);
     }
 
+    /**
+     * 
+     * @param type
+     * @return
+     */
     @Operation
     public List<Object> getRecords(@Parameter RecordType type)
     {
         return client.getRecords(type);
     }
 
+    /**
+     * 
+     * @param recordType
+     * @param internalId
+     * @param externalId
+     * @return
+     */
     @Operation
     public Object getRecord(@Parameter RecordType recordType,
                             @Parameter(optional = true) String internalId,
@@ -158,12 +227,21 @@ public class NetSuiteCloudConnector implements Initialisable
         return client.getItemAvailability(from(recordType, internalId, externalId), ifNotModifiedSince);
     }
 
+    /**
+     * 
+     * @param type
+     * @return
+     */
     @Operation
     public List<Object> getSavedSearch(@Parameter RecordType type)
     {
         return client.getSavedSearch(type);
     }
 
+    /**
+     * 
+     * @return
+     */
     @Operation
     public Date GetServerTime()
     {
@@ -179,31 +257,63 @@ public class NetSuiteCloudConnector implements Initialisable
         client.updateInviteeStatus(from(recordType, internalId, externalId), status);
     }
 
+    /**
+     * 
+     * @param recordType
+     * @param recordAttributes
+     * @return
+     */
     @Operation
     public RecordRef addRecord(@Parameter RecordType recordType,
                                @Parameter Map<String, Object> recordAttributes)
     {
         return ((RecordRef) client.addRecord(recordType, recordAttributes));
     }
-
+    
+    /**
+     * 
+     * @param jobId
+     * @return
+     */
     @Operation
     public Object checkAsyncStatus(@Parameter String jobId)
     {
         return client.checkAsyncStatus(jobId);
     }
 
+    /**
+     * 
+     * @param recordType
+     * @param expression
+     * @return
+     */
     @Operation
-    public void findRecord()
+    public List<Object> findRecord(@Parameter RecordType recordType,
+            @Parameter String expression)
     {
-        client.findRecord();
+       return client.findRecord(recordType, expression);
     }
 
+    /**
+     * 
+     * @param jobId
+     * @param pageIndex
+     * @return
+     */
     @Operation
     public Object getAsyncResult(@Parameter String jobId, @Parameter int pageIndex)
     {
         return client.getAsyncResult(jobId, pageIndex);
     }
 
+    /**
+     * 
+     * @param type
+     * @param recordType
+     * @param internalId
+     * @param externalId
+     * @return
+     */
     @Operation
     public Object initialize(@Parameter RecordType type,
                              @Parameter RecordType recordType,
