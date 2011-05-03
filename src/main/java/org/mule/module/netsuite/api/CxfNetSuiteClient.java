@@ -223,13 +223,13 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getServerTime(new GetServerTimeRequest());
     }
 
-    public Object updateInviteeStatus(@NotNull RecordReference record,
+    public Object updateInviteeStatus(@NotNull RecordId  eventId,
                                       @NotNull CalendarEventAttendeeResponse status) throws Exception
     {
-        Validate.notNull(record);
+        Validate.notNull(eventId);
         Validate.notNull(status);
         return getAuthenticatedPort().updateInviteeStatus(
-            new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(record.createRef(), status)));
+            new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(eventId.createRef(), status)));
     }
 
     @NetSuiteOperation(resultName = "AsyncStatus", resultType = ReturnType.RECORD)

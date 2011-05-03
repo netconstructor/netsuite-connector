@@ -77,7 +77,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object getServerTime() throws Exception;
 
     @NetSuiteOperation
-    Object updateInviteeStatus(@NotNull RecordReference entity, @NotNull CalendarEventAttendeeResponse status)
+    Object updateInviteeStatus(@NotNull RecordId eventId, @NotNull CalendarEventAttendeeResponse status)
         throws Exception;
 
 }

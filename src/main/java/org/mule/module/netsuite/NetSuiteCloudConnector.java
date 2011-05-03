@@ -310,20 +310,18 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Sets a new invitation status for a given record
+     * Sets a new invitation status for a given event
      *  
-     * @param recordType the target record type
-     * @param id the target record id
-     * @param idType the id type of the given record id
+     * @param eventId the target event id
+     * @param eventIdType the id type of the given eventId
      * @param status the new status to set
      */
     @Operation
-    public void updateInviteeStatus(@Parameter RecordType recordType,
-                                    @Parameter(optional = false) String id,
-                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
+    public void updateInviteeStatus(@Parameter(optional = false) String eventId,
+                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType eventIdType,
                                     @Parameter CalendarEventAttendeeResponse status)
     {
-        client.updateInviteeStatus(from(recordType, id, idType), status);
+        client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status);
     }
 
     //TODO support object passing?

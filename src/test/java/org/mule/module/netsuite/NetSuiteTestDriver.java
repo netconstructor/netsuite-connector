@@ -15,6 +15,7 @@
 package org.mule.module.netsuite;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
@@ -25,10 +26,29 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.apache.cxf.service.factory.FactoryBeanListener.Event;
 import org.junit.Before;
 import org.junit.Test;
 import org.mule.api.lifecycle.InitialisationException;
+import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
+import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEvent;
+import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEventAttendeeList;
+import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEventResourceList;
+import com.netsuite.webservices.activities.scheduling_2010_2.ExclusionDateList;
+import com.netsuite.webservices.activities.scheduling_2010_2.RecurrenceDowMaskList;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventAccessLevel;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventDow;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventDowim;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventFrequency;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventReminderType;
+import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventStatus;
+import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.platform.core_2010_2.CustomFieldList;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
@@ -53,7 +73,7 @@ public class NetSuiteTestDriver
     @Test
     public void getServerTime() throws Exception
     {
-        assertThat(connector.GetServerTime(), instanceOf(Calendar.class));
+        assertThat(connector.GetServerTime(), instanceOf(Date.class));
     }
 
     @Test
@@ -83,36 +103,69 @@ public class NetSuiteTestDriver
 
                 }
             });
-            connector.attachRecord(RecordType.EMPLOYEE, employee.getInternalId(), null, RecordType.CAMPAIGN,
-                campaign.getInternalId(), null, null, null, null);
-            connector.detachRecord(RecordType.EMPLOYEE, employee.getInternalId(), null, RecordType.CAMPAIGN,
-                campaign.getInternalId(), null);
+            connector.attachRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL,
+                RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL, null, null, null);
+            connector.detachRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL,
+                RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
         finally
         {
             if (employee != null)
             {
-                connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), null);
+                connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
             }
             if (campaign != null)
             {
-                connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+                connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
             }
+        }
+    }
+    /**
+     * Test that a record can be created and updated, and that the modification are persistent 
+     */
+    @Test
+    public void updateRecord() throws Exception
+    {
+
+        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
+        {
+            {
+                put("fax", "159-945-56");
+                put("firstName", "John");
+                put("lastName", "Doe");
+            }
+        });
+        try
+        {
+            connector.updateRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL,
+                new HashMap<String, Object>()
+                {
+                    {
+                        put("fax", "159-945-57");
+                    }
+                });
+            Employee record = (Employee) connector.getRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+            assertEquals("159-945-57", record.getFax());
+        }
+        finally
+        {
+            connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
     @Test
     public void getBudgetExchangeRate()
     {
-        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate("10", null, "65", null, null, null);
+        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate("10", RecordIdType.INTERNAL, "65",
+            RecordIdType.INTERNAL, null, null);
         assertNotNull(budgetExchangeRate);
     }
 
     @Test
     public void getConsolidatedExchangeRate()
     {
-        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRate("10", null, "65", null,
-            null, null);
+        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRate("10",
+            RecordIdType.INTERNAL, "65", RecordIdType.INTERNAL, null, null);
         assertNotNull(consolidatedExchangeRate);
         // TODO
     }
@@ -138,7 +191,7 @@ public class NetSuiteTestDriver
                 put("lastName", "Doe");
             }
         });
-        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), null);
+        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
         connector.getDeletedRecord(RecordType.EMPLOYEE, // 
             "after(dateTime('" + new SimpleDateFormat("HH:mm:ss").format(serverTime) + "','HH:mm:ss'))");
     }
@@ -154,11 +207,11 @@ public class NetSuiteTestDriver
         });
         try
         {
-            connector.getRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+            connector.getRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
         finally
         {
-            connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), null);
+            connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
     }
     
@@ -166,13 +219,13 @@ public class NetSuiteTestDriver
     public void findRecord() throws Exception
     {
         assertNotNull(connector.findRecord(RecordType.CUSTOMER,
-                "isTrue(isGiveAccess), is(email, 'john.doe@foobar.com')"));
+                "isTrue(giveAccess), is(email, 'john.doe@foobar.com')"));
     }
     
     @Test
     public void getItemAvailability()
     {
-        assertNotNull(connector.getItemAvailability(RecordType.JOB, "150", null, null));
+        assertNotNull(connector.getItemAvailability(RecordType.JOB, "150", RecordIdType.INTERNAL, null));
     }
 
     @Test
@@ -184,7 +237,17 @@ public class NetSuiteTestDriver
     @Test
     public void updateInviteeStatus()
     {
-        connector.updateInviteeStatus(RecordType.EMPLOYEE, "980", null, 
+        RecordRef event = connector.addRecord(RecordType.CALENDAR_EVENT, new HashMap<String, Object>()
+        {
+            {
+                put("sendMail", false);
+                put("title", "An importat event");
+                put("location", "Pekin");
+                //TODO date to xmlCalendar conversion 
+                put("location", XmlGregorianCalendarFactory.newInstance().toXmlCalendar(new Date()));
+            }
+        });
+        connector.updateInviteeStatus(event.getInternalId(), RecordIdType.INTERNAL,
             CalendarEventAttendeeResponse.DECLINED);
     }
 

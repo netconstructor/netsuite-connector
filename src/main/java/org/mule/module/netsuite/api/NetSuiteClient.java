@@ -59,7 +59,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     Object getServerTime() throws ExceptionType;
 
-    VoidType updateInviteeStatus(@NotNull RecordReference recordReference,
+    VoidType updateInviteeStatus(@NotNull RecordId eventId,
                                  @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
     CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
