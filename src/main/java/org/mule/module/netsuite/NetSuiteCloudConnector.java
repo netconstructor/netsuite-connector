@@ -17,12 +17,6 @@ package org.mule.module.netsuite;
 import static org.mule.module.netsuite.RecordReferences.from;
 import static org.mule.module.netsuite.RecordReferences.nulSafeFrom;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.CxfNetSuiteClient;
@@ -35,17 +29,17 @@ import org.mule.tools.cloudconnect.annotations.Parameter;
 import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
-import com.netsuite.webservices.platform.core_2010_2.BudgetExchangeRate;
-import com.netsuite.webservices.platform.core_2010_2.ConsolidatedExchangeRate;
-import com.netsuite.webservices.platform.core_2010_2.CustomizationRef;
-import com.netsuite.webservices.platform.core_2010_2.DeletedRecord;
-import com.netsuite.webservices.platform.core_2010_2.ItemAvailability;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
-import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * The NetSuite cloud connector facade, based on a {@link NetSuiteClient}
@@ -208,18 +202,18 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Examples:
      * 
-     * {@code <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>}
-     * {@code <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>}
-     * {@code <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>}
-     * {@code <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>}
-     * {@code <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"/>}
+     * {@code <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
+     *        <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
+     *        <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
+     *        <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
+     *        <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"/>}
      * 
      * @param type the type of the target deleted record to retrieve 
      * @param whenExpression a predicate-style date filtering expression,
      *        in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; 
-     *        | &lt;isoDate( &lt;isoDate&gt; )&gt; | &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; 
-     *        | &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; 
-     *        | &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue 
+     *        \| &lt;isoDate( &lt;isoDate&gt; )&gt; \| &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; 
+     *        \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; 
+     *        \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue 
      *        and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite
      * @return the list of deleted records that match the given date filtering expression
      */
@@ -324,14 +318,31 @@ public class NetSuiteCloudConnector implements Initialisable
      * Creates a new record
      * 
      * @param recordType  the type of record to add
-     * @param recordAttributes the record attributes, as a string-object map
+     * @param attributes the record attributes, as a string-object map
      * @return the RecordRef of the new record
      */
     @Operation
     public RecordRef addRecord(@Parameter RecordType recordType,
-                               @Parameter Map<String, Object> recordAttributes)
+                               @Parameter Map<String, Object> attributes)
     {
-        return ((RecordRef) client.addRecord(recordType, recordAttributes));
+        return ((RecordRef) client.addRecord(recordType, attributes));
+    }
+    
+    /**
+     * Updates an existing record
+     * 
+     * @param recordType the target record type to update
+     * @param id the target record id
+     * @param idType the id type of the given record id
+     * @param attributes the record attributes, as a string-object map
+     */
+    @Operation
+    public void updateRecord(@Parameter RecordType recordType,
+                               @Parameter(optional = false) String id,
+                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
+                               @Parameter Map<String, Object> attributes) throws Exception
+    {
+        client.updateRecord(from(recordType, id, idType), attributes);
     }
 
     /**
