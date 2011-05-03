@@ -20,6 +20,8 @@ import javax.validation.constraints.NotNull;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.BeanUtilsBean;
+import org.apache.commons.beanutils.ConvertUtilsBean;
 import org.apache.commons.beanutils.LazyDynaMap;
 import org.apache.commons.lang.Validate;
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
@@ -28,6 +30,7 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpressionParser;
 import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionParser;
+import org.mule.module.netsuite.api.util.MapToRecordConverter;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
@@ -84,6 +87,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     private final CxfPortProvider portProvider;
     private final XmlGregorianCalendarFactory xmlGregorianCalendarFactory = XmlGregorianCalendarFactory.newInstance();
+    private final MapToRecordConverter converter = new MapToRecordConverter(xmlGregorianCalendarFactory);
+    
 
     public CxfNetSuiteClient(@NotNull CxfPortProvider portProvider)
     {
@@ -119,9 +124,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
-        Record record = recordType.getRecordClass().newInstance();
-        BeanUtils.copyProperties(record, new LazyDynaMap(recordAttributes));
-        return record;
+        return converter.toRecord(recordType, recordAttributes);
     }
 
     public Object attachRecord(@NotNull RecordReference sourceRecord,

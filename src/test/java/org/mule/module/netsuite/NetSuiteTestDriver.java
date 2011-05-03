@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
@@ -268,8 +267,7 @@ public class NetSuiteTestDriver
                 put("sendMail", false);
                 put("title", "An importat event");
                 put("location", "Pekin");
-                // TODO date to xmlCalendar conversion
-                put("location", XmlGregorianCalendarFactory.newInstance().toXmlCalendar(new Date()));
+                put("startDate", new Date());
             }
         });
         connector.updateInviteeStatus(event.getInternalId(), RecordIdType.INTERNAL,
