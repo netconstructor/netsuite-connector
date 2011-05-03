@@ -67,7 +67,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     @NetSuiteOperation(responseName = "GetCustomizationIdResult", resultName = "CustomizationRef", resultType = ReturnType.LIST)
     Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception;
 
-    @NetSuiteOperation(responseName = "GetSavedSearchResult", resultName = "RecordRef", resultType = ReturnType.LIST)
+    @NetSuiteOperation(responseName = "GetItemAvailabilityResult", resultName = "ItemAvailability", resultType = ReturnType.LIST)
     Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince) throws Exception;
 
     @NetSuiteOperation(responseName = "GetSavedSearchResult", resultName = "RecordRef", resultType = ReturnType.LIST)

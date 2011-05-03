@@ -15,43 +15,28 @@
 package org.mule.module.netsuite;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
+import org.mule.api.lifecycle.InitialisationException;
+import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
+
+import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
+import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
+
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.apache.cxf.service.factory.FactoryBeanListener.Event;
 import org.junit.Before;
 import org.junit.Test;
-import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
-
-import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEvent;
-import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEventAttendeeList;
-import com.netsuite.webservices.activities.scheduling_2010_2.CalendarEventResourceList;
-import com.netsuite.webservices.activities.scheduling_2010_2.ExclusionDateList;
-import com.netsuite.webservices.activities.scheduling_2010_2.RecurrenceDowMaskList;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventAccessLevel;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventDow;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventDowim;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventFrequency;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventReminderType;
-import com.netsuite.webservices.activities.scheduling_2010_2.types.CalendarEventStatus;
-import com.netsuite.webservices.lists.employees_2010_2.Employee;
-import com.netsuite.webservices.platform.core_2010_2.CustomFieldList;
-import com.netsuite.webservices.platform.core_2010_2.RecordRef;
-import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
-import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 @SuppressWarnings("serial")
 public class NetSuiteTestDriver
@@ -85,7 +70,7 @@ public class NetSuiteTestDriver
     @Test
     public void attachAndDetachEntity()
     {
-        //TODO file attachements?
+        // TODO file attachements?
         RecordRef employee = null, campaign = null;
         try
         {
@@ -120,8 +105,10 @@ public class NetSuiteTestDriver
             }
         }
     }
+
     /**
-     * Test that a record can be created and updated, and that the modification are persistent 
+     * Test that a record can be created and updated, and that the modification are
+     * persistent
      */
     @Test
     public void updateRecord() throws Exception
@@ -144,7 +131,8 @@ public class NetSuiteTestDriver
                         put("fax", "159-945-57");
                     }
                 });
-            Employee record = (Employee) connector.getRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+            Employee record = (Employee) connector.getRecord(RecordType.EMPLOYEE, recordRef.getInternalId(),
+                RecordIdType.INTERNAL);
             assertEquals("159-945-57", record.getFax());
         }
         finally
@@ -156,8 +144,22 @@ public class NetSuiteTestDriver
     @Test
     public void getBudgetExchangeRate()
     {
-        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate("10", RecordIdType.INTERNAL, "65",
-            RecordIdType.INTERNAL, null, null);
+        final RecordRef subsidiary = connector.addRecord(RecordType.SUBSIDIARY, new HashMap<String, Object>()
+        {
+            {
+                put("Name", "ACME");
+            }
+        });
+        RecordRef budget = connector.addRecord(RecordType.BUDGET, new HashMap<String, Object>()
+        {
+            {
+                put("amount", 150000.00);
+                put("subsidiary", subsidiary);
+                put("budgetType", BudgetBudgetType.LOCAL);
+            }
+        });
+        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate(budget.getInternalId(),
+            RecordIdType.INTERNAL, subsidiary.getInternalId(), RecordIdType.INTERNAL, null, null);
         assertNotNull(budgetExchangeRate);
     }
 
@@ -180,7 +182,7 @@ public class NetSuiteTestDriver
     @Test
     public void getDeletedEntity()
     {
-        // TODO perhaps it would be also a good ide to expose a more object oriented
+        // TODO perhaps it would be also a good idea to expose a more object oriented
         // instead of string oriented date query
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
@@ -214,18 +216,41 @@ public class NetSuiteTestDriver
             connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
     }
-    
+
     @Test
     public void findRecord() throws Exception
     {
         assertNotNull(connector.findRecord(RecordType.CUSTOMER,
-                "isTrue(giveAccess), is(email, 'john.doe@foobar.com')"));
+            "isTrue(giveAccess), is(email, 'john.doe@foobar.com')"));
     }
-    
+
     @Test
     public void getItemAvailability()
     {
-        assertNotNull(connector.getItemAvailability(RecordType.JOB, "150", RecordIdType.INTERNAL, null));
+        RecordRef inventoryItem = connector.addRecord(RecordType.INVENTORY_ITEM,
+            new HashMap<String, Object>()
+            {
+                {
+                    put("isTaxable", false);
+                    put("isOnline", true);
+                    put("weight", 59.10);
+                    put("weightUnit", ItemWeightUnit.G);
+                    put("displayName", "A thing");
+                    put("storeDisplayName", "A thing");
+                    put("vendorName", "A vendor");
+                    put("itemId", "Item");
+                }
+            });
+        try
+        {
+            assertNotNull(connector.getItemAvailability(RecordType.INVENTORY_ITEM,
+                inventoryItem.getInternalId(), RecordIdType.INTERNAL, null));
+        }
+        finally
+        {
+            connector.deleteRecord(RecordType.INVENTORY_ITEM, inventoryItem.getInternalId(),
+                RecordIdType.INTERNAL);
+        }
     }
 
     @Test
@@ -243,7 +268,7 @@ public class NetSuiteTestDriver
                 put("sendMail", false);
                 put("title", "An importat event");
                 put("location", "Pekin");
-                //TODO date to xmlCalendar conversion 
+                // TODO date to xmlCalendar conversion
                 put("location", XmlGregorianCalendarFactory.newInstance().toXmlCalendar(new Date()));
             }
         });
