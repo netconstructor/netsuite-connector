@@ -43,7 +43,6 @@ public class NetSuiteTestDriver
     public void setup() throws InitialisationException
     {
         connector = new NetSuiteCloudConnector();
-        connector.setAddress("https://webservices.netsuite.com/services/NetSuitePort_2010_2");
         connector.setAccount(System.getenv("netsuiteAccount"));
         connector.setEmail(System.getenv("netsuiteEmail"));
         connector.setPassword(System.getenv("netsuitePassword"));

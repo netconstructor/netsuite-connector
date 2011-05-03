@@ -20,8 +20,7 @@
                           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
                           http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd">
 
-	<netsuite:config address="127.0.0.1" email="foo@bar.com"
-		password="1234" account="myaccount" roleId="3" />
+	<netsuite:config email="foo@bar.com" password="1234" account="myaccount" roleId="3" />
 	<!--
 		Declare one flow like this one per element you add in your schema. See
 		the comment in NetSuiteNamespaceHandlerTestCase for an example how to

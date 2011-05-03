@@ -49,19 +49,33 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
 public class NetSuiteCloudConnector implements Initialisable
 {
+    private static final String SUITETALK_ADDRESS = "https://webservices.netsuite.com/services/NetSuitePort_2010_2";
+    
     @Property(name = "client-ref", optional = true)
     private NetSuiteClient<List<Object>, RuntimeException, Void> client;
-    @Property
-    private String address;
+    
+    /**
+     * The login email of both NetSuite UI and SuiteTalk
+     */
     @Property
     private String email;
+    /**
+     * The login password of both the NetSuite UI and SuiteTalk
+     */
     @Property
     private String password;
+    /**
+     * SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX
+     */
     @Property
     private String account;
+    /**
+     * The id of the role used to login in SuiteTalk, which determines the operations
+     * privileges
+     */
     @Property
     private String roleId;
-
+    
     /**
      * Attaches a record to another one, optionally specifying a contact for the
      * attachment. Not all record type are supported as source, destination or
@@ -406,7 +420,7 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         if (client == null)
         {
-            setClient(new CxfNetSuiteClient(new DefaultCxfPortProvider(address, email, password, account,
+            setClient(new CxfNetSuiteClient(new DefaultCxfPortProvider(SUITETALK_ADDRESS, email, password, account,
                 roleId)));
         }
     }
@@ -421,10 +435,6 @@ public class NetSuiteCloudConnector implements Initialisable
         this.client = NetSuiteClientAdaptor.adapt(client);
     }
 
-    public String getAddress()
-    {
-        return address;
-    }
 
     public String getRoleId()
     {
@@ -434,11 +444,6 @@ public class NetSuiteCloudConnector implements Initialisable
     public void setRoleId(String roleId)
     {
         this.roleId = roleId;
-    }
-
-    public void setAddress(String address)
-    {
-        this.address = address;
     }
 
     public String getEmail()
