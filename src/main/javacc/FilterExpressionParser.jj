@@ -45,9 +45,9 @@ TOKEN : { < DOT : "." > }
 TOKEN : { < OPEN_PAR : "(" > }
 TOKEN : { < CLOSE_PAR : ")" > }
 
-TOKEN : { < UNQUOTED_STRING : (["a"-"z","A"-"Z","0"-"9"])+ > }
+TOKEN : { < IDENTIFIER : ["a"-"z","A"-"Z"](["a"-"z","A"-"Z","0"-"9"])* > }
 
-TOKEN : { < STRING : "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
+TOKEN : { < VALUE :  (["0"-"9",".", "+", "-"])+ | "'" (~["'"])* "'" | "\"" (~["\""])* "\""  > }
 
 SearchRecord start() : 
 { }
@@ -58,15 +58,15 @@ SearchRecord start() :
 
 void expression() :
 {Token operation, attributeOrJoin, attribute = null, arg0 = null, arg1 = null; }
-{ operation = < UNQUOTED_STRING >
+{ operation = < IDENTIFIER >
   < OPEN_PAR >
-  attributeOrJoin = < UNQUOTED_STRING >
+  attributeOrJoin = < IDENTIFIER >
   (< DOT >
-  attribute = < UNQUOTED_STRING >)? 
+  attribute = < IDENTIFIER >)? 
   (< COMMA >
-  arg0 = < UNQUOTED_STRING >
+  arg0 = < VALUE >
   (< COMMA >
-  arg1 = < UNQUOTED_STRING >)?)?
+  arg1 = < VALUE >)?)?
   < CLOSE_PAR > 
   { 
     if( attribute == null  ) 

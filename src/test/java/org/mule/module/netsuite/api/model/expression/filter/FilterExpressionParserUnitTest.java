@@ -1,5 +1,16 @@
+/**
+ * Mule NetSuite Cloud Connector
+ *
+ * Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+ *
+ * The software in this package is published under the terms of the CPAL v1.0
+ * license, a copy of which has been included with this distribution in the
+ * LICENSE.txt file.
+ */
+
 package org.mule.module.netsuite.api.model.expression.filter;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -8,7 +19,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.netsuite.webservices.lists.employees_2010_2.EmployeeSearch;
 import com.netsuite.webservices.lists.relationships_2010_2.CustomerSearch;
+import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
+import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchLongFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
@@ -31,6 +45,26 @@ public class FilterExpressionParserUnitTest
     {
         FilterExpressionParser.parse(SearchRecordType.CUSTOMER,
                 "equalTo(job.internalIdNumber, 136904)");
+    }
+
+    @Test
+    public void testStringSyntaxQuotes() throws Exception
+    {
+        EmployeeSearch searchRecord = (EmployeeSearch) FilterExpressionParser
+                .parse(SearchRecordType.EMPLOYEE,
+                        "is(email, 'john.doe@foobar.com')");
+        assertEquals("john.doe@foobar.com", searchRecord.getBasic().getEmail()
+                .getSearchValue());
+    }
+
+    @Test
+    public void testStringSyntaxDoubleQuotes() throws Exception
+    {
+        EmployeeSearch searchRecord = (EmployeeSearch) FilterExpressionParser
+                .parse(SearchRecordType.EMPLOYEE,
+                        "is(email, \"john.doe@foobar.com\")");
+        assertEquals("john.doe@foobar.com", searchRecord.getBasic().getEmail()
+                .getSearchValue());
     }
 
     @Test

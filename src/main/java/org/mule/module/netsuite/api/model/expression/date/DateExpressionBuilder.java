@@ -9,7 +9,7 @@
  */
 
 package org.mule.module.netsuite.api.model.expression.date;
-
+import static org.mule.module.netsuite.api.model.expression.Quotes.*;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
 import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
@@ -102,11 +102,6 @@ public class DateExpressionBuilder
     public SearchDateField build()
     {
         return searchDateField;
-    }
-
-    private String removeQuotes(String quotedDateString)
-    {
-        return StringUtils.substring(quotedDateString, 1, quotedDateString.length() - 1);
     }
 
     private IllegalArgumentException soften(ParseException e)

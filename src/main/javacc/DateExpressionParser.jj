@@ -49,7 +49,7 @@ TOKEN : { < ISO_DATE_RANGE_SEARCH_VALUE :  "isoDateRange" > }
 TOKEN : { < DATE_TIME_SEARCH_VALUE :  "dateTime" > }
 TOKEN : { < DATE_TIME_RANGE_SEARCH_VALUE :  "dateTimeRange" > }
 
-TOKEN : { < DATE : (["0"-"9","a"-"z","A"-"Z","-",":"])+ > }
+TOKEN : { < ISO_DATE : (["0"-"9","a"-"z","A"-"Z","-",":"])+ > }
 TOKEN : { < STRING : "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
 
 
@@ -89,7 +89,7 @@ void dateSearchValue() :
 {
    < ISO_DATE_SEARCH_VALUE >
    < OPEN_PAR >
-   date =  < DATE > 
+   date =  < ISO_DATE > 
    <CLOSE_PAR> 
    { builder.setDateSearchValue(date.image); } 
 }
@@ -99,9 +99,9 @@ void rangeSearchValue() :
 {
    < ISO_DATE_RANGE_SEARCH_VALUE >
    < OPEN_PAR >
-   minDate =  < DATE >
+   minDate =  < ISO_DATE >
    < COMMA >
-   maxDate =  < DATE > 
+   maxDate =  < ISO_DATE > 
    <CLOSE_PAR> 
    { builder.setRangeSearchValue(minDate.image, maxDate.image); } 
 }

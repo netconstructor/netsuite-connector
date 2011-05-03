@@ -1,5 +1,16 @@
+/**
+ * Mule NetSuite Cloud Connector
+ *
+ * Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+ *
+ * The software in this package is published under the terms of the CPAL v1.0
+ * license, a copy of which has been included with this distribution in the
+ * LICENSE.txt file.
+ */
+
 package org.mule.module.netsuite.api.model.expression.filter;
 
+import static org.mule.module.netsuite.api.model.expression.Quotes.*;
 import static org.apache.commons.beanutils.MethodUtils.invokeExactStaticMethod;
 
 import java.beans.IntrospectionException;
@@ -89,7 +100,7 @@ public class FilterExpressionBuilder
 
     private void addBooleanOperation(Object attribute) throws Exception
     {
-        setFirstArg(true, attribute);
+        setFirstArg("true", attribute);
     }
 
     private void addSimpleOperation(String operationName, String firstArg,
@@ -127,24 +138,26 @@ public class FilterExpressionBuilder
 
     }
 
-    private void setFirstArg(Object argument, Object attribute)
+    private void setFirstArg(String argument, Object attribute)
             throws Exception
     {
         convertAndSet(argument, "searchValue", attribute);
     }
 
-    private void setSecondArg(Object argument, Object attribute)
+    private void setSecondArg(String argument, Object attribute)
             throws Exception
     {
         convertAndSet(argument, "searchValue2", attribute);
     }
 
-    private void convertAndSet(Object argument, String propertyName,
+    private void convertAndSet(String argument, String propertyName,
             Object attribute) throws Exception
     {
         PropertyDescriptor descriptor = newDescriptor(propertyName, attribute);
-        descriptor.getWriteMethod().invoke(attribute,
-                ConvertUtils.convert(argument, descriptor.getPropertyType()));
+        descriptor.getWriteMethod().invoke(
+                attribute,
+                ConvertUtils.convert(removeQuotesIfPresent(argument),
+                        descriptor.getPropertyType()));
 
     }
 
