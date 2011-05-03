@@ -10,8 +10,11 @@
 
 package org.mule.module.netsuite.api.model.expression.filter;
 
-import static org.mule.module.netsuite.api.model.expression.Quotes.*;
 import static org.apache.commons.beanutils.MethodUtils.invokeExactStaticMethod;
+import static org.mule.module.netsuite.api.model.expression.Quotes.removeQuotesIfPresent;
+
+import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -19,9 +22,6 @@ import java.beans.PropertyDescriptor;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.lang.UnhandledException;
 import org.apache.commons.lang.Validate;
-
-import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 public class FilterExpressionBuilder
 {
@@ -36,44 +36,49 @@ public class FilterExpressionBuilder
             PropertyDescriptor descriptor = newDescriptor("basic", target);
             basic = (SearchRecord) descriptor.getPropertyType().newInstance();
             descriptor.getWriteMethod().invoke(target, basic);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             throw soften(e);
         }
     }
 
-    public void addSimpleExpression(String operationName, String attributeName,
-            String firstArg, String secondArg)
+    public void addSimpleExpression(String operationName,
+                                    String attributeName,
+                                    String firstArg,
+                                    String secondArg)
     {
         try
         {
-            addExpressionToGroup(operationName, attributeName, firstArg,
-                    secondArg, basic);
-        } catch (Exception e)
+            addExpressionToGroup(operationName, attributeName, firstArg, secondArg, basic);
+        }
+        catch (Exception e)
         {
             throw soften(e);
         }
     }
 
-    public void addJoinedExpression(String operationName, String joinName,
-            String attributeName, String firstArg, String secondArg)
+    public void addJoinedExpression(String operationName,
+                                    String joinName,
+                                    String attributeName,
+                                    String firstArg,
+                                    String secondArg)
     {
         try
         {
-            addExpressionToGroup(operationName, attributeName, firstArg,
-                    secondArg, createOrGetAttributeGroup(joinName));
-        } catch (Exception e)
+            addExpressionToGroup(operationName, attributeName, firstArg, secondArg,
+                createOrGetAttributeGroup(joinName));
+        }
+        catch (Exception e)
         {
             throw soften(e);
         }
     }
 
-    private SearchRecord createOrGetAttributeGroup(String joinName)
-            throws Exception
+    private SearchRecord createOrGetAttributeGroup(String joinName) throws Exception
     {
         PropertyDescriptor d = newDescriptor(joinName + "Join", target);
-        SearchRecord attributeGroup = (SearchRecord) d.getReadMethod().invoke(
-                target);
+        SearchRecord attributeGroup = (SearchRecord) d.getReadMethod().invoke(target);
         if (attributeGroup == null)
         {
             attributeGroup = (SearchRecord) d.getPropertyType().newInstance();
@@ -83,16 +88,18 @@ public class FilterExpressionBuilder
     }
 
     private void addExpressionToGroup(String operationName,
-            String attributeName, String firstArg, String secondArg,
-            SearchRecord attributeGroup) throws Exception
+                                      String attributeName,
+                                      String firstArg,
+                                      String secondArg,
+                                      SearchRecord attributeGroup) throws Exception
     {
         Object attribute = addAttribute(attributeName, attributeGroup);
         if (operationName.equals("isTrue"))
         {
-            Validate.isTrue(firstArg == null && secondArg == null,
-                    "isTrue does not take arguments");
+            Validate.isTrue(firstArg == null && secondArg == null, "isTrue does not take arguments");
             addBooleanOperation(attribute);
-        } else
+        }
+        else
         {
             addSimpleOperation(operationName, firstArg, secondArg, attribute);
         }
@@ -103,8 +110,8 @@ public class FilterExpressionBuilder
         setFirstArg("true", attribute);
     }
 
-    private void addSimpleOperation(String operationName, String firstArg,
-            String secondArg, Object attribute) throws Exception
+    private void addSimpleOperation(String operationName, String firstArg, String secondArg, Object attribute)
+        throws Exception
     {
         if (firstArg != null)
         {
@@ -117,47 +124,37 @@ public class FilterExpressionBuilder
         setOperation(operationName, attribute);
     }
 
-    private void setOperation(String operationName, Object attribute)
-            throws Exception
+    private void setOperation(String operationName, Object attribute) throws Exception
     {
         PropertyDescriptor descriptor = newDescriptor("operator", attribute);
-        descriptor.getWriteMethod().invoke(
-                attribute,
-                invokeExactStaticMethod(descriptor.getPropertyType(),
-                        "fromValue", operationName));
+        descriptor.getWriteMethod().invoke(attribute,
+            invokeExactStaticMethod(descriptor.getPropertyType(), "fromValue", operationName));
     }
 
-    private Object addAttribute(String attributeName,
-            SearchRecord attributeGroup) throws Exception
+    private Object addAttribute(String attributeName, SearchRecord attributeGroup) throws Exception
     {
-        PropertyDescriptor descriptor = newDescriptor(attributeName,
-                attributeGroup);
+        PropertyDescriptor descriptor = newDescriptor(attributeName, attributeGroup);
         Object attributeObject = descriptor.getPropertyType().newInstance();
         descriptor.getWriteMethod().invoke(attributeGroup, attributeObject);
         return attributeObject;
 
     }
 
-    private void setFirstArg(String argument, Object attribute)
-            throws Exception
+    private void setFirstArg(String argument, Object attribute) throws Exception
     {
         convertAndSet(argument, "searchValue", attribute);
     }
 
-    private void setSecondArg(String argument, Object attribute)
-            throws Exception
+    private void setSecondArg(String argument, Object attribute) throws Exception
     {
         convertAndSet(argument, "searchValue2", attribute);
     }
 
-    private void convertAndSet(String argument, String propertyName,
-            Object attribute) throws Exception
+    private void convertAndSet(String argument, String propertyName, Object attribute) throws Exception
     {
         PropertyDescriptor descriptor = newDescriptor(propertyName, attribute);
-        descriptor.getWriteMethod().invoke(
-                attribute,
-                ConvertUtils.convert(removeQuotesIfPresent(argument),
-                        descriptor.getPropertyType()));
+        descriptor.getWriteMethod().invoke(attribute,
+            ConvertUtils.convert(removeQuotesIfPresent(argument), descriptor.getPropertyType()));
 
     }
 
@@ -166,17 +163,17 @@ public class FilterExpressionBuilder
         try
         {
             return new PropertyDescriptor(propertyName, object.getClass());
-        } catch (IntrospectionException e)
+        }
+        catch (IntrospectionException e)
         {
-            throw new IllegalArgumentException("Invallid property "
-                    + propertyName + " for class " + object.getClass());
+            throw new IllegalArgumentException("Invallid property " + propertyName + " for class "
+                                               + object.getClass());
         }
     }
 
     private RuntimeException soften(Exception e)
     {
-        return (RuntimeException) (e instanceof RuntimeException ? e
-                : new UnhandledException(e));
+        return (RuntimeException) (e instanceof RuntimeException ? e : new UnhandledException(e));
     }
 
     public SearchRecord build()
