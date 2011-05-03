@@ -185,7 +185,7 @@ public class NetSuiteTestDriver
     @Test
     public void updateInviteeStatus()
     {
-        connector.updateInviteeStatus(RecordType.EMPLOYEE, null, "980",
+        connector.updateInviteeStatus(RecordType.EMPLOYEE, "980", null, 
             CalendarEventAttendeeResponse.DECLINED);
     }
 

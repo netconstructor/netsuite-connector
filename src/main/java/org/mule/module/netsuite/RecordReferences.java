@@ -27,20 +27,24 @@ public final class RecordReferences
     {
     }
 
-    public static RecordReference from(@NotNull RecordType recordType, String internalId, String externalId)
+    public static RecordReference from(@NotNull RecordType recordType,
+                                       @NotNull String id,
+                                       @NotNull RecordIdType idType)
     {
-        return new RecordReference(RecordIds.from(internalId, externalId), recordType);
+        return new RecordReference(RecordIds.from(id, idType), recordType);
     }
 
-    public static RecordReference nulSafeFrom(RecordType recordType, String internalId, String externalId)
+    public static RecordReference nulSafeFrom(@NotNull RecordType recordType,
+                                              @NotNull String id,
+                                              @NotNull RecordIdType idType)
     {
-        return recordType != null ? from(recordType, internalId, externalId)// 
-                                 : fromNull(externalId, internalId);
+        return recordType != null ? from(recordType, id, idType)// 
+                                 : fromNull(id, idType);
     }
 
-    private static RecordReference fromNull(String externalId, String internalId)
+    private static RecordReference fromNull(String id, RecordIdType idType)
     {
-        Validate.isTrue(externalId == null && internalId == null, "Must specify recordType");
+        Validate.isTrue(id == null && idType == null, "Must specify recordType");
         return null;
     }
 

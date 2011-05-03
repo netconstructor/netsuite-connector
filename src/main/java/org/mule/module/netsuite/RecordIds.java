@@ -11,21 +11,26 @@
 package org.mule.module.netsuite;
 
 import org.mule.module.netsuite.api.model.entity.RecordId;
-import org.mule.module.netsuite.api.model.entity.RecordId.ExternalId;
-import org.mule.module.netsuite.api.model.entity.RecordId.InternalId;
+
+import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang.Validate;
 
-public class RecordIds
+public final class RecordIds
 {
-    public static RecordId from(String internalId, String externalId)
+    private RecordIds()
     {
-        Validate.isTrue((internalId == null) != (externalId == null), "Must specify one and only one id");
-        return internalId != null ? new InternalId(internalId) : new ExternalId(externalId);
     }
 
-    public static RecordId nullSafeFrom(String internalId, String externalId)
+    public static RecordId from(@NotNull String id, @NotNull RecordIdType recordIdType)
     {
-        return internalId == null && externalId == null ? null : from(internalId, externalId);
+        Validate.notEmpty(id);
+        Validate.notNull(recordIdType);
+        return recordIdType.newId(id);
+    }
+
+    public static RecordId nullSafeFrom(String id, RecordIdType recordIdType)
+    {
+        return id != null ? from(id, recordIdType) : null;
     }
 }

@@ -65,7 +65,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
         throws ExceptionType;
 
-    CollectionType getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
+    CollectionType getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)
         throws ExceptionType;
 
     CollectionType getBudgetExchangeRate(@NotNull RecordId period,

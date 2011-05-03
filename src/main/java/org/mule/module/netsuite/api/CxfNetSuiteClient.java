@@ -201,14 +201,14 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 new CustomizationType(GetCustomizationType.fromValue(type.value())), includeInactives));
     }
 
-    public Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
+    public Object getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)
         throws Exception
     {
         Validate.notNull(recordReference);
         return getAuthenticatedPort().getItemAvailability(//
             new GetItemAvailabilityRequest(//
                 new ItemAvailabilityFilter(singletonRecordRefList(recordReference),
-                    nullSafeToXmlCalendar(ifNotModifiedSince))));
+                    nullSafeToXmlCalendar(ifModifiedSince))));
     }
 
     public Object getSavedSearch(@NotNull RecordType type) throws Exception
