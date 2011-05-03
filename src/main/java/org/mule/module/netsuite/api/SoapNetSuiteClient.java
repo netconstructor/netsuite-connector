@@ -27,12 +27,12 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
 {
     @NetSuiteOperation
     Object updateRecord(@NotNull RecordReference recordReference,
-                          @NotNull Map<String, Object> recordAttributes) throws Exception;
+                        @NotNull Map<String, Object> recordAttributes) throws Exception;
 
     @NetSuiteOperation(resultName = "BaseRef", resultType = ReturnType.RECORD)
-    Object addRecord(@NotNull RecordType recordType, @NotNull  Map<String, Object> recordAttributes) throws Exception;
+    Object addRecord(@NotNull RecordType recordType, @NotNull Map<String, Object> recordAttributes)
+        throws Exception;
 
-    
     @NetSuiteOperation
     Object attachRecord(@NotNull RecordReference sourceEntity,
                         @NotNull RecordReference destinationEntity,
@@ -68,7 +68,8 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception;
 
     @NetSuiteOperation(responseName = "GetItemAvailabilityResult", resultName = "ItemAvailability", resultType = ReturnType.LIST)
-    Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince) throws Exception;
+    Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
+        throws Exception;
 
     @NetSuiteOperation(responseName = "GetSavedSearchResult", resultName = "RecordRef", resultType = ReturnType.LIST)
     Object getSavedSearch(@NotNull RecordType type) throws Exception;
@@ -79,5 +80,17 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     @NetSuiteOperation
     Object updateInviteeStatus(@NotNull RecordId eventId, @NotNull CalendarEventAttendeeResponse status)
         throws Exception;
+
+    @NetSuiteOperation(responseName = "SearchResult", resultName = "Record", resultType = ReturnType.LIST)
+    Object findRecord(RecordType recordType, String expression) throws Exception;
+
+    @NetSuiteOperation(resultName = "AsyncResult", resultType = ReturnType.RECORD)
+    Object getAsyncResult(@NotNull String jobId, int pageIndex) throws Exception;
+
+    @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
+    Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference) throws Exception;
+
+    @NetSuiteOperation // FIXME 
+    Object checkAsyncStatus(@NotNull String jobId) throws Exception;
 
 }

@@ -14,8 +14,6 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
-import com.netsuite.webservices.platform.core_2010_2.types.GetAllRecordType;
-import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Date;
@@ -30,8 +28,8 @@ import javax.validation.constraints.NotNull;
  */
 public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
-    //TODO annotations
-    CollectionType findRecord(RecordType recordType, String expression) throws ExceptionType;
+    CollectionType findRecord(@NotNull RecordType recordType, @NotNull String expression)
+        throws ExceptionType;
 
     VoidType updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;

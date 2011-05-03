@@ -94,6 +94,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
     public Object updateRecord(RecordReference recordReference, Map<String, Object> recordAttributes)
         throws Exception
     {
+        Validate.notNull(recordReference);
+        Validate.notEmpty(recordAttributes);
         return getAuthenticatedPort().update(
             new UpdateRequest(createRecord(recordReference.getType(), recordReference.getId().populate(
                 new HashMap<String, Object>(recordAttributes)))));
@@ -101,15 +103,18 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     public Object addRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
     {
+        Validate.notNull(recordType);
+        Validate.notEmpty(recordAttributes);
         return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    public Object findRecord(RecordType recordType, String expression) throws Exception
+    public Object findRecord(@NotNull RecordType recordType, @NotNull String expression) throws Exception
     {
+        Validate.notNull(recordType);
+        Validate.notEmpty(expression);
         return getAuthenticatedPort().search(
-                new SearchRequest(FilterExpressionParser.parse(
-                        SearchRecordType.fromValue(recordType.value()),
-                        expression)));
+            new SearchRequest(FilterExpressionParser.parse(SearchRecordType.fromValue(recordType.value()),
+                expression)));
     }
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
@@ -142,6 +147,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     public Object deleteRecord(RecordReference record) throws Exception
     {
+        Validate.notNull(record);
         return getAuthenticatedPort().delete(new DeleteRequest(record.createRef()));
     }
 
@@ -164,11 +170,13 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
 
     public Object getRecord(RecordReference record) throws Exception
     {
+        Validate.notNull(record);
         return getAuthenticatedPort().get(new GetRequest(record.createRef()));
     }
 
     public Object getRecords(RecordType type) throws Exception
     {
+        Validate.notNull(type);
         return getAuthenticatedPort().getAll(
             new GetAllRequest(new GetAllRecord(GetAllRecordType.fromValue(type.value()))));
     }
@@ -188,6 +196,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                                               @NotNull RecordId fromSubsidiary,
                                               RecordId toSubsidiary) throws Exception
     {
+        Validate.notNull(period);
+        Validate.notNull(fromSubsidiary);
         return getAuthenticatedPort().getConsolidatedExchangeRate(
             new GetConsolidatedExchangeRateRequest(new ConsolidatedExchangeRateFilter(period.createRef(),
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
@@ -223,8 +233,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getServerTime(new GetServerTimeRequest());
     }
 
-    public Object updateInviteeStatus(@NotNull RecordId  eventId,
-                                      @NotNull CalendarEventAttendeeResponse status) throws Exception
+    public Object updateInviteeStatus(@NotNull RecordId eventId, @NotNull CalendarEventAttendeeResponse status)
+        throws Exception
     {
         Validate.notNull(eventId);
         Validate.notNull(status);
@@ -239,8 +249,6 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().checkAsyncStatus(new CheckAsyncStatusRequest(jobId));
     }
 
-    // TODO annotations
-    @NetSuiteOperation(resultName = "AsyncResult", resultType = ReturnType.RECORD)
     public Object getAsyncResult(String jobId, int pageIndex) throws Exception
     {
         Validate.notEmpty(jobId);
