@@ -16,6 +16,7 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Date;
@@ -65,7 +66,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
                                        RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetCustomizationIdResult", resultName = "CustomizationRef", resultType = ReturnType.LIST)
-    Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception;
+    Object getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception;
 
     @NetSuiteOperation(responseName = "GetItemAvailabilityResult", resultName = "ItemAvailability", resultType = ReturnType.LIST)
     Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)

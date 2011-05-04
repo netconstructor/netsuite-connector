@@ -14,6 +14,7 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 
 import java.util.Date;
@@ -60,7 +61,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     VoidType updateInviteeStatus(@NotNull RecordId eventId,
                                  @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
-    CollectionType getCustomizationId(@NotNull RecordType type, boolean includeInactives)
+    CollectionType getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives)
         throws ExceptionType;
 
     CollectionType getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)

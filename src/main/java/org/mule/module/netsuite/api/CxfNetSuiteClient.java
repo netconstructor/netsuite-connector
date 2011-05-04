@@ -10,20 +10,6 @@
 
 package org.mule.module.netsuite.api;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.validation.constraints.NotNull;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.beanutils.BeanUtilsBean;
-import org.apache.commons.beanutils.ConvertUtilsBean;
-import org.apache.commons.beanutils.LazyDynaMap;
-import org.apache.commons.lang.Validate;
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
@@ -77,6 +63,17 @@ import com.netsuite.webservices.platform.messages_2010_2.SearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.validation.constraints.NotNull;
+import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.apache.commons.lang.Validate;
 
 /**
  * Implementation of the {@link SoapNetSuiteClient} that uses CXF generated-based
@@ -206,12 +203,11 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    public Object getCustomizationId(@NotNull RecordType type, boolean includeInactives) throws Exception
+    public Object getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception
     {
         Validate.notNull(type);
         return getAuthenticatedPort().getCustomizationId(
-            new GetCustomizationIdRequest(
-                new CustomizationType(GetCustomizationType.fromValue(type.value())), includeInactives));
+            new GetCustomizationIdRequest(new CustomizationType(type), includeInactives));
     }
 
     public Object getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)

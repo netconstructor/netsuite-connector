@@ -18,15 +18,16 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.mule.api.lifecycle.InitialisationException;
 
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
-import com.netsuite.webservices.platform.core_2010_2.DeletedRecord;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
@@ -34,8 +35,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.validation.constraints.AssertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -165,10 +164,9 @@ public class NetSuiteTestDriver
     @Test
     public void getCustomizationId()
     {
-        List<Object> customizations = connector.getCustomizationId(RecordType.ACCOUNT, false);
+        List<Object> customizations = connector.getCustomizationId(GetCustomizationType.CRM_CUSTOM_FIELD, false);
         assertNotNull(customizations);
-        // TODO test more in depth
-        //TODO change to GetCustomizationType  and use CRM_CUSTOM_FIELD in example
+        assertFalse(customizations.isEmpty());
     }
 
     /**

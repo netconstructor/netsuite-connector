@@ -29,9 +29,11 @@ import org.mule.tools.cloudconnect.annotations.Parameter;
 import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
+import com.netsuite.webservices.platform.core_2010_2.CustomizationRef;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
+import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
@@ -221,16 +223,17 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Answers the available customizations for a given record type
-     * Example:
-     * {@code <netsuite:get-customization-id type="ACCOUNT"/>}
+     * Answers the available customizations for a given record type.
+     * 
+     *  Example: {@code <netsuite:get-customization-id type="ACCOUNT"/>}
+     * 
      * @param type the target record type
      * @param includeInactives if inactive customizations should also be returned
      * @return a list of CustomizationRef's
      */
     @Operation
-    public List<Object> getCustomizationId(@Parameter RecordType type,
-                                           @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
+    public List<Object> getCustomizationId(@Parameter GetCustomizationType type,
+                                                     @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
     {
         return client.getCustomizationId(type, includeInactives);
     }

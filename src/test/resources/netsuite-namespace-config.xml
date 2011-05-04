@@ -72,7 +72,7 @@
 	<flow name="getCustomizationId">
 		<inbound-endpoint address="vm://getCustomizationId"
 			exchange-pattern="request-response" />
-		<netsuite:get-customization-id type="ACCOUNT"/>
+		<netsuite:get-customization-id type="CRM_CUSTOM_FIELD"/>
 	</flow>
 
 
