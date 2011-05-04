@@ -509,9 +509,10 @@ public class NetSuiteCloudConnector implements Initialisable
     @Operation 
     public AsyncStatusResult checkAsyncStatus(@Parameter String jobId)
     {
-        //TODO check it is returning the proper object
-        return (AsyncStatusResult) client.checkAsyncStatus(jobId);
+        return client.checkAsyncStatus(jobId);
     }
+    
+    //TODO add examples and document filtering syntax
 
     /**
      * Answers all records that match the given filtering expression.
@@ -526,6 +527,21 @@ public class NetSuiteCloudConnector implements Initialisable
                                    @Parameter(optional = true) String expression)
     {
         return client.findRecord(recordType, expression);
+    }
+    
+    /**
+     * Searches for all records that match the given filtering expression, asynchronously.
+     * If no expression is specified, all records of the given type are retrieved  
+     * 
+     * @param recordType the type of record to search
+     * @param expression the filtering expression
+     * @return the AsyncStatusResult of the query
+     */
+    @Operation
+    public AsyncStatusResult asyncFindRecord(@Parameter SearchRecordType recordType,
+                                             @Parameter(optional = true) String expression) throws Exception
+    {
+        return client.asyncFindRecord(recordType, expression);
     }
 
     /**
@@ -542,8 +558,7 @@ public class NetSuiteCloudConnector implements Initialisable
     @Operation
     public AsyncResult getAsyncResult(@Parameter String jobId, /*TODO check if mandatory */ @Parameter int pageIndex)
     {
-      //TODO check it is returning the proper object
-        return (AsyncResult) client.getAsyncResult(jobId, pageIndex);
+        return client.getAsyncResult(jobId, pageIndex);
     }
     
     //TODO check pagination

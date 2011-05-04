@@ -46,6 +46,15 @@ public class AsyncSearchRequest {
 
     @XmlElement(required = true)
     protected SearchRecord searchRecord;
+    
+    public AsyncSearchRequest()
+    {
+    }
+
+    public AsyncSearchRequest(SearchRecord searchRecord)
+    {
+        this.searchRecord = searchRecord;
+    }
 
     /**
      * Gets the value of the searchRecord property.

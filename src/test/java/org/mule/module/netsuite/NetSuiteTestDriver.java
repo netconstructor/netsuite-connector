@@ -31,12 +31,16 @@ import com.netsuite.webservices.documents.filecabinet_2010_2.types.MediaType;
 import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncoding;
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
+import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
+import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
+import com.netsuite.webservices.platform.messages_2010_2.AsyncSearchResult;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
 import java.awt.color.CMMException;
@@ -47,6 +51,7 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
@@ -392,7 +397,27 @@ public class NetSuiteTestDriver
         });
         return recordRef;
     }
+    
+    @Test
+    public void asyncFindRecord() throws Exception
+    {
+        AsyncStatusResult initialStatus = connector.asyncFindRecord(SearchRecordType.EMPLOYEE,
+            "is(firstName, 'John'), is(lastName, 'Doe')");
+        assertNotNull(initialStatus);
+        assertTrue(initialStatus.getStatus().isActive());
+        AsyncStatusType status;
+        do
+        {
+            Thread.sleep(500);
+            status = connector.checkAsyncStatus(initialStatus.getJobId()).getStatus();
+            System.out.println(status);
+        }
+        while (status.isActive());
+        assertSame(AsyncStatusType.FINISHED, status);
+        // TODO
+//        AsyncResult result = connector.getAsyncResult(initialStatus.getJobId(), 0);
+//        assertThat(result, instanceOf(AsyncSearchResult.class));
+    }
 
     // TODO pagination
-    // TODO async
 }

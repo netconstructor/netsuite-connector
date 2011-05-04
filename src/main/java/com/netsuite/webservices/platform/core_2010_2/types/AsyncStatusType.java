@@ -67,4 +67,8 @@ public enum AsyncStatusType {
         throw new IllegalArgumentException(v);
     }
 
+    public boolean isActive()
+    {
+        return this == AsyncStatusType.PENDING || this == AsyncStatusType.PROCESSING;
+    }
 }

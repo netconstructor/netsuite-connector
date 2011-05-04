@@ -69,10 +69,15 @@ public final class NetSuiteClientAdaptor
     private static Object adaptReturnType(Object returnValue, NetSuiteOperation operationMetadata)
         throws Throwable
     {
+        if (!operationMetadata.adapt())
+        {
+            return returnValue;
+        }
         return operationMetadata.resultType().adapt(returnValue, operationMetadata.responseName(),
             operationMetadata.resultName());
     }
 
+    // TODO retry
     // private static abstract class RetryingInterceptor implements Interceptor
     // {
     // public Object intercept(Object target, Block block, Object[] args) throws

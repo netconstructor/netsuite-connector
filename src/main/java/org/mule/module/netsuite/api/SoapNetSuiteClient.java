@@ -16,10 +16,12 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 
+import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
+import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.util.Date;
 import java.util.Map;
@@ -87,14 +89,17 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
 
     @NetSuiteOperation(responseName = "SearchResult", resultName = "Record", resultType = ReturnType.LIST)
     Object findRecord(@NotNull SearchRecordType recordType, String expression) throws Exception;
-
-    @NetSuiteOperation(resultName = "AsyncResult", resultType = ReturnType.RECORD)
-    Object getAsyncResult(@NotNull String jobId, int pageIndex) throws Exception;
-
+    
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
     Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference) throws Exception;
+    
+    @NetSuiteOperation(adapt = false)
+    AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression) throws Exception;
 
-    @NetSuiteOperation // FIXME 
-    Object checkAsyncStatus(@NotNull String jobId) throws Exception;
+    @NetSuiteOperation(adapt = false)
+    AsyncResult getAsyncResult(@NotNull String jobId, int pageIndex) throws Exception;
+
+    @NetSuiteOperation(adapt = false) 
+    AsyncStatusResult checkAsyncStatus(@NotNull String jobId) throws Exception;
 
 }

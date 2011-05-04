@@ -10,8 +10,6 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
-import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
@@ -19,6 +17,7 @@ import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionPars
 import org.mule.module.netsuite.api.util.MapToRecordConverter;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
+import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.AttachBasicReference;
 import com.netsuite.webservices.platform.core_2010_2.AttachContactReference;
 import com.netsuite.webservices.platform.core_2010_2.BudgetExchangeRateFilter;
@@ -43,6 +42,8 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
+import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
+import com.netsuite.webservices.platform.messages_2010_2.AsyncSearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
 import com.netsuite.webservices.platform.messages_2010_2.CheckAsyncStatusRequest;
 import com.netsuite.webservices.platform.messages_2010_2.DeleteRequest;
@@ -114,6 +115,17 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         Validate.notEmpty(expression);
         return getAuthenticatedPort().search(
             new SearchRequest(FilterExpressionParser.parse(recordType, expression)));
+    }
+    
+
+    public AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)
+        throws Exception
+    {
+        Validate.notNull(recordType);
+        Validate.notEmpty(expression);
+        return getAuthenticatedPort().asyncSearch(
+            new AsyncSearchRequest(FilterExpressionParser.parse(recordType, expression)))
+            .getAsyncStatusResult();
     }
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception
@@ -239,17 +251,18 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
             new UpdateInviteeStatusRequest(new UpdateInviteeStatusReference(eventId.createRef(), status)));
     }
 
-    @NetSuiteOperation(resultName = "AsyncStatus", resultType = ReturnType.RECORD)
-    public Object checkAsyncStatus(String jobId) throws Exception
+    public AsyncStatusResult checkAsyncStatus(String jobId) throws Exception
     {
         Validate.notEmpty(jobId);
-        return getAuthenticatedPort().checkAsyncStatus(new CheckAsyncStatusRequest(jobId));
+        return getAuthenticatedPort().checkAsyncStatus(new CheckAsyncStatusRequest(jobId))
+            .getAsyncStatusResult();
     }
 
-    public Object getAsyncResult(String jobId, int pageIndex) throws Exception
+    public AsyncResult getAsyncResult(String jobId, int pageIndex) throws Exception
     {
         Validate.notEmpty(jobId);
-        return getAuthenticatedPort().getAsyncResult(new GetAsyncResultRequest(jobId, pageIndex));
+        return getAuthenticatedPort().getAsyncResult(new GetAsyncResultRequest(jobId, pageIndex))
+            .getAsyncResult();
     }
 
     public Object initialize(RecordType type, RecordReference recordReference) throws Exception
