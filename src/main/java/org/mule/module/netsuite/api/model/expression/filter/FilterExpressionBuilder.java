@@ -96,8 +96,11 @@ public class FilterExpressionBuilder
         Object attribute = addAttribute(attributeName, attributeGroup);
         if (operationName.equals("isTrue"))
         {
-            Validate.isTrue(firstArg == null && secondArg == null, "isTrue does not take arguments");
-            addBooleanOperation(attribute);
+            addBooleanOperation(attribute, firstArg, secondArg, "true");
+        }
+        else if (operationName.equals("isFalse"))
+        {
+            addBooleanOperation(attribute, firstArg, secondArg, "false");
         }
         else
         {
@@ -105,9 +108,10 @@ public class FilterExpressionBuilder
         }
     }
 
-    private void addBooleanOperation(Object attribute) throws Exception
+    private void addBooleanOperation(Object attribute, Object firstArg, Object secondArg, String booleanValueAsString) throws Exception
     {
-        setFirstArg("true", attribute);
+        Validate.isTrue(firstArg == null && secondArg == null, "isTrue/isFalse do not take arguments");
+        setFirstArg(booleanValueAsString, attribute);
     }
 
     private void addSimpleOperation(String operationName, String firstArg, String secondArg, Object attribute)

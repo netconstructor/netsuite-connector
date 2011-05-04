@@ -11,6 +11,7 @@
 package org.mule.module.netsuite.api.model.expression.filter;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
@@ -61,7 +62,13 @@ public class FilterExpressionParserUnitTest
     @Test
     public void testBooleanSyntax() throws Exception
     {
-        FilterExpressionParser.parse(SearchRecordType.CUSTOMER, "isTrue(job.giveAccess)");
+        CustomerSearch record = (CustomerSearch) FilterExpressionParser.parse(SearchRecordType.CUSTOMER,
+            "isTrue(job.giveAccess)");
+        assertTrue(record.getJobJoin().getGiveAccess().isSearchValue());
+
+        record = (CustomerSearch) FilterExpressionParser.parse(SearchRecordType.CUSTOMER,
+            "isFalse(job.giveAccess)");
+        assertFalse(record.getJobJoin().getGiveAccess().isSearchValue());
     }
 
     @Test
@@ -69,7 +76,6 @@ public class FilterExpressionParserUnitTest
     {
         FilterExpressionParser.parse(SearchRecordType.CUSTOMER,
             "greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25) ");
-
     }
 
     @Test

@@ -18,12 +18,13 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 import org.mule.api.lifecycle.InitialisationException;
 
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.platform.core_2010_2.DeletedRecord;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
@@ -33,6 +34,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.validation.constraints.AssertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -73,13 +76,7 @@ public class NetSuiteTestDriver
         RecordRef employee = null, campaign = null;
         try
         {
-            employee = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
-            {
-                {
-                    put("firstName", "John");
-                    put("lastName", "Doe");
-                }
-            });
+            employee = createEmployeeJohnDoe();
             campaign = connector.addRecord(RecordType.CONTACT, new HashMap<String, Object>()
             {
                 {
@@ -113,14 +110,7 @@ public class NetSuiteTestDriver
     public void updateRecord() throws Exception
     {
 
-        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
-        {
-            {
-                put("fax", "159-945-56");
-                put("firstName", "John");
-                put("lastName", "Doe");
-            }
-        });
+        RecordRef recordRef = createEmployeeJohnDoe();
         try
         {
             connector.updateRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL,
@@ -171,32 +161,37 @@ public class NetSuiteTestDriver
         // TODO
     }
 
+    
+    @Test
     public void getCustomizationId()
     {
-        List<Object> customizations = connector.getCustomizationId(RecordType.CALENDAR_EVENT, false);
+        List<Object> customizations = connector.getCustomizationId(RecordType.ACCOUNT, false);
         assertNotNull(customizations);
         // TODO test more in depth
+        //TODO change to GetCustomizationType  and use CRM_CUSTOM_FIELD in example
     }
 
+    /**
+     * Test that deleted records are retrieved in the getDeletedRecords query 
+     */
     @Test
     public void getDeletedEntity()
     {
         // TODO perhaps it would be also a good idea to expose a more object oriented
         // instead of string oriented date query
         Date serverTime = connector.GetServerTime();
-        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
-        {
-            {
-                put("fax", "159-945-56");
-                put("firstName", "John");
-                put("lastName", "Doe");
-            }
-        });
+        RecordRef recordRef = createEmployeeJohnDoe();
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
-        connector.getDeletedRecord(RecordType.EMPLOYEE, // 
-            "after(dateTime('" + new SimpleDateFormat("HH:mm:ss").format(serverTime) + "','HH:mm:ss'))");
+        //TODO rename to getDeletedRecords
+        List<Object> deletedRecords = connector.getDeletedRecord(RecordType.EMPLOYEE, // 
+            "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime) + "','yyyy-MM-dd HH:mm:ss'))");
+        assertEquals(1, deletedRecords.size());
+        //TODO cast
     }
 
+    /**
+     * Test that existing records can be fetched
+     */
     @Test
     public void getRecord()
     {
@@ -216,13 +211,47 @@ public class NetSuiteTestDriver
         }
     }
 
+    /**
+     * Tests that simple searches that involve multiple record attributes work properly 
+     */
     @Test
-    public void findRecord() throws Exception
+    public void findRecordSimpleSearch() throws Exception
     {
-        assertNotNull(connector.findRecord(RecordType.CUSTOMER,
-            "isTrue(giveAccess), is(email, 'john.doe@foobar.com')"));
+        List<Object> employees = findJohnDoe();
+        assertTrue(employees.isEmpty());
+
+        RecordRef ref = createEmployeeJohnDoe();
+        try
+        {
+            assertEquals(1, findJohnDoe().size());
+            assertEquals(0, findMaryDoe().size());
+        }
+        finally
+        {
+            connector.deleteRecord(RecordType.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
+        }
     }
 
+    private List<Object> findJohnDoe()
+    {
+        return connector.findRecord(RecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
+    }
+
+    private List<Object> findMaryDoe()
+    {
+        return connector.findRecord(RecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
+    }
+
+    @Test
+    public void findRecordJoinedSearch() throws Exception
+    {
+        assertNotNull(connector.findRecord(RecordType.EMPLOYEE,
+            "is(email, 'john.doe@foobar.com'), is(userNotes.title, 'A note')"));
+    }
+
+    /**
+     * Test that item availability queries work for existing inventory items
+     */
     @Test
     public void getItemAvailability()
     {
@@ -258,6 +287,9 @@ public class NetSuiteTestDriver
         connector.getSavedSearch(RecordType.CONTACT);
     }
 
+    /**
+     * Tests that the invitation status of a calendar event can be updated
+     */
     @Test
     public void updateInviteeStatus()
     {
@@ -274,4 +306,19 @@ public class NetSuiteTestDriver
             CalendarEventAttendeeResponse.DECLINED);
     }
 
+    private RecordRef createEmployeeJohnDoe()
+    {
+        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
+        {
+            {
+                put("fax", "159-945-56");
+                put("firstName", "John");
+                put("lastName", "Doe");
+                put("salesRep", true);
+                put("email", "john.doe@foobar.com");
+
+            }
+        });
+        return recordRef;
+    }
 }

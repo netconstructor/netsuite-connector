@@ -254,7 +254,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *        \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue 
      *        and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite
      * @return the list of deleted records that match the given date filtering expression
-     */
+     *///TODO finish doc
     @Operation
     public List<Object> getDeletedRecord(@Parameter RecordType type, @Parameter String whenExpression)
     {

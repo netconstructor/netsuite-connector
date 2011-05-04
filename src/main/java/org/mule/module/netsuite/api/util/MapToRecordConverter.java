@@ -54,5 +54,7 @@ public class MapToRecordConverter
         beanUtils.copyProperties(record, new LazyDynaMap(recordAttributes));
         return record;
     }
+    
+    //TODO tests that wrong attrbutes generate an exception
 
 }
