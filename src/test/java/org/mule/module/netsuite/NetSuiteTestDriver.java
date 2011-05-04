@@ -23,6 +23,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.mule.api.lifecycle.InitialisationException;
 
+import com.netsuite.webservices.documents.filecabinet_2010_2.FileSiteCategoryList;
+import com.netsuite.webservices.documents.filecabinet_2010_2.types.FileAttachFrom;
+import com.netsuite.webservices.documents.filecabinet_2010_2.types.FileEncoding;
+import com.netsuite.webservices.documents.filecabinet_2010_2.types.MediaType;
+import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncoding;
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
@@ -33,10 +38,16 @@ import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperat
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
+import java.awt.color.CMMException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -74,34 +85,56 @@ public class NetSuiteTestDriver
     public void attachAndDetachEntity()
     {
         // TODO file attachements?
-        RecordRef employee = null, campaign = null;
+        RecordRef file = null, folder = null, employee = createEmployeeJohnDoe();
         try
         {
-            employee = createEmployeeJohnDoe();
-            campaign = connector.addRecord(RecordType.CONTACT, new HashMap<String, Object>()
-            {
-                {
-                    put("title", "The Campaignola");
-
-                }
-            });
-            connector.attachRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL,
-                RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL, null, null, null);
-            connector.detachRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL,
-                RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
+            folder = createFolder();
+            file = createFile(folder);
+            connector.attachRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL,
+                RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL, null, null, null);
+            connector.detachRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL,
+                RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
         }
         finally
         {
-            if (employee != null)
+            connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+            if (file != null)
             {
-                connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+                connector.deleteRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL);
             }
-            if (campaign != null)
+            if (folder != null)
             {
-                connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
+                connector.deleteRecord(RecordType.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
             }
         }
     }
+
+    private RecordRef createFolder()
+    {
+        return connector.addRecord(RecordType.FOLDER, new HashMap<String, Object>()
+        {
+            {
+                put("isPrivate", false);
+                put("name", "Folder1");
+            }
+        });
+    }
+
+    private RecordRef createFile(final RecordRef folder)
+    {
+        return connector.addRecord(RecordType.FILE, new HashMap<String, Object>()
+        {
+            {
+                put("isPrivate", false);
+                put("description", "File1.txt");
+                put("textFileEncoding", TextFileEncoding.UTF_8);
+                put("name", "foobar");
+                put("content", "foo bar".getBytes());
+                put("folder", folder);
+            }
+        });
+    }
+
 
     /**
      * Test that a record can be created and updated, and that the modification are
@@ -162,11 +195,11 @@ public class NetSuiteTestDriver
         // TODO
     }
 
-    
     @Test
     public void getCustomizationId()
     {
-        List<Object> customizations = connector.getCustomizationIds(GetCustomizationType.CRM_CUSTOM_FIELD, false);
+        List<Object> customizations = connector.getCustomizationIds(GetCustomizationType.CRM_CUSTOM_FIELD,
+            false);
         assertNotNull(customizations);
         assertFalse(customizations.isEmpty());
     }
@@ -182,12 +215,14 @@ public class NetSuiteTestDriver
         RecordRef recordRef = createEmployeeJohnDoe();
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
         List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, // 
-            "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime) + "','yyyy-MM-dd HH:mm:ss'))", null, null, null);
+            "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime)
+                            + "','yyyy-MM-dd HH:mm:ss'))", null, null, null);
         assertEquals(1, deletedRecords.size());
     }
-    
+
     /**
-     * Test that deleted records are retrieved in the getDeletedRecords query, using the simple style. 
+     * Test that deleted records are retrieved in the getDeletedRecords query, using
+     * the simple style.
      */
     @Test
     public void getDeletedEntitySimpleExpression()
@@ -195,7 +230,8 @@ public class NetSuiteTestDriver
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = createEmployeeJohnDoe();
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
-        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, null, serverTime, null, SearchDateFieldOperator.AFTER); 
+        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, null, serverTime,
+            null, SearchDateFieldOperator.AFTER);
         assertEquals(1, deletedRecords.size());
     }
 
@@ -222,7 +258,8 @@ public class NetSuiteTestDriver
     }
 
     /**
-     * Tests that simple searches that involve multiple record attributes work properly 
+     * Tests that simple searches that involve multiple record attributes work
+     * properly
      */
     @Test
     public void findRecordSimpleSearch() throws Exception
@@ -331,4 +368,8 @@ public class NetSuiteTestDriver
         });
         return recordRef;
     }
+
+    // TODO attachments
+    // TODO pagination
+    // TODO async
 }

@@ -152,8 +152,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                                @NotNull RecordReference destinationEntity) throws Exception
     {
         return getAuthenticatedPort().detach(
-            new DetachRequest(new DetachBasicReference(destinationEntity.createRef(),
-                sourceEntity.createRef())));
+            new DetachRequest(new DetachBasicReference(
+                sourceEntity.createRef(), destinationEntity.createRef())));
     }
 
     public Object getDeletedRecords(RecordType type, DateExpression expression) throws Exception
