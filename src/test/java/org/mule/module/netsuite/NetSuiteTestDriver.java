@@ -15,6 +15,7 @@
 package org.mule.module.netsuite;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -80,11 +81,11 @@ public class NetSuiteTestDriver
     {
         assertFalse(connector.getRecords(RecordType.CURRENCY).isEmpty());
     }
+    
 
     @Test
     public void attachAndDetachEntity()
     {
-        // TODO file attachements?
         RecordRef file = null, folder = null, employee = createEmployeeJohnDoe();
         try
         {
@@ -119,7 +120,7 @@ public class NetSuiteTestDriver
             }
         });
     }
-
+    
     private RecordRef createFile(final RecordRef folder)
     {
         return connector.addRecord(RecordType.FILE, new HashMap<String, Object>()
@@ -133,6 +134,29 @@ public class NetSuiteTestDriver
                 put("folder", folder);
             }
         });
+    }
+
+    /**
+     * Test creating a file using the
+     * {@link NetSuiteCloudConnector#addFile(java.util.Map, Object, String, String, RecordIdType)}
+     * method
+     */
+    @Test
+    public void addFile() throws Exception
+    {
+        RecordRef file = null, folder = createFolder();
+        try
+        {
+            file = connector.addFile(null, "foobar", "File2.txt", folder.getInternalId(), RecordIdType.INTERNAL);
+        }
+        finally
+        {
+            if (file != null)
+            {
+                connector.deleteRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL);
+            }
+            connector.deleteRecord(RecordType.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
+        }
     }
 
 
@@ -369,7 +393,6 @@ public class NetSuiteTestDriver
         return recordRef;
     }
 
-    // TODO attachments
     // TODO pagination
     // TODO async
 }

@@ -40,11 +40,19 @@ import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperat
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.xml.datatype.XMLGregorianCalendar;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 /**
  * The NetSuite cloud connector facade, based on a {@link NetSuiteClient}
@@ -380,7 +388,6 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status);
     }
-
     
     /**
      * Creates a new record
@@ -395,6 +402,72 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         return ((RecordRef) client.addRecord(recordType, attributes));
     }
+
+    /**
+     * Creates a new file record. This operation is similar to addRecord, but is
+     * customized for simplifying local content passing 
+     * 
+     * @param attributes the additional file attributes
+     * @param content the content of the file record to add. It can be of type
+     *            String, byte array, File or InputStream. If it is an input stream,
+     *            this operations also closes it.
+     * @param fileName the name of the remote file
+     * @param folderId  the id of the folder record where to add this file
+     * @param folderIdType the id type of the folder record
+     * @return the RecordRef of the new record 
+     */
+    @Operation
+    @SuppressWarnings("serial")
+    public RecordRef addFile(@Parameter Map<String, Object> attributes,
+                             @Parameter final Object content,
+                             @Parameter final String fileName,
+                             @Parameter final String folderId,
+                             @Parameter(optional = true, defaultValue = "INTERNAL") final RecordIdType folderIdType) throws IOException
+    {
+        return addRecord(RecordType.FILE, new HashMap<String, Object>(
+            attributes != null ? attributes : Collections.<String, Object> emptyMap())
+        {
+            {
+                put("content", createContent(content));
+                put("name", fileName);
+                put("folder", RecordIds.from(folderId, folderIdType).createRef());
+            }
+        });
+    }
+
+    private byte[] createContent(Object content) throws IOException
+    {
+        if (content instanceof String)
+        {
+            return ((String) content).getBytes();
+        }
+        if (content instanceof byte[])
+        {
+            return (byte[]) content;
+        }
+        if (content instanceof File)
+        {
+            return FileUtils.readFileToByteArray((File) content);
+        }
+        if (content instanceof InputStream)
+        {
+            return toByteArray((InputStream) content);
+        }
+        throw new IllegalArgumentException("Unsupported Content Type " + content);
+    }
+
+    private byte[] toByteArray(InputStream content) throws IOException
+    {
+        try
+        {
+            return IOUtils.toByteArray(content);
+        }
+        finally
+        {
+            content.close();
+        }
+    }
+
     
     /**
      * Updates an existing record.
@@ -440,7 +513,14 @@ public class NetSuiteCloudConnector implements Initialisable
         return (AsyncStatusResult) client.checkAsyncStatus(jobId);
     }
 
-   /*TODO*/
+    /**
+     * Answers all records that match the given filtering expression.
+     * If no expression is specified, all records of the given type are retrieved  
+     * 
+     * @param recordType the type of record to search
+     * @param expression the filtering expression
+     * @return a list of Record's
+     */
     @Operation
     public List<Object> findRecord(@Parameter SearchRecordType recordType,
                                    @Parameter(optional = true) String expression)

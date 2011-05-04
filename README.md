@@ -374,6 +374,25 @@ Returns RecordRef of the new record
 
 
 
+Add File
+--------
+
+Creates a new file record. This operation is similar to addRecord, but is
+customized for simplifying local content passing
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|attributes|the additional file attributes|no||
+|content|the content of the file record to add. It can be of type String, byte array, File or InputStream. If it is an input stream, this operations also closes it.|no||
+|fileName|the name of the remote file|no||
+|folderId|the id of the folder record where to add this file|no||
+|folderIdType|the id type of the folder record|yes|INTERNAL|*INTERNAL*, *EXTERNAL*
+
+Returns RecordRef of the new record
+
+
+
 Update Record
 -------------
 
@@ -424,11 +443,16 @@ Returns AsyncStatusResult for the given job
 Find Record
 -----------
 
+Answers all records that match the given filtering expression.
+If no expression is specified, all records of the given type are retrieved
+
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|recordType||no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *BIN*, *BUDGET*, *CALENDAR_EVENT*, *CAMPAIGN*, *CLASSIFICATION*, *CONTACT*, *CUSTOMER*, *CUSTOM_RECORD*, *DEPARTMENT*, *EMPLOYEE*, *ENTITY_GROUP*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GROUP_MEMBER*, *ITEM*, *ISSUE*, *JOB*, *LOCATION*, *MESSAGE*, *NOTE*, *OPPORTUNITY*, *PARTNER*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *SALES_ROLE*, *SOLUTION*, *SITE_CATEGORY*, *SUBSIDIARY*, *SUPPORT_CASE*, *TASK*, *TIME_BILL*, *TOPIC*, *TRANSACTION*, *VENDOR*, *clazz*
-|expression||yes||
+|recordType|the type of record to search|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *BIN*, *BUDGET*, *CALENDAR_EVENT*, *CAMPAIGN*, *CLASSIFICATION*, *CONTACT*, *CUSTOMER*, *CUSTOM_RECORD*, *DEPARTMENT*, *EMPLOYEE*, *ENTITY_GROUP*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GROUP_MEMBER*, *ITEM*, *ISSUE*, *JOB*, *LOCATION*, *MESSAGE*, *NOTE*, *OPPORTUNITY*, *PARTNER*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *SALES_ROLE*, *SOLUTION*, *SITE_CATEGORY*, *SUBSIDIARY*, *SUPPORT_CASE*, *TASK*, *TIME_BILL*, *TOPIC*, *TRANSACTION*, *VENDOR*, *clazz*
+|expression|the filtering expression|yes||
+
+Returns list of Record's
 
 
 
