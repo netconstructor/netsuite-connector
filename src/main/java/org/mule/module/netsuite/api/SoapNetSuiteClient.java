@@ -18,6 +18,7 @@ import org.mule.module.netsuite.api.model.entity.RecordReference;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.util.Date;
 import java.util.Map;
@@ -83,7 +84,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
         throws Exception;
 
     @NetSuiteOperation(responseName = "SearchResult", resultName = "Record", resultType = ReturnType.LIST)
-    Object findRecord(RecordType recordType, String expression) throws Exception;
+    Object findRecord(@NotNull SearchRecordType recordType, String expression) throws Exception;
 
     @NetSuiteOperation(resultName = "AsyncResult", resultType = ReturnType.RECORD)
     Object getAsyncResult(@NotNull String jobId, int pageIndex) throws Exception;

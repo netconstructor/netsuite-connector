@@ -29,6 +29,7 @@ import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
 import java.text.SimpleDateFormat;
@@ -230,18 +231,18 @@ public class NetSuiteTestDriver
 
     private List<Object> findJohnDoe()
     {
-        return connector.findRecord(RecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
+        return connector.findRecord(SearchRecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
     }
 
     private List<Object> findMaryDoe()
     {
-        return connector.findRecord(RecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
+        return connector.findRecord(SearchRecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
     }
 
     @Test
     public void findRecordJoinedSearch() throws Exception
     {
-        assertNotNull(connector.findRecord(RecordType.EMPLOYEE,
+        assertNotNull(connector.findRecord(SearchRecordType.EMPLOYEE,
             "is(email, 'john.doe@foobar.com'), is(userNotes.title, 'A note')"));
     }
 

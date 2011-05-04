@@ -6,16 +6,20 @@ PARSER_BEGIN(FilterExpressionParser)
     import com.netsuite.webservices.platform.core_2010_2.*;
     import com.netsuite.webservices.platform.core_2010_2.types.*;
     import  java.io.ByteArrayInputStream;
+    import org.apache.commons.lang.*;
 
    /**
-    * A predicate-like syntax parser for date expressions
+    * A predicate-like syntax parser for filter expressions
     * @author flbulgarelli*/
    public class FilterExpressionParser {
    
      private FilterExpressionBuilder builder = new FilterExpressionBuilder(); 
    
      public static SearchRecord parse(SearchRecordType targetRecordType, String expression)  {
-       org.apache.commons.lang.Validate.notEmpty(expression);
+       Validate.notNull(targetRecordType);
+       if( StringUtils.isEmpty(expression) )  
+        return targetRecordType.newInstance();
+       
         try{
           return new FilterExpressionParser(new ByteArrayInputStream(expression.getBytes())).withTarget(targetRecordType).start();
       } catch(ParseException e){

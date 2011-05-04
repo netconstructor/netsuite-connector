@@ -14,7 +14,6 @@ PARSER_BEGIN(DateExpressionParser)
      private DateExpressionBuilder builder; 
    
      public static SearchDateField parse(String expression, org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory calendarFactory)  {
-       //TODO support for empty/notEmpty?
        org.apache.commons.lang.Validate.notEmpty(expression);
        org.apache.commons.lang.Validate.notNull(calendarFactory);
         try{

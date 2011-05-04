@@ -19,6 +19,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.netsuite.webservices.lists.employees_2010_2.EmployeeSearch;
 import com.netsuite.webservices.lists.relationships_2010_2.CustomerSearch;
+import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchLongFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
@@ -31,6 +32,13 @@ import org.junit.Test;
  */
 public class FilterExpressionParserUnitTest
 {
+    @Test
+    public void testNullOrEmptyExpression() throws Exception
+    {
+        SearchRecord record = FilterExpressionParser.parse(SearchRecordType.EMPLOYEE, null);
+        assertTrue(record instanceof EmployeeSearch);
+    }
+    
     @Test
     public void testBasicSyntax() throws Exception
     {

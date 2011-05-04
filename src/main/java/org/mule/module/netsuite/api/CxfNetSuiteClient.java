@@ -110,13 +110,12 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    public Object findRecord(@NotNull RecordType recordType, @NotNull String expression) throws Exception
+    public Object findRecord(@NotNull SearchRecordType recordType, @NotNull String expression) throws Exception
     {
         Validate.notNull(recordType);
         Validate.notEmpty(expression);
         return getAuthenticatedPort().search(
-            new SearchRequest(FilterExpressionParser.parse(SearchRecordType.fromValue(recordType.value()),
-                expression)));
+            new SearchRequest(FilterExpressionParser.parse(recordType, expression)));
     }
 
     private Record createRecord(RecordType recordType, Map<String, Object> recordAttributes) throws Exception

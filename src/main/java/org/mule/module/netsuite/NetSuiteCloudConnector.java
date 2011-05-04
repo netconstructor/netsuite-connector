@@ -29,13 +29,12 @@ import org.mule.tools.cloudconnect.annotations.Parameter;
 import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
-import com.netsuite.webservices.platform.core_2010_2.CustomizationRef;
-import com.netsuite.webservices.platform.core_2010_2.DeletedRecord;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.util.Date;
@@ -426,7 +425,8 @@ public class NetSuiteCloudConnector implements Initialisable
 
    /*TODO*/
     @Operation
-    public List<Object> findRecord(@Parameter RecordType recordType, @Parameter String expression)
+    public List<Object> findRecord(@Parameter SearchRecordType recordType,
+                                   @Parameter(optional = true) String expression)
     {
         return client.findRecord(recordType, expression);
     }
