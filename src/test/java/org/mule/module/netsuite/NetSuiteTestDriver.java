@@ -146,7 +146,7 @@ public class NetSuiteTestDriver
                 put("budgetType", BudgetBudgetType.LOCAL);
             }
         });
-        List<Object> budgetExchangeRate = connector.getBudgetExchangeRate(budget.getInternalId(),
+        List<Object> budgetExchangeRate = connector.getBudgetExchangeRates(budget.getInternalId(),
             RecordIdType.INTERNAL, subsidiary.getInternalId(), RecordIdType.INTERNAL, null, null);
         assertNotNull(budgetExchangeRate);
     }
@@ -154,7 +154,7 @@ public class NetSuiteTestDriver
     @Test
     public void getConsolidatedExchangeRate()
     {
-        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRate("10",
+        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRates("10",
             RecordIdType.INTERNAL, "65", RecordIdType.INTERNAL, null, null);
         assertNotNull(consolidatedExchangeRate);
         // TODO
@@ -164,7 +164,7 @@ public class NetSuiteTestDriver
     @Test
     public void getCustomizationId()
     {
-        List<Object> customizations = connector.getCustomizationId(GetCustomizationType.CRM_CUSTOM_FIELD, false);
+        List<Object> customizations = connector.getCustomizationIds(GetCustomizationType.CRM_CUSTOM_FIELD, false);
         assertNotNull(customizations);
         assertFalse(customizations.isEmpty());
     }
@@ -180,11 +180,9 @@ public class NetSuiteTestDriver
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = createEmployeeJohnDoe();
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
-        //TODO rename to getDeletedRecords
-        List<Object> deletedRecords = connector.getDeletedRecord(RecordType.EMPLOYEE, // 
+        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, // 
             "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime) + "','yyyy-MM-dd HH:mm:ss'))");
         assertEquals(1, deletedRecords.size());
-        //TODO cast
     }
 
     /**
@@ -269,7 +267,7 @@ public class NetSuiteTestDriver
             });
         try
         {
-            assertNotNull(connector.getItemAvailability(RecordType.INVENTORY_ITEM,
+            assertNotNull(connector.getItemAvailabilities(RecordType.INVENTORY_ITEM,
                 inventoryItem.getInternalId(), RecordIdType.INTERNAL, null));
         }
         finally

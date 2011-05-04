@@ -41,7 +41,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     Object getRecord(@NotNull RecordReference sourceEntity) throws ExceptionType;
 
     @NotNull
-    CollectionType getDeletedRecord(@NotNull RecordType type, @NotNull String whenExpression)
+    CollectionType getDeletedRecords(@NotNull RecordType type, @NotNull String whenExpression)
         throws ExceptionType;
 
     VoidType attachRecord(@NotNull RecordReference sourceEntity,
@@ -61,17 +61,17 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     VoidType updateInviteeStatus(@NotNull RecordId eventId,
                                  @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
 
-    CollectionType getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives)
+    CollectionType getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives)
         throws ExceptionType;
 
-    CollectionType getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)
+    CollectionType getItemAvailabilities(@NotNull RecordReference recordReference, Date ifModifiedSince)
         throws ExceptionType;
 
-    CollectionType getBudgetExchangeRate(@NotNull RecordId period,
+    CollectionType getBudgetExchangeRates(@NotNull RecordId period,
                                          @NotNull RecordId fromSubsidiary,
                                          RecordId toSubsidiary) throws ExceptionType;
 
-    CollectionType getConsolidatedExchangeRate(@NotNull RecordId period,
+    CollectionType getConsolidatedExchangeRates(@NotNull RecordId period,
                                                @NotNull RecordId fromSubsidiary,
                                                RecordId toSubsidiary) throws ExceptionType;
 

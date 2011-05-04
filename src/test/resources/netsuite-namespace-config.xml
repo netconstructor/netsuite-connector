@@ -58,13 +58,13 @@
 	<flow name="getBudgetExchangeRate">
 		<inbound-endpoint address="vm://getBudgetExchangeRate"
 			exchange-pattern="request-response" />
-		<netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
+		<netsuite:get-budget-exchange-rates periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
 	</flow>
 
 	<flow name="getConsolidatedExchangeRate">
 		<inbound-endpoint address="vm://getConsolidatedExchangeRate"
 			exchange-pattern="request-response" />
-		<netsuite:get-consolidated-exchange-rate
+		<netsuite:get-consolidated-exchange-rates
 			periodId="106" periodIdType="EXTERNAL" fromSubsidiaryId="5689"
 			toSubsidiaryId="4898" />
 	</flow>
@@ -72,14 +72,14 @@
 	<flow name="getCustomizationId">
 		<inbound-endpoint address="vm://getCustomizationId"
 			exchange-pattern="request-response" />
-		<netsuite:get-customization-id type="CRM_CUSTOM_FIELD"/>
+		<netsuite:get-customization-ids type="CRM_CUSTOM_FIELD"/>
 	</flow>
 
 
 	<flow name="getDeletedRecord">
 		<inbound-endpoint address="vm://getDeletedRecord"
 			exchange-pattern="request-response" />
-		<netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
+		<netsuite:get-deleted-records type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
 	</flow>
 
 	<flow name="getRecords">
@@ -97,7 +97,7 @@
 	<flow name="getItemAvailability">
 		<inbound-endpoint address="vm://getItemAvailability"
 			exchange-pattern="request-response" />
-		<netsuite:get-item-availability recordType="ACCOUNT" id="489"/>
+		<netsuite:get-item-availabilities recordType="ACCOUNT" id="489"/>
 	</flow>
 
 	<flow name="getSavedSearch">

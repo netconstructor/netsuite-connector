@@ -30,6 +30,7 @@ import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.CustomizationRef;
+import com.netsuite.webservices.platform.core_2010_2.DeletedRecord;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
@@ -178,14 +179,14 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of BudgetExchangeRate's
      */
     @Operation
-    public List<Object> getBudgetExchangeRate(@Parameter String periodId,
-                                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
-                                              @Parameter String fromSubsidiaryId,
-                                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
-                                              @Parameter(optional = true) String toSubsidiaryId,
-                                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
+    public List<Object> getBudgetExchangeRates(@Parameter String periodId,
+                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
+                                               @Parameter String fromSubsidiaryId,
+                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
+                                               @Parameter(optional = true) String toSubsidiaryId,
+                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
     {
-        return client.getBudgetExchangeRate(//
+        return client.getBudgetExchangeRates(//
             RecordIds.from(periodId, periodIdType), // 
             RecordIds.from(fromSubsidiaryId, fromSubsidiaryIdType), //
             RecordIds.nullSafeFrom(toSubsidiaryId, toSubsidiaryIdType));
@@ -209,21 +210,21 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of ConsolidatedExchangeRate's
      */
     @Operation
-    public List<Object> getConsolidatedExchangeRate(@Parameter String periodId,
-                                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
-                                                    @Parameter String fromSubsidiaryId,
-                                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
-                                                    @Parameter(optional = true) String toSubsidiaryId,
-                                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
+    public List<Object> getConsolidatedExchangeRates(@Parameter String periodId,
+                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
+                                                     @Parameter String fromSubsidiaryId,
+                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
+                                                     @Parameter(optional = true) String toSubsidiaryId,
+                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
     {
-        return client.getConsolidatedExchangeRate(//
+        return client.getConsolidatedExchangeRates(//
             RecordIds.from(periodId, periodIdType), // 
             RecordIds.from(fromSubsidiaryId, fromSubsidiaryIdType), //
             RecordIds.nullSafeFrom(toSubsidiaryId, toSubsidiaryIdType));
     }
 
     /**
-     * Answers the available customizations for a given record type.
+     * Answers the ids of available customizations for a given record type.
      * 
      *  Example: {@code <netsuite:get-customization-id type="ACCOUNT"/>}
      * 
@@ -232,10 +233,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of CustomizationRef's
      */
     @Operation
-    public List<Object> getCustomizationId(@Parameter GetCustomizationType type,
-                                                     @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
+    public List<Object> getCustomizationIds(@Parameter GetCustomizationType type,
+                                            @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
     {
-        return client.getCustomizationId(type, includeInactives);
+        return client.getCustomizationIds(type, includeInactives);
     }
 
     /**
@@ -256,12 +257,12 @@ public class NetSuiteCloudConnector implements Initialisable
      *        \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; 
      *        \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue 
      *        and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite
-     * @return the list of deleted records that match the given date filtering expression
+     * @return the list of DeletedRecord's that match the given date filtering expression
      *///TODO finish doc
     @Operation
-    public List<Object> getDeletedRecord(@Parameter RecordType type, @Parameter String whenExpression)
+    public List<Object> getDeletedRecords(@Parameter RecordType type, @Parameter String whenExpression)
     {
-        return  client.getDeletedRecord(type, whenExpression);
+        return  client.getDeletedRecords(type, whenExpression);
     }
 
     /**
@@ -310,12 +311,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return A list of ItemAvailability's
      */
     @Operation
-    public List<Object> getItemAvailability(@Parameter RecordType recordType,
-                                            @Parameter(optional = false) String id,
-                                            @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
-                                            @Parameter(optional = true) Date ifModifiedSince)
+    public List<Object> getItemAvailabilities(@Parameter RecordType recordType,
+                                              @Parameter(optional = false) String id,
+                                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
+                                              @Parameter(optional = true) Date ifModifiedSince)
     {
-        return client.getItemAvailability(from(recordType, id, idType), ifModifiedSince);
+        return client.getItemAvailabilities(from(recordType, id, idType), ifModifiedSince);
     }
 
     /**
@@ -444,8 +445,11 @@ public class NetSuiteCloudConnector implements Initialisable
     @Operation
     public AsyncResult getAsyncResult(@Parameter String jobId, /*TODO check if mandatory */ @Parameter int pageIndex)
     {
+      //TODO check it is returning the proper object
         return (AsyncResult) client.getAsyncResult(jobId, pageIndex);
     }
+    
+    //TODO check pagination
 
     /**
      * Populates fields on transaction line items with values from a related record,

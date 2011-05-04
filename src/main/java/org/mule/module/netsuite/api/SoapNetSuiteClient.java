@@ -47,7 +47,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
         throws Exception;
 
     @NetSuiteOperation(responseName = "GetDeletedResult", resultName = "DeletedRecord", resultType = ReturnType.LIST)
-    Object getDeletedRecord(RecordType type, String whenExpression) throws Exception;
+    Object getDeletedRecords(RecordType type, String whenExpression) throws Exception;
 
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
     Object getRecord(RecordReference entity) throws Exception;
@@ -56,20 +56,20 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object getRecords(RecordType type) throws Exception;
 
     @NetSuiteOperation(responseName = "GetBudgetExchangeRateResult", resultName = "BudgetExchangeRate", resultType = ReturnType.LIST)
-    Object getBudgetExchangeRate(@NotNull RecordId period,
+    Object getBudgetExchangeRates(@NotNull RecordId period,
                                  @NotNull RecordId fromSubsidiary,
                                  RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetConsolidatedExchangeRateResult", resultName = "ConsolidatedExchangeRate", resultType = ReturnType.LIST)
-    Object getConsolidatedExchangeRate(@NotNull RecordId period,
+    Object getConsolidatedExchangeRates(@NotNull RecordId period,
                                        @NotNull RecordId fromSubsidiary,
                                        RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetCustomizationIdResult", resultName = "CustomizationRef", resultType = ReturnType.LIST)
-    Object getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception;
+    Object getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception;
 
     @NetSuiteOperation(responseName = "GetItemAvailabilityResult", resultName = "ItemAvailability", resultType = ReturnType.LIST)
-    Object getItemAvailability(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
+    Object getItemAvailabilities(@NotNull RecordReference recordReference, Date ifNotModifiedSince)
         throws Exception;
 
     @NetSuiteOperation(responseName = "GetSavedSearchResult", resultName = "RecordRef", resultType = ReturnType.LIST)

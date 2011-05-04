@@ -163,7 +163,7 @@ public class CxfNetSuiteClientUnitTest
     @Test
     public void getItemAvailability() throws Exception
     {
-        client.getItemAvailability(new RecordReference(new RecordId.ExternalId("489"), RecordType.BIN), null);
+        client.getItemAvailabilities(new RecordReference(new RecordId.ExternalId("489"), RecordType.BIN), null);
         verify(port).getItemAvailability(argThat(new Matcher<GetItemAvailabilityRequest>()
         {
             public boolean matchesImpl(GetItemAvailabilityRequest r )
@@ -179,7 +179,7 @@ public class CxfNetSuiteClientUnitTest
     @Test
     public void getDeletedRecord() throws Exception
     {
-        client.getDeletedRecord(RecordType.BUDGET, "within(isoDateRange(2010-1-6, 2011-2-9))");
+        client.getDeletedRecords(RecordType.BUDGET, "within(isoDateRange(2010-1-6, 2011-2-9))");
         verify(port).getDeleted(argThat(new Matcher<GetDeletedRequest>()
         {
             public boolean matchesImpl(GetDeletedRequest r)

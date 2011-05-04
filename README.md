@@ -135,8 +135,8 @@ Example:
 
 
 
-Get Budget Exchange Rate
-------------------------
+Get Budget Exchange Rates
+-------------------------
 
 Answers the list of budget exchange rates
 Example:
@@ -159,8 +159,8 @@ Returns list of BudgetExchangeRate's
 
 
 
-Get Consolidated Exchange Rate
-------------------------------
+Get Consolidated Exchange Rates
+-------------------------------
 
 Answers the list of consolidated exchange rates
 Example:
@@ -184,27 +184,27 @@ Returns list of ConsolidatedExchangeRate's
 
 
 
-Get Customization Id
---------------------
+Get Customization Ids
+---------------------
 
-Answers the available customizations for a given record type
-Example:
+Answers the ids of available customizations for a given record type.
 
+ Example: 
 
      <netsuite:get-customization-id type="ACCOUNT"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|type|the target record type|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
+|type|the target record type|no||*CRM_CUSTOM_FIELD*, *CUSTOM_LIST*, *CUSTOM_RECORD_TYPE*, *ENTITY_CUSTOM_FIELD*, *ITEM_CUSTOM_FIELD*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *OTHER_CUSTOM_FIELD*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*
 |includeInactives|if inactive customizations should also be returned|yes|false|
 
 Returns list of CustomizationRef's
 
 
 
-Get Deleted Record
-------------------
+Get Deleted Records
+-------------------
 
 Answers a list of deleted records of a given record type
 
@@ -224,7 +224,7 @@ Examples:
 |type|the type of the target deleted record to retrieve|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
 |whenExpression|a predicate-style date filtering expression, in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; \| &lt;isoDate( &lt;isoDate&gt; )&gt; \| &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite|no||
 
-Returns list of deleted records that match the given date filtering expression
+Returns list of DeletedRecord's that match the given date filtering expression
 
 
 
@@ -267,8 +267,8 @@ Returns Record
 
 
 
-Get Item Availability
----------------------
+Get Item Availabilities
+-----------------------
 
 Answers the availability for a given record reference.
 If the Multi-Location Inventory feature is enabled, this operation returns results for all locations. 

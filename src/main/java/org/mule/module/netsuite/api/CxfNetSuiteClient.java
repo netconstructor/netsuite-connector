@@ -159,7 +159,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 sourceEntity.createRef())));
     }
 
-    public Object getDeletedRecord(RecordType type, String whenExpression) throws Exception
+    public Object getDeletedRecords(RecordType type, String whenExpression) throws Exception
     {
         GetDeletedFilter filter = new GetDeletedFilter();
         filter.setDeletedDate(parse(whenExpression));
@@ -181,7 +181,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
             new GetAllRequest(new GetAllRecord(GetAllRecordType.fromValue(type.value()))));
     }
 
-    public Object getBudgetExchangeRate(@NotNull RecordId period,
+    public Object getBudgetExchangeRates(@NotNull RecordId period,
                                         @NotNull RecordId fromSubsidiary,
                                         RecordId toSubsidiary) throws Exception
     {
@@ -192,7 +192,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    public Object getConsolidatedExchangeRate(@NotNull RecordId period,
+    public Object getConsolidatedExchangeRates(@NotNull RecordId period,
                                               @NotNull RecordId fromSubsidiary,
                                               RecordId toSubsidiary) throws Exception
     {
@@ -203,14 +203,14 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    public Object getCustomizationId(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception
+    public Object getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception
     {
         Validate.notNull(type);
         return getAuthenticatedPort().getCustomizationId(
             new GetCustomizationIdRequest(new CustomizationType(type), includeInactives));
     }
 
-    public Object getItemAvailability(@NotNull RecordReference recordReference, Date ifModifiedSince)
+    public Object getItemAvailabilities(@NotNull RecordReference recordReference, Date ifModifiedSince)
         throws Exception
     {
         Validate.notNull(recordReference);
