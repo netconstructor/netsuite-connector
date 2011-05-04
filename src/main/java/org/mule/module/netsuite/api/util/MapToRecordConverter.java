@@ -55,6 +55,6 @@ public class MapToRecordConverter
         return record;
     }
     
-    //TODO tests that wrong attrbutes generate an exception
+    
 
 }

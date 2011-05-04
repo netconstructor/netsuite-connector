@@ -9,7 +9,8 @@
  */
 
 package org.mule.module.netsuite.api.model.expression.date;
-import static org.mule.module.netsuite.api.model.expression.Quotes.*;
+import static org.mule.module.netsuite.api.model.expression.Quotes.removeQuotes;
+
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
 import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
@@ -19,14 +20,8 @@ import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperat
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.UnhandledException;
 
 public class DateExpressionBuilder
 {

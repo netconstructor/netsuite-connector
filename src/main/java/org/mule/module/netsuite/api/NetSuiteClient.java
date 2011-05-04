@@ -12,6 +12,7 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
+import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
@@ -30,8 +31,7 @@ import javax.validation.constraints.NotNull;
  */
 public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
-    CollectionType findRecord(@NotNull SearchRecordType recordType, String expression)
-        throws ExceptionType;
+    CollectionType findRecord(@NotNull SearchRecordType recordType, String expression) throws ExceptionType;
 
     VoidType updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;
@@ -42,7 +42,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
     Object getRecord(@NotNull RecordReference sourceEntity) throws ExceptionType;
 
     @NotNull
-    CollectionType getDeletedRecords(@NotNull RecordType type, @NotNull String whenExpression)
+    CollectionType getDeletedRecords(@NotNull RecordType type, @NotNull DateExpression whenExpression)
         throws ExceptionType;
 
     VoidType attachRecord(@NotNull RecordReference sourceEntity,
@@ -59,8 +59,8 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     Object getServerTime() throws ExceptionType;
 
-    VoidType updateInviteeStatus(@NotNull RecordId eventId,
-                                 @NotNull CalendarEventAttendeeResponse status) throws ExceptionType;
+    VoidType updateInviteeStatus(@NotNull RecordId eventId, @NotNull CalendarEventAttendeeResponse status)
+        throws ExceptionType;
 
     CollectionType getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives)
         throws ExceptionType;
@@ -69,12 +69,12 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
         throws ExceptionType;
 
     CollectionType getBudgetExchangeRates(@NotNull RecordId period,
-                                         @NotNull RecordId fromSubsidiary,
-                                         RecordId toSubsidiary) throws ExceptionType;
+                                          @NotNull RecordId fromSubsidiary,
+                                          RecordId toSubsidiary) throws ExceptionType;
 
     CollectionType getConsolidatedExchangeRates(@NotNull RecordId period,
-                                               @NotNull RecordId fromSubsidiary,
-                                               RecordId toSubsidiary) throws ExceptionType;
+                                                @NotNull RecordId fromSubsidiary,
+                                                RecordId toSubsidiary) throws ExceptionType;
 
     CollectionType getSavedSearch(@NotNull RecordType type) throws ExceptionType;
 
@@ -84,6 +84,5 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference)
         throws ExceptionType;
-
 
 }

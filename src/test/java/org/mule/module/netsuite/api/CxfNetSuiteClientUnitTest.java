@@ -18,6 +18,7 @@ import static org.mockito.Mockito.when;
 
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
+import org.mule.module.netsuite.api.model.expression.date.StringDateExpression;
 
 import com.netsuite.webservices.lists.accounting_2010_2.Account;
 import com.netsuite.webservices.lists.accounting_2010_2.Bin;
@@ -179,7 +180,8 @@ public class CxfNetSuiteClientUnitTest
     @Test
     public void getDeletedRecord() throws Exception
     {
-        client.getDeletedRecords(RecordType.BUDGET, "within(isoDateRange(2010-1-6, 2011-2-9))");
+        client.getDeletedRecords(RecordType.BUDGET, new StringDateExpression(
+            "within(isoDateRange(2010-1-6, 2011-2-9))"));
         verify(port).getDeleted(argThat(new Matcher<GetDeletedRequest>()
         {
             public boolean matchesImpl(GetDeletedRequest r)

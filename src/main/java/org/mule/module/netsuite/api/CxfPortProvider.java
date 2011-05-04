@@ -8,7 +8,6 @@
  * LICENSE.txt file.
  */
 
-
 package org.mule.module.netsuite.api;
 
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
@@ -19,6 +18,6 @@ public interface CxfPortProvider
 {
     NetSuitePortType getPort() throws RemoteException;
 
-    NetSuitePortType getAuthenticatedPort() throws RemoteException, Exception;
+    NetSuitePortType getAuthenticatedPort() throws Exception;
 
 }

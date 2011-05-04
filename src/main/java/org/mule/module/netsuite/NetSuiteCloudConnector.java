@@ -23,6 +23,8 @@ import org.mule.module.netsuite.api.CxfNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultCxfPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
+import org.mule.module.netsuite.api.model.expression.date.SimpleDateExpression;
+import org.mule.module.netsuite.api.model.expression.date.StringDateExpression;
 import org.mule.tools.cloudconnect.annotations.Connector;
 import org.mule.tools.cloudconnect.annotations.Operation;
 import org.mule.tools.cloudconnect.annotations.Parameter;
@@ -34,6 +36,7 @@ import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
@@ -239,15 +242,24 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Answers a list of deleted records of a given record type
+     * Answers a list of deleted records of a given record type that match a given date expression.
+     * This operations accepts two different date expression passing styles: string oriented, 
+     * and object oriented. If whenExpression is specified, it is parsed and used as date expression. 
+     * Otherwise, a date expression is build from date1, date2 and operator parameters. 
      * 
-     * Examples:
+     * The first style is more appropriate when the date expression can be harcdoded, while the second style 
+     * is better when client code already has date objects. However, predefined search values like 
+     * thisWeek, tomorrow or today can only be used with the first, string oriented, style.    
+     * 
+     * Examples using both string and object oriented styles:
      * 
      * {@code <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
      *        <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
      *        <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
      *        <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
-     *        <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"/>}
+     *        <netsuite:get-deleted-record type="CUSTOMER" date1="#[payload]" operator="BEFORE"/>
+     *        <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"
+     *        <netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />}
      * 
      * @param type the type of the target deleted record to retrieve 
      * @param whenExpression a predicate-style date filtering expression,
@@ -259,9 +271,15 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the list of DeletedRecord's that match the given date filtering expression
      *///TODO finish doc
     @Operation
-    public List<Object> getDeletedRecords(@Parameter RecordType type, @Parameter String whenExpression)
+    public List<Object> getDeletedRecords(@Parameter RecordType type,
+                                          @Parameter(optional = true) String whenExpression,
+                                          @Parameter(optional = true) Date date1,
+                                          @Parameter(optional = true) Date date2,
+                                          @Parameter(optional = true) SearchDateFieldOperator operator)
     {
-        return  client.getDeletedRecords(type, whenExpression);
+        
+        return client.getDeletedRecords(type, 
+            whenExpression != null ? new StringDateExpression( whenExpression) : new SimpleDateExpression(date1, date2, operator));
     }
 
     /**
@@ -363,7 +381,6 @@ public class NetSuiteCloudConnector implements Initialisable
         client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status);
     }
 
-    //TODO support object passing?
     
     /**
      * Creates a new record

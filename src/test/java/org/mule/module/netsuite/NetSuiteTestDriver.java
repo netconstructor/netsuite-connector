@@ -29,6 +29,7 @@ import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
@@ -171,18 +172,30 @@ public class NetSuiteTestDriver
     }
 
     /**
-     * Test that deleted records are retrieved in the getDeletedRecords query 
+     * Test that deleted records are retrieved in the getDeletedRecords query, using
+     * the string oriented style
      */
     @Test
-    public void getDeletedEntity()
+    public void getDeletedEntityStringExpression()
     {
-        // TODO perhaps it would be also a good idea to expose a more object oriented
-        // instead of string oriented date query
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = createEmployeeJohnDoe();
         connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
         List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, // 
-            "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime) + "','yyyy-MM-dd HH:mm:ss'))");
+            "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime) + "','yyyy-MM-dd HH:mm:ss'))", null, null, null);
+        assertEquals(1, deletedRecords.size());
+    }
+    
+    /**
+     * Test that deleted records are retrieved in the getDeletedRecords query, using the simple style. 
+     */
+    @Test
+    public void getDeletedEntitySimpleExpression()
+    {
+        Date serverTime = connector.GetServerTime();
+        RecordRef recordRef = createEmployeeJohnDoe();
+        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, null, serverTime, null, SearchDateFieldOperator.AFTER); 
         assertEquals(1, deletedRecords.size());
     }
 

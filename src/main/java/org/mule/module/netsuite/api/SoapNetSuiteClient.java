@@ -14,6 +14,7 @@ import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
+import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
@@ -48,7 +49,8 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
         throws Exception;
 
     @NetSuiteOperation(responseName = "GetDeletedResult", resultName = "DeletedRecord", resultType = ReturnType.LIST)
-    Object getDeletedRecords(RecordType type, String whenExpression) throws Exception;
+    Object getDeletedRecords(@NotNull RecordType type, @NotNull DateExpression whenExpression)
+        throws Exception;
 
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
     Object getRecord(RecordReference entity) throws Exception;

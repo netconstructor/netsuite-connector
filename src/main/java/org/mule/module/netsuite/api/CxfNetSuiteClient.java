@@ -14,7 +14,7 @@ import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
-import org.mule.module.netsuite.api.model.expression.date.DateExpressionParser;
+import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionParser;
 import org.mule.module.netsuite.api.util.MapToRecordConverter;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
@@ -33,7 +33,6 @@ import com.netsuite.webservices.platform.core_2010_2.ItemAvailabilityFilter;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.RecordRefList;
-import com.netsuite.webservices.platform.core_2010_2.SearchDateField;
 import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.UpdateInviteeStatusReference;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
@@ -71,7 +70,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.lang.Validate;
 
@@ -158,15 +156,16 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 sourceEntity.createRef())));
     }
 
-    public Object getDeletedRecords(RecordType type, String whenExpression) throws Exception
+    public Object getDeletedRecords(RecordType type, DateExpression expression) throws Exception
     {
         GetDeletedFilter filter = new GetDeletedFilter();
-        filter.setDeletedDate(parse(whenExpression));
+        filter.setDeletedDate(expression.createSearchDateField(xmlGregorianCalendarFactory));
         filter.setType(new SearchEnumMultiSelectField(Arrays.asList(type.value()),
             SearchEnumMultiSelectFieldOperator.ANY_OF));
         return getAuthenticatedPort().getDeleted(new GetDeletedRequest(filter));
     }
-
+    
+    
     public Object getRecord(RecordReference record) throws Exception
     {
         Validate.notNull(record);
@@ -216,7 +215,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().getItemAvailability(//
             new GetItemAvailabilityRequest(//
                 new ItemAvailabilityFilter(singletonRecordRefList(recordReference),
-                    nullSafeToXmlCalendar(ifModifiedSince))));
+                    xmlGregorianCalendarFactory.nullSafeToXmlCalendar(ifModifiedSince))));
     }
 
     public Object getSavedSearch(@NotNull RecordType type) throws Exception
@@ -272,19 +271,10 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return toSubsidiary != null ? toSubsidiary.createRef() : null;
     }
 
-    private XMLGregorianCalendar nullSafeToXmlCalendar(Date date)
-    {
-        return xmlGregorianCalendarFactory.nullSafeToXmlCalendar(date);
-    }
-
     private RecordRefList singletonRecordRefList(RecordReference recordReference)
     {
         return new RecordRefList(Collections.singletonList(recordReference.createRef()));
     }
-
-    private SearchDateField parse(String whenExpression)
-    {
-        return DateExpressionParser.parse(whenExpression, xmlGregorianCalendarFactory);
-    }
+    
 
 }

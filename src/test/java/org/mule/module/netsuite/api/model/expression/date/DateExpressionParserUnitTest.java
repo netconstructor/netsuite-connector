@@ -10,7 +10,9 @@
 
 package org.mule.module.netsuite.api.model.expression.date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 

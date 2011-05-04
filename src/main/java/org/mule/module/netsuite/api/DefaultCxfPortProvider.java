@@ -60,6 +60,7 @@ public class DefaultCxfPortProvider implements CxfPortProvider
         this.roleId = roleId;
     }
 
+    @SuppressWarnings("unchecked")
     private JaxWsProxyFactoryBean getProxyFactory(final Class clazz, final String address)
     {
         final JaxWsProxyFactoryBean ret = new JaxWsProxyFactoryBean();
@@ -77,7 +78,7 @@ public class DefaultCxfPortProvider implements CxfPortProvider
         return (NetSuitePortType) factory.create();
     }
 
-    public NetSuitePortType getAuthenticatedPort() throws RemoteException, Exception
+    public NetSuitePortType getAuthenticatedPort() throws Exception
     {
         NetSuitePortType port = getPort();
         ((BindingProvider) port).getRequestContext().put(BindingProvider.SESSION_MAINTAIN_PROPERTY, true);
