@@ -10,7 +10,6 @@
 
 package org.mule.module.netsuite.api.util;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -60,5 +59,23 @@ public class MapToRecordConverterUnitTest
         assertEquals(title, record.getTitle());
         assertEquals(location, record.getLocation());
         assertNotNull(record.getStartDate());
+    }
+    
+    /**
+     * Test that a map can be converted into record, applying attribute conversions
+     * if necessary
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testToRecordBadAttribute() throws Exception
+    {
+        mapToRecordConverter.toRecord(RecordType.CALENDAR_EVENT,
+            new HashMap<String, Object>()
+            {
+                {
+                    put("sendEmail", true);
+                    put("title", "title");
+                    put("foobar", "2");
+                }
+            });
     }
 }

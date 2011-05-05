@@ -1,0 +1,26 @@
+/**
+ * Mule NetSuite Cloud Connector
+ *
+ * Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+ *
+ * The software in this package is published under the terms of the CPAL v1.0
+ * license, a copy of which has been included with this distribution in the
+ * LICENSE.txt file.
+ */
+
+package org.mule.module.netsuite.api.model.expression;
+
+public final class PropertyAccess
+{
+
+    private PropertyAccess()
+    {
+    }
+
+    public static IllegalArgumentException propertyNotFound(String propertyName, Object target)
+    {
+        return new IllegalArgumentException("Invallid property " + propertyName + " for class "
+                                            + target.getClass().getSimpleName());
+    }
+
+}

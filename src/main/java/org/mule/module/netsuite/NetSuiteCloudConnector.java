@@ -83,8 +83,7 @@ public class NetSuiteCloudConnector implements Initialisable
     @Property
     private String account;
     /**
-     * The id of the role used to login in SuiteTalk, which determines the operations
-     * privileges
+     * The id of the role used to login in SuiteTalk, which determines the operation privileges
      */
     @Property
     private String roleId;

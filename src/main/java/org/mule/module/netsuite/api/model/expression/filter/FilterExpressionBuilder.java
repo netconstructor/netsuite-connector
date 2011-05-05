@@ -13,6 +13,8 @@ package org.mule.module.netsuite.api.model.expression.filter;
 import static org.apache.commons.beanutils.MethodUtils.invokeExactStaticMethod;
 import static org.mule.module.netsuite.api.model.expression.Quotes.removeQuotesIfPresent;
 
+import org.mule.module.netsuite.api.model.expression.PropertyAccess;
+
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
@@ -170,8 +172,7 @@ public class FilterExpressionBuilder
         }
         catch (IntrospectionException e)
         {
-            throw new IllegalArgumentException("Invallid property " + propertyName + " for class "
-                                               + object.getClass());
+            throw PropertyAccess.propertyNotFound(propertyName, target);
         }
     }
 

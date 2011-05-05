@@ -44,7 +44,7 @@ public final class RecordReferences
 
     private static RecordReference fromNull(String id, RecordIdType idType)
     {
-        Validate.isTrue(id == null && idType == null, "Must specify recordType");
+        Validate.isTrue(id == null, "Must specify recordType");
         return null;
     }
 
