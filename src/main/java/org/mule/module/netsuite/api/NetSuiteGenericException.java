@@ -24,4 +24,13 @@ public class NetSuiteGenericException extends RuntimeException
         super(message);
     }
 
+    public static RuntimeException soften(Exception e)
+    {
+        if (!(e instanceof RuntimeException))
+        {
+            return new NetSuiteGenericException(e);
+        }
+        return (RuntimeException) e;
+    }
+
 }

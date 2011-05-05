@@ -16,8 +16,6 @@ import java.rmi.RemoteException;
 
 public interface CxfPortProvider
 {
-    NetSuitePortType getPort() throws RemoteException;
-
     NetSuitePortType getAuthenticatedPort() throws Exception;
 
 }

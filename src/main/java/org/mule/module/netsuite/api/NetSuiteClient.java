@@ -16,6 +16,7 @@ import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
+import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
@@ -23,6 +24,7 @@ import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -34,7 +36,7 @@ import javax.validation.constraints.NotNull;
  */
 public interface NetSuiteClient<CollectionType, ExceptionType extends Exception, VoidType>
 {
-    CollectionType findRecord(@NotNull SearchRecordType recordType, String expression) throws ExceptionType;
+    Iterable<Record> findRecords(@NotNull SearchRecordType recordType, String expression) throws ExceptionType;
 
     VoidType updateRecord(@NotNull RecordReference recordReference,
                           @NotNull Map<String, Object> recordAttributes) throws Exception;
@@ -89,6 +91,6 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     AsyncStatusResult checkAsyncStatus(@NotNull String jobId) throws ExceptionType;
 
-    AsyncResult getAsyncResult(@NotNull String jobId, int pageIndex) throws ExceptionType;
+    Iterable<Record> getAsyncFindResult(@NotNull String jobId) throws ExceptionType;
 
 }

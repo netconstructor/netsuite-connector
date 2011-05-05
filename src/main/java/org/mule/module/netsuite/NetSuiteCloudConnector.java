@@ -531,12 +531,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      *  
      * Examples:
-     * {@code <netsuite:find-record recordType="BIN")" />
-     *        <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-     *        <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-     *        <netsuite:find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-     *        <netsuite:find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
-     *        <netsuite:find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+     * {@code <netsuite:find-records recordType="BIN")" />
+     *        <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *        <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     *        <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     *        <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *        <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
@@ -544,10 +544,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of Record's
      */
     @Operation
-    public List<Object> findRecord(@Parameter SearchRecordType recordType,
-                                   @Parameter(optional = true) String expression)
+    public Iterable<Record> findRecords(@Parameter SearchRecordType recordType,
+                                       @Parameter(optional = true) String expression)
     {
-        return client.findRecord(recordType, expression);
+        return client.findRecords(recordType, expression);
     }
     
     /**
@@ -581,8 +581,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the AsyncStatusResult of the query
      */
     @Operation
-    public AsyncStatusResult asyncFindRecord(@Parameter SearchRecordType recordType,
-                                             @Parameter(optional = true) String expression) throws Exception
+    public AsyncStatusResult asyncFindRecords(@Parameter SearchRecordType recordType,
+                                              @Parameter(optional = true) String expression) throws Exception
     {
         return client.asyncFindRecord(recordType, expression);
     }
@@ -592,19 +592,18 @@ public class NetSuiteCloudConnector implements Initialisable
      * can be executed operation up to 20 times within a 30 day time period to
      * retrieve the results of an asynchronous job.
      * Example:
-     * {@code <netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />}
+     * {@code <netsuite:get-async-find-result jobId="#[map-payload:jobId]"  />}
      * 
      * @param jobId the id of the job
      * @param pageIndex the page number the the async result
      * @return the AsyncResult
      */
     @Operation
-    public AsyncResult getAsyncResult(@Parameter String jobId, /*TODO check if mandatory */ @Parameter int pageIndex)
+    public Iterable<Record> getAsyncFindResult(@Parameter String jobId)
     {
-        return client.getAsyncResult(jobId, pageIndex);
+        return client.getAsyncFindResult(jobId);
     }
     
-    //TODO check pagination
 
     /**
      * Populates fields on transaction line items with values from a related record,

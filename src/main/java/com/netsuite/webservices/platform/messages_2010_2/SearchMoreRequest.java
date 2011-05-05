@@ -42,6 +42,15 @@ import javax.xml.bind.annotation.XmlType;
 public class SearchMoreRequest {
 
     protected int pageIndex;
+    
+    public SearchMoreRequest()
+    {
+    }
+
+    public SearchMoreRequest(int pageIndex)
+    {
+        this.pageIndex = pageIndex;
+    }
 
     /**
      * Gets the value of the pageIndex property.

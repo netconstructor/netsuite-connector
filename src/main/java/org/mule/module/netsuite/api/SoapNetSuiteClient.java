@@ -17,13 +17,14 @@ import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
+import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -62,13 +63,13 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
 
     @NetSuiteOperation(responseName = "GetBudgetExchangeRateResult", resultName = "BudgetExchangeRate", resultType = ReturnType.LIST)
     Object getBudgetExchangeRates(@NotNull RecordId period,
-                                 @NotNull RecordId fromSubsidiary,
-                                 RecordId toSubsidiary) throws Exception;
+                                  @NotNull RecordId fromSubsidiary,
+                                  RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetConsolidatedExchangeRateResult", resultName = "ConsolidatedExchangeRate", resultType = ReturnType.LIST)
     Object getConsolidatedExchangeRates(@NotNull RecordId period,
-                                       @NotNull RecordId fromSubsidiary,
-                                       RecordId toSubsidiary) throws Exception;
+                                        @NotNull RecordId fromSubsidiary,
+                                        RecordId toSubsidiary) throws Exception;
 
     @NetSuiteOperation(responseName = "GetCustomizationIdResult", resultName = "CustomizationRef", resultType = ReturnType.LIST)
     Object getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception;
@@ -87,19 +88,20 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Object updateInviteeStatus(@NotNull RecordId eventId, @NotNull CalendarEventAttendeeResponse status)
         throws Exception;
 
-    @NetSuiteOperation(responseName = "SearchResult", resultName = "Record", resultType = ReturnType.LIST)
-    Object findRecord(@NotNull SearchRecordType recordType, String expression) throws Exception;
-    
+    @NetSuiteOperation(adapt = false)
+    Iterable<Record> findRecords(@NotNull SearchRecordType recordType, String expression) throws Exception;
+
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
     Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference) throws Exception;
-    
-    @NetSuiteOperation(adapt = false)
-    AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression) throws Exception;
 
     @NetSuiteOperation(adapt = false)
-    AsyncResult getAsyncResult(@NotNull String jobId, int pageIndex) throws Exception;
+    AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)
+        throws Exception;
 
-    @NetSuiteOperation(adapt = false) 
+    @NetSuiteOperation(adapt = false)
+    Iterable<Record> getAsyncFindResult(@NotNull String jobId) throws Exception;
+
+    @NetSuiteOperation(adapt = false)
     AsyncStatusResult checkAsyncStatus(@NotNull String jobId) throws Exception;
 
 }

@@ -13,6 +13,7 @@ package org.mule.module.netsuite.api.annotation;
 import static org.apache.commons.beanutils.MethodUtils.invokeExactMethod;
 
 import org.mule.module.netsuite.api.NetSuiteGenericException;
+import org.mule.module.netsuite.api.ResultStatuses;
 
 import com.netsuite.webservices.platform.core_2010_2.Status;
 import com.netsuite.webservices.platform.core_2010_2.StatusDetail;
@@ -60,20 +61,8 @@ public enum ReturnType
     public Object adapt(Object returnValue, String responseName, String resultName) throws Throwable
     {
         Object result = invokeExactMethod(returnValue, "get" + responseName, EMPTY_ARRAY);
-        Status status = (Status) invokeExactMethod(result, "getStatus", EMPTY_ARRAY);
-        if (status.isIsSuccess())
-        {
-            return adaptImpl(result, resultName);
-        }
-        throw new NetSuiteGenericException("Request failed. Details: " + getStatusDetails(status));
+        ResultStatuses.checkStatus(result);
+        return adaptImpl(result, resultName);
     }
 
-    private String getStatusDetails(Status status)
-    {
-        if (status.getStatusDetail().isEmpty())
-        {
-            return "<no details>";
-        }
-        return ToStringBuilder.reflectionToString(status.getStatusDetail().get(0));
-    }
 }

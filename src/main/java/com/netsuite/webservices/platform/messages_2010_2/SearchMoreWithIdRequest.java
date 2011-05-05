@@ -47,6 +47,16 @@ public class SearchMoreWithIdRequest {
     @XmlElement(required = true)
     protected String searchId;
     protected int pageIndex;
+    
+    public SearchMoreWithIdRequest()
+    {
+    }
+
+    public SearchMoreWithIdRequest(String searchId, int pageIndex)
+    {
+        this.searchId = searchId;
+        this.pageIndex = pageIndex;
+    }
 
     /**
      * Gets the value of the searchId property.

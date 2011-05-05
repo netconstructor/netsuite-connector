@@ -14,6 +14,8 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionParser;
+import org.mule.module.netsuite.api.paging.RecordAsyncSearchIterable;
+import org.mule.module.netsuite.api.paging.RecordSearchIterable;
 import org.mule.module.netsuite.api.util.MapToRecordConverter;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
@@ -42,14 +44,12 @@ import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.platform.messages_2010_2.AddRequest;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 import com.netsuite.webservices.platform.messages_2010_2.AsyncSearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.AttachRequest;
 import com.netsuite.webservices.platform.messages_2010_2.CheckAsyncStatusRequest;
 import com.netsuite.webservices.platform.messages_2010_2.DeleteRequest;
 import com.netsuite.webservices.platform.messages_2010_2.DetachRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetAllRequest;
-import com.netsuite.webservices.platform.messages_2010_2.GetAsyncResultRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetBudgetExchangeRateRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetConsolidatedExchangeRateRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetCustomizationIdRequest;
@@ -59,7 +59,6 @@ import com.netsuite.webservices.platform.messages_2010_2.GetRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetSavedSearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.GetServerTimeRequest;
 import com.netsuite.webservices.platform.messages_2010_2.InitializeRequest;
-import com.netsuite.webservices.platform.messages_2010_2.SearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest;
 import com.netsuite.webservices.platform.messages_2010_2.UpdateRequest;
 import com.netsuite.webservices.platform_2010_2.NetSuitePortType;
@@ -68,6 +67,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -78,13 +78,12 @@ import org.apache.commons.lang.Validate;
  * Implementation of the {@link SoapNetSuiteClient} that uses CXF generated-based
  * interface
  */
-public class CxfNetSuiteClient implements SoapNetSuiteClient
+public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
 {
 
     private final CxfPortProvider portProvider;
     private final XmlGregorianCalendarFactory xmlGregorianCalendarFactory = XmlGregorianCalendarFactory.newInstance();
     private final MapToRecordConverter converter = new MapToRecordConverter(xmlGregorianCalendarFactory);
-    
 
     public CxfNetSuiteClient(@NotNull CxfPortProvider portProvider)
     {
@@ -109,14 +108,13 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
         return getAuthenticatedPort().add(new AddRequest(createRecord(recordType, recordAttributes)));
     }
 
-    public Object findRecord(@NotNull SearchRecordType recordType, @NotNull String expression) throws Exception
+    public Iterable<Record> findRecords(@NotNull final SearchRecordType recordType,
+                                       @NotNull final String expression) throws Exception
     {
         Validate.notNull(recordType);
         Validate.notEmpty(expression);
-        return getAuthenticatedPort().search(
-            new SearchRequest(FilterExpressionParser.parse(recordType, expression)));
+        return new RecordSearchIterable(this, recordType, expression);
     }
-    
 
     public AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)
         throws Exception
@@ -164,8 +162,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                                @NotNull RecordReference destinationEntity) throws Exception
     {
         return getAuthenticatedPort().detach(
-            new DetachRequest(new DetachBasicReference(
-                sourceEntity.createRef(), destinationEntity.createRef())));
+            new DetachRequest(new DetachBasicReference(sourceEntity.createRef(),
+                destinationEntity.createRef())));
     }
 
     public Object getDeletedRecords(RecordType type, DateExpression expression) throws Exception
@@ -176,8 +174,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
             SearchEnumMultiSelectFieldOperator.ANY_OF));
         return getAuthenticatedPort().getDeleted(new GetDeletedRequest(filter));
     }
-    
-    
+
     public Object getRecord(RecordReference record) throws Exception
     {
         Validate.notNull(record);
@@ -192,8 +189,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
     }
 
     public Object getBudgetExchangeRates(@NotNull RecordId period,
-                                        @NotNull RecordId fromSubsidiary,
-                                        RecordId toSubsidiary) throws Exception
+                                         @NotNull RecordId fromSubsidiary,
+                                         RecordId toSubsidiary) throws Exception
     {
         Validate.notNull(period);
         Validate.notNull(fromSubsidiary);
@@ -203,8 +200,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
     }
 
     public Object getConsolidatedExchangeRates(@NotNull RecordId period,
-                                              @NotNull RecordId fromSubsidiary,
-                                              RecordId toSubsidiary) throws Exception
+                                               @NotNull RecordId fromSubsidiary,
+                                               RecordId toSubsidiary) throws Exception
     {
         Validate.notNull(period);
         Validate.notNull(fromSubsidiary);
@@ -213,7 +210,8 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
                 fromSubsidiary.createRef(), createRefNullSafe(toSubsidiary))));
     }
 
-    public Object getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives) throws Exception
+    public Object getCustomizationIds(@NotNull GetCustomizationType type, boolean includeInactives)
+        throws Exception
     {
         Validate.notNull(type);
         return getAuthenticatedPort().getCustomizationId(
@@ -258,11 +256,10 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
             .getAsyncStatusResult();
     }
 
-    public AsyncResult getAsyncResult(String jobId, int pageIndex) throws Exception
+    public Iterable<Record> getAsyncFindResult(String jobId) throws Exception
     {
         Validate.notEmpty(jobId);
-        return getAuthenticatedPort().getAsyncResult(new GetAsyncResultRequest(jobId, pageIndex))
-            .getAsyncResult();
+        return new RecordAsyncSearchIterable(this, jobId);
     }
 
     public Object initialize(RecordType type, RecordReference recordReference) throws Exception
@@ -288,6 +285,5 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient
     {
         return new RecordRefList(Collections.singletonList(recordReference.createRef()));
     }
-    
 
 }

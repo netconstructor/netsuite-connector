@@ -32,6 +32,7 @@ import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncod
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
+import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
@@ -86,7 +87,6 @@ public class NetSuiteTestDriver
     {
         assertFalse(connector.getRecords(RecordType.CURRENCY).isEmpty());
     }
-    
 
     @Test
     public void attachAndDetachEntity()
@@ -125,7 +125,7 @@ public class NetSuiteTestDriver
             }
         });
     }
-    
+
     private RecordRef createFile(final RecordRef folder)
     {
         return connector.addRecord(RecordType.FILE, new HashMap<String, Object>()
@@ -152,7 +152,8 @@ public class NetSuiteTestDriver
         RecordRef file = null, folder = createFolder();
         try
         {
-            file = connector.addFile(null, "foobar", "File2.txt", folder.getInternalId(), RecordIdType.INTERNAL);
+            file = connector.addFile(null, "foobar", "File2.txt", folder.getInternalId(),
+                RecordIdType.INTERNAL);
         }
         finally
         {
@@ -163,7 +164,6 @@ public class NetSuiteTestDriver
             connector.deleteRecord(RecordType.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
         }
     }
-
 
     /**
      * Test that a record can be created and updated, and that the modification are
@@ -293,14 +293,14 @@ public class NetSuiteTestDriver
     @Test
     public void findRecordSimpleSearch() throws Exception
     {
-        List<Object> employees = findJohnDoe();
-        assertTrue(employees.isEmpty());
+        Iterable<Record> employees = findJohnDoe();
+        assertFalse(employees.iterator().hasNext());
 
         RecordRef ref = createEmployeeJohnDoe();
         try
         {
-            assertEquals(1, findJohnDoe().size());
-            assertEquals(0, findMaryDoe().size());
+            assertTrue(findJohnDoe().iterator().hasNext());
+            assertFalse(findMaryDoe().iterator().hasNext());
         }
         finally
         {
@@ -308,20 +308,20 @@ public class NetSuiteTestDriver
         }
     }
 
-    private List<Object> findJohnDoe()
+    private Iterable<Record> findJohnDoe()
     {
-        return connector.findRecord(SearchRecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
+        return connector.findRecords(SearchRecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
     }
 
-    private List<Object> findMaryDoe()
+    private Iterable<Record> findMaryDoe()
     {
-        return connector.findRecord(SearchRecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
+        return connector.findRecords(SearchRecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
     }
 
     @Test
     public void findRecordJoinedSearch() throws Exception
     {
-        assertNotNull(connector.findRecord(SearchRecordType.EMPLOYEE,
+        assertNotNull(connector.findRecords(SearchRecordType.EMPLOYEE,
             "is(email, 'john.doe@foobar.com'), is(userNotes.title, 'A note')"));
     }
 
@@ -372,7 +372,6 @@ public class NetSuiteTestDriver
         RecordRef event = connector.addRecord(RecordType.CALENDAR_EVENT, new HashMap<String, Object>()
         {
             {
-                put("sendMail", false);
                 put("title", "An importat event");
                 put("location", "Pekin");
                 put("startDate", new Date());
@@ -390,18 +389,18 @@ public class NetSuiteTestDriver
                 put("fax", "159-945-56");
                 put("firstName", "John");
                 put("lastName", "Doe");
-                put("salesRep", true);
+                put("isSalesRep", true);
                 put("email", "john.doe@foobar.com");
 
             }
         });
         return recordRef;
     }
-    
+
     @Test
     public void asyncFindRecord() throws Exception
     {
-        AsyncStatusResult initialStatus = connector.asyncFindRecord(SearchRecordType.EMPLOYEE,
+        AsyncStatusResult initialStatus = connector.asyncFindRecords(SearchRecordType.EMPLOYEE,
             "is(firstName, 'John'), is(lastName, 'Doe')");
         assertNotNull(initialStatus);
         assertTrue(initialStatus.getStatus().isActive());
@@ -415,9 +414,8 @@ public class NetSuiteTestDriver
         while (status.isActive());
         assertSame(AsyncStatusType.FINISHED, status);
         // TODO
-//        AsyncResult result = connector.getAsyncResult(initialStatus.getJobId(), 0);
-//        assertThat(result, instanceOf(AsyncSearchResult.class));
+        // AsyncResult result = connector.getAsyncResult(initialStatus.getJobId(),
+        // 0);
+        // assertThat(result, instanceOf(AsyncSearchResult.class));
     }
-
-    // TODO pagination
 }

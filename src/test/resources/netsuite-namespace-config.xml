@@ -118,7 +118,7 @@
 	<flow name="getAsyncResult">
 		<inbound-endpoint address="vm://getAsyncResult"
 			exchange-pattern="request-response" />
-		<netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />
+		<netsuite:get-async-find-result jobId="#[map-payload:jobId]" />
 	</flow>
 
 	<flow name="updateRecord">
@@ -135,13 +135,13 @@
 		<flow name="findRecord">
 		<inbound-endpoint address="vm://findRecord"
 			exchange-pattern="request-response" />
-		<netsuite:find-record recordType="EMPLOYEE" expression="is(email, 'john.doe@foobar.com')" />
+		<netsuite:find-records recordType="EMPLOYEE" expression="is(email, 'john.doe@foobar.com')" />
 	</flow>
 
 	<flow name="asyncFindRecord">
 		<inbound-endpoint address="vm://asyncFindRecord"
 			exchange-pattern="request-response" />
-		<netsuite:async-find-record recordType="CUSTOMER" expression="greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25)" />
+		<netsuite:async-find-records recordType="CUSTOMER" expression="greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25)" />
 	</flow>
     
 

@@ -449,8 +449,8 @@ Returns AsyncStatusResult for the given job
 
 
 
-Find Record
------------
+Find Records
+------------
 
 Answers all records that match the given filtering expression.
 If no expression is specified, all records of the given type are retrieved.
@@ -468,12 +468,12 @@ plus the isTrue/isFalse boolean operators, and arguments are zero up to three op
 Examples:
 
 
-     <netsuite:find-record recordType="BIN")" />
-           <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-           <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-           <netsuite:find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-           <netsuite:find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
-           <netsuite:find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
+     <netsuite:find-records recordType="BIN")" />
+           <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+           <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+           <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+           <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+           <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -485,8 +485,8 @@ Returns list of Record's
 
 
 
-Async Find Record
------------------
+Async Find Records
+------------------
 
 Searches for all records that match the given filtering expression, asynchronously.
 If no expression is specified, all records of the given type are retrieved  
@@ -519,8 +519,8 @@ Returns AsyncStatusResult of the query
 
 
 
-Get Async Result
-----------------
+Get Async Find Result
+---------------------
 
 Answers the results of an asynchronous web services submission. This operation
 can be executed operation up to 20 times within a 30 day time period to
@@ -528,13 +528,12 @@ retrieve the results of an asynchronous job.
 Example:
 
 
-     <netsuite:get-async-result jobId="#[map-payload:jobId]" pageIndex="#[map-payload:pageIndex]" />
+     <netsuite:get-async-find-result jobId="#[map-payload:jobId]"  />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
 |jobId|the id of the job|no||
-|pageIndex|the page number the the async result|no||
 
 Returns AsyncResult
 

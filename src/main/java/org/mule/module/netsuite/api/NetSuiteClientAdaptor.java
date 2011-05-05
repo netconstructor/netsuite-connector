@@ -12,6 +12,8 @@ package org.mule.module.netsuite.api;
 
 import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 
+import com.netsuite.webservices.platform.core_2010_2.Record;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -51,19 +53,10 @@ public final class NetSuiteClientAdaptor
                     }
                     catch (Exception e)
                     {
-                        throw soften(e);
+                        throw NetSuiteGenericException.soften(e);
                     }
                 }
             });
-    }
-
-    private static Exception soften(Exception e)
-    {
-        if (!(e instanceof RuntimeException))
-        {
-            return new NetSuiteGenericException(e);
-        }
-        return e;
     }
 
     private static Object adaptReturnType(Object returnValue, NetSuiteOperation operationMetadata)

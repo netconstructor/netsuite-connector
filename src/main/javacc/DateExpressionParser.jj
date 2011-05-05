@@ -52,7 +52,6 @@ TOKEN : { < ISO_DATE : (["0"-"9","a"-"z","A"-"Z","-",":"])+ > }
 TOKEN : { < STRING : "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
 
 
-
 SearchDateField start() : 
 { }
 { 
