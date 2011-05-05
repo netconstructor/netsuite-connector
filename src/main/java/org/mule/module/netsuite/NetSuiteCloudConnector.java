@@ -256,7 +256,17 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * The first style is more appropriate when the date expression can be harcdoded, while the second style 
      * is better when client code already has date objects. However, predefined search values like 
-     * thisWeek, tomorrow or today can only be used with the first, string oriented, style.    
+     * thisWeek, tomorrow or today can only be used with the first, string oriented, style.
+     * 
+     * String oriented date expressions are in the form operation( searchValue, arguments...), where operation is any of the NetSuite 
+     * supported date operations, arguments are one or two operands for the given operator, and
+     * searchValue is some of the supported predefined search value as defined by NetSuite or any 
+     * of the following expressions:
+     * isoDate( anIsoDate ), isoDateRante( anIsoDate, anotherIsoDate ) , 
+     * dateTime( aQuotedDateTime, aQuoatedJavaDateFormat ), 
+     * dateTimeRange( aQuotedDateTime, anotherQuotedDateTime, aQuoatedJavaDateFormat ).       
+     * Supported predefined search values are: today, thisWeek, thisBusinessWeek, thisMonth,thisYear, yesterday, 
+     * twoDaysAgo, lastWeek, lastMonth, threeMonthAgo,tomorrow, nextMonth , nextWeek    
      * 
      * Examples using both string and object oriented styles:
      * 
@@ -269,14 +279,9 @@ public class NetSuiteCloudConnector implements Initialisable
      *        <netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />}
      * 
      * @param type the type of the target deleted record to retrieve 
-     * @param whenExpression a predicate-style date filtering expression,
-     *        in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; 
-     *        \| &lt;isoDate( &lt;isoDate&gt; )&gt; \| &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; 
-     *        \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; 
-     *        \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue 
-     *        and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite
+     * @param whenExpression a predicate-style date filtering expression
      * @return the list of DeletedRecord's that match the given date filtering expression
-     *///TODO finish doc
+     */
     @Operation
     public List<Object> getDeletedRecords(@Parameter RecordType type,
                                           @Parameter(optional = true) String whenExpression,
@@ -510,15 +515,32 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         return client.checkAsyncStatus(jobId);
     }
-    
-    //TODO add examples and document filtering syntax
 
     /**
      * Answers all records that match the given filtering expression.
-     * If no expression is specified, all records of the given type are retrieved  
+     * If no expression is specified, all records of the given type are retrieved.
+     * 
+     * Filtering expressions support both basic and joined syntax, that is, using in the filters
+     * attributes of both the target entity and the target entity associations. Advanced search is not supported.
+     * 
+     * Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+     * and operator(join.attribute, arguments...) for joined search, where operator is 
+     * any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+     * 
+     * 
+     *  
+     * Examples:
+     * {@code <netsuite:find-record recordType="BIN")" />
+     *        <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *        <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     *        <netsuite:find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     *        <netsuite:find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *        <netsuite:find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
+     *          Multiple filters can be combined using multiple predicates separated by commas.    
      * @return a list of Record's
      */
     @Operation
@@ -532,8 +554,30 @@ public class NetSuiteCloudConnector implements Initialisable
      * Searches for all records that match the given filtering expression, asynchronously.
      * If no expression is specified, all records of the given type are retrieved  
      * 
+     * Filtering expressions support both basic and joined syntax, that is, using in the filters
+     * attributes of both the target entity and the target entity associations. Advanced search is not supported.
+     * 
+     * Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+     * and operator(join.attribute, arguments...) for joined search, where operator is 
+     * any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+     * 
+     * Examples:
+     * {@code <netsuite:async-find-record recordType="BIN")" />
+     *        <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *        <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     *        <netsuite:async-find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     *        <netsuite:async-find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *        <netsuite:async-find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+     * 
+     * 
      * @param recordType the type of record to search
-     * @param expression the filtering expression
+     * @param expression the filtering expression, in the 
+     *          form operator(attribute, arguments...) for basic search, 
+     *          and operator(join.attribute, arguments...) for joined search, where operator is 
+     *          any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     *          plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+     *          Multiple filters can be combined using multiple predicates separated by commas.
      * @return the AsyncStatusResult of the query
      */
     @Operation

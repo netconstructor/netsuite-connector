@@ -131,6 +131,19 @@
 			</netsuite:attributes>
 		</netsuite:update-record>
 	</flow>
+	
+		<flow name="findRecord">
+		<inbound-endpoint address="vm://findRecord"
+			exchange-pattern="request-response" />
+		<netsuite:find-record recordType="EMPLOYEE" expression="is(email, 'john.doe@foobar.com')" />
+	</flow>
+
+	<flow name="asyncFindRecord">
+		<inbound-endpoint address="vm://asyncFindRecord"
+			exchange-pattern="request-response" />
+		<netsuite:async-find-record recordType="CUSTOMER" expression="greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25)" />
+	</flow>
+    
 
 
 </mule>

@@ -54,8 +54,7 @@ Here is detailed list of all the configuration attributes:
 |:-----------|:-----------|:---------|:--------------|
 |name|Give a name to this configuration so it can be later referenced by config-ref.|yes||
 |client||yes|
-|roleId|The id of the role used to login in SuiteTalk, which determines the operations
-privileges|no|
+|roleId|The id of the role used to login in SuiteTalk, which determines the operation privileges|no|
 |email|The login email of both NetSuite UI and SuiteTalk|no|
 |password|The login password of both the NetSuite UI and SuiteTalk|no|
 |account|SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX|no|
@@ -213,7 +212,17 @@ Otherwise, a date expression is build from date1, date2 and operator parameters.
 
 The first style is more appropriate when the date expression can be harcdoded, while the second style 
 is better when client code already has date objects. However, predefined search values like 
-thisWeek, tomorrow or today can only be used with the first, string oriented, style.    
+thisWeek, tomorrow or today can only be used with the first, string oriented, style.
+
+String oriented date expressions are in the form operation( searchValue, arguments...), where operation is any of the NetSuite 
+supported date operations, arguments are one or two operands for the given operator, and
+searchValue is some of the supported predefined search value as defined by NetSuite or any 
+of the following expressions:
+isoDate( anIsoDate ), isoDateRante( anIsoDate, anotherIsoDate ) , 
+dateTime( aQuotedDateTime, aQuoatedJavaDateFormat ), 
+dateTimeRange( aQuotedDateTime, anotherQuotedDateTime, aQuoatedJavaDateFormat ).       
+Supported predefined search values are: today, thisWeek, thisBusinessWeek, thisMonth,thisYear, yesterday, 
+twoDaysAgo, lastWeek, lastMonth, threeMonthAgo,tomorrow, nextMonth , nextWeek    
 
 Examples using both string and object oriented styles:
 
@@ -231,7 +240,7 @@ Examples using both string and object oriented styles:
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
 |type|the type of the target deleted record to retrieve|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
-|whenExpression|a predicate-style date filtering expression, in the form &lt;operation&gt;( &lt;predefinedSearchValue&gt; \| &lt;isoDate( &lt;isoDate&gt; )&gt; \| &lt;isoDateRange(&lt;isoDate1&gt;, &lt;isoDate2&gt;)&gt; \| &lt;dateTime( '&lt;date&gt;', '&lt;format&gt;' )&gt; \| &lt;dateTimeRange( '&lt;date1&gt;', '&lt;date2&gt;', '&lt;format&gt;' )&gt; ), where predefinedSearchValue and operation are a subset of the most common predefinedSearchValues and operations supported by Netsuite|yes||
+|whenExpression|a predicate-style date filtering expression|yes||
 |date1||yes||
 |date2||yes||
 |operator||yes||*AFTER*, *BEFORE*, *EMPTY*, *NOT_AFTER*, *NOT_BEFORE*, *NOT_EMPTY*, *NOT_ON*, *NOT_ON_OR_AFTER*, *NOT_ON_OR_BEFORE*, *NOT_WITHIN*, *ON*, *ON_OR_AFTER*, *ON_OR_BEFORE*, *WITHIN*
@@ -444,15 +453,69 @@ Find Record
 -----------
 
 Answers all records that match the given filtering expression.
-If no expression is specified, all records of the given type are retrieved
+If no expression is specified, all records of the given type are retrieved.
+
+Filtering expressions support both basic and joined syntax, that is, using in the filters
+attributes of both the target entity and the target entity associations. Advanced search is not supported.
+
+Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+and operator(join.attribute, arguments...) for joined search, where operator is 
+any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+
+
+ 
+Examples:
+
+
+     <netsuite:find-record recordType="BIN")" />
+           <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+           <netsuite:find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+           <netsuite:find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+           <netsuite:find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+           <netsuite:find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
 |recordType|the type of record to search|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *BIN*, *BUDGET*, *CALENDAR_EVENT*, *CAMPAIGN*, *CLASSIFICATION*, *CONTACT*, *CUSTOMER*, *CUSTOM_RECORD*, *DEPARTMENT*, *EMPLOYEE*, *ENTITY_GROUP*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GROUP_MEMBER*, *ITEM*, *ISSUE*, *JOB*, *LOCATION*, *MESSAGE*, *NOTE*, *OPPORTUNITY*, *PARTNER*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *SALES_ROLE*, *SOLUTION*, *SITE_CATEGORY*, *SUBSIDIARY*, *SUPPORT_CASE*, *TASK*, *TIME_BILL*, *TOPIC*, *TRANSACTION*, *VENDOR*, *clazz*
-|expression|the filtering expression|yes||
+|expression|the filtering expression Multiple filters can be combined using multiple predicates separated by commas.|yes||
 
 Returns list of Record's
+
+
+
+Async Find Record
+-----------------
+
+Searches for all records that match the given filtering expression, asynchronously.
+If no expression is specified, all records of the given type are retrieved  
+
+Filtering expressions support both basic and joined syntax, that is, using in the filters
+attributes of both the target entity and the target entity associations. Advanced search is not supported.
+
+Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+and operator(join.attribute, arguments...) for joined search, where operator is 
+any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+
+Examples:
+
+
+     <netsuite:async-find-record recordType="BIN")" />
+           <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+           <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+           <netsuite:async-find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+           <netsuite:async-find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+           <netsuite:async-find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|recordType|the type of record to search|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *BIN*, *BUDGET*, *CALENDAR_EVENT*, *CAMPAIGN*, *CLASSIFICATION*, *CONTACT*, *CUSTOMER*, *CUSTOM_RECORD*, *DEPARTMENT*, *EMPLOYEE*, *ENTITY_GROUP*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GROUP_MEMBER*, *ITEM*, *ISSUE*, *JOB*, *LOCATION*, *MESSAGE*, *NOTE*, *OPPORTUNITY*, *PARTNER*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *SALES_ROLE*, *SOLUTION*, *SITE_CATEGORY*, *SUBSIDIARY*, *SUPPORT_CASE*, *TASK*, *TIME_BILL*, *TOPIC*, *TRANSACTION*, *VENDOR*, *clazz*
+|expression|the filtering expression, in the form operator(attribute, arguments...) for basic search, and operator(join.attribute, arguments...) for joined search, where operator is any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported - plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. Multiple filters can be combined using multiple predicates separated by commas.|yes||
+
+Returns AsyncStatusResult of the query
 
 
 
