@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mule.demos</groupId>
-	<artifactId>mule-netsuite-demo-setup</artifactId>
+	<artifactId>mule-netsuite-demo-search-employee-and-attach-file</artifactId>
 	<packaging>mule</packaging>
-	<name>Mule NetSuite Demo Setup</name>
+	<name>Mule NetSuite Product Media Demo</name>
 	<version>1.0</version>
 
 	<properties>
@@ -15,7 +15,7 @@
 		<mule.s3.version>1.0</mule.s3.version>
 	</properties>
 
-	<description>Example that setups netsuite, s3 and mongo environment for the rest of netsuite examples</description>
+	<description>Simple NetSuite demo for searching products and updating their media</description>
 	
 	<build>
 		<defaultGoal>install</defaultGoal>
@@ -67,10 +67,6 @@
 							<groupId>org.mule.modules</groupId>
 							<artifactId>mule-module-s3</artifactId>
 						</inclusion>
-						<inclusion>
-                            <groupId>org.mule.transports</groupId>
-                            <artifactId>mule-transport-mongodb</artifactId>
-                        </inclusion>
 					</inclusions>
 				</configuration>
 			</plugin>
@@ -108,11 +104,6 @@
 			<artifactId>mule-module-s3</artifactId>
 			<version>${mule.s3.version}</version>
 		</dependency>
-		<dependency>
-            <groupId>org.mule.transports</groupId>
-            <artifactId>mule-transport-mongodb</artifactId>
-            <version>3.1.0.1</version>
-        </dependency>
 		 <dependency>
             <groupId>org.mule.tests</groupId>
             <artifactId>mule-tests-functional</artifactId>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Mule NetSuite Cloud Connector
+
+    Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+
+    The software in this package is published under the terms of the CPAL v1.0
+    license, a copy of which has been included with this distribution in the
+    LICENSE.txt file.
+
+-->
+
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite" xmlns:s3="http://www.mulesoft.org/schema/mule/s3"
+	xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd
+       http://www.mulesoft.org/schema/mule/core    http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
+       http://www.mulesoft.org/schema/mule/json    http://www.mulesoft.org/schema/mule/json/3.1/mule-json.xsd
+       http://www.mulesoft.org/schema/mule/s3      http://www.mulesoft.org/schema/mule/s3/1.0/mule-s3.xsd
+       http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd 
+       http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.0/mule-http.xsd">
+
+	<netsuite:config name="NetsuiteTest" account="${netsuiteAccount}"
+		password="${netsuitePassword}" email="${netsuiteEmail}" roleId="${netsuiteRoleId}" />
+	<s3:config accessKey="${s3AccessKey}" secretKey="${s3SecretKey}" />
+
+	<flow name="SearchEmployees">
+		<description>Searches for employees given an expression</description>
+		<netsuite:find-records recordType="EMPLOYEE"
+			expression="#[header:expression]" />
+	</flow>
+
+
+	<flow name="UploadMedia">
+		<description>
+			Attaches the file whose id is in the header to employee in the payload 
+ 		</description>
+		<netsuite:attach-record sourceRecordType="EMPLOYEE" sourceId="#[header:fileId]" destinationRecordType="FILE" destinationId="#[ognl:internalId]"  />
+	</flow>
+	
+	<flow name="UploadFile">
+		<description>Gets the id of the "attachments" folder, downloads a file from S3, and uploads it to such folder. Returns the new file RecordRef</description>
+<!--	TODO Equivalent?	
+		 <netsuite:find-first-record recordType="FOLDER" expression="is(name, 'attachments')"/>
+         <message-properties-transformer scope="invocation">-->
+<!--			<add-message-property key="folderId" value="#[ognl:internalId]" />-->
+<!--		</message-properties-transformer>-->
+		<enricher target="#[variable:folderId]" source="#[ognl:internalId]">
+			<netsuite:find-first-record recordType="FOLDER" expression="is(name, 'attachments')"/>
+		</enricher>
+		<s3:get-object-content bucketName="${s3.bucketName}" key="#[header:filename]" />
+		<netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[variable:folderId]"  />
+	</flow>
+
+	<flow name="MainFlow">
+		<description>Uploads a file from S3 to NetSuite, given its name - that is,
+			creates a file record -, searches employees that match a given filtering
+			expression, and attaches that file to each employee found
+		</description>
+		<http:inbound-endpoint host="localhost" port="9092"
+			path="netsuite-demo-search-employee-and-attach-file" />
+		<enricher target="#[header:fileId]" source="#[ognl:internalId]">
+			<flow-ref name="UploadFile"/>
+		</enricher>
+		<flow-ref name="SearchEmployees" />
+		<collection-splitter />
+		<flow-ref name="AttachFile" />
+	</flow>
+</mule>

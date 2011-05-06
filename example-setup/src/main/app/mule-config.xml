@@ -10,10 +10,10 @@
     LICENSE.txt file.
 
 -->
-
-
+	
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
        xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+       xmlns:s3="http://www.mulesoft.org/schema/mule/s3" 
        xmlns:json="http://www.mulesoft.org/schema/mule/json"
        xmlns:mongodb="http://www.mulesoft.org/schema/mule/mongodb"
        xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
@@ -25,37 +25,65 @@
        http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd
        http://www.mulesoft.org/schema/mule/core    http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/json    http://www.mulesoft.org/schema/mule/json/3.1/mule-json.xsd
+       http://www.mulesoft.org/schema/mule/s3      http://www.mulesoft.org/schema/mule/s3/1.0/mule-s3.xsd
        http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd
        http://www.mulesoft.org/schema/mule/mongodb http://www.mulesoft.org/schema/mule/mongodb/3.1/mule-mongodb.xsd 
        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.0/mule-http.xsd">
 	
-    <netsuite:config name="NetsuiteTest" 
+ 	
+ 	<netsuite:config name="NetsuiteTest" 
     	account="${netsuiteAccount}"
 		password="${netsuitePassword}" 
-		address="${netsuiteAddress}" 
 		email="${netsuiteEmail}"
 		roleId="${netsuiteRoleId}" />     
+ 	<s3:config accessKey="${s3AccessKey}" secretKey="${s3SecretKey}" />
  	<mongodb:connector name="mongodb" database="${mongoDatabase}" hostname="${mongoHostname}" />
 
-	<flow name="CreateRecordUpdatesFlow">	
+	<flow name="CreateEmployeePhoneUpdatesFlow">	
 		<description>Creates some record update document in the mongodb</description>
 		<http:inbound-endpoint host="localhost" port="9090"
-			path="netsuite-demo-setup-create-price-updates" />
+			path="netsuite-demo-setup-create-employee-phone-updates" />
 		<scripting:component>
 			<scripting:script engine="groovy">
-					return [ "{ \"email\": \"chris@foobar.com\", \"officePhone\": "459-99865"}", 
-					         "{ \"email\": \"mary@foobar.com\", \"homePhone\": "126-650055" }", 
-					         "{ \"email\": \"john@foobar.com\", \"mobilePhone\": "359-5659-0100" }" ]
+					return [ '{ "email": "chris@foobar.com", "officePhone": "459-99865"}', 
+					         '{ "email": "mary@foobar.com", "homePhone": "126-650055" }', 
+					         '{ "email": "john@foobar.com", "mobilePhone": "359-5659-0100" }' ]
             </scripting:script>
 			</scripting:component>
 		<collection-splitter/>
-		<mongodb:outbound-endpoint collection="priceUpdates"/>
+		<mongodb:outbound-endpoint collection="employeePhoneUpdates"/>
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Employee Phone Updates Created Sucesfully" />
+		</expression-transformer>
 	</flow>
 	
-	<flow name="CreateRecordsFlow">
+	<flow name="CreateS3BucketFlow">
+		<description>Creates a bucket in S3 for testing</description>
+		<http:inbound-endpoint host="localhost" port="9090"
+			path="netsuite-demo-setup-create-bucket" />
+		<s3:create-bucket bucketName="${s3.bucketName}" />
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Bucket Created Sucesfully" />
+		</expression-transformer>
+	</flow>
+
+	<flow name="UploadS3ImageFlow">
+		<description>Uploads an image</description>
+		<http:inbound-endpoint host="localhost" port="9090"
+			path="netsuite-demo-setup-upload-s3-image" />
+		<outbound-endpoint
+			address="http://www.zumbrovalley.net/ArcadeOptics/trackball/ms009s_top.jpg" />
+		<s3:create-object content="#[payload]" bucketName="${s3.bucketName}"
+			key="image.jpg" acl="PUBLIC_READ" />
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Image Uploaded Sucesfully" />
+		</expression-transformer>
+	</flow>
+	
+	<flow name="CreateEmployeesFlow">
 		<description>Creates some employees in Netsuite for testing.
 		</description>
-		<http:inbound-endpoint host="localhost" port="9090" path="netsuite-demo-setup-add-records" />
+		<http:inbound-endpoint host="localhost" port="9090" path="netsuite-demo-setup-add-employees" />
 		<netsuite:add-record recordType="EMPLOYEE" >
 			<netsuite:attributes>
 				<netsuite:attribute key="firstName" value="Chris" />
@@ -77,5 +105,22 @@
 				<netsuite:attribute key="email" value="john@foobar.com" />
 			</netsuite:attributes>
 		</netsuite:add-record>
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Employees Created Succesfuly" />
+		</expression-transformer>
+	</flow>
+	
+	<flow name="CreateAttachmentsFolderFlow">
+		<description>Creates a folder for attachments in netsuite</description>
+		<http:inbound-endpoint host="localhost" port="9090" path="netsuite-demo-setup-add-folder" />
+		<netsuite:add-record recordType="FOLDER" >
+			<netsuite:attributes>
+				<netsuite:attribute key="name" value="attachments" />
+				<netsuite:attribute key="description" value="This folder contains attachements created by the search-employee-and-attach-file demo" />
+			</netsuite:attributes>
+		</netsuite:add-record>
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Folder Created Succesfuly" />
+		</expression-transformer>
 	</flow>
 </mule>

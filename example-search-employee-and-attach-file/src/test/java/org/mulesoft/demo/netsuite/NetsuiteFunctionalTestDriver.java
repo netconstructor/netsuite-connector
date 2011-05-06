@@ -8,12 +8,15 @@
  * LICENSE.txt file.
  */
 
+
 package org.mulesoft.demo.netsuite;
 
 import org.mule.construct.SimpleFlowConstruct;
 import org.mule.tck.FunctionalTestCase;
 
 import java.util.Collections;
+
+import org.slf4j.LoggerFactory;
 
 public class NetsuiteFunctionalTestDriver extends FunctionalTestCase
 {
@@ -24,21 +27,10 @@ public class NetsuiteFunctionalTestDriver extends FunctionalTestCase
         return "mule-config.xml";
     }
 
-    /**
-     * Creates some employees for this test. Run this test only once
-     */
-    public void testCreateProductsFlow() throws Exception
+    public void testSearchAndUploadMedia() throws Exception
     {
-        lookupFlowConstruct("CreateEmployeesFlow").process(getTestEvent(""));
-    }
-    
-    /**
-     * Creates some employees updates for this test. Run this test only 
-     * once
-     */
-    public void testSetupFlow() throws Exception
-    {
-        lookupFlowConstruct("CreateEmployeePhoneUpdatesFlow").process(getTestEvent(""));
+        System.out.println(lookupFlowConstruct("MainFlow").process(
+            getTestEvent(Collections.singletonMap("productType", "simple"))));
     }
 
     private SimpleFlowConstruct lookupFlowConstruct(final String name)
