@@ -25,25 +25,20 @@ public class NetsuiteFunctionalTestDriver extends FunctionalTestCase
     }
 
     /**
-     * Creates some employees for this test. Run this test only once
+     * Creates the resources necessary for the rest of the tests
      */
-    public void testCreateProductsFlow() throws Exception
-    {
-        lookupFlowConstruct("CreateEmployeesFlow").process(getTestEvent(""));
-    }
-    
-    /**
-     * Creates some employees updates for this test. Run this test only 
-     * once
-     */
-    public void testSetupFlow() throws Exception
+    public void setup() throws Exception
     {
         lookupFlowConstruct("CreateEmployeePhoneUpdatesFlow").process(getTestEvent(""));
+        lookupFlowConstruct("CreateS3BucketFlow").process(getTestEvent(""));
+        lookupFlowConstruct("UploadS3ImageFlow").process(getTestEvent(""));
+        lookupFlowConstruct("CreateEmployeesFlow").process(getTestEvent(""));
+        lookupFlowConstruct("CreateAttachmentsFolderFlow").process(getTestEvent(""));
     }
+    
 
     private SimpleFlowConstruct lookupFlowConstruct(final String name)
     {
         return (SimpleFlowConstruct) muleContext.getRegistry().lookupFlowConstruct(name);
     }
-
 }
