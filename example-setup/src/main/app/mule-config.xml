@@ -46,8 +46,8 @@
 		<scripting:component>
 			<scripting:script engine="groovy">
 					return [ '{ "email": "chris@foobar.com", "officePhone": "459-99865"}', 
-					         '{ "email": "mary@foobar.com", "homePhone": "126-650055" }', 
-					         '{ "email": "john@foobar.com", "mobilePhone": "359-5659-0100" }' ]
+					         '{ "email": "mary@foobar.com", "officePhone": "126-650055" }', 
+					         '{ "email": "john@foobar.com", "officePhone": "359-5659-0100" }' ]
             </scripting:script>
 			</scripting:component>
 		<collection-splitter/>
@@ -61,7 +61,9 @@
 		<description>Creates a bucket in S3 for testing</description>
 		<http:inbound-endpoint host="localhost" port="9090"
 			path="netsuite-demo-setup-create-bucket" />
-		<s3:create-bucket bucketName="${s3.bucketName}" />
+		<logger message="${s3BucketName}" level="ERROR"/>
+		<s3:create-bucket bucketName="${s3BucketName}" />
+		<logger message="#[payload]" level="ERROR"/>
 		<expression-transformer>
 			<return-argument evaluator="string" expression="Bucket Created Sucesfully" />
 		</expression-transformer>
@@ -73,7 +75,7 @@
 			path="netsuite-demo-setup-upload-s3-image" />
 		<outbound-endpoint
 			address="http://www.zumbrovalley.net/ArcadeOptics/trackball/ms009s_top.jpg" />
-		<s3:create-object content="#[payload]" bucketName="${s3.bucketName}"
+		<s3:create-object content="#[payload]" bucketName="${s3BucketName}"
 			key="image.jpg" acl="PUBLIC_READ" />
 		<expression-transformer>
 			<return-argument evaluator="string" expression="Image Uploaded Sucesfully" />

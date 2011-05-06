@@ -15,24 +15,19 @@
 package org.mule.module.netsuite;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.mule.api.lifecycle.InitialisationException;
 
-import com.netsuite.webservices.documents.filecabinet_2010_2.FileSiteCategoryList;
-import com.netsuite.webservices.documents.filecabinet_2010_2.types.FileAttachFrom;
-import com.netsuite.webservices.documents.filecabinet_2010_2.types.FileEncoding;
-import com.netsuite.webservices.documents.filecabinet_2010_2.types.MediaType;
 import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncoding;
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
-import com.netsuite.webservices.platform.core_2010_2.ConsolidatedExchangeRate;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
@@ -41,21 +36,12 @@ import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncSearchResult;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
-import java.awt.color.CMMException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Before;
 import org.junit.Ignore;

@@ -35,31 +35,36 @@
 		roleId="${netsuiteRoleId}" />        
   <mongodb:connector name="mongodb" database="${mongoDatabase}" hostname="${mongoHostname}" />
 
- <flow name="GetPriceUpdates">
- 	<description>Looks for product price updates in a mongo db</description>
+ <flow name="GetEmployeePhoneUpdates">
+ 	<description>Looks for employee phone updates in a mongo db</description>
  	<mongodb:outbound-endpoint 
- 		collection="priceUpdates"  
+ 		collection="employeePhoneUpdates"  
  		query='{}' 
  		exchange-pattern="request-response"/>
  </flow>
  
- <flow name="UpdateProductPrice">
- 	<description>Updates product prices based on price updates in mongodb</description>
- 	<!-- FIXME -->
-	<netsuite:update-record recordType="EMPLOYEE" id="#[ognl:get('id')]">
+ <flow name="UpdateEmployeePhoneNumber">
+ 	<description>Updates employees phone numbers based on update documents in mongodb</description>
+ 	<enricher target="#[variable:employeeId]" source="#[ognl:internalId]">
+	 	<netsuite:find-first-record  recordType="EMPLOYEE" expression="is(email,'#[ognl:get('email')]')"/>
+ 	</enricher>
+ 	<netsuite:update-record recordType="EMPLOYEE" id="#[variable:employeeId]">
 		<netsuite:attributes>
 			<netsuite:attribute key="officePhone" value="#[ognl:get('officePhone')]"/>
-			<netsuite:attribute key="homePhone" value="#[ognl:get('homePhone')]"/>
-			<netsuite:attribute key="mobilePhone" value="#[ognl:get('mobilePhone')]"/>
 		</netsuite:attributes>
 	</netsuite:update-record> 	
  </flow>
  
  <flow name="MainFlow">
- 	<description>For each update in a mongodb, update the corresponding product in netsuite</description>
- 	<http:inbound-endpoint host="localhost" port="9091" path="netsuite-demo-update-product" />
- 	<flow-ref name="GetPriceUpdates"/>
+ 	<description>For each update in a mongodb, update the corresponding employee in netsuite</description>
+ 	<http:inbound-endpoint host="localhost" port="9091" path="netsuite-demo-update-employee" />
+ 	<flow-ref name="GetEmployeePhoneUpdates"/>
+ 	<logger level="ERROR" message="#[payload]"/> 
  	<collection-splitter/>
- 	<flow-ref name="UpdateProductPrice"/>
+ 	<flow-ref name="UpdateEmployeePhoneNumber"/>
+ 	<logger level="ERROR" message="#[payload]"/>
+ 	<expression-transformer>
+		<return-argument evaluator="string" expression="Employees Updated Succesfuly" />
+	</expression-transformer>
  </flow>
 </mule>

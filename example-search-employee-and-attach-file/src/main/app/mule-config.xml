@@ -11,7 +11,6 @@
 
 -->
 
-
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite" xmlns:s3="http://www.mulesoft.org/schema/mule/s3"
 	xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
@@ -33,29 +32,23 @@
 	<flow name="SearchEmployees">
 		<description>Searches for employees given an expression</description>
 		<netsuite:find-records recordType="EMPLOYEE"
-			expression="#[header:expression]" />
+			expression="#[header:inbound:expression]" />
 	</flow>
 
-
-	<flow name="UploadMedia">
+	<flow name="AttachFile">
 		<description>
 			Attaches the file whose id is in the header to employee in the payload 
  		</description>
-		<netsuite:attach-record sourceRecordType="EMPLOYEE" sourceId="#[header:fileId]" destinationRecordType="FILE" destinationId="#[ognl:internalId]"  />
+		<netsuite:attach-record sourceRecordType="FILE" sourceId="#[header:session:fileId]" destinationRecordType="EMPLOYEE" destinationId="#[ognl:internalId]"  />
 	</flow>
 	
 	<flow name="UploadFile">
 		<description>Gets the id of the "attachments" folder, downloads a file from S3, and uploads it to such folder. Returns the new file RecordRef</description>
-<!--	TODO Equivalent?	
-		 <netsuite:find-first-record recordType="FOLDER" expression="is(name, 'attachments')"/>
-         <message-properties-transformer scope="invocation">-->
-<!--			<add-message-property key="folderId" value="#[ognl:internalId]" />-->
-<!--		</message-properties-transformer>-->
 		<enricher target="#[variable:folderId]" source="#[ognl:internalId]">
 			<netsuite:find-first-record recordType="FOLDER" expression="is(name, 'attachments')"/>
 		</enricher>
-		<s3:get-object-content bucketName="${s3.bucketName}" key="#[header:filename]" />
-		<netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[variable:folderId]"  />
+		<s3:get-object-content bucketName="${s3BucketName}" key="#[header:inbound:filename]" />
+		<netsuite:add-file  content="#[payload]" fileName="#[header:inbound:filename]" folderId="#[variable:folderId]"  />
 	</flow>
 
 	<flow name="MainFlow">
@@ -65,11 +58,14 @@
 		</description>
 		<http:inbound-endpoint host="localhost" port="9092"
 			path="netsuite-demo-search-employee-and-attach-file" />
-		<enricher target="#[header:fileId]" source="#[ognl:internalId]">
+		<enricher target="#[header:session:fileId]" source="#[ognl:internalId]">
 			<flow-ref name="UploadFile"/>
 		</enricher>
 		<flow-ref name="SearchEmployees" />
 		<collection-splitter />
 		<flow-ref name="AttachFile" />
+		<expression-transformer>
+			<return-argument evaluator="string" expression="Files Attached Succesfully" />
+		</expression-transformer>
 	</flow>
 </mule>
