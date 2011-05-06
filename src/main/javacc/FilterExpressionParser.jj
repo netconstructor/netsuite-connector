@@ -23,7 +23,7 @@ PARSER_BEGIN(FilterExpressionParser)
         try{
           return new FilterExpressionParser(new ByteArrayInputStream(expression.getBytes())).withTarget(targetRecordType).start();
       } catch(ParseException e){
-         throw new IllegalArgumentException("Syntax error in date expression " + expression, e);
+         throw new IllegalArgumentException("Syntax error in date expression " + expression + ". Cause: " + e.getMessage());
       }
     } 
     

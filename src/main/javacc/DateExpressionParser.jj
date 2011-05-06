@@ -19,7 +19,7 @@ PARSER_BEGIN(DateExpressionParser)
         try{
           return new DateExpressionParser(new ByteArrayInputStream(expression.getBytes())).withCalendarFactory(calendarFactory).start();
       } catch(ParseException e){
-         throw new IllegalArgumentException("Syntax error in date expression " + expression, e);
+         throw new IllegalArgumentException("Syntax error in date expression " + expression + ". Cause: " + e.getMessage());
       }
     } 
     
