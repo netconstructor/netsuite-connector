@@ -159,8 +159,6 @@ public class CxfNetSuiteClientUnitTest
         }));
     }
 
-    // TODO move cxf files to another dir
-
     @Test
     public void getItemAvailability() throws Exception
     {

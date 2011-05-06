@@ -32,6 +32,7 @@ import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncod
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
+import com.netsuite.webservices.platform.core_2010_2.ConsolidatedExchangeRate;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
@@ -57,6 +58,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @SuppressWarnings("serial")
@@ -193,13 +195,14 @@ public class NetSuiteTestDriver
         }
     }
 
+    @Ignore
     @Test
     public void getBudgetExchangeRate()
     {
         final RecordRef subsidiary = connector.addRecord(RecordType.SUBSIDIARY, new HashMap<String, Object>()
         {
             {
-                put("Name", "ACME");
+                put("name", "ACME");
             }
         });
         RecordRef budget = connector.addRecord(RecordType.BUDGET, new HashMap<String, Object>()
@@ -213,15 +216,6 @@ public class NetSuiteTestDriver
         List<Object> budgetExchangeRate = connector.getBudgetExchangeRates(budget.getInternalId(),
             RecordIdType.INTERNAL, subsidiary.getInternalId(), RecordIdType.INTERNAL, null, null);
         assertNotNull(budgetExchangeRate);
-    }
-
-    @Test
-    public void getConsolidatedExchangeRate()
-    {
-        List<Object> consolidatedExchangeRate = connector.getConsolidatedExchangeRates("10",
-            RecordIdType.INTERNAL, "65", RecordIdType.INTERNAL, null, null);
-        assertNotNull(consolidatedExchangeRate);
-        // TODO
     }
 
     @Test
@@ -400,22 +394,28 @@ public class NetSuiteTestDriver
     @Test
     public void asyncFindRecord() throws Exception
     {
-        AsyncStatusResult initialStatus = connector.asyncFindRecords(SearchRecordType.EMPLOYEE,
-            "is(firstName, 'John'), is(lastName, 'Doe')");
-        assertNotNull(initialStatus);
-        assertTrue(initialStatus.getStatus().isActive());
-        AsyncStatusType status;
-        do
+        RecordRef employee = createEmployeeJohnDoe();
+        try
         {
-            Thread.sleep(500);
-            status = connector.checkAsyncStatus(initialStatus.getJobId()).getStatus();
-            System.out.println(status);
+            AsyncStatusResult initialStatus = connector.asyncFindRecords(SearchRecordType.EMPLOYEE,
+                "is(firstName, 'John'), is(lastName, 'Doe')");
+            assertNotNull(initialStatus);
+            assertTrue(initialStatus.getStatus().isActive());
+            AsyncStatusType status;
+            do
+            {
+                Thread.sleep(500);
+                status = connector.checkAsyncStatus(initialStatus.getJobId()).getStatus();
+                System.out.println(status);
+            }
+            while (status.isActive());
+            assertSame(AsyncStatusType.FINISHED, status);
+            Iterable<Record> result = connector.getAsyncFindResult(initialStatus.getJobId());
+            assertTrue(result.iterator().hasNext());
         }
-        while (status.isActive());
-        assertSame(AsyncStatusType.FINISHED, status);
-        // TODO
-        // AsyncResult result = connector.getAsyncResult(initialStatus.getJobId(),
-        // 0);
-        // assertThat(result, instanceOf(AsyncSearchResult.class));
+        finally
+        {
+            connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+        }
     }
 }
