@@ -32,7 +32,7 @@ public class FilterExpressionBuilder
 
     public void setTarget(SearchRecordType targetRecordType)
     {
-        target = targetRecordType.newInstance();
+        target = targetRecordType.newSearchInstance();
         try
         {
             PropertyDescriptor descriptor = newDescriptor("basic", target);

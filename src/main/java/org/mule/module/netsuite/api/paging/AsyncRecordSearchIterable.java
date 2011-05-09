@@ -19,12 +19,12 @@ import com.netsuite.webservices.platform.messages_2010_2.GetAsyncResultRequest;
 /**
  * @author flbulgarelli
  */
-public final class RecordAsyncSearchIterable extends AbstractRecordSearchIterable
+public final class AsyncRecordSearchIterable extends AbstractRecordSearchIterable
 {
 
     private final String jobId;
 
-    public RecordAsyncSearchIterable(CxfPortProvider portProvider, String jobId)
+    public AsyncRecordSearchIterable(CxfPortProvider portProvider, String jobId)
     {
         super(portProvider);
         this.jobId = jobId;

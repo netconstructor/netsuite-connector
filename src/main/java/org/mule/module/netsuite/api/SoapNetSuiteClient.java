@@ -15,6 +15,7 @@ import org.mule.module.netsuite.api.annotation.ReturnType;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
+import org.mule.module.netsuite.api.paging.SavedRecordSearchIterable;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
@@ -28,6 +29,8 @@ import java.util.Date;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
+
+import org.apache.commons.lang.Validate;
 
 public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Object>
 {
@@ -90,6 +93,10 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
 
     @NetSuiteOperation(adapt = false)
     Iterable<Record> findRecords(@NotNull SearchRecordType recordType, String expression) throws Exception;
+
+    @NetSuiteOperation(adapt = false)
+    Iterable<Record> savedFindRecords(@NotNull final SearchRecordType recordType, @NotNull String searchId)
+        throws Exception; 
 
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
     Object initialize(@NotNull InitializeType type, @NotNull RecordReference recordReference) throws Exception;

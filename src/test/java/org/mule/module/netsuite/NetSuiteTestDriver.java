@@ -336,10 +336,17 @@ public class NetSuiteTestDriver
         }
     }
 
+    /***
+     *  Tests that a saved search can be executed
+     *  This tests assumes there is at least a saved search in the system - one
+     * of those provided as example to new netsuite accounts.
+     */
     @Test
     public void getSavedSearch()
     {
-        connector.getSavedSearch(RecordType.CONTACT);
+        
+        RecordRef object = (RecordRef) connector.getSavedSearch(RecordType.CUSTOMER).get(0);
+        assertNotNull(connector.savedFindRecords(SearchRecordType.CUSTOMER, object.getInternalId()));
     }
 
     /**

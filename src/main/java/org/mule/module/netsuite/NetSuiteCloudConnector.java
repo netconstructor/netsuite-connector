@@ -540,7 +540,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *  
      * Examples:
      * {@code 
-     *  <netsuite:find-records recordType="BIN")" />
+     *  <netsuite:find-records recordType="BIN" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
@@ -559,7 +559,6 @@ public class NetSuiteCloudConnector implements Initialisable
         return client.findRecords(recordType, expression);
     }
     
-
     /**
      * Answers the first records that match the given filtering expression. 
      * If no expression is specified, the empty expression is used, 
@@ -596,6 +595,23 @@ public class NetSuiteCloudConnector implements Initialisable
     }
     
     /**
+     * Answers all records of a given type for a saved search, given its search id.
+     * 
+     * Examples:
+     * {@code  <netsuite:find-saved-records recordType="BIN" searchId="#[header:searchId]" /> }
+     * 
+     * @param recordType the type of record to search
+     * @param searchId the id of the save search    
+     * @return a list of Record's
+     */
+    @Operation
+    public Iterable<Record> savedFindRecords(@Parameter SearchRecordType recordType,
+                                             @Parameter String searchId)
+    {
+        return client.savedFindRecords(recordType, searchId);
+    }
+    
+    /**
      * Searches for all records that match the given filtering expression, asynchronously.
      * If no expression is specified, all records of the given type are retrieved  
      * 
@@ -609,7 +625,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Examples:
      * {@code 
-     *  <netsuite:async-find-records recordType="BIN")" />
+     *  <netsuite:async-find-records recordType="BIN" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 

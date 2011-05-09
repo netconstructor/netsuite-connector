@@ -14,8 +14,9 @@ import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
 import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionParser;
-import org.mule.module.netsuite.api.paging.RecordAsyncSearchIterable;
+import org.mule.module.netsuite.api.paging.AsyncRecordSearchIterable;
 import org.mule.module.netsuite.api.paging.RecordSearchIterable;
+import org.mule.module.netsuite.api.paging.SavedRecordSearchIterable;
 import org.mule.module.netsuite.api.util.MapToRecordConverter;
 import org.mule.module.netsuite.api.util.XmlGregorianCalendarFactory;
 
@@ -67,7 +68,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -109,11 +109,18 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
     }
 
     public Iterable<Record> findRecords(@NotNull final SearchRecordType recordType,
-                                       @NotNull final String expression) throws Exception
+                                        @NotNull final String expression) throws Exception
     {
         Validate.notNull(recordType);
         Validate.notEmpty(expression);
         return new RecordSearchIterable(this, recordType, expression);
+    }
+
+    public Iterable<Record> savedFindRecords(@NotNull final SearchRecordType recordType,
+                                             @NotNull String searchId) throws Exception
+    {
+        Validate.notEmpty(searchId);
+        return new SavedRecordSearchIterable(this, recordType, searchId);
     }
 
     public AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)
@@ -259,7 +266,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
     public Iterable<Record> getAsyncFindResult(String jobId) throws Exception
     {
         Validate.notEmpty(jobId);
-        return new RecordAsyncSearchIterable(this, jobId);
+        return new AsyncRecordSearchIterable(this, jobId);
     }
 
     public Object initialize(InitializeType type, RecordReference recordReference) throws Exception
@@ -267,8 +274,7 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
         Validate.notNull(type);
         Validate.notNull(recordReference);
         return getAuthenticatedPort().initialize(
-            new InitializeRequest(new InitializeRecord(type,
-                recordReference.createInitializeRef(), null)));
+            new InitializeRequest(new InitializeRecord(type, recordReference.createInitializeRef(), null)));
     }
 
     public NetSuitePortType getAuthenticatedPort() throws Exception

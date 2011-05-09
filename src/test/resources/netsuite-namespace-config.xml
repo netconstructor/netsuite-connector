@@ -132,10 +132,16 @@
 		</netsuite:update-record>
 	</flow>
 	
-		<flow name="findRecord">
+	<flow name="findRecord">
 		<inbound-endpoint address="vm://findRecord"
 			exchange-pattern="request-response" />
 		<netsuite:find-records recordType="EMPLOYEE" expression="is(email, 'john.doe@foobar.com')" />
+	</flow>
+	
+	<flow name="savedFindRecord">
+		<inbound-endpoint address="vm://savedFindRecord"
+			exchange-pattern="request-response" />
+		<netsuite:saved-find-records recordType="EMPLOYEE" searchId="4892"/>
 	</flow>
 
 	<flow name="asyncFindRecord">
