@@ -108,7 +108,6 @@
                            <version>2.1</version>
                          </plugin>
 
-
                         <!--
 				<plugin> <groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
@@ -335,4 +334,17 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	
+
+	<scm>
+        <connection>scm:git:git://github.com:mulesoft/netsuite-connector.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:mulesoft/netsuite-connector.git
+        </developerConnection>
+        <url>http://github.com/mulesoft/netsuite-connector</url>
+    </scm>	
+	
+	
+	
+	
 </project>
