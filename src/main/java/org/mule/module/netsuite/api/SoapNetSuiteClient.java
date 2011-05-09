@@ -20,11 +20,11 @@ import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -92,7 +92,7 @@ public interface SoapNetSuiteClient extends NetSuiteClient<Object, Exception, Ob
     Iterable<Record> findRecords(@NotNull SearchRecordType recordType, String expression) throws Exception;
 
     @NetSuiteOperation(responseName = "ReadResponse", resultName = "Record", resultType = ReturnType.RECORD)
-    Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference) throws Exception;
+    Object initialize(@NotNull InitializeType type, @NotNull RecordReference recordReference) throws Exception;
 
     @NetSuiteOperation(adapt = false)
     AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)

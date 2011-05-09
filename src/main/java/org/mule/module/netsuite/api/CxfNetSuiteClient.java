@@ -262,12 +262,12 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
         return new RecordAsyncSearchIterable(this, jobId);
     }
 
-    public Object initialize(RecordType type, RecordReference recordReference) throws Exception
+    public Object initialize(InitializeType type, RecordReference recordReference) throws Exception
     {
         Validate.notNull(type);
         Validate.notNull(recordReference);
         return getAuthenticatedPort().initialize(
-            new InitializeRequest(new InitializeRecord(InitializeType.fromValue(type.value()),
+            new InitializeRequest(new InitializeRecord(type,
                 recordReference.createInitializeRef(), null)));
     }
 

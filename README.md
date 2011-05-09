@@ -63,19 +63,15 @@ Here is detailed list of all the configuration attributes:
 Attach Record
 -------------
 
-Attaches a record to another one, optionally specifying a contact for the
+Attaches a source record - that is, the attachment - to another destination one, 
+optionally specifying a contact for the
 attachment. Not all record type are supported as source, destination or
 contact. Please consult NetSuite documentation.
 Example:
 
 
 
-     <netsuite:attach-record 
-             sourceRecordType="BUDGET"
-             sourceId="500" 
-             sourceIdType="EXTERNAL" 
-             destinationId="1590"
-             destinationRecordType="ACCOUNT" />
+     <netsuite:attach-record  sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96"  />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -95,7 +91,7 @@ Example:
 Delete Record
 -------------
 
-Deletes a record
+Deletes a record. Not all records can be deleted. Please consult NetSuite documentation
 
 Example:
 
@@ -115,12 +111,12 @@ Example:
 Detach Record
 -------------
 
-Detaches a record
+Detaches a source record - that is, the attachment - from a destination record.
 Example:
 
 
 
-     <netsuite:detach-record destinationRecordType="ACCOUNT" destinationId="96" sourceRecordType="ACCOUNT" sourceId="16"/>
+     <netsuite:detach-record sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -163,11 +159,15 @@ Get Consolidated Exchange Rates
 
 Answers the list of consolidated exchange rates
 Example:
-<netsuite:get-consolidated-exchange-rate
-      periodId="106" 
-      periodIdType="EXTERNAL" 
-      fromSubsidiaryId="5689"
-      toSubsidiaryId="4898" />
+
+
+
+    
+    <netsuite:get-consolidated-exchange-rate
+          periodId="106" 
+          periodIdType="EXTERNAL" 
+          fromSubsidiaryId="5689"
+          toSubsidiaryId="4898" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -190,7 +190,7 @@ Answers the ids of available customizations for a given record type.
 
  Example: 
 
-     <netsuite:get-customization-id type="ACCOUNT"/>
+     <netsuite:get-customization-ids type="ACCOUNT"/>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -228,12 +228,13 @@ Examples using both string and object oriented styles:
 
 
 
-     <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
+     
+           <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
            <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
            <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
            <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
            <netsuite:get-deleted-record type="CUSTOMER" date1="#[payload]" operator="BEFORE"/>
-           <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))"
+           <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))" />
            <netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />
 
 | attribute | description | optional | default value | possible values |
@@ -371,7 +372,18 @@ Example:
 Add Record
 ----------
 
-Creates a new record
+Creates a new record. Example:
+
+
+
+     
+     <netsuite:add-record recordType="EMPLOYEE">
+          <netsuite:attributes>
+              <netsuite:attribute key="firstName" value="#[variable:firstName]" />
+              <netsuite:attribute key="lastName" value="#[variable:lastName]" />
+              <netsuite:attribute key="email" value="#[variable:email]" />
+          </netsuite:attributes>
+      </netsuite:add-record>
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -387,12 +399,16 @@ Add File
 --------
 
 Creates a new file record. This operation is similar to addRecord, but is
-customized for simplifying local content passing
+customized for simplifying local content passing.
+
+
+
+     <netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[header:folderId]"  />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|attributes|the additional file attributes|no||
+|attributes|the additional file attributes|yes||
 |content|the content of the file record to add. It can be of type String, byte array, File or InputStream. If it is an input stream, this operations also closes it.|no||
 |fileName|the name of the remote file|no||
 |folderId|the id of the folder record where to add this file|no||
@@ -410,6 +426,7 @@ Example:
 
 
 
+     
      <netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
           <netsuite:attributes>
               <netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
@@ -453,7 +470,8 @@ Find Records
 ------------
 
 Answers all records that match the given filtering expression.
-If no expression is specified, all records of the given type are retrieved.
+If no expression is specified, the empty expression is used, 
+which retrieves all records of the given type. 
 
 Filtering expressions support both basic and joined syntax, that is, using in the filters
 attributes of both the target entity and the target entity associations. Advanced search is not supported.
@@ -468,12 +486,13 @@ plus the isTrue/isFalse boolean operators, and arguments are zero up to three op
 Examples:
 
 
+     
      <netsuite:find-records recordType="BIN")" />
-           <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-           <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-           <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-           <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
-           <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
+     <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+     <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -482,6 +501,43 @@ Examples:
 |expression|the filtering expression Multiple filters can be combined using multiple predicates separated by commas.|yes||
 
 Returns list of Record's
+
+
+
+Find First Record
+-----------------
+
+Answers the first records that match the given filtering expression. 
+If no expression is specified, the empty expression is used, 
+which retrieves all records of the given type.  
+Throws a NoSuchElementException if no record can be retrieved.
+
+Filtering expressions support both basic and joined syntax, that is, using in the filters
+attributes of both the target entity and the target entity associations. Advanced search is not supported.
+
+Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+and operator(join.attribute, arguments...) for joined search, where operator is 
+any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+
+Examples:
+
+
+     
+     <netsuite:find-first-record recordType="BIN")" />
+     <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     <netsuite:find-first-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     <netsuite:find-first-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+     <netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|recordType|the type of record to search|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *BIN*, *BUDGET*, *CALENDAR_EVENT*, *CAMPAIGN*, *CLASSIFICATION*, *CONTACT*, *CUSTOMER*, *CUSTOM_RECORD*, *DEPARTMENT*, *EMPLOYEE*, *ENTITY_GROUP*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GROUP_MEMBER*, *ITEM*, *ISSUE*, *JOB*, *LOCATION*, *MESSAGE*, *NOTE*, *OPPORTUNITY*, *PARTNER*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *SALES_ROLE*, *SOLUTION*, *SITE_CATEGORY*, *SUBSIDIARY*, *SUPPORT_CASE*, *TASK*, *TIME_BILL*, *TOPIC*, *TRANSACTION*, *VENDOR*, *clazz*
+|expression|the filtering expression Multiple filters can be combined using multiple predicates separated by commas.|yes||
+
+Returns first record that match the given filtering expression
 
 
 
@@ -502,12 +558,13 @@ plus the isTrue/isFalse boolean operators, and arguments are zero up to three op
 Examples:
 
 
-     <netsuite:async-find-record recordType="BIN")" />
-           <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-           <netsuite:async-find-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-           <netsuite:async-find-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-           <netsuite:async-find-record recordType="BIN"" expression="isTrue(user.isInactive)" />
-           <netsuite:async-find-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
+     
+     <netsuite:async-find-records recordType="BIN")" />
+     <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+     <netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+     <netsuite:async-find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+     <netsuite:async-find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />
 
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
@@ -535,7 +592,29 @@ Example:
 |config-ref|Specify which configuration to use for this invocation|yes||
 |jobId|the id of the job|no||
 
-Returns AsyncResult
+Returns Record's list
+
+
+
+Get Async Find First Result
+---------------------------
+
+Answers the the first result of an asynchronous asyncFind.
+Throws a NoSuchElement exception if there are no results.
+This operation can be executed operation up to 20 times within a 30 day time period to
+retrieve the results of an asynchronous job.
+
+Example:
+
+
+     <netsuite:get-async-find-first-result jobId="#[map-payload:jobId]"  />
+
+| attribute | description | optional | default value | possible values |
+|:-----------|:-----------|:---------|:--------------|:----------------|
+|config-ref|Specify which configuration to use for this invocation|yes||
+|jobId|the id of the job|no||
+
+Returns first Record
 
 
 
@@ -553,7 +632,7 @@ Example:
 | attribute | description | optional | default value | possible values |
 |:-----------|:-----------|:---------|:--------------|:----------------|
 |config-ref|Specify which configuration to use for this invocation|yes||
-|type|the type of record whose defaults values are used to populate the target record|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
+|type|the type of record whose defaults values are used to populate the target record|no||*ASSEMBLY_UNBUILD*, *CASH_REFUND*, *CASH_SALE*, *CREDIT_MEMO*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *DEPOSIT_APPLICATION*, *ESTIMATE*, *INVOICE*, *ITEM_FULFILLMENT*, *ITEM_RECEIPT*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *VENDOR_BILL*, *VENDOR_PAYMENT*
 |recordType|the target record type|no||*ACCOUNT*, *ACCOUNTING_PERIOD*, *ASSEMBLY_BUILD*, *ASSEMBLY_UNBUILD*, *ASSEMBLY_ITEM*, *BIN*, *BUDGET*, *BUDGET_CATEGORY*, *CALENDAR_EVENT*, *CAMPAIGN*, *CAMPAIGN_AUDIENCE*, *CAMPAIGN_CATEGORY*, *CAMPAIGN_CHANNEL*, *CAMPAIGN_FAMILY*, *CAMPAIGN_OFFER*, *CAMPAIGN_RESPONSE*, *CAMPAIGN_SEARCH_ENGINE*, *CAMPAIGN_SUBSCRIPTION*, *CAMPAIGN_VERTICAL*, *CASH_REFUND*, *CASH_SALE*, *CHECK*, *CLASSIFICATION*, *CONTACT*, *CONTACT_CATEGORY*, *CONTACT_ROLE*, *CREDIT_MEMO*, *CRM_CUSTOM_FIELD*, *CURRENCY*, *CUSTOM_LIST*, *CUSTOM_RECORD*, *CUSTOM_RECORD_CUSTOM_FIELD*, *CUSTOM_RECORD_TYPE*, *CUSTOMER*, *CUSTOMER_CATEGORY*, *CUSTOMER_DEPOSIT*, *CUSTOMER_PAYMENT*, *CUSTOMER_REFUND*, *CUSTOMER_STATUS*, *DEPOSIT_APPLICATION*, *DEPARTMENT*, *DESCRIPTION_ITEM*, *DISCOUNT_ITEM*, *DOWNLOAD_ITEM*, *EMPLOYEE*, *ENTITY_CUSTOM_FIELD*, *ENTITY_GROUP*, *ESTIMATE*, *EXPENSE_CATEGORY*, *EXPENSE_REPORT*, *FILE*, *FOLDER*, *GIFT_CERTIFICATE*, *GIFT_CERTIFICATE_ITEM*, *INTER_COMPANY_JOURNAL_ENTRY*, *INTER_COMPANY_TRANSFER_ORDER*, *INVENTORY_ADJUSTMENT*, *INVENTORY_ITEM*, *INVOICE*, *ITEM_CUSTOM_FIELD*, *ITEM_FULFILLMENT*, *ITEM_NUMBER_CUSTOM_FIELD*, *ITEM_OPTION_CUSTOM_FIELD*, *ISSUE*, *JOB*, *JOB_STATUS*, *JOB_TYPE*, *ITEM_RECEIPT*, *JOURNAL_ENTRY*, *KIT_ITEM*, *LEAD_SOURCE*, *LOCATION*, *LOT_NUMBERED_INVENTORY_ITEM*, *LOT_NUMBERED_ASSEMBLY_ITEM*, *MARKUP_ITEM*, *MESSAGE*, *NON_INVENTORY_PURCHASE_ITEM*, *NON_INVENTORY_RESALE_ITEM*, *NON_INVENTORY_SALE_ITEM*, *NOTE*, *NOTE_TYPE*, *OPPORTUNITY*, *OTHER_CHARGE_PURCHASE_ITEM*, *OTHER_CHARGE_RESALE_ITEM*, *OTHER_CHARGE_SALE_ITEM*, *OTHER_CUSTOM_FIELD*, *PARTNER*, *PARTNER_CATEGORY*, *PAYMENT_ITEM*, *PAYMENT_METHOD*, *PHONE_CALL*, *PRICE_LEVEL*, *PROJECT_TASK*, *PROMOTION_CODE*, *PURCHASE_ORDER*, *RETURN_AUTHORIZATION*, *SALES_ORDER*, *SALES_ROLE*, *SALES_TAX_ITEM*, *SERIALIZED_INVENTORY_ITEM*, *SERIALIZED_ASSEMBLY_ITEM*, *SERVICE_PURCHASE_ITEM*, *SERVICE_RESALE_ITEM*, *SERVICE_SALE_ITEM*, *SOLUTION*, *SITE_CATEGORY*, *STATE*, *SUBSIDIARY*, *SUBTOTAL_ITEM*, *SUPPORT_CASE*, *SUPPORT_CASE_ISSUE*, *SUPPORT_CASE_ORIGIN*, *SUPPORT_CASE_PRIORITY*, *SUPPORT_CASE_STATUS*, *SUPPORT_CASE_TYPE*, *TASK*, *TAX_GROUP*, *TAX_TYPE*, *TERM*, *TIME_BILL*, *TOPIC*, *TRANSFER_ORDER*, *TRANSACTION_BODY_CUSTOM_FIELD*, *TRANSACTION_COLUMN_CUSTOM_FIELD*, *UNITS_TYPE*, *VENDOR*, *VENDOR_CATEGORY*, *VENDOR_BILL*, *VENDOR_PAYMENT*, *WIN_LOSS_REASON*, *recordClass*
 |id|the target record id|no||
 |idType|the id type of the given record id|yes|INTERNAL|*INTERNAL*, *EXTERNAL*

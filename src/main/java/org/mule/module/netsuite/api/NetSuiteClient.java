@@ -10,7 +10,6 @@
 
 package org.mule.module.netsuite.api;
 
-import org.mule.module.netsuite.api.annotation.NetSuiteOperation;
 import org.mule.module.netsuite.api.model.entity.RecordId;
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 import org.mule.module.netsuite.api.model.expression.date.DateExpression;
@@ -19,12 +18,11 @@ import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.constraints.NotNull;
@@ -83,7 +81,7 @@ public interface NetSuiteClient<CollectionType, ExceptionType extends Exception,
 
     CollectionType getSavedSearch(@NotNull RecordType type) throws ExceptionType;
 
-    Object initialize(@NotNull RecordType type, @NotNull RecordReference recordReference)
+    Object initialize(@NotNull InitializeType type, @NotNull RecordReference recordReference)
         throws ExceptionType;
 
     AsyncStatusResult asyncFindRecord(@NotNull SearchRecordType recordType, @NotNull String expression)

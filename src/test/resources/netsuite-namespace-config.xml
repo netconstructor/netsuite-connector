@@ -143,7 +143,25 @@
 			exchange-pattern="request-response" />
 		<netsuite:async-find-records recordType="CUSTOMER" expression="greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25)" />
 	</flow>
-    
+	
+	<flow name="addRecord">
+		<inbound-endpoint address="vm://addRecord"
+			exchange-pattern="request-response" />
+		<netsuite:add-record recordType="EMPLOYEE">
+			<netsuite:attributes>
+					<netsuite:attribute key="firstName" value="John" />
+				<netsuite:attribute key="lastName" value="J" />
+				<netsuite:attribute key="email" value="john@foobar.com" />
+			</netsuite:attributes>
+		</netsuite:add-record>
+	</flow>
+
+   	<flow name="addFile">
+		<inbound-endpoint address="vm://addFile"
+			exchange-pattern="request-response" />
+		<netsuite:add-file  content="#[payload]" fileName="#[header:inbound:filename]" folderId="#[variable:folderId]"  />
+	</flow>
+
 
 
 </mule>

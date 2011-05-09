@@ -50,7 +50,6 @@ import org.junit.Test;
 @SuppressWarnings("serial")
 public class NetSuiteTestDriver
 {
-    // FIXME the file path of the wsdl is embedded in the generated classes
     private NetSuiteCloudConnector connector;
 
     @Before

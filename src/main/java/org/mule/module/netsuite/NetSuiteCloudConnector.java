@@ -31,10 +31,10 @@ import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
+import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
 import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncResult;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,17 +85,13 @@ public class NetSuiteCloudConnector implements Initialisable
     private String roleId;
     
     /**
-     * Attaches a record to another one, optionally specifying a contact for the
+     * Attaches a source record - that is, the attachment - to another destination one, 
+     * optionally specifying a contact for the
      * attachment. Not all record type are supported as source, destination or
      * contact. Please consult NetSuite documentation.
      * Example:
      * 
-     * {@code <netsuite:attach-record 
-     *          sourceRecordType="BUDGET"
-     *          sourceId="500" 
-     *          sourceIdType="EXTERNAL" 
-     *          destinationId="1590"
-     *          destinationRecordType="ACCOUNT" />}
+     * {@code <netsuite:attach-record  sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96"  />}
      * 
      * @param sourceRecordType the type of the target record to be attached
      * @param sourceId the id of the target record to be attached
@@ -125,7 +121,7 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Deletes a record
+     * Deletes a record. Not all records can be deleted. Please consult NetSuite documentation
      * 
      * Example:
      * 
@@ -144,10 +140,10 @@ public class NetSuiteCloudConnector implements Initialisable
     }
 
     /**
-     * Detaches a record
+     * Detaches a source record - that is, the attachment - from a destination record.
      * Example:
      * 
-     * {@code <netsuite:detach-record destinationRecordType="ACCOUNT" destinationId="96" sourceRecordType="ACCOUNT" sourceId="16"/>}
+     * {@code <netsuite:detach-record sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96" />}
       
      * @param sourceRecordType the type of the target record to be detached
      * @param sourceId the id of the target record to be detached
@@ -393,8 +389,17 @@ public class NetSuiteCloudConnector implements Initialisable
     }
     
     /**
-     * Creates a new record
+     * Creates a new record. Example:
      * 
+     * {@code 
+     *  <netsuite:add-record recordType="EMPLOYEE">
+     *       <netsuite:attributes>
+     *           <netsuite:attribute key="firstName" value="#[variable:firstName]" />
+     *           <netsuite:attribute key="lastName" value="#[variable:lastName]" />
+     *           <netsuite:attribute key="email" value="#[variable:email]" />
+     *       </netsuite:attributes>
+     *   </netsuite:add-record>}
+     *   
      * @param recordType  the type of record to add
      * @param attributes the record attributes, as a string-object map
      * @return the RecordRef of the new record
@@ -408,7 +413,9 @@ public class NetSuiteCloudConnector implements Initialisable
 
     /**
      * Creates a new file record. This operation is similar to addRecord, but is
-     * customized for simplifying local content passing 
+     * customized for simplifying local content passing.
+     * 
+     * {@code <netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[header:folderId]"  />}
      * 
      * @param attributes the additional file attributes
      * @param content the content of the file record to add. It can be of type
@@ -678,7 +685,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the initialized Record
      */
     @Operation
-    public Record initialize(@Parameter RecordType type,
+    public Record initialize(@Parameter InitializeType type,
                              @Parameter RecordType recordType,
                              @Parameter(optional = false) String id,
                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType)

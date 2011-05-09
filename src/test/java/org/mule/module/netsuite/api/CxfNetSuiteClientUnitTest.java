@@ -10,7 +10,6 @@
 
 package org.mule.module.netsuite.api;
 
-import static org.junit.Assert.*;
 import static org.mockito.Matchers.argThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -194,7 +193,7 @@ public class CxfNetSuiteClientUnitTest
     @Test
     public void initialize() throws Exception
     {
-        client.initialize(RecordType.CUSTOMER_REFUND, new RecordReference(new RecordId.ExternalId("489"),
+        client.initialize(InitializeType.CUSTOMER_REFUND, new RecordReference(new RecordId.ExternalId("489"),
             RecordType.ASSEMBLY_BUILD));
         verify(port).initialize(argThat(new Matcher<InitializeRequest>()
         {
