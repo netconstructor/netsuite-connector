@@ -18,7 +18,7 @@
 	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-                          http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0-SNAPSHOT/mule-netsuite.xsd">
+                          http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0/mule-netsuite.xsd">
 
 	<netsuite:config email="foo@bar.com" password="1234" account="myaccount" roleId="3" />
 	<!--

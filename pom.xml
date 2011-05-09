@@ -80,6 +80,9 @@
 				<artifactId>mule-cloud-connector-maven-plugin</artifactId>
 				<version>${cloudconnect.version}</version>
 				<extensions>true</extensions>
+                                <configuration>
+                                    <schemaVersion>1.0</schemaVersion>
+                                 </configuration>
 			</plugin>
 
 			<!-- The release distribution for this project -->
