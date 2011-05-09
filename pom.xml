@@ -95,7 +95,18 @@
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
-			<!--
+			<plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-release-plugin</artifactId>
+                            <configuration>
+                               <autoVersionSubmodules>true</autoVersionSubmodules>
+                               <pushChanges>false</pushChanges>
+                           </configuration>
+                           <version>2.1</version>
+                         </plugin>
+
+
+                        <!--
 				<plugin> <groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
 				<version>${cxf.version}</version> <executions> <execution>
