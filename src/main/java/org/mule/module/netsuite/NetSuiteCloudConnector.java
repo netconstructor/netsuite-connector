@@ -546,7 +546,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
      *  <netsuite:find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:find-records recordType="FOLDER" expression="noneOf(group, [internalId('#[header:internalId1]'), internalId('#[header:internalId2]')])" />
+     *  <netsuite:find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      *  <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
      * 
@@ -585,7 +585,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
      *  <netsuite:find-first-record recordType="BIN"" expression="isTrue(user.isInactive)" />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:find-first-record recordType="FOLDER" expression="noneOf(group, [internalId('#[header:internalId1]'), internalId('#[header:internalId2]')])" />
+     *  <netsuite:find-first-record recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      *  
      * 
@@ -639,7 +639,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
      *  <netsuite:async-find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:async-find-records recordType="FOLDER" expression="noneOf(group, [internalId('#[header:internalId1]'), internalId('#[header:internalId2]')])" />
+     *  <netsuite:async-find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      * 
      * @param recordType the type of record to search

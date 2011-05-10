@@ -52,8 +52,8 @@ TOKEN : { < CLOSE_PAR : ")" > }
 TOKEN : { < OPEN_BRACKET : "[" > }
 TOKEN : { < CLOSE_BRACKET : "]" > }
 
-TOKEN : { < INTERNAL : "internalId" > }
-TOKEN : { < EXTERNAL : "externalId" > }
+TOKEN : { < INTERNAL : "internal" > }
+TOKEN : { < EXTERNAL : "external" > }
 TOKEN : { < IDENTIFIER : ["a"-"z","A"-"Z", "_"](["a"-"z","A"-"Z","0"-"9"])* > }
 
 TOKEN : { < VALUE :  (["0"-"9",".", "+", "-"])+ | "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }

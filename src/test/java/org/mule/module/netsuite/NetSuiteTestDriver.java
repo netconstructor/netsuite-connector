@@ -27,6 +27,7 @@ import org.mule.api.lifecycle.InitialisationException;
 import com.netsuite.webservices.documents.filecabinet_2010_2.types.TextFileEncoding;
 import com.netsuite.webservices.lists.accounting_2010_2.types.ItemWeightUnit;
 import com.netsuite.webservices.lists.employees_2010_2.Employee;
+import com.netsuite.webservices.lists.employees_2010_2.types.Gender;
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
@@ -39,6 +40,7 @@ import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -61,6 +63,42 @@ public class NetSuiteTestDriver
         connector.setPassword(System.getenv("netsuitePassword"));
         connector.setRoleId("3");
         connector.initialise();
+    }
+    
+    /**
+     * Tests searching using multi enum selects
+     */
+    @Test
+    public void findRecordMultiSelectSearch() throws Exception
+    {
+        Iterable<Record> employees = findJohnDoe();
+        assertFalse(employees.iterator().hasNext());
+
+        RecordRef ref = createEmployeeJohnDoe();
+        try
+        {
+            assertEquals(1, 
+                getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "anyOf(internalId, [ internal('" + ref.getInternalId() + "') ] )")));
+        }
+        finally
+        {
+            connector.deleteRecord(RecordType.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
+        }
+    }
+
+    /**
+     * Tests searching using multi enum selects. This tests assumes there are
+     * employees in the server
+     */
+    @Test
+    public void findRecordMultiEnumSelectSearch() throws Exception
+    {
+        int length = getLength(connector.findRecords(SearchRecordType.EMPLOYEE, null));
+        assertTrue(length > 0);
+
+        assertEquals(length, // 
+            getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "noneOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")) +  
+            getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "anyOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")));
     }
 
     @Test
@@ -265,6 +303,14 @@ public class NetSuiteTestDriver
         }
     }
 
+   
+
+    @SuppressWarnings("unchecked")
+    private int getLength(Iterable<?> results)
+    {
+        return ((Collection) results).toArray().length;
+    }
+
     /**
      * Tests that simple searches that involve multiple record attributes work
      * properly
@@ -337,14 +383,14 @@ public class NetSuiteTestDriver
     }
 
     /***
-     *  Tests that a saved search can be executed
-     *  This tests assumes there is at least a saved search in the system - one
-     * of those provided as example to new netsuite accounts.
+     * Tests that a saved search can be executed This tests assumes there is at least
+     * a saved search in the system - one of those provided as example to new
+     * netsuite accounts.
      */
     @Test
     public void getSavedSearch()
     {
-        
+
         RecordRef object = (RecordRef) connector.getSavedSearch(RecordType.CUSTOMER).get(0);
         assertNotNull(connector.savedFindRecords(SearchRecordType.CUSTOMER, object.getInternalId()));
     }
@@ -377,7 +423,7 @@ public class NetSuiteTestDriver
                 put("lastName", "Doe");
                 put("isSalesRep", true);
                 put("email", "john.doe@foobar.com");
-
+                put("gender", Gender.MALE);
             }
         });
         return recordRef;

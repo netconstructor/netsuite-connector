@@ -11,13 +11,10 @@
 package org.mule.module.netsuite.api.paging;
 
 import org.mule.module.netsuite.api.CxfPortProvider;
-import org.mule.module.netsuite.api.ResultStatuses;
 import org.mule.module.netsuite.api.model.expression.filter.FilterExpressionParser;
 
-import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.SearchResult;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
-import com.netsuite.webservices.platform.messages_2010_2.AsyncSearchRequest;
 import com.netsuite.webservices.platform.messages_2010_2.SearchRequest;
 
 public final class RecordSearchIterable extends AbstractRecordSearchIterable

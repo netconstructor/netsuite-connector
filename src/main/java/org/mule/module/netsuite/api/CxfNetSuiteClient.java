@@ -112,7 +112,6 @@ public class CxfNetSuiteClient implements SoapNetSuiteClient, CxfPortProvider
                                         @NotNull final String expression) throws Exception
     {
         Validate.notNull(recordType);
-        Validate.notEmpty(expression);
         return new RecordSearchIterable(this, recordType, expression);
     }
 
