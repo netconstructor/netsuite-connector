@@ -17,14 +17,18 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.netsuite.webservices.documents.filecabinet_2010_2.FolderSearch;
 import com.netsuite.webservices.lists.employees_2010_2.EmployeeSearch;
 import com.netsuite.webservices.lists.relationships_2010_2.CustomerSearch;
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchLongFieldOperator;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -91,6 +95,20 @@ public class FilterExpressionParserUnitTest
             .getGlobalSubscriptionStatus()
             .getOperator());
         assertEquals(Arrays.asList("_confirmedOptOut", "_softOptIn"), record.getBasic().getGlobalSubscriptionStatus().getSearchValue());
+    }
+    
+    @Test
+    public void testMultiIdSyntax() throws Exception
+    {
+        FolderSearch record = (FolderSearch) FilterExpressionParser.parse(SearchRecordType.FOLDER,
+            "noneOf(group, [internalId('10'), internalId('898')])");
+        assertSame(SearchMultiSelectFieldOperator.NONE_OF, record.getBasic()
+            .getGroup()
+            .getOperator());
+        List<RecordRef> searchValue = record.getBasic().getGroup().getSearchValue();
+        assertEquals(2, searchValue.size());
+        assertEquals("10", searchValue.get(0).getInternalId());
+        assertEquals("898", searchValue.get(1).getInternalId());
     }
 
     @Test

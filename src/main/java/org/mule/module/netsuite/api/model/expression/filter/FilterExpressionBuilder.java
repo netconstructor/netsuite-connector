@@ -16,7 +16,9 @@ import static org.mule.module.netsuite.api.model.expression.Quotes.removeQuotesI
 import org.mule.module.netsuite.api.model.expression.PropertyAccess;
 import org.mule.module.netsuite.api.model.expression.Quotes;
 
+import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
+import com.netsuite.webservices.platform.core_2010_2.SearchMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
@@ -27,6 +29,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections.TransformerUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.UnhandledException;
 import org.apache.commons.lang.Validate;
@@ -53,7 +57,7 @@ public class FilterExpressionBuilder
 
     public void addSimpleExpression(String operationName,
                                     String attributeName,
-                                    String firstArg,
+                                    Object firstArg,
                                     String secondArg)
     {
         try
@@ -69,7 +73,7 @@ public class FilterExpressionBuilder
     public void addJoinedExpression(String operationName,
                                     String joinName,
                                     String attributeName,
-                                    String firstArg,
+                                    Object firstArg,
                                     String secondArg)
     {
         try
@@ -97,7 +101,7 @@ public class FilterExpressionBuilder
 
     private void addExpressionToGroup(String operationName,
                                       String attributeName,
-                                      String firstArg,
+                                      Object firstArg,
                                       String secondArg,
                                       SearchRecord attributeGroup) throws Exception
     {
@@ -125,7 +129,7 @@ public class FilterExpressionBuilder
         setFirstArg(booleanValueAsString, attribute);
     }
 
-    private void addSimpleOperation(String operationName, String firstArg, String secondArg, Object attribute)
+    private void addSimpleOperation(String operationName, Object firstArg, String secondArg, Object attribute)
         throws Exception
     {
         if (firstArg != null)
@@ -155,7 +159,7 @@ public class FilterExpressionBuilder
 
     }
 
-    private void setFirstArg(String argument, Object attribute) throws Exception
+    private void setFirstArg(Object argument, Object attribute) throws Exception
     {
         convertAndSet(argument, "searchValue", attribute);
     }
@@ -165,29 +169,21 @@ public class FilterExpressionBuilder
         convertAndSet(argument, "searchValue2", attribute);
     }
 
-    private void convertAndSet(String argument, String propertyName, Object attribute) throws Exception
+    private void convertAndSet(Object argument, String propertyName, Object attribute) throws Exception
     {
         PropertyDescriptor descriptor = newDescriptor(propertyName, attribute);
-        descriptor.getWriteMethod().invoke(attribute, convert(argument, descriptor.getPropertyType()));
+        descriptor.getWriteMethod().invoke(attribute,
+            convert(argument, descriptor.getPropertyType(), attribute.getClass()));
     }
 
-    private Object convert(String argument, Class<?> propertyType)
+    private Object convert(Object argument, Class<?> propertyType, Class<?> attributeClass)
     {
-        if (propertyType == List.class)
-        {
-            return csvToStringList(Quotes.removeQuotes(argument));
-        }
         return ConvertUtils.convert(removeQuotesIfPresent(argument), propertyType);
     }
 
-    private List<String> csvToStringList(String csv)
+    private Object removeQuotesIfPresent(Object argument)
     {
-        String[] splitted = StringUtils.split(csv, ',');
-        for (int i = 0; i < splitted.length; i++)
-        {
-            splitted[i] = splitted[i].trim();
-        }
-        return new ArrayList<String>(Arrays.asList(splitted));
+        return argument instanceof String ? Quotes.removeQuotesIfPresent((String) argument) : argument;
     }
 
     private PropertyDescriptor newDescriptor(String propertyName, Object object)
@@ -198,7 +194,7 @@ public class FilterExpressionBuilder
         }
         catch (IntrospectionException e)
         {
-            throw PropertyAccess.propertyNotFound(propertyName, target);
+            throw PropertyAccess.propertyNotFound(propertyName, object);
         }
     }
 

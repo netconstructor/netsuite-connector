@@ -7,6 +7,7 @@ PARSER_BEGIN(FilterExpressionParser)
     import com.netsuite.webservices.platform.core_2010_2.types.*;
     import  java.io.ByteArrayInputStream;
     import org.apache.commons.lang.*;
+    import java.util.*;
 
    /**
     * A predicate-like syntax parser for filter expressions
@@ -48,10 +49,15 @@ TOKEN : { < DOT : "." > }
 
 TOKEN : { < OPEN_PAR : "(" > }
 TOKEN : { < CLOSE_PAR : ")" > }
+TOKEN : { < OPEN_BRACKET : "[" > }
+TOKEN : { < CLOSE_BRACKET : "]" > }
 
-TOKEN : { < IDENTIFIER : ["a"-"z","A"-"Z"](["a"-"z","A"-"Z","0"-"9"])* > }
+TOKEN : { < INTERNAL : "internalId" > }
+TOKEN : { < EXTERNAL : "externalId" > }
+TOKEN : { < IDENTIFIER : ["a"-"z","A"-"Z", "_"](["a"-"z","A"-"Z","0"-"9"])* > }
 
-TOKEN : { < VALUE :  (["0"-"9",".", "+", "-"])+ | "'" (~["'"])* "'" | "\"" (~["\""])* "\""  | "[" (~["[","]"])+ "]" > }
+TOKEN : { < VALUE :  (["0"-"9",".", "+", "-"])+ | "'" (~["'"])* "'" | "\"" (~["\""])* "\"" > }
+
 
 SearchRecord start() : 
 { }
@@ -61,23 +67,78 @@ SearchRecord start() :
 }
 
 void expression() :
-{Token operation, attributeOrJoin, attribute = null, arg0 = null, arg1 = null; }
+{Token operation, attributeOrJoin, attribute = null, arg1 = null; Object arg0 = null; }
 { operation = < IDENTIFIER >
   < OPEN_PAR >
   attributeOrJoin = < IDENTIFIER >
   (< DOT >
   attribute = < IDENTIFIER >)? 
   (< COMMA >
-  arg0 = < VALUE >
+  arg0 = valueOrCollection()
   (< COMMA >
   arg1 = < VALUE >)?)?
   < CLOSE_PAR > 
   { 
     if( attribute == null  ) 
-      builder.addSimpleExpression(operation.image, attributeOrJoin.image, nullSafeImage(arg0), nullSafeImage(arg1));
+      builder.addSimpleExpression(operation.image, attributeOrJoin.image, arg0, nullSafeImage(arg1));
     else
-      builder.addJoinedExpression(operation.image, attributeOrJoin.image, attribute.image, nullSafeImage(arg0), nullSafeImage(arg1));
+      builder.addJoinedExpression(operation.image, attributeOrJoin.image, attribute.image, arg0, nullSafeImage(arg1));
   }  
 }
 
+Object valueOrCollection() :
+{ Object o = null; }
+{
+  (o = value() | o = collection())
+  { return o; }   
+}
+
+Object value() :
+{ Token v; }
+{
+  v =  <VALUE>
+  { return v.image; }
+}
+
+List<Object> collection() :
+{ CollectionBuilder b = new CollectionBuilder(); }
+{	
+	<OPEN_BRACKET>
+	collectionElement(b)
+	( < COMMA > collectionElement(b))*	
+	<CLOSE_BRACKET>
+	{ return b.build(); }
+}
+
+void collectionElement(CollectionBuilder b ) :
+{ }
+{
+	collectionEnumElement(b) | collectionInternalIdElement(b) | collectionExternalIdElement(b)
+}
+
+void collectionEnumElement(CollectionBuilder b) :
+{ Token id; }
+{
+  id = < IDENTIFIER >
+  { b.addEnumElement( id.image); }
+}
+
+void collectionInternalIdElement(CollectionBuilder b) :
+{ Token id; }
+{
+  
+  < INTERNAL > < OPEN_PAR >
+  id = < VALUE > 
+  <CLOSE_PAR> 
+  { b.addInternalIdElement( id.image); }
+}
+
+void collectionExternalIdElement(CollectionBuilder b) :
+{ Token id; }
+{
+  < EXTERNAL > < OPEN_PAR >
+  id = < VALUE > 
+  <CLOSE_PAR> 
+  { b.addExternalIdElement( id.image); }
+}
 
