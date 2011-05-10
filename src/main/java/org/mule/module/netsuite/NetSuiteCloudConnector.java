@@ -533,7 +533,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Search expressions are  in the form operator(attribute, arguments...) for basic search, 
      * and operator(join.attribute, arguments...) for joined search, where operator is 
-     * any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     * any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
      * 
@@ -542,10 +542,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * {@code 
      *  <netsuite:find-records recordType="BIN" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *  <netsuite:find-records recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-     *  <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *  <netsuite:find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" /> 
      *  <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+     *  <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
@@ -570,17 +572,20 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Search expressions are  in the form operator(attribute, arguments...) for basic search, 
      * and operator(join.attribute, arguments...) for joined search, where operator is 
-     * any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     * any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
      * Examples:
      * {@code 
      *  <netsuite:find-first-record recordType="BIN")" />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *  <netsuite:find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
      *  <netsuite:find-first-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
      *  <netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+     *  
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
@@ -620,16 +625,18 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Search expressions are  in the form operator(attribute, arguments...) for basic search, 
      * and operator(join.attribute, arguments...) for joined search, where operator is 
-     * any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     * any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
      * Examples:
      * {@code 
      *  <netsuite:async-find-records recordType="BIN" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+     *  <netsuite:async-find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
      *  <netsuite:async-find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
      *  <netsuite:async-find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
      * 
      * 
@@ -637,7 +644,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param expression the filtering expression, in the 
      *          form operator(attribute, arguments...) for basic search, 
      *          and operator(join.attribute, arguments...) for joined search, where operator is 
-     *          any of the string, long, double, and text operators supported by SuiteTalk - Enum and MultiSelect operators are not supported -
+     *          any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
      *          plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      *          Multiple filters can be combined using multiple predicates separated by commas.
      * @return the AsyncStatusResult of the query

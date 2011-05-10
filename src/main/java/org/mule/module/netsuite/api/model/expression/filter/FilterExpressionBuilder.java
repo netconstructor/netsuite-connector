@@ -14,14 +14,20 @@ import static org.apache.commons.beanutils.MethodUtils.invokeExactStaticMethod;
 import static org.mule.module.netsuite.api.model.expression.Quotes.removeQuotesIfPresent;
 
 import org.mule.module.netsuite.api.model.expression.PropertyAccess;
+import org.mule.module.netsuite.api.model.expression.Quotes;
 
+import com.netsuite.webservices.platform.core_2010_2.SearchEnumMultiSelectField;
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.UnhandledException;
 import org.apache.commons.lang.Validate;
 
@@ -110,7 +116,10 @@ public class FilterExpressionBuilder
         }
     }
 
-    private void addBooleanOperation(Object attribute, Object firstArg, Object secondArg, String booleanValueAsString) throws Exception
+    private void addBooleanOperation(Object attribute,
+                                     Object firstArg,
+                                     Object secondArg,
+                                     String booleanValueAsString) throws Exception
     {
         Validate.isTrue(firstArg == null && secondArg == null, "isTrue/isFalse do not take arguments");
         setFirstArg(booleanValueAsString, attribute);
@@ -159,9 +168,26 @@ public class FilterExpressionBuilder
     private void convertAndSet(String argument, String propertyName, Object attribute) throws Exception
     {
         PropertyDescriptor descriptor = newDescriptor(propertyName, attribute);
-        descriptor.getWriteMethod().invoke(attribute,
-            ConvertUtils.convert(removeQuotesIfPresent(argument), descriptor.getPropertyType()));
+        descriptor.getWriteMethod().invoke(attribute, convert(argument, descriptor.getPropertyType()));
+    }
 
+    private Object convert(String argument, Class<?> propertyType)
+    {
+        if (propertyType == List.class)
+        {
+            return csvToStringList(Quotes.removeQuotes(argument));
+        }
+        return ConvertUtils.convert(removeQuotesIfPresent(argument), propertyType);
+    }
+
+    private List<String> csvToStringList(String csv)
+    {
+        String[] splitted = StringUtils.split(csv, ',');
+        for (int i = 0; i < splitted.length; i++)
+        {
+            splitted[i] = splitted[i].trim();
+        }
+        return new ArrayList<String>(Arrays.asList(splitted));
     }
 
     private PropertyDescriptor newDescriptor(String propertyName, Object object)

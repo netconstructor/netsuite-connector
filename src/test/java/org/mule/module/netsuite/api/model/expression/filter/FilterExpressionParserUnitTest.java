@@ -20,8 +20,11 @@ import static org.junit.Assert.assertTrue;
 import com.netsuite.webservices.lists.employees_2010_2.EmployeeSearch;
 import com.netsuite.webservices.lists.relationships_2010_2.CustomerSearch;
 import com.netsuite.webservices.platform.core_2010_2.SearchRecord;
+import com.netsuite.webservices.platform.core_2010_2.types.SearchEnumMultiSelectFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchLongFieldOperator;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
+
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -77,6 +80,17 @@ public class FilterExpressionParserUnitTest
         record = (CustomerSearch) FilterExpressionParser.parse(SearchRecordType.CUSTOMER,
             "isFalse(job.giveAccess)");
         assertFalse(record.getJobJoin().getGiveAccess().isSearchValue());
+    }
+    
+    @Test
+    public void testMultiEnumSyntax() throws Exception
+    {
+        EmployeeSearch record = (EmployeeSearch) FilterExpressionParser.parse(SearchRecordType.EMPLOYEE,
+            "anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])");
+        assertSame(SearchEnumMultiSelectFieldOperator.ANY_OF, record.getBasic()
+            .getGlobalSubscriptionStatus()
+            .getOperator());
+        assertEquals(Arrays.asList("_confirmedOptOut", "_softOptIn"), record.getBasic().getGlobalSubscriptionStatus().getSearchValue());
     }
 
     @Test
