@@ -101,7 +101,7 @@ public class FilterExpressionParserUnitTest
     public void testMultiIdSyntax() throws Exception
     {
         FolderSearch record = (FolderSearch) FilterExpressionParser.parse(SearchRecordType.FOLDER,
-            "noneOf(group, [internalId('10'), internalId('898')])");
+            "noneOf(group, [internal('10'), internal('898')])");
         assertSame(SearchMultiSelectFieldOperator.NONE_OF, record.getBasic()
             .getGroup()
             .getOperator());
