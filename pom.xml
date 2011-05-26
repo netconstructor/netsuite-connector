@@ -5,7 +5,7 @@
 	<artifactId>mule-module-netsuite</artifactId>
 	<packaging>cloud-connector</packaging>
 	<name>Mule NetSuite Cloud Connector</name>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<description>Mule Cloud connector to NetSuite</description>
 	<url>http://www.muleforge.org/projects/mule-module-netsuite</url>
 
