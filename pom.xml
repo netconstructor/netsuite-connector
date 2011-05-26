@@ -18,7 +18,7 @@
 		<vmtype>org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType</vmtype>
 		<jdk.name>J2SE-1.5</jdk.name>
 		<jdk.version>1.5</jdk.version>
-		<cloudconnect.version>2.0.15-SNAPSHOT</cloudconnect.version>
+		<cloudconnect.version>2.0.15</cloudconnect.version>
 	</properties>
 
 	<build>
