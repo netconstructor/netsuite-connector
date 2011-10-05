@@ -13,6 +13,11 @@ package org.mule.module.netsuite;
 import static org.mule.module.netsuite.RecordReferences.from;
 import static org.mule.module.netsuite.RecordReferences.nulSafeFrom;
 
+import org.mule.api.annotations.Configurable;
+import org.mule.api.annotations.Module;
+import org.mule.api.annotations.Processor;
+import org.mule.api.annotations.param.Default;
+import org.mule.api.annotations.param.Optional;
 import org.mule.api.lifecycle.Initialisable;
 import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.CxfNetSuiteClient;
@@ -21,10 +26,6 @@ import org.mule.module.netsuite.api.NetSuiteClient;
 import org.mule.module.netsuite.api.NetSuiteClientAdaptor;
 import org.mule.module.netsuite.api.model.expression.date.SimpleDateExpression;
 import org.mule.module.netsuite.api.model.expression.date.StringDateExpression;
-import org.mule.tools.cloudconnect.annotations.Connector;
-import org.mule.tools.cloudconnect.annotations.Operation;
-import org.mule.tools.cloudconnect.annotations.Parameter;
-import org.mule.tools.cloudconnect.annotations.Property;
 
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
@@ -55,33 +56,36 @@ import org.apache.commons.io.IOUtils;
  * 
  * @author flbulgarelli
  */
-@Connector(namespacePrefix = "netsuite", namespaceUri = "http://www.mulesoft.org/schema/mule/netsuite")
+@Module(name = "netsuite",        
+        namespace = "http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite",
+        schemaLocation = "http://repository.mulesoft.org/releases/org/mule/modules/mule-module-zuora/2.0/mule-netsuite.xsd")
 public class NetSuiteCloudConnector implements Initialisable
 {
     private static final String SUITETALK_ADDRESS = "https://webservices.netsuite.com/services/NetSuitePort_2010_2";
     
-    @Property(name = "client-ref", optional = true)
+    @Configurable
+    @Optional    
     private NetSuiteClient<List<Object>, RuntimeException, Void> client;
     
     /**
      * The login email of both NetSuite UI and SuiteTalk
      */
-    @Property
+    @Configurable
     private String email;
     /**
      * The login password of both the NetSuite UI and SuiteTalk
      */
-    @Property
+    @Configurable
     private String password;
     /**
      * SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX
      */
-    @Property
+    @Configurable
     private String account;
     /**
-     * The id of the role used to login in SuiteTalk, which determines the operation privileges
+     * The id of the role used to login in SuiteTalk, which determines the Processor privileges
      */
-    @Property
+    @Configurable
     private String roleId;
     
     /**
@@ -103,16 +107,16 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param contanctId the id of the optional contact record
      * @param contanctIdType the id type of the optional contact record
      */
-    @Operation
-    public void attachRecord(@Parameter(optional = false) RecordType sourceRecordType,
-                             @Parameter(optional = false) String sourceId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType sourceIdType,
-                             @Parameter(optional = false) RecordType destinationRecordType,
-                             @Parameter(optional = false) String destinationId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType destinationIdType,
-                             @Parameter(optional = true) RecordType contanctRecordType,
-                             @Parameter(optional = true) String contanctId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType contanctIdType)
+    @Processor
+    public void attachRecord( RecordType sourceRecordType,
+                              String sourceId,
+                             @Optional @Default("INTERNAL") RecordIdType sourceIdType,
+                              RecordType destinationRecordType,
+                              String destinationId,
+                             @Optional @Default("INTERNAL") RecordIdType destinationIdType,
+                             @Optional RecordType contanctRecordType,
+                             @Optional String contanctId,
+                             @Optional @Default("INTERNAL") RecordIdType contanctIdType)
     {
         client.attachRecord( //
             from(sourceRecordType, sourceId, sourceIdType), //
@@ -131,10 +135,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param id the id of the record to delete
      * @param idType the type of id of the record to delete
      */
-    @Operation
-    public void deleteRecord(@Parameter RecordType recordType,
-                             @Parameter String id,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType)
+    @Processor
+    public void deleteRecord(RecordType recordType,
+                             String id,
+                             @Optional @Default("INTERNAL") RecordIdType idType)
     {
         client.deleteRecord(from(recordType, id, idType));
     }
@@ -152,13 +156,13 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param destinationId the id of the record to be detached to
      * @param destinationIdType the id type of the record to be detached to
      */
-    @Operation
-    public void detachRecord(@Parameter RecordType sourceRecordType,
-                             @Parameter String sourceId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType sourceIdType,
-                             @Parameter RecordType destinationRecordType,
-                             @Parameter String destinationId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType destinationIdType)
+    @Processor
+    public void detachRecord(RecordType sourceRecordType,
+                             String sourceId,
+                             @Optional @Default("INTERNAL") RecordIdType sourceIdType,
+                             RecordType destinationRecordType,
+                             String destinationId,
+                             @Optional @Default("INTERNAL") RecordIdType destinationIdType)
     {
         client.detachRecord(//
             from(sourceRecordType, sourceId, sourceIdType), // 
@@ -179,13 +183,13 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param toSubsidiaryIdType the id type of the optional ending subsidiary
      * @return a list of BudgetExchangeRate's
      */
-    @Operation
-    public List<Object> getBudgetExchangeRates(@Parameter String periodId,
-                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
-                                               @Parameter String fromSubsidiaryId,
-                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
-                                               @Parameter(optional = true) String toSubsidiaryId,
-                                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
+    @Processor
+    public List<Object> getBudgetExchangeRates(String periodId,
+                                               @Optional @Default("INTERNAL") RecordIdType periodIdType,
+                                               String fromSubsidiaryId,
+                                               @Optional @Default("INTERNAL") RecordIdType fromSubsidiaryIdType,
+                                               @Optional String toSubsidiaryId,
+                                               @Optional @Default("INTERNAL") RecordIdType toSubsidiaryIdType)
     {
         return client.getBudgetExchangeRates(//
             RecordIds.from(periodId, periodIdType), // 
@@ -212,13 +216,13 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param toSubsidiaryIdType the id type of the optional ending subsidiary
      * @return a list of ConsolidatedExchangeRate's
      */
-    @Operation
-    public List<Object> getConsolidatedExchangeRates(@Parameter String periodId,
-                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType periodIdType,
-                                                     @Parameter String fromSubsidiaryId,
-                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType fromSubsidiaryIdType,
-                                                     @Parameter(optional = true) String toSubsidiaryId,
-                                                     @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType toSubsidiaryIdType)
+    @Processor
+    public List<Object> getConsolidatedExchangeRates(String periodId,
+                                                     @Optional @Default("INTERNAL") RecordIdType periodIdType,
+                                                     String fromSubsidiaryId,
+                                                     @Optional @Default("INTERNAL") RecordIdType fromSubsidiaryIdType,
+                                                     @Optional String toSubsidiaryId,
+                                                     @Optional @Default("INTERNAL") RecordIdType toSubsidiaryIdType)
     {
         return client.getConsolidatedExchangeRates(//
             RecordIds.from(periodId, periodIdType), // 
@@ -235,16 +239,16 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param includeInactives if inactive customizations should also be returned
      * @return a list of CustomizationRef's
      */
-    @Operation
-    public List<Object> getCustomizationIds(@Parameter GetCustomizationType type,
-                                            @Parameter(optional = true, defaultValue = "false") boolean includeInactives)
+    @Processor
+    public List<Object> getCustomizationIds(GetCustomizationType type,
+                                            @Optional @Default("false") boolean includeInactives)
     {
         return client.getCustomizationIds(type, includeInactives);
     }
 
     /**
      * Answers a list of deleted records of a given record type that match a given date expression.
-     * This operations accepts two different date expression passing styles: string oriented, 
+     * This Processors accepts two different date expression passing styles: string oriented, 
      * and object oriented. If whenExpression is specified, it is parsed and used as date expression. 
      * Otherwise, a date expression is build from date1, date2 and operator parameters. 
      * 
@@ -252,8 +256,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * is better when client code already has date objects. However, predefined search values like 
      * thisWeek, tomorrow or today can only be used with the first, string oriented, style.
      * 
-     * String oriented date expressions are in the form operation( searchValue, arguments...), where operation is any of the NetSuite 
-     * supported date operations, arguments are one or two operands for the given operator, and
+     * String oriented date expressions are in the form Processor( searchValue, arguments...), where Processor is any of the NetSuite 
+     * supported date Processors, arguments are one or two operands for the given operator, and
      * searchValue is some of the supported predefined search value as defined by NetSuite or any 
      * of the following expressions:
      * isoDate( anIsoDate ), isoDateRante( anIsoDate, anotherIsoDate ) , 
@@ -277,12 +281,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param whenExpression a predicate-style date filtering expression
      * @return the list of DeletedRecord's that match the given date filtering expression
      */
-    @Operation
-    public List<Object> getDeletedRecords(@Parameter RecordType type,
-                                          @Parameter(optional = true) String whenExpression,
-                                          @Parameter(optional = true) Date date1,
-                                          @Parameter(optional = true) Date date2,
-                                          @Parameter(optional = true) SearchDateFieldOperator operator)
+    @Processor
+    public List<Object> getDeletedRecords(RecordType type,
+                                          @Optional String whenExpression,
+                                          @Optional Date date1,
+                                          @Optional Date date2,
+                                          @Optional SearchDateFieldOperator operator)
     {
         
         return client.getDeletedRecords(type, 
@@ -297,8 +301,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param type the target record type  
      * @return the list of Record's
      */
-    @Operation
-    public List<Object> getRecords(@Parameter RecordType type)
+    @Processor
+    public List<Object> getRecords(RecordType type)
     {
         return client.getRecords(type);
     }
@@ -312,17 +316,17 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param idType the id type of the given record id
      * @return a Record
      */
-    @Operation
-    public Object getRecord(@Parameter RecordType recordType,
-                            @Parameter(optional = false) String id,
-                            @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType)
+    @Processor
+    public Object getRecord(RecordType recordType,
+                             String id,
+                            @Optional @Default("INTERNAL") RecordIdType idType)
     {
         return client.getRecord(from(recordType, id, idType));
     }
 
     /**
      * Answers the availability for a given record reference.
-     * If the Multi-Location Inventory feature is enabled, this operation returns results for all locations. 
+     * If the Multi-Location Inventory feature is enabled, this Processor returns results for all locations. 
      * For locations that do not have any items available, only location IDs and names are listed in results. 
      * Example:
      * 
@@ -334,11 +338,11 @@ public class NetSuiteCloudConnector implements Initialisable
      *         If set, only items with quantity available changes recorded as of the specified date are returned.
      * @return A list of ItemAvailability's
      */
-    @Operation
-    public List<Object> getItemAvailabilities(@Parameter RecordType recordType,
-                                              @Parameter(optional = false) String id,
-                                              @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
-                                              @Parameter(optional = true) Date ifModifiedSince)
+    @Processor
+    public List<Object> getItemAvailabilities(RecordType recordType,
+                                               String id,
+                                              @Optional @Default("INTERNAL") RecordIdType idType,
+                                              @Optional Date ifModifiedSince)
     {
         return client.getItemAvailabilities(from(recordType, id, idType), ifModifiedSince);
     }
@@ -351,8 +355,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param type the target record type
      * @return the list of RecordRedf's 
      */
-    @Operation
-    public List<Object> getSavedSearch(@Parameter RecordType type)
+    @Processor
+    public List<Object> getSavedSearch(RecordType type)
     {
         return client.getSavedSearch(type);
     }
@@ -365,7 +369,7 @@ public class NetSuiteCloudConnector implements Initialisable
      *
      * @return the server time, as a Date
      */
-    @Operation
+    @Processor
     public Date GetServerTime()
     {
         return ((XMLGregorianCalendar) client.getServerTime()).toGregorianCalendar().getTime();
@@ -380,10 +384,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param eventIdType the id type of the given eventId
      * @param status the new status to set
      */
-    @Operation
-    public void updateInviteeStatus(@Parameter(optional = false) String eventId,
-                                    @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType eventIdType,
-                                    @Parameter CalendarEventAttendeeResponse status)
+    @Processor
+    public void updateInviteeStatus( String eventId,
+                                    @Optional @Default("INTERNAL") RecordIdType eventIdType,
+                                    CalendarEventAttendeeResponse status)
     {
         client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status);
     }
@@ -404,15 +408,15 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param attributes the record attributes, as a string-object map
      * @return the RecordRef of the new record
      */
-    @Operation
-    public RecordRef addRecord(@Parameter RecordType recordType,
-                               @Parameter Map<String, Object> attributes)
+    @Processor
+    public RecordRef addRecord(RecordType recordType,
+                               Map<String, Object> attributes)
     {
         return ((RecordRef) client.addRecord(recordType, attributes));
     }
 
     /**
-     * Creates a new file record. This operation is similar to addRecord, but is
+     * Creates a new file record. This Processor is similar to addRecord, but is
      * customized for simplifying local content passing.
      * 
      * {@code <netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[header:folderId]"  />}
@@ -420,19 +424,19 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param attributes the additional file attributes
      * @param content the content of the file record to add. It can be of type
      *            String, byte array, File or InputStream. If it is an input stream,
-     *            this operations also closes it.
+     *            this Processors also closes it.
      * @param fileName the name of the remote file
      * @param folderId  the id of the folder record where to add this file
      * @param folderIdType the id type of the folder record
      * @return the RecordRef of the new record 
      */
-    @Operation
+    @Processor
     @SuppressWarnings("serial")
-    public RecordRef addFile(@Parameter(optional = true) Map<String, Object> attributes,
-                             @Parameter final Object content,
-                             @Parameter final String fileName,
-                             @Parameter final String folderId,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") final RecordIdType folderIdType) throws IOException
+    public RecordRef addFile(@Optional Map<String, Object> attributes,
+                             final Object content,
+                             final String fileName,
+                             final String folderId,
+                             @Optional @Default("INTERNAL") final RecordIdType folderIdType) throws IOException
     {
         return addRecord(RecordType.FILE, new HashMap<String, Object>(
             attributes != null ? attributes : Collections.<String, Object> emptyMap())
@@ -496,11 +500,11 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param idType the id type of the given record id
      * @param attributes the record attributes, as a string-object map
      */
-    @Operation
-    public void updateRecord(@Parameter RecordType recordType,
-                               @Parameter(optional = false) String id,
-                               @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType,
-                               @Parameter Map<String, Object> attributes) throws Exception
+    @Processor
+    public void updateRecord(RecordType recordType,
+                                String id,
+                               @Optional @Default("INTERNAL") RecordIdType idType,
+                               Map<String, Object> attributes) throws Exception
     {
         client.updateRecord(from(recordType, id, idType), attributes);
     }
@@ -517,8 +521,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param jobId
      * @return the AsyncStatusResult for the given job
      */
-    @Operation 
-    public AsyncStatusResult checkAsyncStatus(@Parameter String jobId)
+    @Processor 
+    public AsyncStatusResult checkAsyncStatus(String jobId)
     {
         return client.checkAsyncStatus(jobId);
     }
@@ -555,9 +559,9 @@ public class NetSuiteCloudConnector implements Initialisable
      *          Multiple filters can be combined using multiple predicates separated by commas.    
      * @return a list of Record's
      */
-    @Operation
-    public Iterable<Record> findRecords(@Parameter SearchRecordType recordType,
-                                        @Parameter(optional = true) String expression)
+    @Processor
+    public Iterable<Record> findRecords(SearchRecordType recordType,
+                                        @Optional String expression)
     {
         return client.findRecords(recordType, expression);
     }
@@ -594,9 +598,9 @@ public class NetSuiteCloudConnector implements Initialisable
      *          Multiple filters can be combined using multiple predicates separated by commas.    
      * @return the first record that match the given filtering expression
      */
-    @Operation 
-    public Record findFirstRecord(@Parameter SearchRecordType recordType,
-                                  @Parameter(optional = true) String expression)
+    @Processor 
+    public Record findFirstRecord(SearchRecordType recordType,
+                                  @Optional String expression)
     {
         return client.findRecords(recordType, expression).iterator().next();
     }
@@ -611,9 +615,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param searchId the id of the save search    
      * @return a list of Record's
      */
-    @Operation
-    public Iterable<Record> savedFindRecords(@Parameter SearchRecordType recordType,
-                                             @Parameter String searchId)
+    @Processor
+    public Iterable<Record> savedFindRecords(SearchRecordType recordType,
+                                             String searchId)
     {
         return client.savedFindRecords(recordType, searchId);
     }
@@ -651,16 +655,16 @@ public class NetSuiteCloudConnector implements Initialisable
      *          Multiple filters can be combined using multiple predicates separated by commas.
      * @return the AsyncStatusResult of the query
      */
-    @Operation
-    public AsyncStatusResult asyncFindRecords(@Parameter SearchRecordType recordType,
-                                              @Parameter(optional = true) String expression) throws Exception
+    @Processor
+    public AsyncStatusResult asyncFindRecords(SearchRecordType recordType,
+                                              @Optional String expression) throws Exception
     {
         return client.asyncFindRecord(recordType, expression);
     }
 
     /**
-     * Answers the results of an asynchronous web services submission. This operation
-     * can be executed operation up to 20 times within a 30 day time period to
+     * Answers the results of an asynchronous web services submission. This Processor
+     * can be executed Processor up to 20 times within a 30 day time period to
      * retrieve the results of an asynchronous job.
      * Example:
      * {@code <netsuite:get-async-find-result jobId="#[map-payload:jobId]"  />}
@@ -669,8 +673,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param pageIndex the page number the the async result
      * @return the Record's list
      */
-    @Operation
-    public Iterable<Record> getAsyncFindResult(@Parameter String jobId)
+    @Processor
+    public Iterable<Record> getAsyncFindResult(String jobId)
     {
         return client.getAsyncFindResult(jobId);
     }
@@ -679,7 +683,7 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Answers the the first result of an asynchronous asyncFind.
      * Throws a NoSuchElement exception if there are no results.
-     * This operation can be executed operation up to 20 times within a 30 day time period to
+     * This Processor can be executed Processor up to 20 times within a 30 day time period to
      * retrieve the results of an asynchronous job.
      * 
      * Example:
@@ -689,8 +693,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param pageIndex the page number the the async result
      * @return the first Record
      */
-    @Operation
-    public Record getAsyncFindFirstResult(@Parameter String jobId)
+    @Processor
+    public Record getAsyncFindFirstResult(String jobId)
     {
         return client.getAsyncFindResult(jobId).iterator().next();
     }
@@ -709,11 +713,11 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param idType the id type of the given record id
      * @return the initialized Record
      */
-    @Operation
-    public Record initialize(@Parameter InitializeType type,
-                             @Parameter RecordType recordType,
-                             @Parameter(optional = false) String id,
-                             @Parameter(optional = true, defaultValue = "INTERNAL") RecordIdType idType)
+    @Processor
+    public Record initialize(InitializeType type,
+                             RecordType recordType,
+                             String id,
+                             @Optional @Default("INTERNAL") RecordIdType idType)
     {
         return (Record) client.initialize(type, from(recordType, id, idType));
     }
