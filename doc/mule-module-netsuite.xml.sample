@@ -1,0 +1,31 @@
+<!-- BEGIN_INCLUDE(zuora:subscribe) -->
+<subscribe subscriptions-ref="#[variable:subscribtions]"/>
+<!-- END_INCLUDE(zuora:subscribe) -->
+<!-- BEGIN_INCLUDE(zuora:create) -->
+<create>
+    <zobjects>
+        <zobject ref="#[variable:anObject]"/>
+    </zobject>
+</create>
+<!-- END_INCLUDE(zuora:create) -->
+<!-- BEGIN_INCLUDE(zuora:generate) -->
+<generate zobjects-ref="#[variable:accounts]"/>
+<!-- END_INCLUDE(zuora:generate) -->
+<!-- BEGIN_INCLUDE(zuora:update) -->
+<update zobjects-ref="#[variable:objects]"/>
+<!-- END_INCLUDE(zuora:update) -->
+<!-- BEGIN_INCLUDE(zuora:delete) -->
+<delete ids-ref="#[variable:ids]" type="#[variable:zobjectType]"/>
+<!-- END_INCLUDE(zuora:delete) -->
+<!-- BEGIN_INCLUDE(zuora:find) -->
+<find query="#[header:queryString]" />
+<!-- END_INCLUDE(zuora:find) -->
+<!-- BEGIN_INCLUDE(zuora:product-profile) -->
+<product-profile productId="001..."/>
+<!-- END_INCLUDE(zuora:product-profile) -->
+<!-- BEGIN_INCLUDE(zuora:get-user-info) -->
+<get-user-info userId="#[header:userId]"/>
+<!-- END_INCLUDE(zuora:get-user-info) -->
+<!-- BEGIN_INCLUDE(zuora:amend) -->
+<amend amendaments-ref="#[header:amendamentsList]"/>
+<!-- END_INCLUDE(zuora:amend) -->

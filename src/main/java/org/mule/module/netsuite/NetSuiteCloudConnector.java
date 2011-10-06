@@ -63,6 +63,9 @@ public class NetSuiteCloudConnector implements Initialisable
 {
     private static final String SUITETALK_ADDRESS = "https://webservices.netsuite.com/services/NetSuitePort_2010_2";
     
+    /**
+     * The Netsuite client to use. Mainly for mocking purposes 
+     */
     @Configurable
     @Optional    
     private NetSuiteClient<List<Object>, RuntimeException, Void> client;
@@ -95,8 +98,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * contact. Please consult NetSuite documentation.
      * Example:
      * 
-     * {@code <netsuite:attach-record  sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96"  />}
-     * 
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:attach-record}
+     *   
      * @param sourceRecordType the type of the target record to be attached
      * @param sourceId the id of the target record to be attached
      * @param sourceIdType the id type of the record to be attached
@@ -129,8 +132,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Example:
      * 
-     * {@code <netsuite:delete-record recordType="CONTACT" id="986" idType="EXTERNAL"/> }
-     *  
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:delete-record}
+     *   
      * @param recordType the type of the record to delete
      * @param id the id of the record to delete
      * @param idType the type of id of the record to delete
@@ -147,7 +150,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * Detaches a source record - that is, the attachment - from a destination record.
      * Example:
      * 
-     * {@code <netsuite:detach-record sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96" />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:detach-record}      
       
      * @param sourceRecordType the type of the target record to be detached
      * @param sourceId the id of the target record to be detached
@@ -173,7 +176,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the list of budget exchange rates
      * Example:
      * 
-     * {@code <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-budget-exchange-rate} 
      * 
      * @param periodId the id of the period 
      * @param periodIdType the period id type
@@ -201,12 +204,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the list of consolidated exchange rates
      * Example:
      * 
-     * {@code
-     * <netsuite:get-consolidated-exchange-rate
-     *       periodId="106" 
-     *       periodIdType="EXTERNAL" 
-     *       fromSubsidiaryId="5689"
-     *       toSubsidiaryId="4898" />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-consolidated-exchange-rate}
+     * 
      * 
      * @param periodId the id of the period 
      * @param periodIdType the period id type
@@ -233,7 +232,9 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Answers the ids of available customizations for a given record type.
      * 
-     *  Example: {@code <netsuite:get-customization-ids type="ACCOUNT"/>}
+     * Example:
+     * 
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-customization-ids}
      * 
      * @param type the target record type
      * @param includeInactives if inactive customizations should also be returned
@@ -267,17 +268,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * twoDaysAgo, lastWeek, lastMonth, threeMonthAgo,tomorrow, nextMonth , nextWeek    
      * 
      * Examples using both string and object oriented styles:
-     * 
-     * {@code 
-     *        <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
-     *        <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
-     *        <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
-     *        <netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
-     *        <netsuite:get-deleted-record type="CUSTOMER" date1="#[payload]" operator="BEFORE"/>
-     *        <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))" />
-     *        <netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-deleted-records}
      * 
      * @param type the type of the target deleted record to retrieve 
+     * @param date1 the first date to use
+     * @param date2 the second date to use
+     * @param operator the date operator
      * @param whenExpression a predicate-style date filtering expression
      * @return the list of DeletedRecord's that match the given date filtering expression
      */
@@ -297,7 +293,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers all the record of a given type
      * Example:
      * 
-     * {@code <netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-records}
      * @param type the target record type  
      * @return the list of Record's
      */
@@ -310,7 +306,8 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Answers a record given its id
      * Example:
-     * {@code <netsuite:get-record recordType="CREDIT_MEMO" id="982"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-record"}
+     *
      * @param recordType the target record type
      * @param id the target record id
      * @param idType the id type of the given record id
@@ -330,7 +327,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * For locations that do not have any items available, only location IDs and names are listed in results. 
      * Example:
      * 
-     * {@code <netsuite:get-item-availability recordType="ACCOUNT" id="#[map-payload:recordId]"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-item-availability}
+     *
      * @param recordType the target record type
      * @param id the target record id
      * @param idType the id type of the given record id
@@ -351,7 +349,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * Retrieves a list of existing saved searches for the given record type.
      * Example:
      * 
-     * {@code <netsuite:get-saved-search type="ACCOUNT"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-saved-search}
+     *
      * @param type the target record type
      * @return the list of RecordRedf's 
      */
@@ -365,7 +364,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * Answers the server time, resulting in more accurate and reliable sync'ing of data than using
      * using local client time. Example:
      * 
-     * {@code <netsuite:get-server-time />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-server-time}
      *
      * @return the server time, as a Date
      */
@@ -379,7 +378,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * Sets a new invitation status for a given event. Example:
      * Example:
      * 
-     * {@code <netsuite:update-invitee-status eventId="#[map-payload:eventId]" status="TENTATIVE"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:update-invitee-status}
+     *
      * @param eventId the target event id
      * @param eventIdType the id type of the given eventId
      * @param status the new status to set
@@ -395,14 +395,7 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * Creates a new record. Example:
      * 
-     * {@code 
-     *  <netsuite:add-record recordType="EMPLOYEE">
-     *       <netsuite:attributes>
-     *           <netsuite:attribute key="firstName" value="#[variable:firstName]" />
-     *           <netsuite:attribute key="lastName" value="#[variable:lastName]" />
-     *           <netsuite:attribute key="email" value="#[variable:email]" />
-     *       </netsuite:attributes>
-     *   </netsuite:add-record>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:add-record}
      *   
      * @param recordType  the type of record to add
      * @param attributes the record attributes, as a string-object map
@@ -419,7 +412,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * Creates a new file record. This Processor is similar to addRecord, but is
      * customized for simplifying local content passing.
      * 
-     * {@code <netsuite:add-file  content="#[payload]" fileName="#[header:filename]" folderId="#[header:folderId]"  />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:add-file}
+     *
      * 
      * @param attributes the additional file attributes
      * @param content the content of the file record to add. It can be of type
@@ -487,13 +481,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * Updates an existing record.
      * Example:
      * 
-     * {@code 
-     *  <netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
-     *       <netsuite:attributes>
-     *           <netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
-     *           <netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
-     *       </netsuite:attributes>
-     *   </netsuite:update-record>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:upadte-record}
      * 
      * @param recordType the target record type to update
      * @param id the target record id
@@ -516,9 +504,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * 
      * Example:
      * 
-     * {@code <netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-budget-exchange-rate}
      * 
-     * @param jobId
+     * @param jobId the id of the job whose status to check
      * @return the AsyncStatusResult for the given job
      */
     @Processor 
@@ -540,19 +528,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
-     * 
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:find-records}
      *  
      * Examples:
-     * {@code 
-     *  <netsuite:find-records recordType="BIN" />
-     *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-     *  <netsuite:find-records recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
-     *  <netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-     *  <netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-     *  <netsuite:find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
-     *  <netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
-     *  <netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
@@ -581,17 +559,8 @@ public class NetSuiteCloudConnector implements Initialisable
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
      * Examples:
-     * {@code 
-     *  <netsuite:find-first-record recordType="BIN")" />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-     *  <netsuite:find-first-record recordType="BIN"" expression="isTrue(user.isInactive)" />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:find-first-record recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
-     *  <netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
-     *  
+     * 
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:find-first-record}
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression
@@ -604,12 +573,12 @@ public class NetSuiteCloudConnector implements Initialisable
     {
         return client.findRecords(recordType, expression).iterator().next();
     }
-    
+     //TODO rename
     /**
      * Answers all records of a given type for a saved search, given its search id.
      * 
      * Examples:
-     * {@code  <netsuite:find-saved-records recordType="BIN" searchId="#[header:searchId]" /> }
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:find-saved-records}
      * 
      * @param recordType the type of record to search
      * @param searchId the id of the save search    
@@ -635,16 +604,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
      * 
      * Examples:
-     * {@code 
-     *  <netsuite:async-find-records recordType="BIN" />
-     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
-     *  <netsuite:async-find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
-     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
-     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
-     *  <netsuite:async-find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
-     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
-     *  <netsuite:async-find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
-     *  <netsuite:async-find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:async-find-records}
      * 
      * @param recordType the type of record to search
      * @param expression the filtering expression, in the 
@@ -667,7 +627,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * can be executed Processor up to 20 times within a 30 day time period to
      * retrieve the results of an asynchronous job.
      * Example:
-     * {@code <netsuite:get-async-find-result jobId="#[map-payload:jobId]"  />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-async-find-result}
      * 
      * @param jobId the id of the job
      * @param pageIndex the page number the the async result
@@ -687,7 +647,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * retrieve the results of an asynchronous job.
      * 
      * Example:
-     * {@code <netsuite:get-async-find-first-result jobId="#[map-payload:jobId]"  />}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-async-find-first-result}
      * 
      * @param jobId the id of the job
      * @param pageIndex the page number the the async result
@@ -704,7 +664,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * in a similar way empty text boxes are prepopulated within the Netsuite UI
      * Example:
      * 
-     * {@code <netsuite:initialize type="INVOICE" id="#[map-payload:recordId]" recordType="SALES_ORDER" /> }
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:initialize}
      * 
      * @param type the type of record whose defaults values are used to populate the
      *            target record
