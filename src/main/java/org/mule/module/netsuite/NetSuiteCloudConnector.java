@@ -66,18 +66,22 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * The login email of both NetSuite UI and SuiteTalk
      */
+    @Configurable
     private String email;
     /**
      * The login password of both the NetSuite UI and SuiteTalk
      */
+    @Configurable
     private String password;
     /**
      * SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX
      */
+    @Configurable
     private String account;
     /**
      * The id of the role used to login in SuiteTalk, which determines the Processor privileges
      */
+    @Configurable
     private String roleId;
     
     /**

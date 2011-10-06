@@ -15,10 +15,10 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:spring="http://www.springframework.org/schema/beans"
-	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+	xmlns:netsuite="http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-                          http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0/mule-netsuite.xsd">
+                          http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite http://repository.mulesoft.org/releases/org/mule/modules/mule-module-zuora/2.0/mule-netsuite.xsd">
 
 	<netsuite:config email="foo@bar.com" password="1234" account="myaccount" roleId="3" />
 	<!--
