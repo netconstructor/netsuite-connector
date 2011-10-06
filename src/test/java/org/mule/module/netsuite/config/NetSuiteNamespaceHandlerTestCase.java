@@ -13,7 +13,7 @@
  */
 package org.mule.module.netsuite.config;
 
-import org.mule.construct.SimpleFlowConstruct;
+import org.mule.api.construct.FlowConstruct;
 import org.mule.tck.FunctionalTestCase;
 
 public class NetSuiteNamespaceHandlerTestCase extends FunctionalTestCase
@@ -29,8 +29,8 @@ public class NetSuiteNamespaceHandlerTestCase extends FunctionalTestCase
         lookupFlowConstruct("theFlow");
     }
 
-    private SimpleFlowConstruct lookupFlowConstruct(String name)
+    private FlowConstruct lookupFlowConstruct(String name)
     {
-        return (SimpleFlowConstruct) muleContext.getRegistry().lookupFlowConstruct(name);
+        return muleContext.getRegistry().lookupFlowConstruct(name);
     }
 }

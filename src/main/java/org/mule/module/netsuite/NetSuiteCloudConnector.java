@@ -30,12 +30,6 @@ import org.mule.module.netsuite.api.model.expression.date.StringDateExpression;
 import com.netsuite.webservices.platform.core_2010_2.AsyncStatusResult;
 import com.netsuite.webservices.platform.core_2010_2.Record;
 import com.netsuite.webservices.platform.core_2010_2.RecordRef;
-import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
-import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
-import com.netsuite.webservices.platform.core_2010_2.types.InitializeType;
-import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 
 import java.io.File;
 import java.io.IOException;
@@ -66,29 +60,24 @@ public class NetSuiteCloudConnector implements Initialisable
     /**
      * The Netsuite client to use. Mainly for mocking purposes 
      */
-    @Configurable
     @Optional    
     private NetSuiteClient<List<Object>, RuntimeException, Void> client;
     
     /**
      * The login email of both NetSuite UI and SuiteTalk
      */
-    @Configurable
     private String email;
     /**
      * The login password of both the NetSuite UI and SuiteTalk
      */
-    @Configurable
     private String password;
     /**
      * SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX
      */
-    @Configurable
     private String account;
     /**
      * The id of the role used to login in SuiteTalk, which determines the Processor privileges
      */
-    @Configurable
     private String roleId;
     
     /**
@@ -111,13 +100,13 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param contanctIdType the id type of the optional contact record
      */
     @Processor
-    public void attachRecord( RecordType sourceRecordType,
+    public void attachRecord( RecordTypeEnum sourceRecordType,
                               String sourceId,
                              @Optional @Default("INTERNAL") RecordIdType sourceIdType,
-                              RecordType destinationRecordType,
+                              RecordTypeEnum destinationRecordType,
                               String destinationId,
                              @Optional @Default("INTERNAL") RecordIdType destinationIdType,
-                             @Optional RecordType contanctRecordType,
+                             @Optional RecordTypeEnum contanctRecordType,
                              @Optional String contanctId,
                              @Optional @Default("INTERNAL") RecordIdType contanctIdType)
     {
@@ -139,7 +128,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param idType the type of id of the record to delete
      */
     @Processor
-    public void deleteRecord(RecordType recordType,
+    public void deleteRecord(RecordTypeEnum recordType,
                              String id,
                              @Optional @Default("INTERNAL") RecordIdType idType)
     {
@@ -160,10 +149,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param destinationIdType the id type of the record to be detached to
      */
     @Processor
-    public void detachRecord(RecordType sourceRecordType,
+    public void detachRecord(RecordTypeEnum sourceRecordType,
                              String sourceId,
                              @Optional @Default("INTERNAL") RecordIdType sourceIdType,
-                             RecordType destinationRecordType,
+                             RecordTypeEnum destinationRecordType,
                              String destinationId,
                              @Optional @Default("INTERNAL") RecordIdType destinationIdType)
     {
@@ -241,10 +230,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of CustomizationRef's
      */
     @Processor
-    public List<Object> getCustomizationIds(GetCustomizationType type,
+    public List<Object> getCustomizationIds(GetCustomizationTypeEnum type,
                                             @Optional @Default("false") boolean includeInactives)
     {
-        return client.getCustomizationIds(type, includeInactives);
+        return client.getCustomizationIds(type.toGetGetGetCustomizationType(), includeInactives);
     }
 
     /**
@@ -278,15 +267,15 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the list of DeletedRecord's that match the given date filtering expression
      */
     @Processor
-    public List<Object> getDeletedRecords(RecordType type,
+    public List<Object> getDeletedRecords(RecordTypeEnum type,
                                           @Optional String whenExpression,
                                           @Optional Date date1,
                                           @Optional Date date2,
-                                          @Optional SearchDateFieldOperator operator)
+                                          @Optional SearchDateFieldOperatorEnum operator)
     {
         
-        return client.getDeletedRecords(type, 
-            whenExpression != null ? new StringDateExpression( whenExpression) : new SimpleDateExpression(date1, date2, operator));
+        return client.getDeletedRecords(type.toRecordType(), 
+            whenExpression != null ? new StringDateExpression( whenExpression) : new SimpleDateExpression(date1, date2, operator.toSearchDateFieldOperator()));
     }
 
     /**
@@ -298,9 +287,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the list of Record's
      */
     @Processor
-    public List<Object> getRecords(RecordType type)
+    public List<Object> getRecords(RecordTypeEnum type)
     {
-        return client.getRecords(type);
+        return client.getRecords(type.toRecordType());
     }
 
     /**
@@ -314,7 +303,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a Record
      */
     @Processor
-    public Object getRecord(RecordType recordType,
+    public Object getRecord(RecordTypeEnum recordType,
                              String id,
                             @Optional @Default("INTERNAL") RecordIdType idType)
     {
@@ -337,7 +326,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return A list of ItemAvailability's
      */
     @Processor
-    public List<Object> getItemAvailabilities(RecordType recordType,
+    public List<Object> getItemAvailabilities(RecordTypeEnum recordType,
                                                String id,
                                               @Optional @Default("INTERNAL") RecordIdType idType,
                                               @Optional Date ifModifiedSince)
@@ -355,9 +344,9 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the list of RecordRedf's 
      */
     @Processor
-    public List<Object> getSavedSearch(RecordType type)
+    public List<Object> getSavedSearch(RecordTypeEnum type)
     {
-        return client.getSavedSearch(type);
+        return client.getSavedSearch(type.toRecordType());
     }
 
     /**
@@ -387,9 +376,9 @@ public class NetSuiteCloudConnector implements Initialisable
     @Processor
     public void updateInviteeStatus( String eventId,
                                     @Optional @Default("INTERNAL") RecordIdType eventIdType,
-                                    CalendarEventAttendeeResponse status)
+                                    CalendarEventAttendeeResponseEnum status)
     {
-        client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status);
+        client.updateInviteeStatus(RecordIds.from(eventId, eventIdType), status.toCalendarEventAttendeeResponse());
     }
     
     /**
@@ -402,10 +391,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the RecordRef of the new record
      */
     @Processor
-    public RecordRef addRecord(RecordType recordType,
+    public RecordRef addRecord(RecordTypeEnum recordType,
                                Map<String, Object> attributes)
     {
-        return ((RecordRef) client.addRecord(recordType, attributes));
+        return ((RecordRef) client.addRecord(recordType.toRecordType(), attributes));
     }
 
     /**
@@ -432,7 +421,7 @@ public class NetSuiteCloudConnector implements Initialisable
                              final String folderId,
                              @Optional @Default("INTERNAL") final RecordIdType folderIdType) throws IOException
     {
-        return addRecord(RecordType.FILE, new HashMap<String, Object>(
+        return addRecord(RecordTypeEnum.FILE, new HashMap<String, Object>(
             attributes != null ? attributes : Collections.<String, Object> emptyMap())
         {
             {
@@ -489,7 +478,7 @@ public class NetSuiteCloudConnector implements Initialisable
      * @param attributes the record attributes, as a string-object map
      */
     @Processor
-    public void updateRecord(RecordType recordType,
+    public void updateRecord(RecordTypeEnum recordType,
                                 String id,
                                @Optional @Default("INTERNAL") RecordIdType idType,
                                Map<String, Object> attributes) throws Exception
@@ -538,10 +527,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of Record's
      */
     @Processor
-    public Iterable<Record> findRecords(SearchRecordType recordType,
+    public Iterable<Record> findRecords(SearchRecordTypeEnum recordType,
                                         @Optional String expression)
     {
-        return client.findRecords(recordType, expression);
+        return client.findRecords(recordType.toSearchRecordType(), expression);
     }
     
     /**
@@ -568,10 +557,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the first record that match the given filtering expression
      */
     @Processor 
-    public Record findFirstRecord(SearchRecordType recordType,
+    public Record findFirstRecord(SearchRecordTypeEnum recordType,
                                   @Optional String expression)
     {
-        return client.findRecords(recordType, expression).iterator().next();
+        return client.findRecords(recordType.toSearchRecordType(), expression).iterator().next();
     }
      //TODO rename
     /**
@@ -585,10 +574,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return a list of Record's
      */
     @Processor
-    public Iterable<Record> savedFindRecords(SearchRecordType recordType,
+    public Iterable<Record> savedFindRecords(SearchRecordTypeEnum recordType,
                                              String searchId)
     {
-        return client.savedFindRecords(recordType, searchId);
+        return client.savedFindRecords(recordType.toSearchRecordType(), searchId);
     }
     
     /**
@@ -616,10 +605,10 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the AsyncStatusResult of the query
      */
     @Processor
-    public AsyncStatusResult asyncFindRecords(SearchRecordType recordType,
+    public AsyncStatusResult asyncFindRecords(SearchRecordTypeEnum recordType,
                                               @Optional String expression) throws Exception
     {
-        return client.asyncFindRecord(recordType, expression);
+        return client.asyncFindRecord(recordType.toSearchRecordType(), expression);
     }
 
     /**
@@ -674,12 +663,12 @@ public class NetSuiteCloudConnector implements Initialisable
      * @return the initialized Record
      */
     @Processor
-    public Record initialize(InitializeType type,
-                             RecordType recordType,
+    public Record initialize(InitializeTypeEnum type,
+                             RecordTypeEnum recordType,
                              String id,
                              @Optional @Default("INTERNAL") RecordIdType idType)
     {
-        return (Record) client.initialize(type, from(recordType, id, idType));
+        return (Record) client.initialize(type.toInitializeType(), from(recordType, id, idType));
     }
 
     public void initialise() throws InitialisationException

@@ -12,8 +12,6 @@ package org.mule.module.netsuite;
 
 import org.mule.module.netsuite.api.model.entity.RecordReference;
 
-import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
-
 import javax.validation.constraints.NotNull;
 
 import org.apache.commons.lang.Validate;
@@ -27,14 +25,15 @@ public final class RecordReferences
     {
     }
 
-    public static RecordReference from(@NotNull RecordType recordType,
+    public static RecordReference from(@NotNull RecordTypeEnum recordType,
                                        @NotNull String id,
                                        @NotNull RecordIdType idType)
     {
-        return new RecordReference(RecordIds.from(id, idType), recordType);
+        Validate.notNull(recordType, "Must specify recordType");
+        return new RecordReference(RecordIds.from(id, idType), recordType.toRecordType());
     }
 
-    public static RecordReference nulSafeFrom(@NotNull RecordType recordType,
+    public static RecordReference nulSafeFrom(@NotNull RecordTypeEnum recordType,
                                               @NotNull String id,
                                               @NotNull RecordIdType idType)
     {
