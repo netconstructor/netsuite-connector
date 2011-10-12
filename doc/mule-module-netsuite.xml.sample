@@ -35,7 +35,7 @@
 
 <!-- BEGIN_INCLUDE(netsuite:get-record) -->
 <netsuite:get-record recordType="CREDIT_MEMO" id="982"/>
-<!-- END_INCLUDE(netsuite:get-record -->
+<!-- END_INCLUDE(netsuite:get-record) -->
 
 <!-- BEGIN_INCLUDE(netsuite:get-item-availability) -->
 <netsuite:get-item-availability recordType="ACCOUNT" id="#[map-payload:recordId]"/>
@@ -60,7 +60,7 @@
 <!-- END_INCLUDE(netsuite:add-file) -->
 
 
-<!-- BEGIN_INCLUDE(netsuite:get-deleted-record) -->
+<!-- BEGIN_INCLUDE(netsuite:get-deleted-records) -->
 <netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
 <netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
 <netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
@@ -68,16 +68,16 @@
 <netsuite:get-deleted-record type="CUSTOMER" date1="#[payload]" operator="BEFORE"/>
 <netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))" />
 <netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />
-<!-- END_INCLUDE(netsuite:get-deleted-record) -->
+<!-- END_INCLUDE(netsuite:get-deleted-records) -->
 
 
 
 <!-- BEGIN_INCLUDE(netsuite:add-record) -->
 <netsuite:add-record recordType="EMPLOYEE">
      <netsuite:attributes>
-         <firstName>#[variable:firstName]</firstName>/>
-         <lastName>#[variable:lastName]</lastName>
-         <email>#[variable:email]</email>
+         <netsuite:attribute key="firstName" value="#[variable:firstName]" />
+         <netsuite:attribute key="lastName" value="#[variable:lastName]" />
+         <netsuite:attribute key="email" value="#[variable:email]" />
      </netsuite:attributes>
  </netsuite:add-record>}
 <!-- END_INCLUDE(netsuite:add-record) -->
@@ -112,7 +112,7 @@
  
  
  
- <!-- BEGIN_INCLUDE(netsuite:find-records) --> 
+ <!-- BEGIN_INCLUDE(netsuite:find-first-record) --> 
 <netsuite:find-first-record recordType="BIN")" />
 <netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
 <netsuite:find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
@@ -122,7 +122,7 @@
 <netsuite:find-first-record recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
 <netsuite:find-first-record recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
 <netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
-<!-- END_INCLUDE(netsuite:find-records) -->
+<!-- END_INCLUDE(netsuite:find-first-record) -->
 
 
 
@@ -151,6 +151,6 @@
 <netsuite:get-async-find-first-result jobId="#[map-payload:jobId]"  />
 <!-- END_INCLUDE(netsuite:get-async-find-first-result) -->
 
-<!-- BEGIN_INCLUDE(netsuite:get-initialize) -->
+<!-- BEGIN_INCLUDE(netsuite:initialize) -->
 {@code <netsuite:initialize type="INVOICE" id="#[map-payload:recordId]" recordType="SALES_ORDER" /> }
 <!-- END_INCLUDE(netsuite:initialize) -->

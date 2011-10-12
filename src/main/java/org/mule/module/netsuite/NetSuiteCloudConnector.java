@@ -298,7 +298,7 @@ public class NetSuiteCloudConnector
     /**
      * Answers a record given its id
      * Example:
-     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-record"}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:get-record}
      *
      * @param recordType the target record type
      * @param id the target record id
@@ -473,7 +473,7 @@ public class NetSuiteCloudConnector
      * Updates an existing record.
      * Example:
      * 
-     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:upadte-record}
+     * {@sample.xml ../../../doc/mule-module-netsuite.xml.sample netsuite:update-record}
      * 
      * @param recordType the target record type to update
      * @param id the target record id
