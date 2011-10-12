@@ -60,7 +60,7 @@ public class NetSuiteTestDriver
         connector.setEmail(System.getenv("netsuiteEmail"));
         connector.setPassword(System.getenv("netsuitePassword"));
         connector.setRoleId("3");
-        connector.initialise();
+        connector.init();
     }
     
     /**

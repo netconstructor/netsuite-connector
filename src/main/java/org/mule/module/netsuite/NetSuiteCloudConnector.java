@@ -18,8 +18,6 @@ import org.mule.api.annotations.Module;
 import org.mule.api.annotations.Processor;
 import org.mule.api.annotations.param.Default;
 import org.mule.api.annotations.param.Optional;
-import org.mule.api.lifecycle.Initialisable;
-import org.mule.api.lifecycle.InitialisationException;
 import org.mule.module.netsuite.api.CxfNetSuiteClient;
 import org.mule.module.netsuite.api.DefaultCxfPortProvider;
 import org.mule.module.netsuite.api.NetSuiteClient;
@@ -40,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.io.FileUtils;
@@ -53,7 +52,7 @@ import org.apache.commons.io.IOUtils;
 @Module(name = "netsuite",        
         namespace = "http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite",
         schemaLocation = "http://repository.mulesoft.org/releases/org/mule/modules/mule-module-zuora/2.0/mule-netsuite.xsd")
-public class NetSuiteCloudConnector implements Initialisable
+public class NetSuiteCloudConnector
 {
     private static final String SUITETALK_ADDRESS = "https://webservices.netsuite.com/services/NetSuitePort_2010_2";
     
@@ -675,15 +674,17 @@ public class NetSuiteCloudConnector implements Initialisable
         return (Record) client.initialize(type.toInitializeType(), from(recordType, id, idType));
     }
 
-    public void initialise() throws InitialisationException
+    @PostConstruct
+    public void init()
     {
         if (client == null)
         {
             setClient(new CxfNetSuiteClient(new DefaultCxfPortProvider(SUITETALK_ADDRESS, email, password, account,
                 roleId)));
         }
-    }
 
+    }
+    
     public NetSuiteClient<List<Object>, RuntimeException, Void> getClient()
     {
         return client;
