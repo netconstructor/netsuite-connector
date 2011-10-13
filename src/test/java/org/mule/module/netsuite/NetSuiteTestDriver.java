@@ -34,9 +34,7 @@ import com.netsuite.webservices.platform.core_2010_2.RecordRef;
 import com.netsuite.webservices.platform.core_2010_2.types.AsyncStatusType;
 import com.netsuite.webservices.platform.core_2010_2.types.CalendarEventAttendeeResponse;
 import com.netsuite.webservices.platform.core_2010_2.types.GetCustomizationType;
-import com.netsuite.webservices.platform.core_2010_2.types.RecordType;
 import com.netsuite.webservices.platform.core_2010_2.types.SearchDateFieldOperator;
-import com.netsuite.webservices.platform.core_2010_2.types.SearchRecordType;
 import com.netsuite.webservices.transactions.financial_2010_2.types.BudgetBudgetType;
 
 import java.text.SimpleDateFormat;
@@ -62,7 +60,7 @@ public class NetSuiteTestDriver
         connector.setEmail(System.getenv("netsuiteEmail"));
         connector.setPassword(System.getenv("netsuitePassword"));
         connector.setRoleId("3");
-        connector.initialise();
+        connector.init();
     }
     
     /**
@@ -78,11 +76,11 @@ public class NetSuiteTestDriver
         try
         {
             assertEquals(1, 
-                getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "anyOf(internalId, [ internal('" + ref.getInternalId() + "') ] )")));
+                getLength(connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, "anyOf(internalId, [ internal('" + ref.getInternalId() + "') ] )")));
         }
         finally
         {
-            connector.deleteRecord(RecordType.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
@@ -93,12 +91,12 @@ public class NetSuiteTestDriver
     @Test
     public void findRecordMultiEnumSelectSearch() throws Exception
     {
-        int length = getLength(connector.findRecords(SearchRecordType.EMPLOYEE, null));
+        int length = getLength(connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, null));
         assertTrue(length > 0);
 
         assertEquals(length, // 
-            getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "noneOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")) +  
-            getLength(connector.findRecords(SearchRecordType.EMPLOYEE, "anyOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")));
+            getLength(connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, "noneOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")) +  
+            getLength(connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, "anyOf(globalSubscriptionStatus, [ _softOptIn, _confirmedOptOut ])")));
     }
 
     @Test
@@ -110,7 +108,7 @@ public class NetSuiteTestDriver
     @Test
     public void getRecords() throws Exception
     {
-        assertFalse(connector.getRecords(RecordType.CURRENCY).isEmpty());
+        assertFalse(connector.getRecords(RecordTypeEnum.CURRENCY).isEmpty());
     }
 
     @Test
@@ -121,28 +119,28 @@ public class NetSuiteTestDriver
         {
             folder = createFolder();
             file = createFile(folder);
-            connector.attachRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL,
-                RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL, null, null, null);
-            connector.detachRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL,
-                RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+            connector.attachRecord(RecordTypeEnum.FILE, file.getInternalId(), RecordIdType.INTERNAL,
+                RecordTypeEnum.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL, null, null, null);
+            connector.detachRecord(RecordTypeEnum.FILE, file.getInternalId(), RecordIdType.INTERNAL,
+                RecordTypeEnum.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
         }
         finally
         {
-            connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
             if (file != null)
             {
-                connector.deleteRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL);
+                connector.deleteRecord(RecordTypeEnum.FILE, file.getInternalId(), RecordIdType.INTERNAL);
             }
             if (folder != null)
             {
-                connector.deleteRecord(RecordType.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
+                connector.deleteRecord(RecordTypeEnum.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
             }
         }
     }
 
     private RecordRef createFolder()
     {
-        return connector.addRecord(RecordType.FOLDER, new HashMap<String, Object>()
+        return connector.addRecord(RecordTypeEnum.FOLDER, new HashMap<String, Object>()
         {
             {
                 put("isPrivate", false);
@@ -153,7 +151,7 @@ public class NetSuiteTestDriver
 
     private RecordRef createFile(final RecordRef folder)
     {
-        return connector.addRecord(RecordType.FILE, new HashMap<String, Object>()
+        return connector.addRecord(RecordTypeEnum.FILE, new HashMap<String, Object>()
         {
             {
                 put("isPrivate", false);
@@ -184,9 +182,9 @@ public class NetSuiteTestDriver
         {
             if (file != null)
             {
-                connector.deleteRecord(RecordType.FILE, file.getInternalId(), RecordIdType.INTERNAL);
+                connector.deleteRecord(RecordTypeEnum.FILE, file.getInternalId(), RecordIdType.INTERNAL);
             }
-            connector.deleteRecord(RecordType.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.FOLDER, folder.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
@@ -201,20 +199,20 @@ public class NetSuiteTestDriver
         RecordRef recordRef = createEmployeeJohnDoe();
         try
         {
-            connector.updateRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL,
+            connector.updateRecord(RecordTypeEnum.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL,
                 new HashMap<String, Object>()
                 {
                     {
                         put("fax", "159-945-57");
                     }
                 });
-            Employee record = (Employee) connector.getRecord(RecordType.EMPLOYEE, recordRef.getInternalId(),
+            Employee record = (Employee) connector.getRecord(RecordTypeEnum.EMPLOYEE, recordRef.getInternalId(),
                 RecordIdType.INTERNAL);
             assertEquals("159-945-57", record.getFax());
         }
         finally
         {
-            connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
@@ -222,13 +220,13 @@ public class NetSuiteTestDriver
     @Test
     public void getBudgetExchangeRate()
     {
-        final RecordRef subsidiary = connector.addRecord(RecordType.SUBSIDIARY, new HashMap<String, Object>()
+        final RecordRef subsidiary = connector.addRecord(RecordTypeEnum.SUBSIDIARY, new HashMap<String, Object>()
         {
             {
                 put("name", "ACME");
             }
         });
-        RecordRef budget = connector.addRecord(RecordType.BUDGET, new HashMap<String, Object>()
+        RecordRef budget = connector.addRecord(RecordTypeEnum.BUDGET, new HashMap<String, Object>()
         {
             {
                 put("amount", 150000.00);
@@ -244,7 +242,7 @@ public class NetSuiteTestDriver
     @Test
     public void getCustomizationId()
     {
-        List<Object> customizations = connector.getCustomizationIds(GetCustomizationType.CRM_CUSTOM_FIELD,
+        List<Object> customizations = connector.getCustomizationIds(GetCustomizationTypeEnum.CRM_CUSTOM_FIELD,
             false);
         assertNotNull(customizations);
         assertFalse(customizations.isEmpty());
@@ -259,8 +257,8 @@ public class NetSuiteTestDriver
     {
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = createEmployeeJohnDoe();
-        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
-        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, // 
+        connector.deleteRecord(RecordTypeEnum.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+        List<Object> deletedRecords = connector.getDeletedRecords(RecordTypeEnum.EMPLOYEE, // 
             "after(dateTime('" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(serverTime)
                             + "','yyyy-MM-dd HH:mm:ss'))", null, null, null);
         assertEquals(1, deletedRecords.size());
@@ -275,9 +273,9 @@ public class NetSuiteTestDriver
     {
         Date serverTime = connector.GetServerTime();
         RecordRef recordRef = createEmployeeJohnDoe();
-        connector.deleteRecord(RecordType.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
-        List<Object> deletedRecords = connector.getDeletedRecords(RecordType.EMPLOYEE, null, serverTime,
-            null, SearchDateFieldOperator.AFTER);
+        connector.deleteRecord(RecordTypeEnum.EMPLOYEE, recordRef.getInternalId(), RecordIdType.INTERNAL);
+        List<Object> deletedRecords = connector.getDeletedRecords(RecordTypeEnum.EMPLOYEE, null, serverTime,
+            null, SearchDateFieldOperatorEnum.AFTER);
         assertEquals(1, deletedRecords.size());
     }
 
@@ -287,7 +285,7 @@ public class NetSuiteTestDriver
     @Test
     public void getRecord()
     {
-        RecordRef campaign = connector.addRecord(RecordType.CAMPAIGN, new HashMap<String, Object>()
+        RecordRef campaign = connector.addRecord(RecordTypeEnum.CAMPAIGN, new HashMap<String, Object>()
         {
             {
                 put("title", "The Campagniola");
@@ -295,11 +293,11 @@ public class NetSuiteTestDriver
         });
         try
         {
-            connector.getRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
+            connector.getRecord(RecordTypeEnum.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
         finally
         {
-            connector.deleteRecord(RecordType.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.CAMPAIGN, campaign.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
@@ -329,24 +327,24 @@ public class NetSuiteTestDriver
         }
         finally
         {
-            connector.deleteRecord(RecordType.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.EMPLOYEE, ref.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 
     private Iterable<Record> findJohnDoe()
     {
-        return connector.findRecords(SearchRecordType.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
+        return connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, "is(firstName, 'John'), is(lastName, 'Doe')");
     }
 
     private Iterable<Record> findMaryDoe()
     {
-        return connector.findRecords(SearchRecordType.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
+        return connector.findRecords(SearchRecordTypeEnum.EMPLOYEE, "is(firstName, 'Mary'), is(lastName, 'Doe')");
     }
 
     @Test
     public void findRecordJoinedSearch() throws Exception
     {
-        assertNotNull(connector.findRecords(SearchRecordType.EMPLOYEE,
+        assertNotNull(connector.findRecords(SearchRecordTypeEnum.EMPLOYEE,
             "is(email, 'john.doe@foobar.com'), is(userNotes.title, 'A note')"));
     }
 
@@ -356,7 +354,7 @@ public class NetSuiteTestDriver
     @Test
     public void getItemAvailability()
     {
-        RecordRef inventoryItem = connector.addRecord(RecordType.INVENTORY_ITEM,
+        RecordRef inventoryItem = connector.addRecord(RecordTypeEnum.INVENTORY_ITEM,
             new HashMap<String, Object>()
             {
                 {
@@ -372,12 +370,12 @@ public class NetSuiteTestDriver
             });
         try
         {
-            assertNotNull(connector.getItemAvailabilities(RecordType.INVENTORY_ITEM,
+            assertNotNull(connector.getItemAvailabilities(RecordTypeEnum.INVENTORY_ITEM,
                 inventoryItem.getInternalId(), RecordIdType.INTERNAL, null));
         }
         finally
         {
-            connector.deleteRecord(RecordType.INVENTORY_ITEM, inventoryItem.getInternalId(),
+            connector.deleteRecord(RecordTypeEnum.INVENTORY_ITEM, inventoryItem.getInternalId(),
                 RecordIdType.INTERNAL);
         }
     }
@@ -391,8 +389,8 @@ public class NetSuiteTestDriver
     public void getSavedSearch()
     {
 
-        RecordRef object = (RecordRef) connector.getSavedSearch(RecordType.CUSTOMER).get(0);
-        assertNotNull(connector.savedFindRecords(SearchRecordType.CUSTOMER, object.getInternalId()));
+        RecordRef object = (RecordRef) connector.getSavedSearch(RecordTypeEnum.CUSTOMER).get(0);
+        assertNotNull(connector.savedFindRecords(SearchRecordTypeEnum.CUSTOMER, object.getInternalId()));
     }
 
     /**
@@ -401,7 +399,7 @@ public class NetSuiteTestDriver
     @Test
     public void updateInviteeStatus()
     {
-        RecordRef event = connector.addRecord(RecordType.CALENDAR_EVENT, new HashMap<String, Object>()
+        RecordRef event = connector.addRecord(RecordTypeEnum.CALENDAR_EVENT, new HashMap<String, Object>()
         {
             {
                 put("title", "An importat event");
@@ -410,12 +408,12 @@ public class NetSuiteTestDriver
             }
         });
         connector.updateInviteeStatus(event.getInternalId(), RecordIdType.INTERNAL,
-            CalendarEventAttendeeResponse.DECLINED);
+            CalendarEventAttendeeResponseEnum.DECLINED);
     }
 
     private RecordRef createEmployeeJohnDoe()
     {
-        RecordRef recordRef = connector.addRecord(RecordType.EMPLOYEE, new HashMap<String, Object>()
+        RecordRef recordRef = connector.addRecord(RecordTypeEnum.EMPLOYEE, new HashMap<String, Object>()
         {
             {
                 put("fax", "159-945-56");
@@ -435,7 +433,7 @@ public class NetSuiteTestDriver
         RecordRef employee = createEmployeeJohnDoe();
         try
         {
-            AsyncStatusResult initialStatus = connector.asyncFindRecords(SearchRecordType.EMPLOYEE,
+            AsyncStatusResult initialStatus = connector.asyncFindRecords(SearchRecordTypeEnum.EMPLOYEE,
                 "is(firstName, 'John'), is(lastName, 'Doe')");
             assertNotNull(initialStatus);
             assertTrue(initialStatus.getStatus().isActive());
@@ -453,7 +451,7 @@ public class NetSuiteTestDriver
         }
         finally
         {
-            connector.deleteRecord(RecordType.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
+            connector.deleteRecord(RecordTypeEnum.EMPLOYEE, employee.getInternalId(), RecordIdType.INTERNAL);
         }
     }
 }

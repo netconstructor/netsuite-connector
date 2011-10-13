@@ -9,9 +9,10 @@
 	<version>1.0</version>
 
 	<properties>
-		<muleVersion>3.1.0</muleVersion>
+		<muleVersion>3.2.0</muleVersion>
 		<ibeansVersion>1.1</ibeansVersion>
-		<mule.netsuite.version>1.0</mule.netsuite.version>
+		<mule.netsuite.version>2.0-SNAPSHOT</mule.netsuite.version>
+      <mule.mongo.version>2.0-SNAPSHOT</mule.mongo.version>
 	</properties>
 
 	<description>Simple Netsuite demo for updating product attributes</description>
@@ -63,8 +64,8 @@
 							<artifactId>mule-module-netsuite</artifactId>
 						</inclusion>
 						<inclusion>
-                            <groupId>org.mule.transports</groupId>
-                            <artifactId>mule-transport-mongodb</artifactId>
+                            <groupId>org.mule.modules</groupId>
+                            <artifactId>mule-module-mongo</artifactId>
                         </inclusion>
 					</inclusions>
 				</configuration>
@@ -99,9 +100,9 @@
 			<version>${mule.netsuite.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.mule.transports</groupId>
-            <artifactId>mule-transport-mongodb</artifactId>
-            <version>3.1.0.1</version>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-mongo</artifactId>
+            <version>${mule.mongo.version}</version>
         </dependency>
 		 <dependency>
             <groupId>org.mule.tests</groupId>

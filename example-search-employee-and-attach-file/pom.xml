@@ -9,9 +9,9 @@
 	<version>1.0</version>
 
 	<properties>
-		<muleVersion>3.1.0</muleVersion>
+		<muleVersion>3.2.0</muleVersion>
 		<ibeansVersion>1.1</ibeansVersion>
-		<mule.netsuite.version>1.0</mule.netsuite.version>
+		<mule.netsuite.version>2.0-SNAPSHOT</mule.netsuite.version>
 		<mule.s3.version>1.0</mule.s3.version>
 	</properties>
 

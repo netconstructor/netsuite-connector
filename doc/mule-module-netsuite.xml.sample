@@ -1,0 +1,156 @@
+<!-- BEGIN_INCLUDE(netsuite:attach-record) -->
+<netsuite:attach-record  sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96"  />
+<!-- END_INCLUDE(netsuite:attach-record) -->
+
+<!-- BEGIN_INCLUDE(netsuite:delete-record) -->
+<netsuite:delete-record recordType="CONTACT" id="986" idType="EXTERNAL"/>
+<!-- END_INCLUDE(netsuite:delete-record) -->
+
+<!-- BEGIN_INCLUDE(netsuite:detach-record) -->
+<netsuite:detach-record sourceRecordType="FILE" sourceId="16" destinationRecordType="EMPLOYEE" destinationId="96" />
+<!-- END_INCLUDE(netsuite:detach-record) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:get-budget-exchange-rate) -->
+<netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
+<!-- END_INCLUDE(netsuite:get-budget-exchange-rate) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:get-consolidated-exchange-rate) -->
+<netsuite:get-consolidated-exchange-rate
+     	     periodId="106" 
+			 periodIdType="EXTERNAL" 
+             fromSubsidiaryId="5689"
+     		 toSubsidiaryId="4898" />
+<!-- END_INCLUDE(netsuite:get-consolidated-exchange-rate) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:get-customization-ids) -->
+<netsuite:get-customization-ids type="ACCOUNT"/>
+<!-- END_INCLUDE(netsuite:get-customization-ids) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-records) -->
+<netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>
+<!-- END_INCLUDE(netsuite:get-records) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-record) -->
+<netsuite:get-record recordType="CREDIT_MEMO" id="982"/>
+<!-- END_INCLUDE(netsuite:get-record) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-item-availability) -->
+<netsuite:get-item-availability recordType="ACCOUNT" id="#[map-payload:recordId]"/>
+<!-- END_INCLUDE(netsuite:get-item-availability) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-saved-search) -->
+<netsuite:get-saved-search type="ACCOUNT"/>
+<!-- END_INCLUDE(netsuite:get-saved-search) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-server-time) -->
+<netsuite:get-server-time />
+<!-- END_INCLUDE(netsuite:get-server-time) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:update-invitee-status) -->
+<netsuite:update-invitee-status eventId="#[map-payload:eventId]" status="TENTATIVE"/>
+<!-- END_INCLUDE(netsuite:update-invitee-status) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:add-file) -->
+<netsuite:add-file  content-ref="#[payload]" fileName="#[header:filename]" folderId="#[header:folderId]"  />
+<!-- END_INCLUDE(netsuite:add-file) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:get-deleted-records) -->
+<netsuite:get-deleted-record type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
+<netsuite:get-deleted-record type="BIN" whenExpression="after(yesterday)"/>
+<netsuite:get-deleted-record type="EMPLOYEE" whenExpression="on(today)"/>
+<netsuite:get-deleted-record type="CUSTOMER" whenExpression="before(isoDate(2005-11-14))"/>
+<netsuite:get-deleted-record type="CUSTOMER" date1="#[payload]" operator="BEFORE"/>
+<netsuite:get-deleted-record type="TASK" whenExpression="notWithin(dateTimeRange('15:14:10', '19:14:10', 'HH:mm:ss'))" />
+<netsuite:get-deleted-record type="TASK" date1="#[map-payload:date1]" date2="#[map-payload:date2]" operator="WITHIN" />
+<!-- END_INCLUDE(netsuite:get-deleted-records) -->
+
+
+
+<!-- BEGIN_INCLUDE(netsuite:add-record) -->
+<netsuite:add-record recordType="EMPLOYEE">
+     <netsuite:attributes>
+         <netsuite:attribute key="firstName" value="#[variable:firstName]" />
+         <netsuite:attribute key="lastName" value="#[variable:lastName]" />
+         <netsuite:attribute key="email" value="#[variable:email]" />
+     </netsuite:attributes>
+ </netsuite:add-record>}
+<!-- END_INCLUDE(netsuite:add-record) -->
+ 
+ 
+<!-- BEGIN_INCLUDE(netsuite:update-record) --> 
+<netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
+     <netsuite:attributes>
+         <netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
+         <netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
+     </netsuite:attributes>
+ </netsuite:update-record>
+ <!-- END_INCLUDE(netsuite:update-record) -->
+ 
+<!-- BEGIN_INCLUDE(netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62") -->
+<netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
+<!-- END_INCLUDE(netsuite:get-budget-exchange-rate periodId="986" fromSubsidiaryId="62") -->
+
+
+
+<!-- BEGIN_INCLUDE(netsuite:find-records) -->
+<netsuite:find-records recordType="BIN" />
+<netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+<netsuite:find-records recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
+<netsuite:find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+<netsuite:find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+<netsuite:find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
+<netsuite:find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
+<netsuite:find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+<netsuite:find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+ <!-- END_INCLUDE(netsuite:find-records) -->
+ 
+ 
+ 
+ <!-- BEGIN_INCLUDE(netsuite:find-first-record) --> 
+<netsuite:find-first-record recordType="BIN")" />
+<netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+<netsuite:find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
+<netsuite:find-first-record recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+<netsuite:find-first-record recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+<netsuite:find-first-record recordType="BIN"" expression="isTrue(user.isInactive)" />
+<netsuite:find-first-record recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
+<netsuite:find-first-record recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
+<netsuite:find-first-record recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+<!-- END_INCLUDE(netsuite:find-first-record) -->
+
+
+
+<!-- BEGIN_INCLUDE(netsuite:find-saved-records) -->
+<netsuite:find-saved-records recordType="BIN" searchId="#[header:searchId]" /
+<!-- END_INCLUDE(netsuite:find-saved-records) -->
+
+<!-- BEGIN_INCLUDE(netsuite:async-find-records) -->
+<netsuite:async-find-records recordType="BIN" />
+<netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]')" />
+<netsuite:async-find-first-record recordType="EMPLOYEE" expression='is(email, "#[map-payload:email]")' />
+<netsuite:async-find-records recordType="EMPLOYEE" expression="is(email, '#[map-payload:email]'), contains(address, '#[map-payload:address]')" />
+<netsuite:async-find-records recordType="EMPLOYEE" expression="empty(title), isNot(file.url, '#[map-payload:fileUrl]')" /> 
+<netsuite:async-find-records recordType="BIN"" expression="isTrue(user.isInactive)" />
+<netsuite:async-find-records recordType="EMPLOYEE" expression="anyOf(globalSubscriptionStatus, [_confirmedOptOut, _softOptIn])" />
+<netsuite:async-find-records recordType="FOLDER" expression="noneOf(group, [internal('#[header:internalId1]'), internal('#[header:internalId2]')])" />
+<netsuite:async-find-records recordType="EMPLOYEE" expression="greaterThanOrEqualTo(file.documentSize, #[map-payload:documentSize])" />}
+<!-- END_INCLUDE(netsuite:async-find-records) -->
+
+<!-- BEGIN_INCLUDE(netsuite:get-async-find-result) -->
+<netsuite:get-async-find-result jobId="#[map-payload:jobId]"  />
+<!-- END_INCLUDE(netsuite:get-async-find-result) -->
+
+
+<!-- BEGIN_INCLUDE(netsuite:get-async-find-first-result) -->
+<netsuite:get-async-find-first-result jobId="#[map-payload:jobId]"  />
+<!-- END_INCLUDE(netsuite:get-async-find-first-result) -->
+
+<!-- BEGIN_INCLUDE(netsuite:initialize) -->
+{@code <netsuite:initialize type="INVOICE" id="#[map-payload:recordId]" recordType="SALES_ORDER" /> }
+<!-- END_INCLUDE(netsuite:initialize) -->

@@ -15,10 +15,10 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:spring="http://www.springframework.org/schema/beans"
-	xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
+	xmlns:netsuite="http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                           http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
-                          http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0/mule-netsuite.xsd">
+                          http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite http://repository.mulesoft.org/releases/org/mule/modules/mule-module-zuora/2.0/mule-netsuite.xsd">
 
 	<netsuite:config email="foo@bar.com" password="1234" account="myaccount" roleId="3" />
 	<!--
@@ -28,15 +28,11 @@
 	-->
 
 	<flow name="serverTime">
-		<inbound-endpoint address="vm://salesOrderHold"
-			exchange-pattern="request-response" />
 		<netsuite:get-server-time />
 	</flow>
 
 
 	<flow name="attachRecord">
-		<inbound-endpoint address="vm://attachRecord"
-			exchange-pattern="request-response" />
 		<netsuite:attach-record sourceRecordType="BUDGET"
 			sourceId="500" sourceIdType="EXTERNAL" destinationId="1590"
 			destinationRecordType="ACCOUNT" />
@@ -44,128 +40,92 @@
 
 
 	<flow name="deleteRecord">
-		<inbound-endpoint address="vm://deleteRecord"
-			exchange-pattern="request-response" />
 		<netsuite:delete-record recordType="CONTACT" id="986" idType="EXTERNAL"/>
 	</flow>
 
 	<flow name="detachRecord">
-		<inbound-endpoint address="vm://detachRecord"
-			exchange-pattern="request-response" />
 		<netsuite:detach-record destinationRecordType="ACCOUNT" destinationId="96" sourceRecordType="ACCOUNT" sourceId="16"/>
 	</flow>
 
 	<flow name="getBudgetExchangeRate">
-		<inbound-endpoint address="vm://getBudgetExchangeRate"
-			exchange-pattern="request-response" />
 		<netsuite:get-budget-exchange-rates periodId="986" fromSubsidiaryId="62" fromSubsidiaryIdType="EXTERNAL"/>
 	</flow>
 
 	<flow name="getConsolidatedExchangeRate">
-		<inbound-endpoint address="vm://getConsolidatedExchangeRate"
-			exchange-pattern="request-response" />
 		<netsuite:get-consolidated-exchange-rates
 			periodId="106" periodIdType="EXTERNAL" fromSubsidiaryId="5689"
 			toSubsidiaryId="4898" />
 	</flow>
 
 	<flow name="getCustomizationId">
-		<inbound-endpoint address="vm://getCustomizationId"
-			exchange-pattern="request-response" />
 		<netsuite:get-customization-ids type="CRM_CUSTOM_FIELD"/>
 	</flow>
 
 
 	<flow name="getDeletedRecord">
-		<inbound-endpoint address="vm://getDeletedRecord"
-			exchange-pattern="request-response" />
 		<netsuite:get-deleted-records type="CUSTOMER_PAYMENT" whenExpression="within(thisWeek)"/>
 	</flow>
 
 	<flow name="getRecords">
-		<inbound-endpoint address="vm://getRecords"
-			exchange-pattern="request-response" />
 		<netsuite:get-records type="ENTITY_CUSTOM_FIELD"/>
 	</flow>
 
 	<flow name="getRecord">
-		<inbound-endpoint address="vm://getRecord"
-			exchange-pattern="request-response" />
 		<netsuite:get-record recordType="CREDIT_MEMO" id="982"/>
 	</flow>
 
 	<flow name="getItemAvailability">
-		<inbound-endpoint address="vm://getItemAvailability"
-			exchange-pattern="request-response" />
 		<netsuite:get-item-availabilities recordType="ACCOUNT" id="489"/>
 	</flow>
 
 	<flow name="getSavedSearch">
-		<inbound-endpoint address="vm://getSavedSearch"
-			exchange-pattern="request-response" />
 		<netsuite:get-saved-search type="ACCOUNT"/>
 	</flow>
 
 
 	<flow name="initialize">
-		<inbound-endpoint address="vm://initialize"
-			exchange-pattern="request-response" />
 		<netsuite:initialize type="INVOICE" id="1467"
 			recordType="SALES_ORDER" /> 
 	</flow>
 
 
 	<flow name="getAsyncResult">
-		<inbound-endpoint address="vm://getAsyncResult"
-			exchange-pattern="request-response" />
 		<netsuite:get-async-find-result jobId="#[map-payload:jobId]" />
 	</flow>
 
 	<flow name="updateRecord">
-		<inbound-endpoint address="vm://updateRecord"
-			exchange-pattern="request-response" />
 		<netsuite:update-record recordType="EMPLOYEE" id="#[map-payload:recordId]">
 			<netsuite:attributes>
-				<netsuite:attribute key="mobilePhone" value="#[map-payload:mobilePhone]" />
-				<netsuite:attribute key="homePhone" value="#[map-payload:homePhone]" />
+				<mobilePhone>#[map-payload:mobilePhone]</mobilePhone>
+                <homePhone>#[map-payload:homePhone]</homePhone>
 			</netsuite:attributes>
 		</netsuite:update-record>
 	</flow>
 	
 	<flow name="findRecord">
-		<inbound-endpoint address="vm://findRecord"
-			exchange-pattern="request-response" />
 		<netsuite:find-records recordType="EMPLOYEE" expression="is(email, 'john.doe@foobar.com')" />
 	</flow>
 	
 	<flow name="savedFindRecord">
-		<inbound-endpoint address="vm://savedFindRecord"
-			exchange-pattern="request-response" />
 		<netsuite:saved-find-records recordType="EMPLOYEE" searchId="4892"/>
 	</flow>
 
 	<flow name="asyncFindRecord">
-		<inbound-endpoint address="vm://asyncFindRecord"
-			exchange-pattern="request-response" />
 		<netsuite:async-find-records recordType="CUSTOMER" expression="greaterThan(job.internalIdNumber, 136904), equalTo(consolDaysOverdue, 25)" />
 	</flow>
 	
 	<flow name="addRecord">
-		<inbound-endpoint address="vm://addRecord"
-			exchange-pattern="request-response" />
 		<netsuite:add-record recordType="EMPLOYEE">
 			<netsuite:attributes>
-					<netsuite:attribute key="firstName" value="John" />
-				<netsuite:attribute key="lastName" value="J" />
-				<netsuite:attribute key="email" value="john@foobar.com" />
+                <firstName>John</firstName>
+                <lastName>J</lastName>
+                <email>john@foobar.com</email>
 			</netsuite:attributes>
 		</netsuite:add-record>
 	</flow>
 
    	<flow name="addFile">
-		<inbound-endpoint address="vm://addFile"
-			exchange-pattern="request-response" />
-		<netsuite:add-file  content="#[payload]" fileName="#[header:inbound:filename]" folderId="#[variable:folderId]"  />
+		<netsuite:add-file  content-ref="#[payload]" fileName="#[header:inbound:filename]" folderId="#[variable:folderId]"  />
 	</flow>
 
 
