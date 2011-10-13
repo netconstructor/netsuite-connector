@@ -14,49 +14,50 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
        xmlns:netsuite="http://www.mulesoft.org/schema/mule/netsuite"
        xmlns:json="http://www.mulesoft.org/schema/mule/json"
-       xmlns:mongodb="http://www.mulesoft.org/schema/mule/mongodb"
+       xmlns:mongo="http://www.mulesoft.org/schema/mule/mongo"
        xmlns:scripting="http://www.mulesoft.org/schema/mule/scripting"
        xmlns:spring="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:netsuite="http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite"
        xmlns:http="http://www.mulesoft.org/schema/mule/http"
     xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.mulesoft.org/schema/mule/netsuite http://www.mulesoft.org/schema/mule/netsuite/1.0/mule-netsuite.xsd
+       http://repository.mulesoft.org/releases/org/mule/modules/mule-module-netsuite http://repository.mulesoft.org/releases/org/mule/modules/mule-module-zuora/2.0/mule-netsuite.xsd
        http://www.mulesoft.org/schema/mule/core    http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/json    http://www.mulesoft.org/schema/mule/json/3.1/mule-json.xsd
-       http://www.mulesoft.org/schema/mule/mongodb http://www.mulesoft.org/schema/mule/mongodb/3.1/mule-mongodb.xsd
+       http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mongo/3.1/mule-mongo.xsd
        http://www.mulesoft.org/schema/mule/scripting http://www.mulesoft.org/schema/mule/scripting/3.1/mule-scripting.xsd 
        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/3.0/mule-http.xsd">
+      
        
     <netsuite:config name="NetsuiteTest" 
     	account="${netsuiteAccount}"
 		password="${netsuitePassword}" 
 		email="${netsuiteEmail}"
-		roleId="${netsuiteRoleId}" />        
-  <mongodb:connector name="mongodb" database="${mongoDatabase}" hostname="${mongoHostname}" />
+		roleId="${netsuiteRoleId}" />
+            
+   <mongo:config name="mongo" database="${mongoDatabase}" host="${mongoHostname}" />
 
  <flow name="GetEmployeePhoneUpdates">
  	<description>Looks for employee phone updates in a mongo db</description>
- 	<mongodb:outbound-endpoint 
- 		collection="employeePhoneUpdates"  
- 		query='{}' 
- 		exchange-pattern="request-response"/>
+    <mongo:find-objects 
+        collection="employeePhoneUpdates" />
  </flow>
  
  <flow name="UpdateEmployeePhoneNumber">
- 	<description>Updates employees phone numbers based on update documents in mongodb</description>
+ 	<description>Updates employees phone numbers based on update documents in mongo</description>
  	<enricher target="#[variable:employeeId]" source="#[ognl:internalId]">
 	 	<netsuite:find-first-record  recordType="EMPLOYEE" expression="is(email,'#[ognl:get('email')]')"/>
  	</enricher>
  	<netsuite:update-record recordType="EMPLOYEE" id="#[variable:employeeId]">
 		<netsuite:attributes>
-			<netsuite:attribute key="officePhone" value="#[ognl:get('officePhone')]"/>
+			<officePhone>#[ognl:get('officePhone')]</officePhone>
 		</netsuite:attributes>
 	</netsuite:update-record> 	
  </flow>
  
  <flow name="MainFlow">
- 	<description>For each update in a mongodb, update the corresponding employee in netsuite</description>
+ 	<description>For each update in a mongo, update the corresponding employee in netsuite</description>
  	<http:inbound-endpoint host="localhost" port="9091" path="netsuite-demo-update-employee" />
  	<flow-ref name="GetEmployeePhoneUpdates"/>
  	<logger level="ERROR" message="#[payload]"/> 
@@ -67,4 +68,6 @@
 		<return-argument evaluator="string" expression="Employees Updated Succesfuly" />
 	</expression-transformer>
  </flow>
+ 
+ 
 </mule>

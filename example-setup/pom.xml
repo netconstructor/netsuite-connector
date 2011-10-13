@@ -6,13 +6,14 @@
 	<artifactId>mule-netsuite-demo-setup</artifactId>
 	<packaging>mule</packaging>
 	<name>Mule NetSuite Demo Setup</name>
-	<version>1.0</version>
+	<version>2.0</version>
 
 	<properties>
-		<muleVersion>3.1.0</muleVersion>
+		<muleVersion>3.2.0</muleVersion>
 		<ibeansVersion>1.1</ibeansVersion>
-		<mule.netsuite.version>1.0</mule.netsuite.version>
+		<mule.netsuite.version>2.0-SNAPSHOT</mule.netsuite.version>
 		<mule.s3.version>1.0</mule.s3.version>
+      <mule.mongo.version>2.0-SNAPSHOT</mule.mongo.version>
 	</properties>
 
 	<description>Example that setups netsuite, s3 and mongo environment for the rest of netsuite examples</description>
@@ -68,8 +69,8 @@
 							<artifactId>mule-module-s3</artifactId>
 						</inclusion>
 						<inclusion>
-                            <groupId>org.mule.transports</groupId>
-                            <artifactId>mule-transport-mongodb</artifactId>
+                            <groupId>org.mule.modules</groupId>
+                            <artifactId>mule-module-mongo</artifactId>
                         </inclusion>
 					</inclusions>
 				</configuration>
@@ -109,9 +110,9 @@
 			<version>${mule.s3.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.mule.transports</groupId>
-            <artifactId>mule-transport-mongodb</artifactId>
-            <version>3.1.0.1</version>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-mongo</artifactId>
+            <version>${mule.mongo.version}</version>
         </dependency>
 		 <dependency>
             <groupId>org.mule.tests</groupId>

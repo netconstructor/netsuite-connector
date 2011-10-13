@@ -11,7 +11,7 @@
 package org.mulesoft.demo.netsuite;
 
 import org.mule.api.MuleEvent;
-import org.mule.construct.SimpleFlowConstruct;
+import org.mule.api.processor.MessageProcessor;
 import org.mule.tck.FunctionalTestCase;
 
 public class NetsuiteFunctionalTestDriver extends FunctionalTestCase
@@ -25,14 +25,14 @@ public class NetsuiteFunctionalTestDriver extends FunctionalTestCase
     public void testUpdateFlow() throws Exception
     {
         final MuleEvent event = getTestEvent("");
-        final SimpleFlowConstruct flow = lookupFlowConstruct("MainFlow");
+        final MessageProcessor flow = lookupFlowConstruct("MainFlow");
         final MuleEvent responseEvent = flow.process(event);
         System.out.println(responseEvent);
     }
 
-    private SimpleFlowConstruct lookupFlowConstruct(final String name)
+    private MessageProcessor lookupFlowConstruct(final String name)
     {
-        return (SimpleFlowConstruct) muleContext.getRegistry().lookupFlowConstruct(name);
+        return (MessageProcessor) muleContext.getRegistry().lookupFlowConstruct(name);
     }
 
 }
