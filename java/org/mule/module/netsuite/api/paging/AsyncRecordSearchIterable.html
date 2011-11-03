@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  AsyncRecordSearchIterable
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html">AbstractRecordSearchIterable</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/AsyncRecordSearchIterable.html">AsyncRecordSearchIterable</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/PaginatedIterable.html">PaginatedIterable</a>&lt;T,&nbsp;Page&gt;</li>
+          <li class="api apilevel-"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/RecordSearchIterable.html">RecordSearchIterable</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/SavedRecordSearchIterable.html">SavedRecordSearchIterable</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+
+  &#124; <a href="#promethods">Protected Methods</a>
+  
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+    final 
+    
+    class
+<h1>AsyncRecordSearchIterable</h1>
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../../java/org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html">AbstractRecordSearchIterable</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="5" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="4" class="jd-inheritance-class-cell">java.util.AbstractCollection&lt;E&gt;</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="3" class="jd-inheritance-class-cell"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/PaginatedIterable.html">org.mule.module.netsuite.api.paging.PaginatedIterable</a>&lt;T,&nbsp;Page&gt;</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../../java/org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html">org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.netsuite.api.paging.AsyncRecordSearchIterable</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AsyncRecordSearchIterable.html#jobId">jobId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html">org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable</a>
+<div id="inherited-fields-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable">
+  <div id="inherited-fields-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          <a href="../../../../../../../java/org/mule/module/netsuite/api/CxfPortProvider.html">CxfPortProvider</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#portProvider">portProvider</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-org.mule.module.netsuite.api.paging.PaginatedIterable" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-org.mule.module.netsuite.api.paging.PaginatedIterable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html">org.mule.module.netsuite.api.paging.PaginatedIterable</a>
+<div id="inherited-fields-org.mule.module.netsuite.api.paging.PaginatedIterable">
+  <div id="inherited-fields-org.mule.module.netsuite.api.paging.PaginatedIterable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-org.mule.module.netsuite.api.paging.PaginatedIterable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          
+          Logger</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#logger">logger</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AsyncRecordSearchIterable.html#AsyncRecordSearchIterable(org.mule.module.netsuite.api.CxfPortProvider, java.lang.String)">AsyncRecordSearchIterable</a></span>(<a href="../../../../../../../java/org/mule/module/netsuite/api/CxfPortProvider.html">CxfPortProvider</a> portProvider, String jobId)</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AsyncRecordSearchIterable.html#doSearch()">doSearch</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html">org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable</a>
+
+<div id="inherited-methods-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable">
+  <div id="inherited-methods-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.netsuite.api.paging.AbstractRecordSearchIterable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#doSearch()">doSearch</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#firstPage()">firstPage</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Answers the first page of the paginated result
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/org/mule/module/netsuite/api/CxfPortProvider.html">CxfPortProvider</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#getPortProvider()">getPortProvider</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#hasNextPage(com.netsuite.webservices.platform.core_2010_2.SearchResult)">hasNextPage</a></span>(<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a> result)</nobr>
+        
+        <div class="jd-descrdiv">Answers if the given page is not the last one</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#nextPage(com.netsuite.webservices.platform.core_2010_2.SearchResult)">nextPage</a></span>(<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a> currentPage)</nobr>
+        
+        <div class="jd-descrdiv">Given a page, answers the next page</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Iterator&lt;<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/AbstractRecordSearchIterable.html#pageIterator(com.netsuite.webservices.platform.core_2010_2.SearchResult)">pageIterator</a></span>(<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a> page)</nobr>
+        
+        <div class="jd-descrdiv">Answers an iterator for the current page</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-org.mule.module.netsuite.api.paging.PaginatedIterable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-org.mule.module.netsuite.api.paging.PaginatedIterable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html">org.mule.module.netsuite.api.paging.PaginatedIterable</a>
+
+<div id="inherited-methods-org.mule.module.netsuite.api.paging.PaginatedIterable">
+  <div id="inherited-methods-org.mule.module.netsuite.api.paging.PaginatedIterable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-org.mule.module.netsuite.api.paging.PaginatedIterable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Page</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#firstPage()">firstPage</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Answers the first page of the paginated result
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#hasNextPage(Page)">hasNextPage</a></span>(Page page)</nobr>
+        
+        <div class="jd-descrdiv">Answers if the given page is not the last one</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Iterator&lt;T&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#iterator()">iterator</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Page</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#nextPage(Page)">nextPage</a></span>(Page currentPage)</nobr>
+        
+        <div class="jd-descrdiv">Given a page, answers the next page</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Iterator&lt;T&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#pageIterator(Page)">pageIterator</a></span>(Page page)</nobr>
+        
+        <div class="jd-descrdiv">Answers an iterator for the current page</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#size()">size</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#toArray()">toArray</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Hack for enabling collection splitter to work, which forces evaluation of
+ whole iterable.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../org/mule/module/netsuite/api/paging/PaginatedIterable.html#toString()">toString</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Same impl that those found in Object, in order to avoid eager elements consumption
+</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.util.AbstractCollection" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.util.AbstractCollection-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.util.AbstractCollection
+
+<div id="inherited-methods-java.util.AbstractCollection">
+  <div id="inherited-methods-java.util.AbstractCollection-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.util.AbstractCollection-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">add</span>(E arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">addAll</span>(Collection&lt;?&nbsp;extends&nbsp;E&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clear</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">contains</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">containsAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">isEmpty</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Iterator&lt;E&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">iterator</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">remove</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">removeAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">retainAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">size</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            &lt;T&gt;
+            T[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toArray</span>(T[] arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toArray</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Iterable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Iterable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.lang.Iterable
+
+<div id="inherited-methods-java.lang.Iterable">
+  <div id="inherited-methods-java.lang.Iterable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Iterable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Iterator&lt;T&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">iterator</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.util.Collection" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.util.Collection-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.util.Collection
+
+<div id="inherited-methods-java.util.Collection">
+  <div id="inherited-methods-java.util.Collection-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.util.Collection-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">add</span>(E arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">addAll</span>(Collection&lt;?&nbsp;extends&nbsp;E&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clear</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">contains</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">containsAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">isEmpty</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Iterator&lt;E&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">iterator</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">remove</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">removeAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">retainAll</span>(Collection&lt;?&gt; arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">size</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            &lt;T&gt;
+            T[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toArray</span>(T[] arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            Object[]</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toArray</span>()</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="jobId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        String
+      </span>
+        jobId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="AsyncRecordSearchIterable(org.mule.module.netsuite.api.CxfPortProvider, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">AsyncRecordSearchIterable</span>
+      <span class="normal">(<a href="../../../../../../../java/org/mule/module/netsuite/api/CxfPortProvider.html">CxfPortProvider</a> portProvider, String jobId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>portProvider</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>jobId</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="doSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/SearchResult.html">SearchResult</a>
+      </span>
+      <span class="sympad">doSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Exception</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

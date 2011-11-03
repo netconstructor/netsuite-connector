@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
+<title>
+
+  NetSuiteCloudConnector
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/NetSuiteCloudConnector.html">NetSuiteCloudConnector</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/RecordIds.html">RecordIds</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/RecordReferences.html">RecordReferences</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/CalendarEventAttendeeResponseEnum.html">CalendarEventAttendeeResponseEnum</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/GetCustomizationTypeEnum.html">GetCustomizationTypeEnum</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/InitializeTypeEnum.html">InitializeTypeEnum</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/SearchDateFieldOperatorEnum.html">SearchDateFieldOperatorEnum</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+  <a href="#constants">Constants</a>
+  
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>NetSuiteCloudConnector</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">org.mule.module.netsuite.NetSuiteCloudConnector</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-direct" class="jd-expando-trigger closed"
+          ><img id="subclasses-direct-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Direct Subclasses
+
+  <div id="subclasses-direct">
+      <div id="subclasses-direct-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../java/org/mule/module/netsuite/config/NetSuiteCloudConnectorCapabilitiesAdapter.html">NetSuiteCloudConnectorCapabilitiesAdapter</a>
+            
+          
+      </div>
+      <div id="subclasses-direct-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../java/org/mule/module/netsuite/config/NetSuiteCloudConnectorCapabilitiesAdapter.html">NetSuiteCloudConnectorCapabilitiesAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>NetSuiteCloudConnectorCapabilitiesAdapter</code> is a wrapper around <code><a href="../../../../../java/org/mule/module/netsuite/NetSuiteCloudConnector.html">NetSuiteCloudConnector</a></code> that implements org.mule.api.Capabilities interface.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
+
+
+<table class="jd-sumtable jd-sumtable-subclasses"><tr><td colspan="12" style="border:none;margin:0;padding:0;">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="subclasses-indirect" class="jd-expando-trigger closed"
+          ><img id="subclasses-indirect-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>Known Indirect Subclasses
+
+  <div id="subclasses-indirect">
+      <div id="subclasses-indirect-list"
+              class="jd-inheritedlinks"
+              
+              >
+          
+            
+              <a href="../../../../../java/org/mule/module/netsuite/config/NetSuiteCloudConnectorLifecycleAdapter.html">NetSuiteCloudConnectorLifecycleAdapter</a>
+            
+          
+      </div>
+      <div id="subclasses-indirect-summary"
+              style="display: none;"
+              >
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../java/org/mule/module/netsuite/config/NetSuiteCloudConnectorLifecycleAdapter.html">NetSuiteCloudConnectorLifecycleAdapter</a></td>
+              <td class="jd-descrcol" width="100%">A <code>NetSuiteCloudConnectorLifecycleAdapter</code> is a wrapper around <code><a href="../../../../../java/org/mule/module/netsuite/NetSuiteCloudConnector.html">NetSuiteCloudConnector</a></code> that adds lifecycle methods to the pojo.&nbsp;</td>
+          </tr>
+  </table>
+      </div>
+  </div>
+</td></tr></table>
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>The NetSuite cloud connector facade, based on a <code><a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a></code></p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">String</td>
+        <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#SUITETALK_ADDRESS">SUITETALK_ADDRESS</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#account">account</a></td>
+          <td class="jd-descrcol" width="100%">SuiteTalk -NetSuite WebService - account id.</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          <a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;List&lt;Object&gt;,&nbsp;RuntimeException,&nbsp;Void&gt;</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#client">client</a></td>
+          <td class="jd-descrcol" width="100%">The Netsuite client to use.</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#email">email</a></td>
+          <td class="jd-descrcol" width="100%">The login email of both NetSuite UI and SuiteTalk
+</td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#password">password</a></td>
+          <td class="jd-descrcol" width="100%">The login password of both the NetSuite UI and SuiteTalk
+</td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#roleId">roleId</a></td>
+          <td class="jd-descrcol" width="100%">The id of the role used to login in SuiteTalk, which determines the Processor privileges
+</td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#NetSuiteCloudConnector()">NetSuiteCloudConnector</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Date</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#GetServerTime()">GetServerTime</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Answers the server time, resulting in more accurate and reliable sync'ing of data than using
+ using local client time.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#addFile(java.util.Map<java.lang.String, java.lang.Object>, java.lang.Object, java.lang.String, java.lang.String, org.mule.module.netsuite.RecordIdType)">addFile</a></span>(Map&lt;String,&nbsp;Object&gt; attributes, Object content, String fileName, String folderId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> folderIdType)</nobr>
+        
+        <div class="jd-descrdiv">Creates a new file record.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#addRecord(org.mule.module.netsuite.RecordTypeEnum, java.util.Map<java.lang.String, java.lang.Object>)">addRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, Map&lt;String,&nbsp;Object&gt; attributes)</nobr>
+        
+        <div class="jd-descrdiv">Creates a new record.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/AsyncStatusResult.html">AsyncStatusResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#asyncFindRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)">asyncFindRecords</a></span>(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</nobr>
+        
+        <div class="jd-descrdiv">Searches for all records that match the given filtering expression, asynchronously.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#attachRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)">attachRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> sourceRecordType, String sourceId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> sourceIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> destinationRecordType, String destinationId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> destinationIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> contanctRecordType, String contanctId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> contanctIdType)</nobr>
+        
+        <div class="jd-descrdiv">Attaches a source record - that is, the attachment - to another destination one, 
+ optionally specifying a contact for the
+ attachment.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/AsyncStatusResult.html">AsyncStatusResult</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#checkAsyncStatus(java.lang.String)">checkAsyncStatus</a></span>(String jobId)</nobr>
+        
+        <div class="jd-descrdiv">Answers the status of an asynchronous Web services submission.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#deleteRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)">deleteRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</nobr>
+        
+        <div class="jd-descrdiv">Deletes a record.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#detachRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)">detachRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> sourceRecordType, String sourceId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> sourceIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> destinationRecordType, String destinationId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> destinationIdType)</nobr>
+        
+        <div class="jd-descrdiv">Detaches a source record - that is, the attachment - from a destination record.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#findFirstRecord(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)">findFirstRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</nobr>
+        
+        <div class="jd-descrdiv">Answers the first records that match the given filtering expression.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#findRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)">findRecords</a></span>(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</nobr>
+        
+        <div class="jd-descrdiv">Answers all records that match the given filtering expression.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getAccount()">getAccount</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getAsyncFindFirstResult(java.lang.String)">getAsyncFindFirstResult</a></span>(String jobId)</nobr>
+        
+        <div class="jd-descrdiv">Answers the the first result of an asynchronous asyncFind.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getAsyncFindResult(java.lang.String)">getAsyncFindResult</a></span>(String jobId)</nobr>
+        
+        <div class="jd-descrdiv">Answers the results of an asynchronous web services submission.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getBudgetExchangeRates(java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType)">getBudgetExchangeRates</a></span>(String periodId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> periodIdType, String fromSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> fromSubsidiaryIdType, String toSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> toSubsidiaryIdType)</nobr>
+        
+        <div class="jd-descrdiv">Answers the list of budget exchange rates
+ Example:
+ 
+  </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;List&lt;Object&gt;,&nbsp;RuntimeException,&nbsp;Void&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getClient()">getClient</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getConsolidatedExchangeRates(java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType)">getConsolidatedExchangeRates</a></span>(String periodId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> periodIdType, String fromSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> fromSubsidiaryIdType, String toSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> toSubsidiaryIdType)</nobr>
+        
+        <div class="jd-descrdiv">Answers the list of consolidated exchange rates
+ Example:
+ 
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getCustomizationIds(org.mule.module.netsuite.GetCustomizationTypeEnum, boolean)">getCustomizationIds</a></span>(<a href="../../../../../java/org/mule/module/netsuite/GetCustomizationTypeEnum.html">GetCustomizationTypeEnum</a> type, boolean includeInactives)</nobr>
+        
+        <div class="jd-descrdiv">Answers the ids of available customizations for a given record type.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getDeletedRecords(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, java.util.Date, java.util.Date, org.mule.module.netsuite.SearchDateFieldOperatorEnum)">getDeletedRecords</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type, String whenExpression, Date date1, Date date2, <a href="../../../../../java/org/mule/module/netsuite/SearchDateFieldOperatorEnum.html">SearchDateFieldOperatorEnum</a> operator)</nobr>
+        
+        <div class="jd-descrdiv">Answers a list of deleted records of a given record type that match a given date expression.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getEmail()">getEmail</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getItemAvailabilities(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, java.util.Date)">getItemAvailabilities</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType, Date ifModifiedSince)</nobr>
+        
+        <div class="jd-descrdiv">Answers the availability for a given record reference.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getPassword()">getPassword</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)">getRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</nobr>
+        
+        <div class="jd-descrdiv">Answers a record given its id
+ Example:
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getRecords(org.mule.module.netsuite.RecordTypeEnum)">getRecords</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type)</nobr>
+        
+        <div class="jd-descrdiv">Answers all the record of a given type
+ Example:
+ 
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getRoleId()">getRoleId</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            List&lt;Object&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#getSavedSearch(org.mule.module.netsuite.RecordTypeEnum)">getSavedSearch</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type)</nobr>
+        
+        <div class="jd-descrdiv">Retrieves a list of existing saved searches for the given record type.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#init()">init</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#initialize(org.mule.module.netsuite.InitializeTypeEnum, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)">initialize</a></span>(<a href="../../../../../java/org/mule/module/netsuite/InitializeTypeEnum.html">InitializeTypeEnum</a> type, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</nobr>
+        
+        <div class="jd-descrdiv">Populates fields on transaction line items with values from a related record,
+ in a similar way empty text boxes are prepopulated within the Netsuite UI
+ Example:
+ 
+ </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#savedFindRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)">savedFindRecords</a></span>(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String searchId)</nobr>
+        
+        <div class="jd-descrdiv">Answers all records of a given type for a saved search, given its search id.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#setAccount(java.lang.String)">setAccount</a></span>(String account)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#setClient(org.mule.module.netsuite.api.NetSuiteClient<?, ?, ?>)">setClient</a></span>(<a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;?,&nbsp;?,&nbsp;?&gt; client)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#setEmail(java.lang.String)">setEmail</a></span>(String email)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#setPassword(java.lang.String)">setPassword</a></span>(String password)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#setRoleId(java.lang.String)">setRoleId</a></span>(String roleId)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#updateInviteeStatus(java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.CalendarEventAttendeeResponseEnum)">updateInviteeStatus</a></span>(String eventId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> eventIdType, <a href="../../../../../java/org/mule/module/netsuite/CalendarEventAttendeeResponseEnum.html">CalendarEventAttendeeResponseEnum</a> status)</nobr>
+        
+        <div class="jd-descrdiv">Sets a new invitation status for a given event.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../org/mule/module/netsuite/NetSuiteCloudConnector.html#updateRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, java.util.Map<java.lang.String, java.lang.Object>)">updateRecord</a></span>(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType, Map&lt;String,&nbsp;Object&gt; attributes)</nobr>
+        
+        <div class="jd-descrdiv">Updates an existing record.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="SUITETALK_ADDRESS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        String
+      </span>
+        SUITETALK_ADDRESS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "https://webservices.netsuite.com/services/NetSuitePort_2010_2"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="account"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        account
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>SuiteTalk -NetSuite WebService - account id. It looks like TSTDRVXXXXXX
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="client"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        <a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;List&lt;Object&gt;,&nbsp;RuntimeException,&nbsp;Void&gt;
+      </span>
+        client
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The Netsuite client to use. Mainly for mocking purposes 
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="email"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        email
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The login email of both NetSuite UI and SuiteTalk
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="password"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        password
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The login password of both the NetSuite UI and SuiteTalk
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="roleId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+         
+        String
+      </span>
+        roleId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The id of the role used to login in SuiteTalk, which determines the Processor privileges
+</p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="NetSuiteCloudConnector()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">NetSuiteCloudConnector</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="GetServerTime()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Date
+      </span>
+      <span class="sympad">GetServerTime</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the server time, resulting in more accurate and reliable sync'ing of data than using
+ using local client time. Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the server time, as a Date
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="addFile(java.util.Map<java.lang.String, java.lang.Object>, java.lang.Object, java.lang.String, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">addFile</span>
+      <span class="normal">(Map&lt;String,&nbsp;Object&gt; attributes, Object content, String fileName, String folderId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> folderIdType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a new file record. This Processor is similar to addRecord, but is
+ customized for simplifying local content passing.
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>attributes</td>
+          <td>The additional file attributes</td>
+        </tr>
+        <tr>
+          <th>content</td>
+          <td>The content of the file record to add. It can be of type
+            String, byte array, File or InputStream. If it is an input stream,
+            this Processors also closes it.</td>
+        </tr>
+        <tr>
+          <th>fileName</td>
+          <td>The name of the remote file</td>
+        </tr>
+        <tr>
+          <th>folderId</td>
+          <td>The id of the folder record where to add this file</td>
+        </tr>
+        <tr>
+          <th>folderIdType</td>
+          <td>The id type of the folder record</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the RecordRef of the new record 
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>IOException</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="addRecord(org.mule.module.netsuite.RecordTypeEnum, java.util.Map<java.lang.String, java.lang.Object>)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">addRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, Map&lt;String,&nbsp;Object&gt; attributes)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a new record. Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of record to add</td>
+        </tr>
+        <tr>
+          <th>attributes</td>
+          <td>The record attributes, as a string-object map</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the RecordRef of the new record
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncFindRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/AsyncStatusResult.html">AsyncStatusResult</a>
+      </span>
+      <span class="sympad">asyncFindRecords</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Searches for all records that match the given filtering expression, asynchronously.
+ If no expression is specified, all records of the given type are retrieved  
+ 
+ Filtering expressions support both basic and joined syntax, that is, using in the filters
+ attributes of both the target entity and the target entity associations. Advanced search is not supported.
+ 
+ Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+ and operator(join.attribute, arguments...) for joined search, where operator is 
+ any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
+ plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+ 
+ Examples:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of record to search</td>
+        </tr>
+        <tr>
+          <th>expression</td>
+          <td>The filtering expression, in the 
+          form operator(attribute, arguments...) for basic search, 
+          and operator(join.attribute, arguments...) for joined search, where operator is 
+          any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
+          plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+          Multiple filters can be combined using multiple predicates separated by commas.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the AsyncStatusResult of the query
+</li></ul>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Exception</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="attachRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">attachRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> sourceRecordType, String sourceId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> sourceIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> destinationRecordType, String destinationId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> destinationIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> contanctRecordType, String contanctId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> contanctIdType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Attaches a source record - that is, the attachment - to another destination one, 
+ optionally specifying a contact for the
+ attachment. Not all record type are supported as source, destination or
+ contact. Please consult NetSuite documentation.
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>sourceRecordType</td>
+          <td>The type of the target record to be attached</td>
+        </tr>
+        <tr>
+          <th>sourceId</td>
+          <td>The id of the target record to be attached</td>
+        </tr>
+        <tr>
+          <th>sourceIdType</td>
+          <td>The id type of the record to be attached</td>
+        </tr>
+        <tr>
+          <th>destinationRecordType</td>
+          <td>The type of the record to be attached to</td>
+        </tr>
+        <tr>
+          <th>destinationId</td>
+          <td>The id of the record to be attached to</td>
+        </tr>
+        <tr>
+          <th>destinationIdType</td>
+          <td>The id type of the record to be attached to</td>
+        </tr>
+        <tr>
+          <th>contanctRecordType</td>
+          <td>The record type of the optional contact record</td>
+        </tr>
+        <tr>
+          <th>contanctId</td>
+          <td>The id of the optional contact record</td>
+        </tr>
+        <tr>
+          <th>contanctIdType</td>
+          <td>The id type of the optional contact record
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="checkAsyncStatus(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/AsyncStatusResult.html">AsyncStatusResult</a>
+      </span>
+      <span class="sympad">checkAsyncStatus</span>
+      <span class="normal">(String jobId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the status of an asynchronous Web services submission. When a jobId is
+ submitted, the status, percent complete, and estimated remaining duration are
+ returned.
+ 
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>jobId</td>
+          <td>The id of the job whose status to check</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the AsyncStatusResult for the given job
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="deleteRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">deleteRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Deletes a record. Not all records can be deleted. Please consult NetSuite documentation
+ 
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of the record to delete</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>The id of the record to delete</td>
+        </tr>
+        <tr>
+          <th>idType</td>
+          <td>The type of id of the record to delete
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="detachRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">detachRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> sourceRecordType, String sourceId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> sourceIdType, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> destinationRecordType, String destinationId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> destinationIdType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Detaches a source record - that is, the attachment - from a destination record.
+ Example:
+ 
+       </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>sourceRecordType</td>
+          <td>The type of the target record to be detached</td>
+        </tr>
+        <tr>
+          <th>sourceId</td>
+          <td>The id of the target record to be detached</td>
+        </tr>
+        <tr>
+          <th>sourceIdType</td>
+          <td>The id type of the record to be detached</td>
+        </tr>
+        <tr>
+          <th>destinationRecordType</td>
+          <td>The type of the record to be detached to</td>
+        </tr>
+        <tr>
+          <th>destinationId</td>
+          <td>The id of the record to be detached to</td>
+        </tr>
+        <tr>
+          <th>destinationIdType</td>
+          <td>The id type of the record to be detached to
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="findFirstRecord(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>
+      </span>
+      <span class="sympad">findFirstRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the first records that match the given filtering expression. 
+ If no expression is specified, the empty expression is used, 
+ which retrieves all records of the given type.  
+ Throws a NoSuchElementException if no record can be retrieved.
+ 
+ Filtering expressions support both basic and joined syntax, that is, using in the filters
+ attributes of both the target entity and the target entity associations. Advanced search is not supported.
+ 
+ Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+ and operator(join.attribute, arguments...) for joined search, where operator is 
+ any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
+ plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+ 
+ Examples:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of record to search</td>
+        </tr>
+        <tr>
+          <th>expression</td>
+          <td>The filtering expression
+          Multiple filters can be combined using multiple predicates separated by commas.    </td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the first record that match the given filtering expression
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="findRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;
+      </span>
+      <span class="sympad">findRecords</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String expression)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers all records that match the given filtering expression.
+ If no expression is specified, the empty expression is used, 
+ which retrieves all records of the given type. 
+ 
+ Filtering expressions support both basic and joined syntax, that is, using in the filters
+ attributes of both the target entity and the target entity associations. Advanced search is not supported.
+ 
+ Search expressions are  in the form operator(attribute, arguments...) for basic search, 
+ and operator(join.attribute, arguments...) for joined search, where operator is 
+ any of the string, long, double, and text operators supported by SuiteTalk - MultiSelect operators are not supported -
+ plus the isTrue/isFalse boolean operators, and arguments are zero up to three operands that depend on the operator used. 
+ 
+ 
+  
+ Examples:</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of record to search</td>
+        </tr>
+        <tr>
+          <th>expression</td>
+          <td>The filtering expression
+          Multiple filters can be combined using multiple predicates separated by commas.    </td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a list of Record's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAccount()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getAccount</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getAsyncFindFirstResult(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>
+      </span>
+      <span class="sympad">getAsyncFindFirstResult</span>
+      <span class="normal">(String jobId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the the first result of an asynchronous asyncFind.
+ Throws a NoSuchElement exception if there are no results.
+ This Processor can be executed Processor up to 20 times within a 30 day time period to
+ retrieve the results of an asynchronous job.
+ 
+ Example:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>jobId</td>
+          <td>The id of the job</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the first Record
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAsyncFindResult(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;
+      </span>
+      <span class="sympad">getAsyncFindResult</span>
+      <span class="normal">(String jobId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the results of an asynchronous web services submission. This Processor
+ can be executed Processor up to 20 times within a 30 day time period to
+ retrieve the results of an asynchronous job.
+ Example:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>jobId</td>
+          <td>The id of the job</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the Record's list
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBudgetExchangeRates(java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getBudgetExchangeRates</span>
+      <span class="normal">(String periodId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> periodIdType, String fromSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> fromSubsidiaryIdType, String toSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> toSubsidiaryIdType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the list of budget exchange rates
+ Example:
+ 
+  </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>periodId</td>
+          <td>The id of the period </td>
+        </tr>
+        <tr>
+          <th>periodIdType</td>
+          <td>The period id type</td>
+        </tr>
+        <tr>
+          <th>fromSubsidiaryId</td>
+          <td>The id of the staring  subsidiary </td>
+        </tr>
+        <tr>
+          <th>fromSubsidiaryIdType</td>
+          <td>The starting subsidiary id type</td>
+        </tr>
+        <tr>
+          <th>toSubsidiaryId</td>
+          <td>The  the id of the optional ending subsidiary  </td>
+        </tr>
+        <tr>
+          <th>toSubsidiaryIdType</td>
+          <td>The id type of the optional ending subsidiary</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a list of BudgetExchangeRate's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getClient()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;List&lt;Object&gt;,&nbsp;RuntimeException,&nbsp;Void&gt;
+      </span>
+      <span class="sympad">getClient</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getConsolidatedExchangeRates(java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getConsolidatedExchangeRates</span>
+      <span class="normal">(String periodId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> periodIdType, String fromSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> fromSubsidiaryIdType, String toSubsidiaryId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> toSubsidiaryIdType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the list of consolidated exchange rates
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>periodId</td>
+          <td>The id of the period </td>
+        </tr>
+        <tr>
+          <th>periodIdType</td>
+          <td>The period id type</td>
+        </tr>
+        <tr>
+          <th>fromSubsidiaryId</td>
+          <td>The id of the staring  subsidiary </td>
+        </tr>
+        <tr>
+          <th>fromSubsidiaryIdType</td>
+          <td>The starting subsidiary id type</td>
+        </tr>
+        <tr>
+          <th>toSubsidiaryId</td>
+          <td>The  the id of the optional ending subsidiary  </td>
+        </tr>
+        <tr>
+          <th>toSubsidiaryIdType</td>
+          <td>The id type of the optional ending subsidiary</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a list of ConsolidatedExchangeRate's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCustomizationIds(org.mule.module.netsuite.GetCustomizationTypeEnum, boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getCustomizationIds</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/GetCustomizationTypeEnum.html">GetCustomizationTypeEnum</a> type, boolean includeInactives)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the ids of available customizations for a given record type.
+ 
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>The target record type</td>
+        </tr>
+        <tr>
+          <th>includeInactives</td>
+          <td>If inactive customizations should also be returned</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a list of CustomizationRef's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDeletedRecords(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, java.util.Date, java.util.Date, org.mule.module.netsuite.SearchDateFieldOperatorEnum)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getDeletedRecords</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type, String whenExpression, Date date1, Date date2, <a href="../../../../../java/org/mule/module/netsuite/SearchDateFieldOperatorEnum.html">SearchDateFieldOperatorEnum</a> operator)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers a list of deleted records of a given record type that match a given date expression.
+ This Processors accepts two different date expression passing styles: string oriented, 
+ and object oriented. If whenExpression is specified, it is parsed and used as date expression. 
+ Otherwise, a date expression is build from date1, date2 and operator parameters. 
+ 
+ The first style is more appropriate when the date expression can be harcdoded, while the second style 
+ is better when client code already has date objects. However, predefined search values like 
+ thisWeek, tomorrow or today can only be used with the first, string oriented, style.
+ 
+ String oriented date expressions are in the form Processor( searchValue, arguments...), where Processor is any of the NetSuite 
+ supported date Processors, arguments are one or two operands for the given operator, and
+ searchValue is some of the supported predefined search value as defined by NetSuite or any 
+ of the following expressions:
+ isoDate( anIsoDate ), isoDateRante( anIsoDate, anotherIsoDate ) , 
+ dateTime( aQuotedDateTime, aQuoatedJavaDateFormat ), 
+ dateTimeRange( aQuotedDateTime, anotherQuotedDateTime, aQuoatedJavaDateFormat ).       
+ Supported predefined search values are: today, thisWeek, thisBusinessWeek, thisMonth,thisYear, yesterday, 
+ twoDaysAgo, lastWeek, lastMonth, threeMonthAgo,tomorrow, nextMonth , nextWeek    
+ 
+ Examples using both string and object oriented styles:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>The type of the target deleted record to retrieve </td>
+        </tr>
+        <tr>
+          <th>whenExpression</td>
+          <td>A predicate-style date filtering expression</td>
+        </tr>
+        <tr>
+          <th>date1</td>
+          <td>The first date to use</td>
+        </tr>
+        <tr>
+          <th>date2</td>
+          <td>The second date to use</td>
+        </tr>
+        <tr>
+          <th>operator</td>
+          <td>The date operator</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the list of DeletedRecord's that match the given date filtering expression
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getEmail()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getEmail</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getItemAvailabilities(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, java.util.Date)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getItemAvailabilities</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType, Date ifModifiedSince)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers the availability for a given record reference.
+ If the Multi-Location Inventory feature is enabled, this Processor returns results for all locations. 
+ For locations that do not have any items available, only location IDs and names are listed in results. 
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The target record type</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>The target record id</td>
+        </tr>
+        <tr>
+          <th>idType</td>
+          <td>The id type of the given record id</td>
+        </tr>
+        <tr>
+          <th>ifModifiedSince</td>
+          <td>An optional modified since date. 
+         If set, only items with quantity available changes recorded as of the specified date are returned.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>A list of ItemAvailability's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPassword()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getPassword</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Object
+      </span>
+      <span class="sympad">getRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers a record given its id
+ Example:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The target record type</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>The target record id</td>
+        </tr>
+        <tr>
+          <th>idType</td>
+          <td>The id type of the given record id</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a Record
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getRecords(org.mule.module.netsuite.RecordTypeEnum)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getRecords</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers all the record of a given type
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>The target record type  </td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the list of Record's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getRoleId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getRoleId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="getSavedSearch(org.mule.module.netsuite.RecordTypeEnum)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        List&lt;Object&gt;
+      </span>
+      <span class="sympad">getSavedSearch</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> type)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Retrieves a list of existing saved searches for the given record type.
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>The target record type</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the list of RecordRedf's 
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="init()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">init</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="initialize(org.mule.module.netsuite.InitializeTypeEnum, org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>
+      </span>
+      <span class="sympad">initialize</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/InitializeTypeEnum.html">InitializeTypeEnum</a> type, <a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Populates fields on transaction line items with values from a related record,
+ in a similar way empty text boxes are prepopulated within the Netsuite UI
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>type</td>
+          <td>The type of record whose defaults values are used to populate the
+            target record</td>
+        </tr>
+        <tr>
+          <th>recordType</td>
+          <td>The target record type</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>The target record id</td>
+        </tr>
+        <tr>
+          <th>idType</td>
+          <td>The id type of the given record id</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the initialized Record
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="savedFindRecords(org.mule.module.netsuite.SearchRecordTypeEnum, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Iterable&lt;<a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;
+      </span>
+      <span class="sympad">savedFindRecords</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/SearchRecordTypeEnum.html">SearchRecordTypeEnum</a> recordType, String searchId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Answers all records of a given type for a saved search, given its search id.
+ 
+ Examples:
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The type of record to search</td>
+        </tr>
+        <tr>
+          <th>searchId</td>
+          <td>The id of the save search    </td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a list of Record's
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setAccount(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAccount</span>
+      <span class="normal">(String account)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>account</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setClient(org.mule.module.netsuite.api.NetSuiteClient<?, ?, ?>)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setClient</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/api/NetSuiteClient.html">NetSuiteClient</a>&lt;?,&nbsp;?,&nbsp;?&gt; client)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>client</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setEmail(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setEmail</span>
+      <span class="normal">(String email)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>email</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPassword(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPassword</span>
+      <span class="normal">(String password)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>password</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setRoleId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRoleId</span>
+      <span class="normal">(String roleId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>roleId</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateInviteeStatus(java.lang.String, org.mule.module.netsuite.RecordIdType, org.mule.module.netsuite.CalendarEventAttendeeResponseEnum)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateInviteeStatus</span>
+      <span class="normal">(String eventId, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> eventIdType, <a href="../../../../../java/org/mule/module/netsuite/CalendarEventAttendeeResponseEnum.html">CalendarEventAttendeeResponseEnum</a> status)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets a new invitation status for a given event. Example:
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>eventId</td>
+          <td>The target event id</td>
+        </tr>
+        <tr>
+          <th>eventIdType</td>
+          <td>The id type of the given eventId</td>
+        </tr>
+        <tr>
+          <th>status</td>
+          <td>The new status to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateRecord(org.mule.module.netsuite.RecordTypeEnum, java.lang.String, org.mule.module.netsuite.RecordIdType, java.util.Map<java.lang.String, java.lang.Object>)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">updateRecord</span>
+      <span class="normal">(<a href="../../../../../java/org/mule/module/netsuite/RecordTypeEnum.html">RecordTypeEnum</a> recordType, String id, <a href="../../../../../java/org/mule/module/netsuite/RecordIdType.html">RecordIdType</a> idType, Map&lt;String,&nbsp;Object&gt; attributes)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Updates an existing record.
+ Example:
+ 
+ </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>recordType</td>
+          <td>The target record type to update</td>
+        </tr>
+        <tr>
+          <th>id</td>
+          <td>The target record id</td>
+        </tr>
+        <tr>
+          <th>idType</td>
+          <td>The id type of the given record id</td>
+        </tr>
+        <tr>
+          <th>attributes</td>
+          <td>The record attributes, as a string-object map
+</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th>Exception</td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

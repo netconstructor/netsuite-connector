@@ -1,0 +1,5062 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  EntityGroup
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CategoryList.html">CategoryList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Contact.html">Contact</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactAddressbook.html">ContactAddressbook</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactAddressbookList.html">ContactAddressbookList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactRole.html">ContactRole</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactRoleList.html">ContactRoleList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactSearch.html">ContactSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactSearchAdvanced.html">ContactSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ContactSearchRow.html">ContactSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Customer.html">Customer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerAddressbook.html">CustomerAddressbook</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerAddressbookList.html">CustomerAddressbookList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerCreditCards.html">CustomerCreditCards</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerCreditCardsList.html">CustomerCreditCardsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerDownload.html">CustomerDownload</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerDownloadList.html">CustomerDownloadList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerGroupPricing.html">CustomerGroupPricing</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerGroupPricingList.html">CustomerGroupPricingList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerItemPricing.html">CustomerItemPricing</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerItemPricingList.html">CustomerItemPricingList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerPartnersList.html">CustomerPartnersList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerSalesTeam.html">CustomerSalesTeam</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerSalesTeamList.html">CustomerSalesTeamList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerSearch.html">CustomerSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerSearchAdvanced.html">CustomerSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerSearchRow.html">CustomerSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerStatus.html">CustomerStatus</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerStatusSearch.html">CustomerStatusSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerStatusSearchAdvanced.html">CustomerStatusSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/CustomerStatusSearchRow.html">CustomerStatusSearchRow</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html">EntityGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/EntityGroupSearch.html">EntityGroupSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/EntityGroupSearchAdvanced.html">EntityGroupSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/EntityGroupSearchRow.html">EntityGroupSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Job.html">Job</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobAddressbook.html">JobAddressbook</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobAddressbookList.html">JobAddressbookList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobCreditCards.html">JobCreditCards</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobCreditCardsList.html">JobCreditCardsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobMilestones.html">JobMilestones</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobMilestonesList.html">JobMilestonesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobResources.html">JobResources</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobResourcesList.html">JobResourcesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobSearch.html">JobSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobSearchAdvanced.html">JobSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobSearchRow.html">JobSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobStatus.html">JobStatus</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobStatusSearch.html">JobStatusSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobStatusSearchAdvanced.html">JobStatusSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobStatusSearchRow.html">JobStatusSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobType.html">JobType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobTypeSearch.html">JobTypeSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobTypeSearchAdvanced.html">JobTypeSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/JobTypeSearchRow.html">JobTypeSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/ObjectFactory.html">ObjectFactory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/OriginatingLeadSearch.html">OriginatingLeadSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/OriginatingLeadSearchRow.html">OriginatingLeadSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Partner.html">Partner</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerAddressbook.html">PartnerAddressbook</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerAddressbookList.html">PartnerAddressbookList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerPromoCode.html">PartnerPromoCode</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerPromoCodeList.html">PartnerPromoCodeList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerSearch.html">PartnerSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerSearchAdvanced.html">PartnerSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/PartnerSearchRow.html">PartnerSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Subscriptions.html">Subscriptions</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/SubscriptionsList.html">SubscriptionsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/Vendor.html">Vendor</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorAddressbook.html">VendorAddressbook</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorAddressbookList.html">VendorAddressbookList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorPricingSchedule.html">VendorPricingSchedule</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorPricingScheduleList.html">VendorPricingScheduleList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorRoles.html">VendorRoles</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorRolesList.html">VendorRolesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorSearch.html">VendorSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorSearchAdvanced.html">VendorSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/VendorSearchRow.html">VendorSearchRow</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>EntityGroup</h1>
+
+
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.lists.relationships_2010_2.EntityGroup</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p><p>Java class for EntityGroup complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="EntityGroup">
+   &lt;complexContent>
+     &lt;extension base="{urn:core_2010_2.platform.webservices.netsuite.com}Record">
+       &lt;sequence>
+         &lt;element name="groupName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="groupType" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupType" minOccurs="0"/>
+         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="groupOwner" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="isSavedSearch" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="parentGroupType" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupType" minOccurs="0"/>
+         &lt;element name="savedSearch" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="isSalesTeam" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="comments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="isPrivate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="restrictionGroup" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="isSalesRep" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="isSupportRep" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="isProductTeam" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="isFunctionalTeam" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="issueRole" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="calendarName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="calendarStartTime" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupDailyTime" minOccurs="0"/>
+         &lt;element name="calendarEndTime" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupDailyTime" minOccurs="0"/>
+         &lt;element name="calendarDefaultView" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupDefView" minOccurs="0"/>
+         &lt;element name="calendarPeriod" type="{urn:types.relationships_2010_2.lists.webservices.netsuite.com}EntityGroupPeriodSize" minOccurs="0"/>
+         &lt;element name="customFieldList" type="{urn:core_2010_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
+       &lt;/sequence>
+       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
+       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
+     &lt;/extension>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+ 
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#calendarDefaultView">calendarDefaultView</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#calendarEndTime">calendarEndTime</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#calendarName">calendarName</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#calendarPeriod">calendarPeriod</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#calendarStartTime">calendarStartTime</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#comments">comments</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#customFieldList">customFieldList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#email">email</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#externalId">externalId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#groupName">groupName</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#groupOwner">groupOwner</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#groupType">groupType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#internalId">internalId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isFunctionalTeam">isFunctionalTeam</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isInactive">isInactive</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isPrivate">isPrivate</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isProductTeam">isProductTeam</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isSalesRep">isSalesRep</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isSalesTeam">isSalesTeam</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isSavedSearch">isSavedSearch</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isSupportRep">isSupportRep</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#issueRole">issueRole</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#parentGroupType">parentGroupType</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#restrictionGroup">restrictionGroup</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#savedSearch">savedSearch</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a>
+<div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record">
+  <div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#nullFieldList">nullFieldList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#EntityGroup()">EntityGroup</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCalendarDefaultView()">getCalendarDefaultView</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the calendarDefaultView property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCalendarEndTime()">getCalendarEndTime</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the calendarEndTime property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCalendarName()">getCalendarName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the calendarName property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCalendarPeriod()">getCalendarPeriod</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the calendarPeriod property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCalendarStartTime()">getCalendarStartTime</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the calendarStartTime property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getComments()">getComments</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the comments property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getCustomFieldList()">getCustomFieldList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the customFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getEmail()">getEmail</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the email property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getExternalId()">getExternalId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the externalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getGroupName()">getGroupName</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the groupName property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getGroupOwner()">getGroupOwner</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the groupOwner property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getGroupType()">getGroupType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the groupType property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getInternalId()">getInternalId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the internalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getIssueRole()">getIssueRole</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the issueRole property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getParentGroupType()">getParentGroupType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the parentGroupType property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getRestrictionGroup()">getRestrictionGroup</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the restrictionGroup property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#getSavedSearch()">getSavedSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the savedSearch property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsFunctionalTeam()">isIsFunctionalTeam</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isFunctionalTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsInactive()">isIsInactive</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isInactive property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsPrivate()">isIsPrivate</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isPrivate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsProductTeam()">isIsProductTeam</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isProductTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsSalesRep()">isIsSalesRep</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isSalesRep property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsSalesTeam()">isIsSalesTeam</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isSalesTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsSavedSearch()">isIsSavedSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isSavedSearch property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#isIsSupportRep()">isIsSupportRep</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isSupportRep property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCalendarDefaultView(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupDefView)">setCalendarDefaultView</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the calendarDefaultView property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCalendarEndTime(java.lang.String)">setCalendarEndTime</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the calendarEndTime property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCalendarName(java.lang.String)">setCalendarName</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the calendarName property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCalendarPeriod(java.lang.String)">setCalendarPeriod</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the calendarPeriod property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCalendarStartTime(java.lang.String)">setCalendarStartTime</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the calendarStartTime property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setComments(java.lang.String)">setComments</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the comments property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setCustomFieldList(com.netsuite.webservices.platform.core_2010_2.CustomFieldList)">setCustomFieldList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the customFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setEmail(java.lang.String)">setEmail</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the email property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setExternalId(java.lang.String)">setExternalId</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the externalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setGroupName(java.lang.String)">setGroupName</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the groupName property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setGroupOwner(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setGroupOwner</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the groupOwner property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setGroupType(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupType)">setGroupType</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the groupType property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setInternalId(java.lang.String)">setInternalId</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the internalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsFunctionalTeam(java.lang.Boolean)">setIsFunctionalTeam</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isFunctionalTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsInactive(java.lang.Boolean)">setIsInactive</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isInactive property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsPrivate(java.lang.Boolean)">setIsPrivate</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isPrivate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsProductTeam(java.lang.Boolean)">setIsProductTeam</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isProductTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsSalesRep(java.lang.Boolean)">setIsSalesRep</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isSalesRep property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsSalesTeam(java.lang.Boolean)">setIsSalesTeam</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isSalesTeam property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsSavedSearch(java.lang.Boolean)">setIsSavedSearch</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isSavedSearch property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIsSupportRep(java.lang.Boolean)">setIsSupportRep</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isSupportRep property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setIssueRole(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setIssueRole</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the issueRole property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setParentGroupType(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupType)">setParentGroupType</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the parentGroupType property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setRestrictionGroup(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setRestrictionGroup</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the restrictionGroup property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/relationships_2010_2/EntityGroup.html#setSavedSearch(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setSavedSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the savedSearch property.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a>
+
+<div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record">
+  <div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#getNullFieldList()">getNullFieldList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the nullFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#setNullFieldList(com.netsuite.webservices.platform.core_2010_2.NullField)">setNullFieldList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the nullFieldList property.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="calendarDefaultView"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a>
+      </span>
+        calendarDefaultView
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="calendarEndTime"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        calendarEndTime
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="calendarName"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        calendarName
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="calendarPeriod"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        calendarPeriod
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="calendarStartTime"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        calendarStartTime
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="comments"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        comments
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="customFieldList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a>
+      </span>
+        customFieldList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="email"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        email
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="externalId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        externalId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="groupName"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        groupName
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="groupOwner"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        groupOwner
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="groupType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a>
+      </span>
+        groupType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="internalId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        internalId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isFunctionalTeam"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isFunctionalTeam
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isInactive"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isInactive
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isPrivate"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isPrivate
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isProductTeam"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isProductTeam
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isSalesRep"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isSalesRep
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isSalesTeam"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isSalesTeam
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isSavedSearch"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isSavedSearch
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isSupportRep"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isSupportRep
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="issueRole"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        issueRole
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="parentGroupType"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a>
+      </span>
+        parentGroupType
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="restrictionGroup"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        restrictionGroup
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="savedSearch"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        savedSearch
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="EntityGroup()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">EntityGroup</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getCalendarDefaultView()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a>
+      </span>
+      <span class="sympad">getCalendarDefaultView</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the calendarDefaultView property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCalendarEndTime()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCalendarEndTime</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the calendarEndTime property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCalendarName()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCalendarName</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the calendarName property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCalendarPeriod()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCalendarPeriod</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the calendarPeriod property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCalendarStartTime()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCalendarStartTime</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the calendarStartTime property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getComments()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getComments</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the comments property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCustomFieldList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a>
+      </span>
+      <span class="sympad">getCustomFieldList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the customFieldList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getEmail()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getEmail</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the email property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getExternalId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getExternalId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the externalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getGroupName()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getGroupName</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the groupName property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getGroupOwner()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getGroupOwner</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the groupOwner property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getGroupType()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a>
+      </span>
+      <span class="sympad">getGroupType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the groupType property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInternalId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getInternalId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the internalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getIssueRole()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getIssueRole</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the issueRole property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getParentGroupType()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a>
+      </span>
+      <span class="sympad">getParentGroupType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the parentGroupType property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getRestrictionGroup()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getRestrictionGroup</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the restrictionGroup property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSavedSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getSavedSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the savedSearch property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsFunctionalTeam()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsFunctionalTeam</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isFunctionalTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsInactive()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsInactive</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isInactive property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsPrivate()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsPrivate</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isPrivate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsProductTeam()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsProductTeam</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isProductTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsSalesRep()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsSalesRep</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isSalesRep property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsSalesTeam()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsSalesTeam</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isSalesTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsSavedSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsSavedSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isSavedSearch property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsSupportRep()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsSupportRep</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isSupportRep property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCalendarDefaultView(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupDefView)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCalendarDefaultView</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the calendarDefaultView property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupDefView.html">EntityGroupDefView</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCalendarEndTime(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCalendarEndTime</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the calendarEndTime property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCalendarName(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCalendarName</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the calendarName property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCalendarPeriod(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCalendarPeriod</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the calendarPeriod property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCalendarStartTime(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCalendarStartTime</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the calendarStartTime property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setComments(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setComments</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the comments property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCustomFieldList(com.netsuite.webservices.platform.core_2010_2.CustomFieldList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCustomFieldList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the customFieldList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setEmail(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setEmail</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the email property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setExternalId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExternalId</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the externalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setGroupName(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setGroupName</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the groupName property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setGroupOwner(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setGroupOwner</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the groupOwner property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setGroupType(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setGroupType</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the groupType property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setInternalId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setInternalId</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the internalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsFunctionalTeam(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsFunctionalTeam</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isFunctionalTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsInactive(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsInactive</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isInactive property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsPrivate(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsPrivate</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isPrivate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsProductTeam(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsProductTeam</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isProductTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsSalesRep(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsSalesRep</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isSalesRep property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsSalesTeam(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsSalesTeam</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isSalesTeam property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsSavedSearch(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsSavedSearch</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isSavedSearch property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsSupportRep(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsSupportRep</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isSupportRep property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIssueRole(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIssueRole</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the issueRole property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setParentGroupType(com.netsuite.webservices.lists.relationships_2010_2.types.EntityGroupType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setParentGroupType</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the parentGroupType property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/EntityGroupType.html">EntityGroupType</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setRestrictionGroup(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRestrictionGroup</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the restrictionGroup property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSavedSearch(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSavedSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the savedSearch property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

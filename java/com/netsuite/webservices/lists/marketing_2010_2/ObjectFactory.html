@@ -1,0 +1,4001 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  ObjectFactory
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html">ObjectFactory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>ObjectFactory</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.lists.marketing_2010_2.ObjectFactory</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>This object contains factory methods for each 
+ Java content interface and Java element interface 
+ generated in the com.netsuite.webservices.lists.marketing_2010_2 package. 
+ <p>An ObjectFactory allows you to programatically 
+ construct new instances of the Java representation 
+ for XML content. The Java representation of XML 
+ content can consist of schema derived interfaces 
+ and classes representing the binding of schema 
+ type definitions, element declarations and model 
+ groups.  Factory methods for each of these are 
+ provided in this class.
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignAudience_QNAME">_CampaignAudience_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignCategory_QNAME">_CampaignCategory_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignChannel_QNAME">_CampaignChannel_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignFamily_QNAME">_CampaignFamily_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignOffer_QNAME">_CampaignOffer_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignResponse_QNAME">_CampaignResponse_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignSearchEngine_QNAME">_CampaignSearchEngine_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignSearch_QNAME">_CampaignSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignSubscription_QNAME">_CampaignSubscription_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_CampaignVertical_QNAME">_CampaignVertical_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_Campaign_QNAME">_Campaign_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_PromotionCodeSearch_QNAME">_PromotionCodeSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#_PromotionCode_QNAME">_PromotionCode_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#ObjectFactory()">ObjectFactory</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.netsuite.webservices.lists.marketing_2010_2
+ 
+</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaign(com.netsuite.webservices.lists.marketing_2010_2.Campaign)">createCampaign</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaign()">createCampaign</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignAudience()">createCampaignAudience</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignAudience(com.netsuite.webservices.lists.marketing_2010_2.CampaignAudience)">createCampaignAudience</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignCategory(com.netsuite.webservices.lists.marketing_2010_2.CampaignCategory)">createCampaignCategory</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignCategory()">createCampaignCategory</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignChannel()">createCampaignChannel</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignChannel(com.netsuite.webservices.lists.marketing_2010_2.CampaignChannel)">createCampaignChannel</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignDirectMail()">createCampaignDirectMail</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignDirectMailList()">createCampaignDirectMailList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEmail()">createCampaignEmail</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEmailList()">createCampaignEmailList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEvent()">createCampaignEvent</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEventList()">createCampaignEventList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEventResponse()">createCampaignEventResponse</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignEventResponseList()">createCampaignEventResponseList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignFamily()">createCampaignFamily</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignFamily(com.netsuite.webservices.lists.marketing_2010_2.CampaignFamily)">createCampaignFamily</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignOffer()">createCampaignOffer</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignOffer(com.netsuite.webservices.lists.marketing_2010_2.CampaignOffer)">createCampaignOffer</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignResponse(com.netsuite.webservices.lists.marketing_2010_2.CampaignResponse)">createCampaignResponse</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignResponse()">createCampaignResponse</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignResponseResponses()">createCampaignResponseResponses</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignResponseResponsesList()">createCampaignResponseResponsesList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearch(com.netsuite.webservices.lists.marketing_2010_2.CampaignSearch)">createCampaignSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearch()">createCampaignSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearchAdvanced()">createCampaignSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearchEngine()">createCampaignSearchEngine</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearchEngine(com.netsuite.webservices.lists.marketing_2010_2.CampaignSearchEngine)">createCampaignSearchEngine</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSearchRow()">createCampaignSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSubscription()">createCampaignSubscription</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignSubscription(com.netsuite.webservices.lists.marketing_2010_2.CampaignSubscription)">createCampaignSubscription</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignVertical()">createCampaignVertical</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createCampaignVertical(com.netsuite.webservices.lists.marketing_2010_2.CampaignVertical)">createCampaignVertical</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCode(com.netsuite.webservices.lists.marketing_2010_2.PromotionCode)">createPromotionCode</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCode()">createPromotionCode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeCurrency()">createPromotionCodeCurrency</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeCurrencyList()">createPromotionCodeCurrencyList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeItems()">createPromotionCodeItems</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeItemsList()">createPromotionCodeItemsList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodePartners()">createPromotionCodePartners</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodePartnersList()">createPromotionCodePartnersList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeSearch()">createPromotionCodeSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeSearch(com.netsuite.webservices.lists.marketing_2010_2.PromotionCodeSearch)">createPromotionCodeSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeSearchAdvanced()">createPromotionCodeSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html#createPromotionCodeSearchRow()">createPromotionCodeSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="_CampaignAudience_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignAudience_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignCategory_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignCategory_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignChannel_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignChannel_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignFamily_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignFamily_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignOffer_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignOffer_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignResponse_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignResponse_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignSearchEngine_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignSearchEngine_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignSubscription_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignSubscription_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_CampaignVertical_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _CampaignVertical_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_Campaign_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _Campaign_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_PromotionCodeSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _PromotionCodeSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_PromotionCode_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _PromotionCode_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="ObjectFactory()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ObjectFactory</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.netsuite.webservices.lists.marketing_2010_2
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="createCampaign(com.netsuite.webservices.lists.marketing_2010_2.Campaign)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a>&gt;
+      </span>
+      <span class="sympad">createCampaign</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaign()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a>
+      </span>
+      <span class="sympad">createCampaign</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignAudience()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a>
+      </span>
+      <span class="sympad">createCampaignAudience</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignAudience(com.netsuite.webservices.lists.marketing_2010_2.CampaignAudience)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a>&gt;
+      </span>
+      <span class="sympad">createCampaignAudience</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignCategory(com.netsuite.webservices.lists.marketing_2010_2.CampaignCategory)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a>&gt;
+      </span>
+      <span class="sympad">createCampaignCategory</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignCategory()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a>
+      </span>
+      <span class="sympad">createCampaignCategory</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignChannel()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a>
+      </span>
+      <span class="sympad">createCampaignChannel</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignChannel(com.netsuite.webservices.lists.marketing_2010_2.CampaignChannel)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a>&gt;
+      </span>
+      <span class="sympad">createCampaignChannel</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignDirectMail()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a>
+      </span>
+      <span class="sympad">createCampaignDirectMail</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignDirectMailList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a>
+      </span>
+      <span class="sympad">createCampaignDirectMailList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEmail()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a>
+      </span>
+      <span class="sympad">createCampaignEmail</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEmailList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a>
+      </span>
+      <span class="sympad">createCampaignEmailList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEvent()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a>
+      </span>
+      <span class="sympad">createCampaignEvent</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEventList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a>
+      </span>
+      <span class="sympad">createCampaignEventList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEventResponse()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a>
+      </span>
+      <span class="sympad">createCampaignEventResponse</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignEventResponseList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a>
+      </span>
+      <span class="sympad">createCampaignEventResponseList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignFamily()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a>
+      </span>
+      <span class="sympad">createCampaignFamily</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignFamily(com.netsuite.webservices.lists.marketing_2010_2.CampaignFamily)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a>&gt;
+      </span>
+      <span class="sympad">createCampaignFamily</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignOffer()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a>
+      </span>
+      <span class="sympad">createCampaignOffer</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignOffer(com.netsuite.webservices.lists.marketing_2010_2.CampaignOffer)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a>&gt;
+      </span>
+      <span class="sympad">createCampaignOffer</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignResponse(com.netsuite.webservices.lists.marketing_2010_2.CampaignResponse)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a>&gt;
+      </span>
+      <span class="sympad">createCampaignResponse</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignResponse()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a>
+      </span>
+      <span class="sympad">createCampaignResponse</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignResponseResponses()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a>
+      </span>
+      <span class="sympad">createCampaignResponseResponses</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignResponseResponsesList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a>
+      </span>
+      <span class="sympad">createCampaignResponseResponsesList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearch(com.netsuite.webservices.lists.marketing_2010_2.CampaignSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a>&gt;
+      </span>
+      <span class="sympad">createCampaignSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a>
+      </span>
+      <span class="sympad">createCampaignSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a>
+      </span>
+      <span class="sympad">createCampaignSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearchEngine()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a>
+      </span>
+      <span class="sympad">createCampaignSearchEngine</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearchEngine(com.netsuite.webservices.lists.marketing_2010_2.CampaignSearchEngine)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a>&gt;
+      </span>
+      <span class="sympad">createCampaignSearchEngine</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a>
+      </span>
+      <span class="sympad">createCampaignSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSubscription()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a>
+      </span>
+      <span class="sympad">createCampaignSubscription</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignSubscription(com.netsuite.webservices.lists.marketing_2010_2.CampaignSubscription)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a>&gt;
+      </span>
+      <span class="sympad">createCampaignSubscription</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignVertical()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a>
+      </span>
+      <span class="sympad">createCampaignVertical</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createCampaignVertical(com.netsuite.webservices.lists.marketing_2010_2.CampaignVertical)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a>&gt;
+      </span>
+      <span class="sympad">createCampaignVertical</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCode(com.netsuite.webservices.lists.marketing_2010_2.PromotionCode)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a>&gt;
+      </span>
+      <span class="sympad">createPromotionCode</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCode()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a>
+      </span>
+      <span class="sympad">createPromotionCode</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeCurrency()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a>
+      </span>
+      <span class="sympad">createPromotionCodeCurrency</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeCurrencyList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a>
+      </span>
+      <span class="sympad">createPromotionCodeCurrencyList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeItems()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a>
+      </span>
+      <span class="sympad">createPromotionCodeItems</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeItemsList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a>
+      </span>
+      <span class="sympad">createPromotionCodeItemsList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodePartners()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a>
+      </span>
+      <span class="sympad">createPromotionCodePartners</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodePartnersList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a>
+      </span>
+      <span class="sympad">createPromotionCodePartnersList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a>
+      </span>
+      <span class="sympad">createPromotionCodeSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeSearch(com.netsuite.webservices.lists.marketing_2010_2.PromotionCodeSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a>&gt;
+      </span>
+      <span class="sympad">createPromotionCodeSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a>
+      </span>
+      <span class="sympad">createPromotionCodeSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createPromotionCodeSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a>
+      </span>
+      <span class="sympad">createPromotionCodeSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

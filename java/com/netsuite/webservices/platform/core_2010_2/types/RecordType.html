@@ -1,0 +1,6466 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  RecordType
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/ObjectFactory.html">ObjectFactory</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/AsyncStatusType.html">AsyncStatusType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/CalendarEventAttendeeResponse.html">CalendarEventAttendeeResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/DeletedRecordType.html">DeletedRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/DurationUnit.html">DurationUnit</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetAllRecordType.html">GetAllRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetCustomizationType.html">GetCustomizationType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetSelectValueFilterOperator.html">GetSelectValueFilterOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeAuxRefType.html">InitializeAuxRefType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeRefType.html">InitializeRefType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeType.html">InitializeType</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDateFieldOperator.html">SearchDateFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDoubleFieldOperator.html">SearchDoubleFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchEnumMultiSelectFieldOperator.html">SearchEnumMultiSelectFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchLongFieldOperator.html">SearchLongFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchMultiSelectFieldOperator.html">SearchMultiSelectFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchRecordType.html">SearchRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchStringFieldOperator.html">SearchStringFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchTextNumberFieldOperator.html">SearchTextNumberFieldOperator</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+  <a href="#enumconstants">Enums</a>
+  
+
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+    final 
+    
+    enum
+<h1>RecordType</h1>
+
+
+
+  
+  
+  
+
+  
+    extends Enum&lt;E&nbsp;extends&nbsp;Enum&lt;E&gt;&gt;<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Enum&lt;E&nbsp;extends&nbsp;java.lang.Enum&lt;E&gt;&gt;</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.platform.core_2010_2.types.RecordType</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p><p>Java class for RecordType.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ <p>
+ <pre>
+ &lt;simpleType name="RecordType">
+   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     &lt;enumeration value="account"/>
+     &lt;enumeration value="accountingPeriod"/>
+     &lt;enumeration value="assemblyBuild"/>
+     &lt;enumeration value="assemblyUnbuild"/>
+     &lt;enumeration value="assemblyItem"/>
+     &lt;enumeration value="bin"/>
+     &lt;enumeration value="budget"/>
+     &lt;enumeration value="budgetCategory"/>
+     &lt;enumeration value="calendarEvent"/>
+     &lt;enumeration value="campaign"/>
+     &lt;enumeration value="campaignAudience"/>
+     &lt;enumeration value="campaignCategory"/>
+     &lt;enumeration value="campaignChannel"/>
+     &lt;enumeration value="campaignFamily"/>
+     &lt;enumeration value="campaignOffer"/>
+     &lt;enumeration value="campaignResponse"/>
+     &lt;enumeration value="campaignSearchEngine"/>
+     &lt;enumeration value="campaignSubscription"/>
+     &lt;enumeration value="campaignVertical"/>
+     &lt;enumeration value="cashRefund"/>
+     &lt;enumeration value="cashSale"/>
+     &lt;enumeration value="check"/>
+     &lt;enumeration value="classification"/>
+     &lt;enumeration value="contact"/>
+     &lt;enumeration value="contactCategory"/>
+     &lt;enumeration value="contactRole"/>
+     &lt;enumeration value="creditMemo"/>
+     &lt;enumeration value="crmCustomField"/>
+     &lt;enumeration value="currency"/>
+     &lt;enumeration value="customList"/>
+     &lt;enumeration value="customRecord"/>
+     &lt;enumeration value="customRecordCustomField"/>
+     &lt;enumeration value="customRecordType"/>
+     &lt;enumeration value="customer"/>
+     &lt;enumeration value="customerCategory"/>
+     &lt;enumeration value="customerDeposit"/>
+     &lt;enumeration value="customerPayment"/>
+     &lt;enumeration value="customerRefund"/>
+     &lt;enumeration value="customerStatus"/>
+     &lt;enumeration value="depositApplication"/>
+     &lt;enumeration value="department"/>
+     &lt;enumeration value="descriptionItem"/>
+     &lt;enumeration value="discountItem"/>
+     &lt;enumeration value="downloadItem"/>
+     &lt;enumeration value="employee"/>
+     &lt;enumeration value="entityCustomField"/>
+     &lt;enumeration value="entityGroup"/>
+     &lt;enumeration value="estimate"/>
+     &lt;enumeration value="expenseCategory"/>
+     &lt;enumeration value="expenseReport"/>
+     &lt;enumeration value="file"/>
+     &lt;enumeration value="folder"/>
+     &lt;enumeration value="giftCertificate"/>
+     &lt;enumeration value="giftCertificateItem"/>
+     &lt;enumeration value="interCompanyJournalEntry"/>
+     &lt;enumeration value="interCompanyTransferOrder"/>
+     &lt;enumeration value="inventoryAdjustment"/>
+     &lt;enumeration value="inventoryItem"/>
+     &lt;enumeration value="invoice"/>
+     &lt;enumeration value="itemCustomField"/>
+     &lt;enumeration value="itemFulfillment"/>
+     &lt;enumeration value="itemNumberCustomField"/>
+     &lt;enumeration value="itemOptionCustomField"/>
+     &lt;enumeration value="issue"/>
+     &lt;enumeration value="job"/>
+     &lt;enumeration value="jobStatus"/>
+     &lt;enumeration value="jobType"/>
+     &lt;enumeration value="itemReceipt"/>
+     &lt;enumeration value="journalEntry"/>
+     &lt;enumeration value="kitItem"/>
+     &lt;enumeration value="leadSource"/>
+     &lt;enumeration value="location"/>
+     &lt;enumeration value="lotNumberedInventoryItem"/>
+     &lt;enumeration value="lotNumberedAssemblyItem"/>
+     &lt;enumeration value="markupItem"/>
+     &lt;enumeration value="message"/>
+     &lt;enumeration value="nonInventoryPurchaseItem"/>
+     &lt;enumeration value="nonInventoryResaleItem"/>
+     &lt;enumeration value="nonInventorySaleItem"/>
+     &lt;enumeration value="note"/>
+     &lt;enumeration value="noteType"/>
+     &lt;enumeration value="opportunity"/>
+     &lt;enumeration value="otherChargePurchaseItem"/>
+     &lt;enumeration value="otherChargeResaleItem"/>
+     &lt;enumeration value="otherChargeSaleItem"/>
+     &lt;enumeration value="otherCustomField"/>
+     &lt;enumeration value="partner"/>
+     &lt;enumeration value="partnerCategory"/>
+     &lt;enumeration value="paymentItem"/>
+     &lt;enumeration value="paymentMethod"/>
+     &lt;enumeration value="phoneCall"/>
+     &lt;enumeration value="priceLevel"/>
+     &lt;enumeration value="projectTask"/>
+     &lt;enumeration value="promotionCode"/>
+     &lt;enumeration value="purchaseOrder"/>
+     &lt;enumeration value="returnAuthorization"/>
+     &lt;enumeration value="salesOrder"/>
+     &lt;enumeration value="salesRole"/>
+     &lt;enumeration value="salesTaxItem"/>
+     &lt;enumeration value="serializedInventoryItem"/>
+     &lt;enumeration value="serializedAssemblyItem"/>
+     &lt;enumeration value="servicePurchaseItem"/>
+     &lt;enumeration value="serviceResaleItem"/>
+     &lt;enumeration value="serviceSaleItem"/>
+     &lt;enumeration value="solution"/>
+     &lt;enumeration value="siteCategory"/>
+     &lt;enumeration value="state"/>
+     &lt;enumeration value="subsidiary"/>
+     &lt;enumeration value="subtotalItem"/>
+     &lt;enumeration value="supportCase"/>
+     &lt;enumeration value="supportCaseIssue"/>
+     &lt;enumeration value="supportCaseOrigin"/>
+     &lt;enumeration value="supportCasePriority"/>
+     &lt;enumeration value="supportCaseStatus"/>
+     &lt;enumeration value="supportCaseType"/>
+     &lt;enumeration value="task"/>
+     &lt;enumeration value="taxGroup"/>
+     &lt;enumeration value="taxType"/>
+     &lt;enumeration value="term"/>
+     &lt;enumeration value="timeBill"/>
+     &lt;enumeration value="topic"/>
+     &lt;enumeration value="transferOrder"/>
+     &lt;enumeration value="transactionBodyCustomField"/>
+     &lt;enumeration value="transactionColumnCustomField"/>
+     &lt;enumeration value="unitsType"/>
+     &lt;enumeration value="vendor"/>
+     &lt;enumeration value="vendorCategory"/>
+     &lt;enumeration value="vendorBill"/>
+     &lt;enumeration value="vendorPayment"/>
+     &lt;enumeration value="winLossReason"/>
+   &lt;/restriction>
+ &lt;/simpleType>
+ </pre>
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="enumconstants" class="jd-sumtable"><tr><th colspan="12">Enum Values</th></tr>
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ACCOUNT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ACCOUNTING_PERIOD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ASSEMBLY_BUILD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ASSEMBLY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ASSEMBLY_UNBUILD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">BIN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">BUDGET&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">BUDGET_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CALENDAR_EVENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_AUDIENCE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_CHANNEL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_FAMILY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_OFFER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_RESPONSE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_SEARCH_ENGINE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_SUBSCRIPTION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CAMPAIGN_VERTICAL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CASH_REFUND&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CASH_SALE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CHECK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CLASSIFICATION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CONTACT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CONTACT_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CONTACT_ROLE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CREDIT_MEMO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CRM_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CURRENCY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER_DEPOSIT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER_PAYMENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER_REFUND&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOMER_STATUS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOM_LIST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOM_RECORD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOM_RECORD_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">CUSTOM_RECORD_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">DEPARTMENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">DEPOSIT_APPLICATION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">DESCRIPTION_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">DISCOUNT_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">DOWNLOAD_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">EMPLOYEE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ENTITY_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ENTITY_GROUP&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ESTIMATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">EXPENSE_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">EXPENSE_REPORT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">FILE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">FOLDER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">GIFT_CERTIFICATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">GIFT_CERTIFICATE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">INTER_COMPANY_JOURNAL_ENTRY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">INTER_COMPANY_TRANSFER_ORDER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">INVENTORY_ADJUSTMENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">INVENTORY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">INVOICE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ISSUE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ITEM_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ITEM_FULFILLMENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ITEM_NUMBER_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ITEM_OPTION_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">ITEM_RECEIPT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">JOB&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">JOB_STATUS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">JOB_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">JOURNAL_ENTRY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">KIT_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">LEAD_SOURCE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">LOCATION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">LOT_NUMBERED_ASSEMBLY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">LOT_NUMBERED_INVENTORY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">MARKUP_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">MESSAGE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">NON_INVENTORY_PURCHASE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">NON_INVENTORY_RESALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">NON_INVENTORY_SALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">NOTE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">NOTE_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">OPPORTUNITY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">OTHER_CHARGE_PURCHASE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">OTHER_CHARGE_RESALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">OTHER_CHARGE_SALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">OTHER_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PARTNER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PARTNER_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PAYMENT_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PAYMENT_METHOD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PHONE_CALL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PRICE_LEVEL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PROJECT_TASK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PROMOTION_CODE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">PURCHASE_ORDER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">RETURN_AUTHORIZATION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SALES_ORDER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SALES_ROLE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SALES_TAX_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SERIALIZED_ASSEMBLY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SERIALIZED_INVENTORY_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SERVICE_PURCHASE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SERVICE_RESALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SERVICE_SALE_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SITE_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SOLUTION&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">STATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUBSIDIARY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUBTOTAL_ITEM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE_ISSUE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE_ORIGIN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE_PRIORITY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE_STATUS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">SUPPORT_CASE_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TASK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TAX_GROUP&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TAX_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TERM&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TIME_BILL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TOPIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TRANSACTION_BODY_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TRANSACTION_COLUMN_CUSTOM_FIELD&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">TRANSFER_ORDER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">UNITS_TYPE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">VENDOR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">VENDOR_BILL&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">VENDOR_CATEGORY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">VENDOR_PAYMENT&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>&nbsp;</td>
+        <td class="jd-linkcol">WIN_LOSS_REASON&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          Class&lt;?&nbsp;extends&nbsp;<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#recordClass">recordClass</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#value">value</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+java.lang.Enum
+<div id="inherited-fields-java.lang.Enum">
+  <div id="inherited-fields-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol">name</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          int</nobr></td>
+          <td class="jd-linkcol">ordinal</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#fromValue(java.lang.String)">fromValue</a></span>(String v)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Class&lt;?&nbsp;extends&nbsp;<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#getRecordClass()">getRecordClass</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#value()">value</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#valueOf(java.lang.String)">valueOf</a></span>(String name)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/RecordType.html#values()">values</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Enum
+
+<div id="inherited-methods-java.lang.Enum">
+  <div id="inherited-methods-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(E arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;E&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getDeclaringClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">name</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">ordinal</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            &lt;T&nbsp;extends&nbsp;Enum&lt;T&gt;&gt;
+            T</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">valueOf</span>(Class&lt;T&gt; arg0, String arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Comparable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Comparable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.lang.Comparable
+
+<div id="inherited-methods-java.lang.Comparable">
+  <div id="inherited-methods-java.lang.Comparable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Comparable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(T arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Enum Values</h2>
+
+
+
+
+<A NAME="ACCOUNT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ACCOUNT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ACCOUNTING_PERIOD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ACCOUNTING_PERIOD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ASSEMBLY_BUILD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ASSEMBLY_BUILD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ASSEMBLY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ASSEMBLY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ASSEMBLY_UNBUILD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ASSEMBLY_UNBUILD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BIN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        BIN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BUDGET"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        BUDGET
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BUDGET_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        BUDGET_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CALENDAR_EVENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CALENDAR_EVENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_AUDIENCE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_AUDIENCE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_CHANNEL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_CHANNEL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_FAMILY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_FAMILY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_OFFER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_OFFER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_RESPONSE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_RESPONSE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_SEARCH_ENGINE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_SEARCH_ENGINE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_SUBSCRIPTION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_SUBSCRIPTION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CAMPAIGN_VERTICAL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CAMPAIGN_VERTICAL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CASH_REFUND"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CASH_REFUND
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CASH_SALE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CASH_SALE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CHECK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CHECK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CLASSIFICATION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CLASSIFICATION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CONTACT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CONTACT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CONTACT_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CONTACT_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CONTACT_ROLE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CONTACT_ROLE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CREDIT_MEMO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CREDIT_MEMO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CRM_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CRM_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CURRENCY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CURRENCY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER_DEPOSIT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER_DEPOSIT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER_PAYMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER_PAYMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER_REFUND"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER_REFUND
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOMER_STATUS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOMER_STATUS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOM_LIST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOM_LIST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOM_RECORD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOM_RECORD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOM_RECORD_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOM_RECORD_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CUSTOM_RECORD_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        CUSTOM_RECORD_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DEPARTMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        DEPARTMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DEPOSIT_APPLICATION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        DEPOSIT_APPLICATION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DESCRIPTION_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        DESCRIPTION_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DISCOUNT_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        DISCOUNT_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DOWNLOAD_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        DOWNLOAD_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="EMPLOYEE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        EMPLOYEE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ENTITY_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ENTITY_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ENTITY_GROUP"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ENTITY_GROUP
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ESTIMATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ESTIMATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXPENSE_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        EXPENSE_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="EXPENSE_REPORT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        EXPENSE_REPORT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FILE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        FILE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FOLDER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        FOLDER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="GIFT_CERTIFICATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        GIFT_CERTIFICATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="GIFT_CERTIFICATE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        GIFT_CERTIFICATE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INTER_COMPANY_JOURNAL_ENTRY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        INTER_COMPANY_JOURNAL_ENTRY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INTER_COMPANY_TRANSFER_ORDER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        INTER_COMPANY_TRANSFER_ORDER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INVENTORY_ADJUSTMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        INVENTORY_ADJUSTMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INVENTORY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        INVENTORY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INVOICE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        INVOICE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ISSUE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ISSUE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITEM_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ITEM_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITEM_FULFILLMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ITEM_FULFILLMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITEM_NUMBER_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ITEM_NUMBER_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITEM_OPTION_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ITEM_OPTION_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITEM_RECEIPT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        ITEM_RECEIPT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JOB"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        JOB
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JOB_STATUS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        JOB_STATUS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JOB_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        JOB_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JOURNAL_ENTRY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        JOURNAL_ENTRY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="KIT_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        KIT_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LEAD_SOURCE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        LEAD_SOURCE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LOCATION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        LOCATION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LOT_NUMBERED_ASSEMBLY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        LOT_NUMBERED_ASSEMBLY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LOT_NUMBERED_INVENTORY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        LOT_NUMBERED_INVENTORY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MARKUP_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        MARKUP_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MESSAGE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        MESSAGE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NON_INVENTORY_PURCHASE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        NON_INVENTORY_PURCHASE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NON_INVENTORY_RESALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        NON_INVENTORY_RESALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NON_INVENTORY_SALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        NON_INVENTORY_SALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        NOTE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NOTE_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        NOTE_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OPPORTUNITY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        OPPORTUNITY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OTHER_CHARGE_PURCHASE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        OTHER_CHARGE_PURCHASE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OTHER_CHARGE_RESALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        OTHER_CHARGE_RESALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OTHER_CHARGE_SALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        OTHER_CHARGE_SALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OTHER_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        OTHER_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PARTNER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PARTNER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PARTNER_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PARTNER_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PAYMENT_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PAYMENT_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PAYMENT_METHOD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PAYMENT_METHOD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PHONE_CALL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PHONE_CALL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PRICE_LEVEL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PRICE_LEVEL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROJECT_TASK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PROJECT_TASK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PROMOTION_CODE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PROMOTION_CODE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PURCHASE_ORDER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        PURCHASE_ORDER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="RETURN_AUTHORIZATION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        RETURN_AUTHORIZATION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SALES_ORDER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SALES_ORDER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SALES_ROLE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SALES_ROLE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SALES_TAX_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SALES_TAX_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERIALIZED_ASSEMBLY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SERIALIZED_ASSEMBLY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERIALIZED_INVENTORY_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SERIALIZED_INVENTORY_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERVICE_PURCHASE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SERVICE_PURCHASE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERVICE_RESALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SERVICE_RESALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SERVICE_SALE_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SERVICE_SALE_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SITE_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SITE_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SOLUTION"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SOLUTION
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="STATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        STATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUBSIDIARY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUBSIDIARY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUBTOTAL_ITEM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUBTOTAL_ITEM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE_ISSUE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE_ISSUE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE_ORIGIN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE_ORIGIN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE_PRIORITY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE_PRIORITY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE_STATUS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE_STATUS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUPPORT_CASE_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        SUPPORT_CASE_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TASK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TASK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TAX_GROUP"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TAX_GROUP
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TAX_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TAX_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TERM"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TERM
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TIME_BILL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TIME_BILL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TOPIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TOPIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TRANSACTION_BODY_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TRANSACTION_BODY_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TRANSACTION_COLUMN_CUSTOM_FIELD"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TRANSACTION_COLUMN_CUSTOM_FIELD
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TRANSFER_ORDER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        TRANSFER_ORDER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="UNITS_TYPE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        UNITS_TYPE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="VENDOR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        VENDOR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="VENDOR_BILL"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        VENDOR_BILL
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="VENDOR_CATEGORY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        VENDOR_CATEGORY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="VENDOR_PAYMENT"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        VENDOR_PAYMENT
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="WIN_LOSS_REASON"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+        WIN_LOSS_REASON
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="recordClass"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        Class&lt;?&nbsp;extends&nbsp;<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;
+      </span>
+        recordClass
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="value"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        String
+      </span>
+        value
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="fromValue(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+      <span class="sympad">fromValue</span>
+      <span class="normal">(String v)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>v</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getRecordClass()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Class&lt;?&nbsp;extends&nbsp;<a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a>&gt;
+      </span>
+      <span class="sympad">getRecordClass</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="value()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">value</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="valueOf(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a>
+      </span>
+      <span class="sympad">valueOf</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="values()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType[]</a>
+      </span>
+      <span class="sympad">values</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

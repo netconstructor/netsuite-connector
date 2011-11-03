@@ -1,0 +1,6927 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  Campaign
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/Campaign.html">Campaign</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignAudience.html">CampaignAudience</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignCategory.html">CampaignCategory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignChannel.html">CampaignChannel</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMail.html">CampaignDirectMail</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmail.html">CampaignEmail</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEvent.html">CampaignEvent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponse.html">CampaignEventResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignFamily.html">CampaignFamily</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignOffer.html">CampaignOffer</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponse.html">CampaignResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponses.html">CampaignResponseResponses</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignResponseResponsesList.html">CampaignResponseResponsesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearch.html">CampaignSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchAdvanced.html">CampaignSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchEngine.html">CampaignSearchEngine</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSearchRow.html">CampaignSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignSubscription.html">CampaignSubscription</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignVertical.html">CampaignVertical</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/ObjectFactory.html">ObjectFactory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCode.html">PromotionCode</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrency.html">PromotionCodeCurrency</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeCurrencyList.html">PromotionCodeCurrencyList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItems.html">PromotionCodeItems</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeItemsList.html">PromotionCodeItemsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartners.html">PromotionCodePartners</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodePartnersList.html">PromotionCodePartnersList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearch.html">PromotionCodeSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchAdvanced.html">PromotionCodeSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/PromotionCodeSearchRow.html">PromotionCodeSearchRow</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>Campaign</h1>
+
+
+
+  
+  
+  
+
+  
+    extends <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">Record</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.lists.marketing_2010_2.Campaign</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p><p>Java class for Campaign complex type.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ 
+ <pre>
+ &lt;complexType name="Campaign">
+   &lt;complexContent>
+     &lt;extension base="{urn:core_2010_2.platform.webservices.netsuite.com}Record">
+       &lt;sequence>
+         &lt;element name="customForm" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="campaignId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="category" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="owner" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="baseCost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="cost" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="expectedRevenue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="isInactive" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="local" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+         &lt;element name="totalRevenue" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="roi" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="profit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="costPerCustomer" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="convCostPerCustomer" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
+         &lt;element name="conversions" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+         &lt;element name="leadsGenerated" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+         &lt;element name="uniqueVisitors" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
+         &lt;element name="vertical" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="audience" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="offer" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="promotionCode" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="itemList" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRefList" minOccurs="0"/>
+         &lt;element name="family" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="searchEngine" type="{urn:core_2010_2.platform.webservices.netsuite.com}RecordRef" minOccurs="0"/>
+         &lt;element name="keyword" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         &lt;element name="campaignEmailList" type="{urn:marketing_2010_2.lists.webservices.netsuite.com}CampaignEmailList" minOccurs="0"/>
+         &lt;element name="campaignDirectMailList" type="{urn:marketing_2010_2.lists.webservices.netsuite.com}CampaignDirectMailList" minOccurs="0"/>
+         &lt;element name="campaignEventList" type="{urn:marketing_2010_2.lists.webservices.netsuite.com}CampaignEventList" minOccurs="0"/>
+         &lt;element name="eventResponseList" type="{urn:marketing_2010_2.lists.webservices.netsuite.com}CampaignEventResponseList" minOccurs="0"/>
+         &lt;element name="customFieldList" type="{urn:core_2010_2.platform.webservices.netsuite.com}CustomFieldList" minOccurs="0"/>
+       &lt;/sequence>
+       &lt;attribute name="internalId" type="{http://www.w3.org/2001/XMLSchema}string" />
+       &lt;attribute name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" />
+     &lt;/extension>
+   &lt;/complexContent>
+ &lt;/complexType>
+ </pre>
+ 
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#audience">audience</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#baseCost">baseCost</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#campaignDirectMailList">campaignDirectMailList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#campaignEmailList">campaignEmailList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#campaignEventList">campaignEventList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#campaignId">campaignId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#category">category</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#convCostPerCustomer">convCostPerCustomer</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Long</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#conversions">conversions</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#cost">cost</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#costPerCustomer">costPerCustomer</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#customFieldList">customFieldList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#customForm">customForm</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          XMLGregorianCalendar</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#endDate">endDate</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#eventResponseList">eventResponseList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#expectedRevenue">expectedRevenue</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#externalId">externalId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#family">family</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#internalId">internalId</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#isInactive">isInactive</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#itemList">itemList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#keyword">keyword</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Long</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#leadsGenerated">leadsGenerated</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Boolean</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#local">local</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#message">message</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#offer">offer</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#owner">owner</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#profit">profit</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#promotionCode">promotionCode</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#roi">roi</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#searchEngine">searchEngine</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          XMLGregorianCalendar</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#startDate">startDate</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#title">title</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Double</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#totalRevenue">totalRevenue</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          Long</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#uniqueVisitors">uniqueVisitors</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#url">url</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#vertical">vertical</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+<a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a>
+<div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record">
+  <div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-com.netsuite.webservices.platform.core_2010_2.Record-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          protected
+          
+          
+          <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a></nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#nullFieldList">nullFieldList</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+</table>
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#Campaign()">Campaign</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getAudience()">getAudience</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the audience property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getBaseCost()">getBaseCost</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the baseCost property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCampaignDirectMailList()">getCampaignDirectMailList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the campaignDirectMailList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCampaignEmailList()">getCampaignEmailList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the campaignEmailList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCampaignEventList()">getCampaignEventList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the campaignEventList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCampaignId()">getCampaignId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the campaignId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCategory()">getCategory</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the category property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getConvCostPerCustomer()">getConvCostPerCustomer</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the convCostPerCustomer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Long</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getConversions()">getConversions</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the conversions property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCost()">getCost</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the cost property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCostPerCustomer()">getCostPerCustomer</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the costPerCustomer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCustomFieldList()">getCustomFieldList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the customFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getCustomForm()">getCustomForm</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the customForm property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            XMLGregorianCalendar</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getEndDate()">getEndDate</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the endDate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getEventResponseList()">getEventResponseList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the eventResponseList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getExpectedRevenue()">getExpectedRevenue</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the expectedRevenue property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getExternalId()">getExternalId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the externalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getFamily()">getFamily</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the family property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getInternalId()">getInternalId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the internalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getItemList()">getItemList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the itemList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getKeyword()">getKeyword</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the keyword property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Long</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getLeadsGenerated()">getLeadsGenerated</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the leadsGenerated property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getMessage()">getMessage</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the message property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getOffer()">getOffer</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the offer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getOwner()">getOwner</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the owner property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getProfit()">getProfit</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the profit property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getPromotionCode()">getPromotionCode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the promotionCode property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getRoi()">getRoi</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the roi property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getSearchEngine()">getSearchEngine</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the searchEngine property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            XMLGregorianCalendar</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getStartDate()">getStartDate</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the startDate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getTitle()">getTitle</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the title property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Double</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getTotalRevenue()">getTotalRevenue</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the totalRevenue property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Long</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getUniqueVisitors()">getUniqueVisitors</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the uniqueVisitors property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getUrl()">getUrl</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the url property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#getVertical()">getVertical</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the vertical property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#isIsInactive()">isIsInactive</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the isInactive property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#isLocal()">isLocal</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the local property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setAudience(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setAudience</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the audience property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setBaseCost(java.lang.Double)">setBaseCost</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the baseCost property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCampaignDirectMailList(com.netsuite.webservices.lists.marketing_2010_2.CampaignDirectMailList)">setCampaignDirectMailList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the campaignDirectMailList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCampaignEmailList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEmailList)">setCampaignEmailList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the campaignEmailList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCampaignEventList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEventList)">setCampaignEventList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the campaignEventList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCampaignId(java.lang.String)">setCampaignId</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the campaignId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCategory(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setCategory</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the category property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setConvCostPerCustomer(java.lang.Double)">setConvCostPerCustomer</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the convCostPerCustomer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setConversions(java.lang.Long)">setConversions</a></span>(Long value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the conversions property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCost(java.lang.Double)">setCost</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the cost property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCostPerCustomer(java.lang.Double)">setCostPerCustomer</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the costPerCustomer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCustomFieldList(com.netsuite.webservices.platform.core_2010_2.CustomFieldList)">setCustomFieldList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the customFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setCustomForm(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setCustomForm</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the customForm property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setEndDate(javax.xml.datatype.XMLGregorianCalendar)">setEndDate</a></span>(XMLGregorianCalendar value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the endDate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setEventResponseList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEventResponseList)">setEventResponseList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the eventResponseList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setExpectedRevenue(java.lang.Double)">setExpectedRevenue</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the expectedRevenue property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setExternalId(java.lang.String)">setExternalId</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the externalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setFamily(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setFamily</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the family property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setInternalId(java.lang.String)">setInternalId</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the internalId property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setIsInactive(java.lang.Boolean)">setIsInactive</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the isInactive property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setItemList(com.netsuite.webservices.platform.core_2010_2.RecordRefList)">setItemList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the itemList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setKeyword(java.lang.String)">setKeyword</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the keyword property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setLeadsGenerated(java.lang.Long)">setLeadsGenerated</a></span>(Long value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the leadsGenerated property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setLocal(java.lang.Boolean)">setLocal</a></span>(Boolean value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the local property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setMessage(java.lang.String)">setMessage</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the message property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setOffer(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setOffer</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the offer property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setOwner(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setOwner</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the owner property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setProfit(java.lang.Double)">setProfit</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the profit property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setPromotionCode(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setPromotionCode</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the promotionCode property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setRoi(java.lang.Double)">setRoi</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the roi property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setSearchEngine(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setSearchEngine</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the searchEngine property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setStartDate(javax.xml.datatype.XMLGregorianCalendar)">setStartDate</a></span>(XMLGregorianCalendar value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the startDate property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setTitle(java.lang.String)">setTitle</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the title property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setTotalRevenue(java.lang.Double)">setTotalRevenue</a></span>(Double value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the totalRevenue property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setUniqueVisitors(java.lang.Long)">setUniqueVisitors</a></span>(Long value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the uniqueVisitors property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setUrl(java.lang.String)">setUrl</a></span>(String value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the url property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/marketing_2010_2/Campaign.html#setVertical(com.netsuite.webservices.platform.core_2010_2.RecordRef)">setVertical</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the vertical property.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html">com.netsuite.webservices.platform.core_2010_2.Record</a>
+
+<div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record">
+  <div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.netsuite.webservices.platform.core_2010_2.Record-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#getNullFieldList()">getNullFieldList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Gets the value of the nullFieldList property.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/platform/core_2010_2/Record.html#setNullFieldList(com.netsuite.webservices.platform.core_2010_2.NullField)">setNullFieldList</a></span>(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/NullField.html">NullField</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Sets the value of the nullFieldList property.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="audience"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        audience
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="baseCost"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        baseCost
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="campaignDirectMailList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a>
+      </span>
+        campaignDirectMailList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="campaignEmailList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a>
+      </span>
+        campaignEmailList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="campaignEventList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a>
+      </span>
+        campaignEventList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="campaignId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        campaignId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="category"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        category
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="convCostPerCustomer"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        convCostPerCustomer
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="conversions"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Long
+      </span>
+        conversions
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="cost"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        cost
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="costPerCustomer"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        costPerCustomer
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="customFieldList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a>
+      </span>
+        customFieldList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="customForm"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        customForm
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="endDate"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        XMLGregorianCalendar
+      </span>
+        endDate
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="eventResponseList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a>
+      </span>
+        eventResponseList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="expectedRevenue"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        expectedRevenue
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="externalId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        externalId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="family"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        family
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="internalId"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        internalId
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="isInactive"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        isInactive
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="itemList"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a>
+      </span>
+        itemList
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="keyword"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        keyword
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="leadsGenerated"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Long
+      </span>
+        leadsGenerated
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="local"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Boolean
+      </span>
+        local
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="message"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        message
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="offer"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        offer
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="owner"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        owner
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="profit"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        profit
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="promotionCode"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        promotionCode
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="roi"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        roi
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="searchEngine"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        searchEngine
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="startDate"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        XMLGregorianCalendar
+      </span>
+        startDate
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="title"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        title
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="totalRevenue"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Double
+      </span>
+        totalRevenue
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="uniqueVisitors"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        Long
+      </span>
+        uniqueVisitors
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="url"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        String
+      </span>
+        url
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="vertical"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+        vertical
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="Campaign()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">Campaign</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="getAudience()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getAudience</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the audience property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBaseCost()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getBaseCost</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the baseCost property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCampaignDirectMailList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a>
+      </span>
+      <span class="sympad">getCampaignDirectMailList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the campaignDirectMailList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCampaignEmailList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a>
+      </span>
+      <span class="sympad">getCampaignEmailList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the campaignEmailList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCampaignEventList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a>
+      </span>
+      <span class="sympad">getCampaignEventList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the campaignEventList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCampaignId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getCampaignId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the campaignId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCategory()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getCategory</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the category property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getConvCostPerCustomer()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getConvCostPerCustomer</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the convCostPerCustomer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getConversions()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Long
+      </span>
+      <span class="sympad">getConversions</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the conversions property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Long
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCost()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getCost</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the cost property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCostPerCustomer()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getCostPerCustomer</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the costPerCustomer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCustomFieldList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a>
+      </span>
+      <span class="sympad">getCustomFieldList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the customFieldList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCustomForm()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getCustomForm</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the customForm property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getEndDate()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        XMLGregorianCalendar
+      </span>
+      <span class="sympad">getEndDate</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the endDate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     XMLGregorianCalendar
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getEventResponseList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a>
+      </span>
+      <span class="sympad">getEventResponseList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the eventResponseList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getExpectedRevenue()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getExpectedRevenue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the expectedRevenue property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getExternalId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getExternalId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the externalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getFamily()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getFamily</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the family property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getInternalId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getInternalId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the internalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getItemList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a>
+      </span>
+      <span class="sympad">getItemList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the itemList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getKeyword()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getKeyword</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the keyword property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getLeadsGenerated()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Long
+      </span>
+      <span class="sympad">getLeadsGenerated</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the leadsGenerated property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Long
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMessage()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getMessage</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the message property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getOffer()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getOffer</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the offer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getOwner()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getOwner</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the owner property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getProfit()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getProfit</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the profit property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPromotionCode()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getPromotionCode</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the promotionCode property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getRoi()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getRoi</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the roi property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSearchEngine()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getSearchEngine</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the searchEngine property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getStartDate()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        XMLGregorianCalendar
+      </span>
+      <span class="sympad">getStartDate</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the startDate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     XMLGregorianCalendar
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTitle()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getTitle</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the title property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getTotalRevenue()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Double
+      </span>
+      <span class="sympad">getTotalRevenue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the totalRevenue property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Double
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getUniqueVisitors()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Long
+      </span>
+      <span class="sympad">getUniqueVisitors</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the uniqueVisitors property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Long
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getUrl()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">getUrl</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the url property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     String
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getVertical()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a>
+      </span>
+      <span class="sympad">getVertical</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the vertical property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isIsInactive()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isIsInactive</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the isInactive property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="isLocal()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        Boolean
+      </span>
+      <span class="sympad">isLocal</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Gets the value of the local property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>possible object is
+     Boolean
+     
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setAudience(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAudience</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the audience property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setBaseCost(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setBaseCost</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the baseCost property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCampaignDirectMailList(com.netsuite.webservices.lists.marketing_2010_2.CampaignDirectMailList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCampaignDirectMailList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the campaignDirectMailList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignDirectMailList.html">CampaignDirectMailList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCampaignEmailList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEmailList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCampaignEmailList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the campaignEmailList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEmailList.html">CampaignEmailList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCampaignEventList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEventList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCampaignEventList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the campaignEventList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventList.html">CampaignEventList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCampaignId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCampaignId</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the campaignId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCategory(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCategory</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the category property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setConvCostPerCustomer(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setConvCostPerCustomer</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the convCostPerCustomer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setConversions(java.lang.Long)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setConversions</span>
+      <span class="normal">(Long value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the conversions property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Long
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCost(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCost</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the cost property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCostPerCustomer(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCostPerCustomer</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the costPerCustomer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCustomFieldList(com.netsuite.webservices.platform.core_2010_2.CustomFieldList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCustomFieldList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the customFieldList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/CustomFieldList.html">CustomFieldList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setCustomForm(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCustomForm</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the customForm property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setEndDate(javax.xml.datatype.XMLGregorianCalendar)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setEndDate</span>
+      <span class="normal">(XMLGregorianCalendar value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the endDate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     XMLGregorianCalendar
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setEventResponseList(com.netsuite.webservices.lists.marketing_2010_2.CampaignEventResponseList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setEventResponseList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the eventResponseList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/CampaignEventResponseList.html">CampaignEventResponseList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setExpectedRevenue(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExpectedRevenue</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the expectedRevenue property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setExternalId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setExternalId</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the externalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setFamily(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setFamily</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the family property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setInternalId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setInternalId</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the internalId property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setIsInactive(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIsInactive</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the isInactive property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setItemList(com.netsuite.webservices.platform.core_2010_2.RecordRefList)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setItemList</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the itemList property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRefList.html">RecordRefList</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setKeyword(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setKeyword</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the keyword property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setLeadsGenerated(java.lang.Long)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLeadsGenerated</span>
+      <span class="normal">(Long value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the leadsGenerated property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Long
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setLocal(java.lang.Boolean)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLocal</span>
+      <span class="normal">(Boolean value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the local property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Boolean
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setMessage(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMessage</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the message property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setOffer(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setOffer</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the offer property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setOwner(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setOwner</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the owner property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setProfit(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setProfit</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the profit property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setPromotionCode(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPromotionCode</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the promotionCode property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setRoi(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRoi</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the roi property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setSearchEngine(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSearchEngine</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the searchEngine property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setStartDate(javax.xml.datatype.XMLGregorianCalendar)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setStartDate</span>
+      <span class="normal">(XMLGregorianCalendar value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the startDate property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     XMLGregorianCalendar
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setTitle(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setTitle</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the title property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setTotalRevenue(java.lang.Double)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setTotalRevenue</span>
+      <span class="normal">(Double value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the totalRevenue property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Double
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setUniqueVisitors(java.lang.Long)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setUniqueVisitors</span>
+      <span class="normal">(Long value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the uniqueVisitors property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     Long
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setUrl(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setUrl</span>
+      <span class="normal">(String value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the url property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     String
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setVertical(com.netsuite.webservices.platform.core_2010_2.RecordRef)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setVertical</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the value of the vertical property.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td>Allowed object is
+     <code><a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/RecordRef.html">RecordRef</a></code>
+     
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

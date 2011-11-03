@@ -1,0 +1,4055 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  ObjectFactory
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/EmailEmployeesList.html">EmailEmployeesList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchAdvanced.html">IssueSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchRow.html">IssueSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersion.html">IssueVersion</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersionList.html">IssueVersionList</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html">ObjectFactory</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solutions.html">Solutions</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchAdvanced.html">SolutionSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchRow.html">SolutionSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionsList.html">SolutionsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopics.html">SolutionTopics</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopicsList.html">SolutionTopicsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateTo.html">SupportCaseEscalateTo</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateToList.html">SupportCaseEscalateToList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchAdvanced.html">SupportCaseSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchRow.html">SupportCaseSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutions.html">SupportCaseSolutions</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutionsList.html">SupportCaseSolutionsList</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchAdvanced.html">TopicSearchAdvanced</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchRow.html">TopicSearchRow</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolution.html">TopicSolution</a></li>
+          <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolutionList.html">TopicSolutionList</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+  <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>ObjectFactory</h1>
+
+
+
+  
+    extends Object<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.lists.support_2010_2.ObjectFactory</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>This object contains factory methods for each 
+ Java content interface and Java element interface 
+ generated in the com.netsuite.webservices.lists.support_2010_2 package. 
+ <p>An ObjectFactory allows you to programatically 
+ construct new instances of the Java representation 
+ for XML content. The Java representation of XML 
+ content can consist of schema derived interfaces 
+ and classes representing the binding of schema 
+ type definitions, element declarations and model 
+ groups.  Factory methods for each of these are 
+ provided in this class.
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_IssueSearch_QNAME">_IssueSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_Issue_QNAME">_Issue_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SolutionSearch_QNAME">_SolutionSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_Solution_QNAME">_Solution_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCaseIssue_QNAME">_SupportCaseIssue_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCaseOrigin_QNAME">_SupportCaseOrigin_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCasePriority_QNAME">_SupportCasePriority_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCaseSearch_QNAME">_SupportCaseSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCaseStatus_QNAME">_SupportCaseStatus_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCaseType_QNAME">_SupportCaseType_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_SupportCase_QNAME">_SupportCase_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_TopicSearch_QNAME">_TopicSearch_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          static
+          final
+          QName</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#_Topic_QNAME">_Topic_QNAME</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#ObjectFactory()">ObjectFactory</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.netsuite.webservices.lists.support_2010_2
+ 
+</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/EmailEmployeesList.html">EmailEmployeesList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createEmailEmployeesList()">createEmailEmployeesList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/EmailEmployeesList.html">EmailEmployeesList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssue(com.netsuite.webservices.lists.support_2010_2.Issue)">createIssue</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssue()">createIssue</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueSearch(com.netsuite.webservices.lists.support_2010_2.IssueSearch)">createIssueSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueSearch()">createIssueSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchAdvanced.html">IssueSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueSearchAdvanced()">createIssueSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchAdvanced.html">IssueSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchRow.html">IssueSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueSearchRow()">createIssueSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchRow.html">IssueSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersion.html">IssueVersion</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueVersion()">createIssueVersion</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersion.html">IssueVersion</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersionList.html">IssueVersionList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createIssueVersionList()">createIssueVersionList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersionList.html">IssueVersionList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolution(com.netsuite.webservices.lists.support_2010_2.Solution)">createSolution</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolution()">createSolution</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionSearch()">createSolutionSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionSearch(com.netsuite.webservices.lists.support_2010_2.SolutionSearch)">createSolutionSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchAdvanced.html">SolutionSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionSearchAdvanced()">createSolutionSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchAdvanced.html">SolutionSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchRow.html">SolutionSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionSearchRow()">createSolutionSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchRow.html">SolutionSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopics.html">SolutionTopics</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionTopics()">createSolutionTopics</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopics.html">SolutionTopics</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopicsList.html">SolutionTopicsList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionTopicsList()">createSolutionTopicsList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopicsList.html">SolutionTopicsList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solutions.html">Solutions</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutions()">createSolutions</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solutions.html">Solutions</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionsList.html">SolutionsList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSolutionsList()">createSolutionsList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionsList.html">SolutionsList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCase(com.netsuite.webservices.lists.support_2010_2.SupportCase)">createSupportCase</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCase()">createSupportCase</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateTo.html">SupportCaseEscalateTo</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseEscalateTo()">createSupportCaseEscalateTo</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateTo.html">SupportCaseEscalateTo</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateToList.html">SupportCaseEscalateToList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseEscalateToList()">createSupportCaseEscalateToList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateToList.html">SupportCaseEscalateToList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseIssue()">createSupportCaseIssue</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseIssue(com.netsuite.webservices.lists.support_2010_2.SupportCaseIssue)">createSupportCaseIssue</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseOrigin()">createSupportCaseOrigin</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseOrigin(com.netsuite.webservices.lists.support_2010_2.SupportCaseOrigin)">createSupportCaseOrigin</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCasePriority()">createSupportCasePriority</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCasePriority(com.netsuite.webservices.lists.support_2010_2.SupportCasePriority)">createSupportCasePriority</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSearch()">createSupportCaseSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSearch(com.netsuite.webservices.lists.support_2010_2.SupportCaseSearch)">createSupportCaseSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchAdvanced.html">SupportCaseSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSearchAdvanced()">createSupportCaseSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchAdvanced.html">SupportCaseSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchRow.html">SupportCaseSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSearchRow()">createSupportCaseSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchRow.html">SupportCaseSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutions.html">SupportCaseSolutions</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSolutions()">createSupportCaseSolutions</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutions.html">SupportCaseSolutions</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutionsList.html">SupportCaseSolutionsList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseSolutionsList()">createSupportCaseSolutionsList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutionsList.html">SupportCaseSolutionsList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseStatus()">createSupportCaseStatus</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseStatus(com.netsuite.webservices.lists.support_2010_2.SupportCaseStatus)">createSupportCaseStatus</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseType(com.netsuite.webservices.lists.support_2010_2.SupportCaseType)">createSupportCaseType</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createSupportCaseType()">createSupportCaseType</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopic(com.netsuite.webservices.lists.support_2010_2.Topic)">createTopic</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopic()">createTopic</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSearch(com.netsuite.webservices.lists.support_2010_2.TopicSearch)">createTopicSearch</a></span>(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a> value)</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></code><code>&gt;</code>}
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSearch()">createTopicSearch</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchAdvanced.html">TopicSearchAdvanced</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSearchAdvanced()">createTopicSearchAdvanced</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchAdvanced.html">TopicSearchAdvanced</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchRow.html">TopicSearchRow</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSearchRow()">createTopicSearchRow</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchRow.html">TopicSearchRow</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolution.html">TopicSolution</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSolution()">createTopicSolution</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolution.html">TopicSolution</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolutionList.html">TopicSolutionList</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../com/netsuite/webservices/lists/support_2010_2/ObjectFactory.html#createTopicSolutionList()">createTopicSolutionList</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolutionList.html">TopicSolutionList</a></code>
+ 
+</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="_IssueSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _IssueSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_Issue_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _Issue_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SolutionSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SolutionSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_Solution_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _Solution_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCaseIssue_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCaseIssue_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCaseOrigin_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCaseOrigin_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCasePriority_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCasePriority_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCaseSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCaseSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCaseStatus_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCaseStatus_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCaseType_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCaseType_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_SupportCase_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _SupportCase_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_TopicSearch_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _TopicSearch_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="_Topic_QNAME"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+        static 
+        final 
+        QName
+      </span>
+        _Topic_QNAME
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="ObjectFactory()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ObjectFactory</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.netsuite.webservices.lists.support_2010_2
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="createEmailEmployeesList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/EmailEmployeesList.html">EmailEmployeesList</a>
+      </span>
+      <span class="sympad">createEmailEmployeesList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/EmailEmployeesList.html">EmailEmployeesList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssue(com.netsuite.webservices.lists.support_2010_2.Issue)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a>&gt;
+      </span>
+      <span class="sympad">createIssue</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssue()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a>
+      </span>
+      <span class="sympad">createIssue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Issue.html">Issue</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueSearch(com.netsuite.webservices.lists.support_2010_2.IssueSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a>&gt;
+      </span>
+      <span class="sympad">createIssueSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a>
+      </span>
+      <span class="sympad">createIssueSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearch.html">IssueSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchAdvanced.html">IssueSearchAdvanced</a>
+      </span>
+      <span class="sympad">createIssueSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchAdvanced.html">IssueSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchRow.html">IssueSearchRow</a>
+      </span>
+      <span class="sympad">createIssueSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueSearchRow.html">IssueSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueVersion()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersion.html">IssueVersion</a>
+      </span>
+      <span class="sympad">createIssueVersion</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersion.html">IssueVersion</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createIssueVersionList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersionList.html">IssueVersionList</a>
+      </span>
+      <span class="sympad">createIssueVersionList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/IssueVersionList.html">IssueVersionList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolution(com.netsuite.webservices.lists.support_2010_2.Solution)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a>&gt;
+      </span>
+      <span class="sympad">createSolution</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolution()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a>
+      </span>
+      <span class="sympad">createSolution</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solution.html">Solution</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a>
+      </span>
+      <span class="sympad">createSolutionSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionSearch(com.netsuite.webservices.lists.support_2010_2.SolutionSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a>&gt;
+      </span>
+      <span class="sympad">createSolutionSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearch.html">SolutionSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchAdvanced.html">SolutionSearchAdvanced</a>
+      </span>
+      <span class="sympad">createSolutionSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchAdvanced.html">SolutionSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchRow.html">SolutionSearchRow</a>
+      </span>
+      <span class="sympad">createSolutionSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionSearchRow.html">SolutionSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionTopics()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopics.html">SolutionTopics</a>
+      </span>
+      <span class="sympad">createSolutionTopics</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopics.html">SolutionTopics</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionTopicsList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopicsList.html">SolutionTopicsList</a>
+      </span>
+      <span class="sympad">createSolutionTopicsList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionTopicsList.html">SolutionTopicsList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutions()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solutions.html">Solutions</a>
+      </span>
+      <span class="sympad">createSolutions</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Solutions.html">Solutions</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSolutionsList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionsList.html">SolutionsList</a>
+      </span>
+      <span class="sympad">createSolutionsList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SolutionsList.html">SolutionsList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCase(com.netsuite.webservices.lists.support_2010_2.SupportCase)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a>&gt;
+      </span>
+      <span class="sympad">createSupportCase</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCase()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a>
+      </span>
+      <span class="sympad">createSupportCase</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCase.html">SupportCase</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseEscalateTo()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateTo.html">SupportCaseEscalateTo</a>
+      </span>
+      <span class="sympad">createSupportCaseEscalateTo</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateTo.html">SupportCaseEscalateTo</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseEscalateToList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateToList.html">SupportCaseEscalateToList</a>
+      </span>
+      <span class="sympad">createSupportCaseEscalateToList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseEscalateToList.html">SupportCaseEscalateToList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseIssue()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a>
+      </span>
+      <span class="sympad">createSupportCaseIssue</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseIssue(com.netsuite.webservices.lists.support_2010_2.SupportCaseIssue)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a>&gt;
+      </span>
+      <span class="sympad">createSupportCaseIssue</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseIssue.html">SupportCaseIssue</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseOrigin()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a>
+      </span>
+      <span class="sympad">createSupportCaseOrigin</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseOrigin(com.netsuite.webservices.lists.support_2010_2.SupportCaseOrigin)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a>&gt;
+      </span>
+      <span class="sympad">createSupportCaseOrigin</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseOrigin.html">SupportCaseOrigin</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCasePriority()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a>
+      </span>
+      <span class="sympad">createSupportCasePriority</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCasePriority(com.netsuite.webservices.lists.support_2010_2.SupportCasePriority)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a>&gt;
+      </span>
+      <span class="sympad">createSupportCasePriority</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCasePriority.html">SupportCasePriority</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a>
+      </span>
+      <span class="sympad">createSupportCaseSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSearch(com.netsuite.webservices.lists.support_2010_2.SupportCaseSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a>&gt;
+      </span>
+      <span class="sympad">createSupportCaseSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearch.html">SupportCaseSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchAdvanced.html">SupportCaseSearchAdvanced</a>
+      </span>
+      <span class="sympad">createSupportCaseSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchAdvanced.html">SupportCaseSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchRow.html">SupportCaseSearchRow</a>
+      </span>
+      <span class="sympad">createSupportCaseSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSearchRow.html">SupportCaseSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSolutions()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutions.html">SupportCaseSolutions</a>
+      </span>
+      <span class="sympad">createSupportCaseSolutions</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutions.html">SupportCaseSolutions</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseSolutionsList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutionsList.html">SupportCaseSolutionsList</a>
+      </span>
+      <span class="sympad">createSupportCaseSolutionsList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseSolutionsList.html">SupportCaseSolutionsList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseStatus()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a>
+      </span>
+      <span class="sympad">createSupportCaseStatus</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseStatus(com.netsuite.webservices.lists.support_2010_2.SupportCaseStatus)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a>&gt;
+      </span>
+      <span class="sympad">createSupportCaseStatus</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseStatus.html">SupportCaseStatus</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseType(com.netsuite.webservices.lists.support_2010_2.SupportCaseType)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a>&gt;
+      </span>
+      <span class="sympad">createSupportCaseType</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createSupportCaseType()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a>
+      </span>
+      <span class="sympad">createSupportCaseType</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/SupportCaseType.html">SupportCaseType</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopic(com.netsuite.webservices.lists.support_2010_2.Topic)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a>&gt;
+      </span>
+      <span class="sympad">createTopic</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopic()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a>
+      </span>
+      <span class="sympad">createTopic</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/Topic.html">Topic</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSearch(com.netsuite.webservices.lists.support_2010_2.TopicSearch)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        JAXBElement&lt;<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a>&gt;
+      </span>
+      <span class="sympad">createTopicSearch</span>
+      <span class="normal">(<a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a> value)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of JAXBElement<code>&lt;</code><code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></code><code>&gt;</code>}
+ 
+</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>value</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSearch()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a>
+      </span>
+      <span class="sympad">createTopicSearch</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearch.html">TopicSearch</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSearchAdvanced()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchAdvanced.html">TopicSearchAdvanced</a>
+      </span>
+      <span class="sympad">createTopicSearchAdvanced</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchAdvanced.html">TopicSearchAdvanced</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSearchRow()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchRow.html">TopicSearchRow</a>
+      </span>
+      <span class="sympad">createTopicSearchRow</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSearchRow.html">TopicSearchRow</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSolution()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolution.html">TopicSolution</a>
+      </span>
+      <span class="sympad">createTopicSolution</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolution.html">TopicSolution</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="createTopicSolutionList()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolutionList.html">TopicSolutionList</a>
+      </span>
+      <span class="sympad">createTopicSolutionList</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Create an instance of <code><a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/TopicSolutionList.html">TopicSolutionList</a></code>
+ 
+</p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

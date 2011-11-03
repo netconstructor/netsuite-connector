@@ -1,0 +1,4126 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
+<title>
+
+  NetSuitePortType
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/NetSuitePortType.html">NetSuitePortType</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/NetSuiteService.html">NetSuiteService</a></li>
+      </ul>
+    </li>
+              
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/AsyncFault.html">AsyncFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InsufficientPermissionFault.html">InsufficientPermissionFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidAccountFault.html">InvalidAccountFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidVersionFault.html">InvalidVersionFault</a></li>
+          <li class="api apilevel-"><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+
+<div class="sum-details-links">
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    interface
+<h1>NetSuitePortType</h1>
+
+
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.platform_2010_2.NetSuitePortType</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>This class was generated by Apache CXF 2.3.0
+ Tue Apr 26 17:35:33 ART 2011
+ Generated source version: 2.3.0
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddResponse.html">AddResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#add(com.netsuite.webservices.platform.messages_2010_2.AddRequest)">add</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddRequest.html">AddRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddListResponse.html">AddListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#addList(com.netsuite.webservices.platform.messages_2010_2.AddListRequest)">addList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddListRequest.html">AddListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncAddList(com.netsuite.webservices.platform.messages_2010_2.AsyncAddListRequest)">asyncAddList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncAddListRequest.html">AsyncAddListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncDeleteList(com.netsuite.webservices.platform.messages_2010_2.AsyncDeleteListRequest)">asyncDeleteList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncDeleteListRequest.html">AsyncDeleteListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncGetList(com.netsuite.webservices.platform.messages_2010_2.AsyncGetListRequest)">asyncGetList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncGetListRequest.html">AsyncGetListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncInitializeList(com.netsuite.webservices.platform.messages_2010_2.AsyncInitializeListRequest)">asyncInitializeList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncInitializeListRequest.html">AsyncInitializeListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncSearch(com.netsuite.webservices.platform.messages_2010_2.AsyncSearchRequest)">asyncSearch</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncSearchRequest.html">AsyncSearchRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#asyncUpdateList(com.netsuite.webservices.platform.messages_2010_2.AsyncUpdateListRequest)">asyncUpdateList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncUpdateListRequest.html">AsyncUpdateListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AttachResponse.html">AttachResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#attach(com.netsuite.webservices.platform.messages_2010_2.AttachRequest)">attach</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AttachRequest.html">AttachRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/ChangePasswordOrEmailResponse.html">ChangePasswordOrEmailResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#changePasswordOrEmail(com.netsuite.webservices.platform.messages_2010_2.ChangePasswordOrEmailRequest)">changePasswordOrEmail</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/ChangePasswordOrEmailRequest.html">ChangePasswordOrEmailRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#checkAsyncStatus(com.netsuite.webservices.platform.messages_2010_2.CheckAsyncStatusRequest)">checkAsyncStatus</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/CheckAsyncStatusRequest.html">CheckAsyncStatusRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteResponse.html">DeleteResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#delete(com.netsuite.webservices.platform.messages_2010_2.DeleteRequest)">delete</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteRequest.html">DeleteRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteListResponse.html">DeleteListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#deleteList(com.netsuite.webservices.platform.messages_2010_2.DeleteListRequest)">deleteList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteListRequest.html">DeleteListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DetachResponse.html">DetachResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#detach(com.netsuite.webservices.platform.messages_2010_2.DetachRequest)">detach</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DetachRequest.html">DetachRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetResponse.html">GetResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#get(com.netsuite.webservices.platform.messages_2010_2.GetRequest)">get</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetRequest.html">GetRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAllResponse.html">GetAllResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getAll(com.netsuite.webservices.platform.messages_2010_2.GetAllRequest)">getAll</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAllRequest.html">GetAllRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAsyncResultResponse.html">GetAsyncResultResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getAsyncResult(com.netsuite.webservices.platform.messages_2010_2.GetAsyncResultRequest)">getAsyncResult</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAsyncResultRequest.html">GetAsyncResultRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetBudgetExchangeRateResponse.html">GetBudgetExchangeRateResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getBudgetExchangeRate(com.netsuite.webservices.platform.messages_2010_2.GetBudgetExchangeRateRequest)">getBudgetExchangeRate</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetBudgetExchangeRateRequest.html">GetBudgetExchangeRateRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetConsolidatedExchangeRateResponse.html">GetConsolidatedExchangeRateResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getConsolidatedExchangeRate(com.netsuite.webservices.platform.messages_2010_2.GetConsolidatedExchangeRateRequest)">getConsolidatedExchangeRate</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetConsolidatedExchangeRateRequest.html">GetConsolidatedExchangeRateRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetCustomizationIdResponse.html">GetCustomizationIdResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getCustomizationId(com.netsuite.webservices.platform.messages_2010_2.GetCustomizationIdRequest)">getCustomizationId</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetCustomizationIdRequest.html">GetCustomizationIdRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetDeletedResponse.html">GetDeletedResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getDeleted(com.netsuite.webservices.platform.messages_2010_2.GetDeletedRequest)">getDeleted</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetDeletedRequest.html">GetDeletedRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetItemAvailabilityResponse.html">GetItemAvailabilityResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getItemAvailability(com.netsuite.webservices.platform.messages_2010_2.GetItemAvailabilityRequest)">getItemAvailability</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetItemAvailabilityRequest.html">GetItemAvailabilityRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetListResponse.html">GetListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getList(com.netsuite.webservices.platform.messages_2010_2.GetListRequest)">getList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetListRequest.html">GetListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetPostingTransactionSummaryResponse.html">GetPostingTransactionSummaryResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getPostingTransactionSummary(com.netsuite.webservices.platform.messages_2010_2.GetPostingTransactionSummaryRequest)">getPostingTransactionSummary</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetPostingTransactionSummaryRequest.html">GetPostingTransactionSummaryRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSavedSearchResponse.html">GetSavedSearchResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getSavedSearch(com.netsuite.webservices.platform.messages_2010_2.GetSavedSearchRequest)">getSavedSearch</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSavedSearchRequest.html">GetSavedSearchRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSelectValueResponse.html">GetSelectValueResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getSelectValue(com.netsuite.webservices.platform.messages_2010_2.GetSelectValueRequest)">getSelectValue</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSelectValueRequest.html">GetSelectValueRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetServerTimeResponse.html">GetServerTimeResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#getServerTime(com.netsuite.webservices.platform.messages_2010_2.GetServerTimeRequest)">getServerTime</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetServerTimeRequest.html">GetServerTimeRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeResponse.html">InitializeResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#initialize(com.netsuite.webservices.platform.messages_2010_2.InitializeRequest)">initialize</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeRequest.html">InitializeRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeListResponse.html">InitializeListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#initializeList(com.netsuite.webservices.platform.messages_2010_2.InitializeListRequest)">initializeList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeListRequest.html">InitializeListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LoginResponse.html">LoginResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#login(com.netsuite.webservices.platform.messages_2010_2.LoginRequest)">login</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LoginRequest.html">LoginRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LogoutResponse.html">LogoutResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#logout(com.netsuite.webservices.platform.messages_2010_2.LogoutRequest)">logout</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LogoutRequest.html">LogoutRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/MapSsoResponse.html">MapSsoResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#mapSso(com.netsuite.webservices.platform.messages_2010_2.MapSsoRequest)">mapSso</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/MapSsoRequest.html">MapSsoRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchResponse.html">SearchResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#search(com.netsuite.webservices.platform.messages_2010_2.SearchRequest)">search</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchRequest.html">SearchRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreResponse.html">SearchMoreResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#searchMore(com.netsuite.webservices.platform.messages_2010_2.SearchMoreRequest)">searchMore</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreRequest.html">SearchMoreRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreWithIdResponse.html">SearchMoreWithIdResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#searchMoreWithId(com.netsuite.webservices.platform.messages_2010_2.SearchMoreWithIdRequest)">searchMoreWithId</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreWithIdRequest.html">SearchMoreWithIdRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchNextResponse.html">SearchNextResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#searchNext(com.netsuite.webservices.platform.messages_2010_2.SearchNextRequest)">searchNext</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchNextRequest.html">SearchNextRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SsoLoginResponse.html">SsoLoginResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#ssoLogin(com.netsuite.webservices.platform.messages_2010_2.SsoLoginRequest)">ssoLogin</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SsoLoginRequest.html">SsoLoginRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateResponse.html">UpdateResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#update(com.netsuite.webservices.platform.messages_2010_2.UpdateRequest)">update</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateRequest.html">UpdateRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusResponse.html">UpdateInviteeStatusResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#updateInviteeStatus(com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest)">updateInviteeStatus</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusRequest.html">UpdateInviteeStatusRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusListResponse.html">UpdateInviteeStatusListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#updateInviteeStatusList(com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusListRequest)">updateInviteeStatusList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusListRequest.html">UpdateInviteeStatusListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateListResponse.html">UpdateListResponse</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../com/netsuite/webservices/platform_2010_2/NetSuitePortType.html#updateList(com.netsuite.webservices.platform.messages_2010_2.UpdateListRequest)">updateList</a></span>(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateListRequest.html">UpdateListRequest</a> parameters)</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="add(com.netsuite.webservices.platform.messages_2010_2.AddRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddResponse.html">AddResponse</a>
+      </span>
+      <span class="sympad">add</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddRequest.html">AddRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="addList(com.netsuite.webservices.platform.messages_2010_2.AddListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddListResponse.html">AddListResponse</a>
+      </span>
+      <span class="sympad">addList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AddListRequest.html">AddListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncAddList(com.netsuite.webservices.platform.messages_2010_2.AsyncAddListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncAddList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncAddListRequest.html">AsyncAddListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncDeleteList(com.netsuite.webservices.platform.messages_2010_2.AsyncDeleteListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncDeleteList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncDeleteListRequest.html">AsyncDeleteListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncGetList(com.netsuite.webservices.platform.messages_2010_2.AsyncGetListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncGetList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncGetListRequest.html">AsyncGetListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncInitializeList(com.netsuite.webservices.platform.messages_2010_2.AsyncInitializeListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncInitializeList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncInitializeListRequest.html">AsyncInitializeListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncSearch(com.netsuite.webservices.platform.messages_2010_2.AsyncSearchRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncSearch</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncSearchRequest.html">AsyncSearchRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="asyncUpdateList(com.netsuite.webservices.platform.messages_2010_2.AsyncUpdateListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">asyncUpdateList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncUpdateListRequest.html">AsyncUpdateListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="attach(com.netsuite.webservices.platform.messages_2010_2.AttachRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AttachResponse.html">AttachResponse</a>
+      </span>
+      <span class="sympad">attach</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AttachRequest.html">AttachRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="changePasswordOrEmail(com.netsuite.webservices.platform.messages_2010_2.ChangePasswordOrEmailRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/ChangePasswordOrEmailResponse.html">ChangePasswordOrEmailResponse</a>
+      </span>
+      <span class="sympad">changePasswordOrEmail</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/ChangePasswordOrEmailRequest.html">ChangePasswordOrEmailRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InsufficientPermissionFault.html">InsufficientPermissionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidAccountFault.html">InvalidAccountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidVersionFault.html">InvalidVersionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="checkAsyncStatus(com.netsuite.webservices.platform.messages_2010_2.CheckAsyncStatusRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/AsyncStatusResponse.html">AsyncStatusResponse</a>
+      </span>
+      <span class="sympad">checkAsyncStatus</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/CheckAsyncStatusRequest.html">CheckAsyncStatusRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/AsyncFault.html">AsyncFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="delete(com.netsuite.webservices.platform.messages_2010_2.DeleteRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteResponse.html">DeleteResponse</a>
+      </span>
+      <span class="sympad">delete</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteRequest.html">DeleteRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="deleteList(com.netsuite.webservices.platform.messages_2010_2.DeleteListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteListResponse.html">DeleteListResponse</a>
+      </span>
+      <span class="sympad">deleteList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DeleteListRequest.html">DeleteListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="detach(com.netsuite.webservices.platform.messages_2010_2.DetachRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DetachResponse.html">DetachResponse</a>
+      </span>
+      <span class="sympad">detach</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/DetachRequest.html">DetachRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="get(com.netsuite.webservices.platform.messages_2010_2.GetRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetResponse.html">GetResponse</a>
+      </span>
+      <span class="sympad">get</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetRequest.html">GetRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAll(com.netsuite.webservices.platform.messages_2010_2.GetAllRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAllResponse.html">GetAllResponse</a>
+      </span>
+      <span class="sympad">getAll</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAllRequest.html">GetAllRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getAsyncResult(com.netsuite.webservices.platform.messages_2010_2.GetAsyncResultRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAsyncResultResponse.html">GetAsyncResultResponse</a>
+      </span>
+      <span class="sympad">getAsyncResult</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetAsyncResultRequest.html">GetAsyncResultRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/AsyncFault.html">AsyncFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getBudgetExchangeRate(com.netsuite.webservices.platform.messages_2010_2.GetBudgetExchangeRateRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetBudgetExchangeRateResponse.html">GetBudgetExchangeRateResponse</a>
+      </span>
+      <span class="sympad">getBudgetExchangeRate</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetBudgetExchangeRateRequest.html">GetBudgetExchangeRateRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getConsolidatedExchangeRate(com.netsuite.webservices.platform.messages_2010_2.GetConsolidatedExchangeRateRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetConsolidatedExchangeRateResponse.html">GetConsolidatedExchangeRateResponse</a>
+      </span>
+      <span class="sympad">getConsolidatedExchangeRate</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetConsolidatedExchangeRateRequest.html">GetConsolidatedExchangeRateRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getCustomizationId(com.netsuite.webservices.platform.messages_2010_2.GetCustomizationIdRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetCustomizationIdResponse.html">GetCustomizationIdResponse</a>
+      </span>
+      <span class="sympad">getCustomizationId</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetCustomizationIdRequest.html">GetCustomizationIdRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getDeleted(com.netsuite.webservices.platform.messages_2010_2.GetDeletedRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetDeletedResponse.html">GetDeletedResponse</a>
+      </span>
+      <span class="sympad">getDeleted</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetDeletedRequest.html">GetDeletedRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getItemAvailability(com.netsuite.webservices.platform.messages_2010_2.GetItemAvailabilityRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetItemAvailabilityResponse.html">GetItemAvailabilityResponse</a>
+      </span>
+      <span class="sympad">getItemAvailability</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetItemAvailabilityRequest.html">GetItemAvailabilityRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getList(com.netsuite.webservices.platform.messages_2010_2.GetListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetListResponse.html">GetListResponse</a>
+      </span>
+      <span class="sympad">getList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetListRequest.html">GetListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getPostingTransactionSummary(com.netsuite.webservices.platform.messages_2010_2.GetPostingTransactionSummaryRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetPostingTransactionSummaryResponse.html">GetPostingTransactionSummaryResponse</a>
+      </span>
+      <span class="sympad">getPostingTransactionSummary</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetPostingTransactionSummaryRequest.html">GetPostingTransactionSummaryRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSavedSearch(com.netsuite.webservices.platform.messages_2010_2.GetSavedSearchRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSavedSearchResponse.html">GetSavedSearchResponse</a>
+      </span>
+      <span class="sympad">getSavedSearch</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSavedSearchRequest.html">GetSavedSearchRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getSelectValue(com.netsuite.webservices.platform.messages_2010_2.GetSelectValueRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSelectValueResponse.html">GetSelectValueResponse</a>
+      </span>
+      <span class="sympad">getSelectValue</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetSelectValueRequest.html">GetSelectValueRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getServerTime(com.netsuite.webservices.platform.messages_2010_2.GetServerTimeRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetServerTimeResponse.html">GetServerTimeResponse</a>
+      </span>
+      <span class="sympad">getServerTime</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/GetServerTimeRequest.html">GetServerTimeRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="initialize(com.netsuite.webservices.platform.messages_2010_2.InitializeRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeResponse.html">InitializeResponse</a>
+      </span>
+      <span class="sympad">initialize</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeRequest.html">InitializeRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="initializeList(com.netsuite.webservices.platform.messages_2010_2.InitializeListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeListResponse.html">InitializeListResponse</a>
+      </span>
+      <span class="sympad">initializeList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/InitializeListRequest.html">InitializeListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="login(com.netsuite.webservices.platform.messages_2010_2.LoginRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LoginResponse.html">LoginResponse</a>
+      </span>
+      <span class="sympad">login</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LoginRequest.html">LoginRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InsufficientPermissionFault.html">InsufficientPermissionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidAccountFault.html">InvalidAccountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidVersionFault.html">InvalidVersionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="logout(com.netsuite.webservices.platform.messages_2010_2.LogoutRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LogoutResponse.html">LogoutResponse</a>
+      </span>
+      <span class="sympad">logout</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/LogoutRequest.html">LogoutRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="mapSso(com.netsuite.webservices.platform.messages_2010_2.MapSsoRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/MapSsoResponse.html">MapSsoResponse</a>
+      </span>
+      <span class="sympad">mapSso</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/MapSsoRequest.html">MapSsoRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InsufficientPermissionFault.html">InsufficientPermissionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidAccountFault.html">InvalidAccountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidVersionFault.html">InvalidVersionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="search(com.netsuite.webservices.platform.messages_2010_2.SearchRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchResponse.html">SearchResponse</a>
+      </span>
+      <span class="sympad">search</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchRequest.html">SearchRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="searchMore(com.netsuite.webservices.platform.messages_2010_2.SearchMoreRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreResponse.html">SearchMoreResponse</a>
+      </span>
+      <span class="sympad">searchMore</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreRequest.html">SearchMoreRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="searchMoreWithId(com.netsuite.webservices.platform.messages_2010_2.SearchMoreWithIdRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreWithIdResponse.html">SearchMoreWithIdResponse</a>
+      </span>
+      <span class="sympad">searchMoreWithId</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchMoreWithIdRequest.html">SearchMoreWithIdRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="searchNext(com.netsuite.webservices.platform.messages_2010_2.SearchNextRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchNextResponse.html">SearchNextResponse</a>
+      </span>
+      <span class="sympad">searchNext</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SearchNextRequest.html">SearchNextRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="ssoLogin(com.netsuite.webservices.platform.messages_2010_2.SsoLoginRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SsoLoginResponse.html">SsoLoginResponse</a>
+      </span>
+      <span class="sympad">ssoLogin</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/SsoLoginRequest.html">SsoLoginRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InsufficientPermissionFault.html">InsufficientPermissionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidAccountFault.html">InvalidAccountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidVersionFault.html">InvalidVersionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="update(com.netsuite.webservices.platform.messages_2010_2.UpdateRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateResponse.html">UpdateResponse</a>
+      </span>
+      <span class="sympad">update</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateRequest.html">UpdateRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateInviteeStatus(com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusResponse.html">UpdateInviteeStatusResponse</a>
+      </span>
+      <span class="sympad">updateInviteeStatus</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusRequest.html">UpdateInviteeStatusRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateInviteeStatusList(com.netsuite.webservices.platform.messages_2010_2.UpdateInviteeStatusListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusListResponse.html">UpdateInviteeStatusListResponse</a>
+      </span>
+      <span class="sympad">updateInviteeStatusList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateInviteeStatusListRequest.html">UpdateInviteeStatusListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="updateList(com.netsuite.webservices.platform.messages_2010_2.UpdateListRequest)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+        abstract 
+         
+        <a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateListResponse.html">UpdateListResponse</a>
+      </span>
+      <span class="sympad">updateList</span>
+      <span class="normal">(<a href="../../../../../java/com/netsuite/webservices/platform/messages_2010_2/UpdateListRequest.html">UpdateListRequest</a> parameters)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>parameters</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRecordCountFault.html">ExceededRecordCountFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestLimitFault.html">ExceededRequestLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededRequestSizeFault.html">ExceededRequestSizeFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/ExceededUsageLimitFault.html">ExceededUsageLimitFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidCredentialsFault.html">InvalidCredentialsFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/InvalidSessionFault.html">InvalidSessionFault</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../../../java/com/netsuite/webservices/platform_2010_2/UnexpectedErrorFault.html">UnexpectedErrorFault</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

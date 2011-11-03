@@ -1,0 +1,5236 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  CurrencyLocale
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ObjectFactory.html">ObjectFactory</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/AccountType.html">AccountType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CashFlowRateType.html">CashFlowRateType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ConsolidatedRate.html">ConsolidatedRate</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyCurrencyPrecision.html">CurrencyCurrencyPrecision</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyFxRateUpdateTimezone.html">CurrencyFxRateUpdateTimezone</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/GeneralRateType.html">GeneralRateType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemCostingMethod.html">ItemCostingMethod</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemEbayRelistingOption.html">ItemEbayRelistingOption</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemMatrixType.html">ItemMatrixType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemOutOfStockBehavior.html">ItemOutOfStockBehavior</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemOverallQuantityPricingType.html">ItemOverallQuantityPricingType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemPreferenceCriterion.html">ItemPreferenceCriterion</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemProductFeed.html">ItemProductFeed</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemSubType.html">ItemSubType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemType.html">ItemType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/ItemWeightUnit.html">ItemWeightUnit</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/SalesTaxItemAvailable.html">SalesTaxItemAvailable</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+  <a href="#enumconstants">Enums</a>
+  
+
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+    final 
+    
+    enum
+<h1>CurrencyLocale</h1>
+
+
+
+  
+  
+  
+
+  
+    extends Enum&lt;E&nbsp;extends&nbsp;Enum&lt;E&gt;&gt;<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Enum&lt;E&nbsp;extends&nbsp;java.lang.Enum&lt;E&gt;&gt;</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.lists.accounting_2010_2.types.CurrencyLocale</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p><p>Java class for CurrencyLocale.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ <p>
+ <pre>
+ &lt;simpleType name="CurrencyLocale">
+   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     &lt;enumeration value="_albaniaAlbanian"/>
+     &lt;enumeration value="_algeriaArabic"/>
+     &lt;enumeration value="_argentinaSpanish"/>
+     &lt;enumeration value="_australiaEnglish"/>
+     &lt;enumeration value="_austriaGerman"/>
+     &lt;enumeration value="_bahrainArabic"/>
+     &lt;enumeration value="_belarusByelorussian"/>
+     &lt;enumeration value="_belgiumDutch"/>
+     &lt;enumeration value="_belgiumFrench"/>
+     &lt;enumeration value="_boliviaSpanish"/>
+     &lt;enumeration value="_bengali"/>
+     &lt;enumeration value="_brazilPortuguese"/>
+     &lt;enumeration value="_bulgariaBulgarian"/>
+     &lt;enumeration value="_canadaEnglish"/>
+     &lt;enumeration value="_canadaFrench"/>
+     &lt;enumeration value="_chileSpanish"/>
+     &lt;enumeration value="_chinaChinese"/>
+     &lt;enumeration value="_colombiaSpanish"/>
+     &lt;enumeration value="_costaRicaSpanish"/>
+     &lt;enumeration value="_croatiaCroatian"/>
+     &lt;enumeration value="_czechRepublicCzech"/>
+     &lt;enumeration value="_denmarkDanish"/>
+     &lt;enumeration value="_dominicanRepublicSpanish"/>
+     &lt;enumeration value="_ecuadorSpanish"/>
+     &lt;enumeration value="_egyptArabic"/>
+     &lt;enumeration value="_elSalvadorSpanish"/>
+     &lt;enumeration value="_estoniaEstonian"/>
+     &lt;enumeration value="_finlandFinnish"/>
+     &lt;enumeration value="_franceFrench"/>
+     &lt;enumeration value="_germanyGerman"/>
+     &lt;enumeration value="_greeceGreek"/>
+     &lt;enumeration value="_guatemalaSpanish"/>
+     &lt;enumeration value="_haitian"/>
+     &lt;enumeration value="_hondurasSpanish"/>
+     &lt;enumeration value="_hongKongChinese"/>
+     &lt;enumeration value="_hungaryHungarian"/>
+     &lt;enumeration value="_icelandIcelandic"/>
+     &lt;enumeration value="_indiaEnglish"/>
+     &lt;enumeration value="_indonesiaIndonesian"/>
+     &lt;enumeration value="_iraqArabic"/>
+     &lt;enumeration value="_irelandEnglish"/>
+     &lt;enumeration value="_israelHebrew"/>
+     &lt;enumeration value="_italyItalian"/>
+     &lt;enumeration value="_japanJapanese"/>
+     &lt;enumeration value="_jordanArabic"/>
+     &lt;enumeration value="_kuwaitArabic"/>
+     &lt;enumeration value="_latviaLatvianLettish"/>
+     &lt;enumeration value="_lebanonArabic"/>
+     &lt;enumeration value="_libyaArabic"/>
+     &lt;enumeration value="_lithuaniaLithuanian"/>
+     &lt;enumeration value="_luxembourgFrench"/>
+     &lt;enumeration value="_luxembourgGerman"/>
+     &lt;enumeration value="_macedoniaMacedonian"/>
+     &lt;enumeration value="_malaysiaMalay"/>
+     &lt;enumeration value="_mexicoSpanish"/>
+     &lt;enumeration value="_moroccoArabic"/>
+     &lt;enumeration value="_netherlandsDutch"/>
+     &lt;enumeration value="_newZealandEnglish"/>
+     &lt;enumeration value="_nicaraguaSpanish"/>
+     &lt;enumeration value="_nigeriaEnglish"/>
+     &lt;enumeration value="_norwayNorwegian"/>
+     &lt;enumeration value="_omanArabic"/>
+     &lt;enumeration value="_panamaSpanish"/>
+     &lt;enumeration value="_paraguaySpanish"/>
+     &lt;enumeration value="_peruSpanish"/>
+     &lt;enumeration value="_philippinesEnglish"/>
+     &lt;enumeration value="_philippinesTagalog"/>
+     &lt;enumeration value="_polandPolish"/>
+     &lt;enumeration value="_portugalPortuguese"/>
+     &lt;enumeration value="_puertoRicoSpanish"/>
+     &lt;enumeration value="_qatarArabic"/>
+     &lt;enumeration value="_romaniaRomanian"/>
+     &lt;enumeration value="_russiaRussian"/>
+     &lt;enumeration value="_saudiArabiaArabic"/>
+     &lt;enumeration value="_singaporeEnglish"/>
+     &lt;enumeration value="_slovakiaSlovak"/>
+     &lt;enumeration value="_sloveniaSlovenian"/>
+     &lt;enumeration value="_southAfricaEnglish"/>
+     &lt;enumeration value="_southKoreaKorean"/>
+     &lt;enumeration value="_spainCatalan"/>
+     &lt;enumeration value="_spainSpanish"/>
+     &lt;enumeration value="_sudanArabic"/>
+     &lt;enumeration value="_swedenSwedish"/>
+     &lt;enumeration value="_switzerlandFrench"/>
+     &lt;enumeration value="_switzerlandGerman"/>
+     &lt;enumeration value="_switzerlandItalian"/>
+     &lt;enumeration value="_syriaArabic"/>
+     &lt;enumeration value="_taiwanChinese"/>
+     &lt;enumeration value="_thailandThai"/>
+     &lt;enumeration value="_tunisiaArabic"/>
+     &lt;enumeration value="_turkeyTurkish"/>
+     &lt;enumeration value="_ukraineUkrainian"/>
+     &lt;enumeration value="_unitedArabEmiratesArabic"/>
+     &lt;enumeration value="_unitedKingdomEnglish"/>
+     &lt;enumeration value="_unitedStatesEnglish"/>
+     &lt;enumeration value="_uruguaySpanish"/>
+     &lt;enumeration value="_venezuelaSpanish"/>
+     &lt;enumeration value="_yemenArabic"/>
+     &lt;enumeration value="_yugoslaviaSerbian"/>
+     &lt;enumeration value="_yugoslaviaSerboCroatian"/>
+   &lt;/restriction>
+ &lt;/simpleType>
+ </pre>
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="enumconstants" class="jd-sumtable"><tr><th colspan="12">Enum Values</th></tr>
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ALBANIA_ALBANIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ALGERIA_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ARGENTINA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">AUSTRALIA_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">AUSTRIA_GERMAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BAHRAIN_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BELARUS_BYELORUSSIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BELGIUM_DUTCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BELGIUM_FRENCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BENGALI&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BOLIVIA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BRAZIL_PORTUGUESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">BULGARIA_BULGARIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CANADA_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CANADA_FRENCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CHILE_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CHINA_CHINESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">COLOMBIA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">COSTA_RICA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CROATIA_CROATIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">CZECH_REPUBLIC_CZECH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">DENMARK_DANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">DOMINICAN_REPUBLIC_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ECUADOR_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">EGYPT_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">EL_SALVADOR_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ESTONIA_ESTONIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">FINLAND_FINNISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">FRANCE_FRENCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">GERMANY_GERMAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">GREECE_GREEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">GUATEMALA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">HAITIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">HONDURAS_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">HONG_KONG_CHINESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">HUNGARY_HUNGARIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ICELAND_ICELANDIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">INDIA_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">INDONESIA_INDONESIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">IRAQ_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">IRELAND_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ISRAEL_HEBREW&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ITALY_ITALIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">JAPAN_JAPANESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">JORDAN_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">KUWAIT_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LATVIA_LATVIAN_LETTISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LEBANON_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LIBYA_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LITHUANIA_LITHUANIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LUXEMBOURG_FRENCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">LUXEMBOURG_GERMAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">MACEDONIA_MACEDONIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">MALAYSIA_MALAY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">MEXICO_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">MOROCCO_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">NETHERLANDS_DUTCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">NEW_ZEALAND_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">NICARAGUA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">NIGERIA_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">NORWAY_NORWEGIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">OMAN_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PANAMA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PARAGUAY_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PERU_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PHILIPPINES_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PHILIPPINES_TAGALOG&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">POLAND_POLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PORTUGAL_PORTUGUESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">PUERTO_RICO_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">QATAR_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">ROMANIA_ROMANIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">RUSSIA_RUSSIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SAUDI_ARABIA_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SINGAPORE_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SLOVAKIA_SLOVAK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SLOVENIA_SLOVENIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SOUTH_AFRICA_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SOUTH_KOREA_KOREAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SPAIN_CATALAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SPAIN_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SUDAN_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SWEDEN_SWEDISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SWITZERLAND_FRENCH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SWITZERLAND_GERMAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SWITZERLAND_ITALIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">SYRIA_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">TAIWAN_CHINESE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">THAILAND_THAI&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">TUNISIA_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">TURKEY_TURKISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">UKRAINE_UKRAINIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">UNITED_ARAB_EMIRATES_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">UNITED_KINGDOM_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">UNITED_STATES_ENGLISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">URUGUAY_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">VENEZUELA_SPANISH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">YEMEN_ARABIC&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">YUGOSLAVIA_SERBIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>&nbsp;</td>
+        <td class="jd-linkcol">YUGOSLAVIA_SERBO_CROATIAN&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html#value">value</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+java.lang.Enum
+<div id="inherited-fields-java.lang.Enum">
+  <div id="inherited-fields-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol">name</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          int</nobr></td>
+          <td class="jd-linkcol">ordinal</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html#fromValue(java.lang.String)">fromValue</a></span>(String v)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html#value()">value</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html#valueOf(java.lang.String)">valueOf</a></span>(String name)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html#values()">values</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Enum
+
+<div id="inherited-methods-java.lang.Enum">
+  <div id="inherited-methods-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(E arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;E&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getDeclaringClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">name</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">ordinal</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            &lt;T&nbsp;extends&nbsp;Enum&lt;T&gt;&gt;
+            T</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">valueOf</span>(Class&lt;T&gt; arg0, String arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Comparable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Comparable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.lang.Comparable
+
+<div id="inherited-methods-java.lang.Comparable">
+  <div id="inherited-methods-java.lang.Comparable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Comparable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(T arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Enum Values</h2>
+
+
+
+
+<A NAME="ALBANIA_ALBANIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ALBANIA_ALBANIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ALGERIA_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ALGERIA_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ARGENTINA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ARGENTINA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="AUSTRALIA_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        AUSTRALIA_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="AUSTRIA_GERMAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        AUSTRIA_GERMAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BAHRAIN_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BAHRAIN_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BELARUS_BYELORUSSIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BELARUS_BYELORUSSIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BELGIUM_DUTCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BELGIUM_DUTCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BELGIUM_FRENCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BELGIUM_FRENCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BENGALI"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BENGALI
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BOLIVIA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BOLIVIA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BRAZIL_PORTUGUESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BRAZIL_PORTUGUESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="BULGARIA_BULGARIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        BULGARIA_BULGARIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CANADA_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CANADA_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CANADA_FRENCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CANADA_FRENCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CHILE_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CHILE_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CHINA_CHINESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CHINA_CHINESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="COLOMBIA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        COLOMBIA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="COSTA_RICA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        COSTA_RICA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CROATIA_CROATIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CROATIA_CROATIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="CZECH_REPUBLIC_CZECH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        CZECH_REPUBLIC_CZECH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DENMARK_DANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        DENMARK_DANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="DOMINICAN_REPUBLIC_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        DOMINICAN_REPUBLIC_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ECUADOR_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ECUADOR_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="EGYPT_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        EGYPT_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="EL_SALVADOR_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        EL_SALVADOR_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ESTONIA_ESTONIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ESTONIA_ESTONIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FINLAND_FINNISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        FINLAND_FINNISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FRANCE_FRENCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        FRANCE_FRENCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="GERMANY_GERMAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        GERMANY_GERMAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="GREECE_GREEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        GREECE_GREEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="GUATEMALA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        GUATEMALA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="HAITIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        HAITIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="HONDURAS_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        HONDURAS_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="HONG_KONG_CHINESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        HONG_KONG_CHINESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="HUNGARY_HUNGARIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        HUNGARY_HUNGARIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ICELAND_ICELANDIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ICELAND_ICELANDIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INDIA_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        INDIA_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="INDONESIA_INDONESIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        INDONESIA_INDONESIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="IRAQ_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        IRAQ_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="IRELAND_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        IRELAND_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ISRAEL_HEBREW"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ISRAEL_HEBREW
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ITALY_ITALIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ITALY_ITALIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JAPAN_JAPANESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        JAPAN_JAPANESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="JORDAN_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        JORDAN_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="KUWAIT_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        KUWAIT_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LATVIA_LATVIAN_LETTISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LATVIA_LATVIAN_LETTISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LEBANON_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LEBANON_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LIBYA_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LIBYA_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LITHUANIA_LITHUANIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LITHUANIA_LITHUANIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LUXEMBOURG_FRENCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LUXEMBOURG_FRENCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LUXEMBOURG_GERMAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        LUXEMBOURG_GERMAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MACEDONIA_MACEDONIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        MACEDONIA_MACEDONIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MALAYSIA_MALAY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        MALAYSIA_MALAY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MEXICO_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        MEXICO_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MOROCCO_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        MOROCCO_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NETHERLANDS_DUTCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        NETHERLANDS_DUTCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEW_ZEALAND_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        NEW_ZEALAND_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NICARAGUA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        NICARAGUA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NIGERIA_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        NIGERIA_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NORWAY_NORWEGIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        NORWAY_NORWEGIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="OMAN_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        OMAN_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PANAMA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PANAMA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PARAGUAY_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PARAGUAY_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PERU_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PERU_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PHILIPPINES_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PHILIPPINES_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PHILIPPINES_TAGALOG"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PHILIPPINES_TAGALOG
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="POLAND_POLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        POLAND_POLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PORTUGAL_PORTUGUESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PORTUGAL_PORTUGUESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PUERTO_RICO_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        PUERTO_RICO_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="QATAR_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        QATAR_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ROMANIA_ROMANIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        ROMANIA_ROMANIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="RUSSIA_RUSSIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        RUSSIA_RUSSIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAUDI_ARABIA_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SAUDI_ARABIA_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SINGAPORE_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SINGAPORE_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLOVAKIA_SLOVAK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SLOVAKIA_SLOVAK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SLOVENIA_SLOVENIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SLOVENIA_SLOVENIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SOUTH_AFRICA_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SOUTH_AFRICA_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SOUTH_KOREA_KOREAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SOUTH_KOREA_KOREAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SPAIN_CATALAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SPAIN_CATALAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SPAIN_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SPAIN_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SUDAN_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SUDAN_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SWEDEN_SWEDISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SWEDEN_SWEDISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SWITZERLAND_FRENCH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SWITZERLAND_FRENCH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SWITZERLAND_GERMAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SWITZERLAND_GERMAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SWITZERLAND_ITALIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SWITZERLAND_ITALIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SYRIA_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        SYRIA_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TAIWAN_CHINESE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        TAIWAN_CHINESE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THAILAND_THAI"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        THAILAND_THAI
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TUNISIA_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        TUNISIA_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TURKEY_TURKISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        TURKEY_TURKISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="UKRAINE_UKRAINIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        UKRAINE_UKRAINIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="UNITED_ARAB_EMIRATES_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        UNITED_ARAB_EMIRATES_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="UNITED_KINGDOM_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        UNITED_KINGDOM_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="UNITED_STATES_ENGLISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        UNITED_STATES_ENGLISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="URUGUAY_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        URUGUAY_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="VENEZUELA_SPANISH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        VENEZUELA_SPANISH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="YEMEN_ARABIC"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        YEMEN_ARABIC
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="YUGOSLAVIA_SERBIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        YUGOSLAVIA_SERBIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="YUGOSLAVIA_SERBO_CROATIAN"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+        YUGOSLAVIA_SERBO_CROATIAN
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="value"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        String
+      </span>
+        value
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="fromValue(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+      <span class="sympad">fromValue</span>
+      <span class="normal">(String v)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>v</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="value()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">value</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="valueOf(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale</a>
+      </span>
+      <span class="sympad">valueOf</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="values()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/CurrencyLocale.html">CurrencyLocale[]</a>
+      </span>
+      <span class="sympad">values</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

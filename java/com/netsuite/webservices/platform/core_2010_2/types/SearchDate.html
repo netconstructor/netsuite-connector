@@ -1,0 +1,6872 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  SearchDate
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="">
+    	<li id="guide"><a href="../../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/ObjectFactory.html">ObjectFactory</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/AsyncStatusType.html">AsyncStatusType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/CalendarEventAttendeeResponse.html">CalendarEventAttendeeResponse</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/DeletedRecordType.html">DeletedRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/DurationUnit.html">DurationUnit</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetAllRecordType.html">GetAllRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetCustomizationType.html">GetCustomizationType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/GetSelectValueFilterOperator.html">GetSelectValueFilterOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeAuxRefType.html">InitializeAuxRefType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeRefType.html">InitializeRefType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/InitializeType.html">InitializeType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/RecordType.html">RecordType</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDateFieldOperator.html">SearchDateFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDoubleFieldOperator.html">SearchDoubleFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchEnumMultiSelectFieldOperator.html">SearchEnumMultiSelectFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchLongFieldOperator.html">SearchLongFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchMultiSelectFieldOperator.html">SearchMultiSelectFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchRecordType.html">SearchRecordType</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchStringFieldOperator.html">SearchStringFieldOperator</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchTextNumberFieldOperator.html">SearchTextNumberFieldOperator</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+  <a href="#enumconstants">Enums</a>
+  
+
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+  &#124; <a href="#inhfields">Inherited Fields</a>
+  
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+    final 
+    
+    enum
+<h1>SearchDate</h1>
+
+
+
+  
+  
+  
+
+  
+    extends Enum&lt;E&nbsp;extends&nbsp;Enum&lt;E&gt;&gt;<br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+        
+        <td colspan="3" class="jd-inheritance-class-cell">java.lang.Object</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="2" class="jd-inheritance-class-cell">java.lang.Enum&lt;E&nbsp;extends&nbsp;java.lang.Enum&lt;E&gt;&gt;</td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;</td>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+        
+        <td colspan="1" class="jd-inheritance-class-cell">com.netsuite.webservices.platform.core_2010_2.types.SearchDate</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p><p>Java class for SearchDate.
+ 
+ <p>The following schema fragment specifies the expected content contained within this class.
+ <p>
+ <pre>
+ &lt;simpleType name="SearchDate">
+   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+     &lt;enumeration value="fiscalHalfBeforeLast"/>
+     &lt;enumeration value="fiscalHalfBeforeLastToDate"/>
+     &lt;enumeration value="fiscalQuarterBeforeLast"/>
+     &lt;enumeration value="fiscalQuarterBeforeLastToDate"/>
+     &lt;enumeration value="fiscalYearBeforeLast"/>
+     &lt;enumeration value="fiscalYearBeforeLastToDate"/>
+     &lt;enumeration value="lastBusinessWeek"/>
+     &lt;enumeration value="lastFiscalHalf"/>
+     &lt;enumeration value="lastFiscalHalfOneYearAgo"/>
+     &lt;enumeration value="lastFiscalHalfToDate"/>
+     &lt;enumeration value="lastFiscalQuarter"/>
+     &lt;enumeration value="lastFiscalQuarterOneYearAgo"/>
+     &lt;enumeration value="lastFiscalQuarterToDate"/>
+     &lt;enumeration value="lastFiscalYear"/>
+     &lt;enumeration value="lastFiscalYearToDate"/>
+     &lt;enumeration value="lastMonth"/>
+     &lt;enumeration value="lastMonthOneQuarterAgo"/>
+     &lt;enumeration value="lastMonthOneYearAgo"/>
+     &lt;enumeration value="lastMonthToDate"/>
+     &lt;enumeration value="lastMonthTwoQuartersAgo"/>
+     &lt;enumeration value="lastMonthTwoYearsAgo"/>
+     &lt;enumeration value="lastQuarterTwoYearsAgo"/>
+     &lt;enumeration value="lastRollingHalf"/>
+     &lt;enumeration value="lastRollingQuarter"/>
+     &lt;enumeration value="lastRollingYear"/>
+     &lt;enumeration value="lastWeek"/>
+     &lt;enumeration value="lastWeekToDate"/>
+     &lt;enumeration value="monthBeforeLast"/>
+     &lt;enumeration value="monthBeforeLastToDate"/>
+     &lt;enumeration value="nextBusinessWeek"/>
+     &lt;enumeration value="nextFiscalHalf"/>
+     &lt;enumeration value="nextFiscalQuarter"/>
+     &lt;enumeration value="nextFiscalYear"/>
+     &lt;enumeration value="nextFourWeeks"/>
+     &lt;enumeration value="nextMonth"/>
+     &lt;enumeration value="nextOneHalf"/>
+     &lt;enumeration value="nextOneMonth"/>
+     &lt;enumeration value="nextOneQuarter"/>
+     &lt;enumeration value="nextOneWeek"/>
+     &lt;enumeration value="nextOneYear"/>
+     &lt;enumeration value="nextWeek"/>
+     &lt;enumeration value="oneYearBeforeLast"/>
+     &lt;enumeration value="previousMonthsLastFiscalHalf"/>
+     &lt;enumeration value="previousMonthsLastFiscalQuarter"/>
+     &lt;enumeration value="previousMonthsLastFiscalYear"/>
+     &lt;enumeration value="previousMonthsSameFiscalHalfLastYear"/>
+     &lt;enumeration value="previousMonthsSameFiscalQuartherLastFiscalYear"/>
+     &lt;enumeration value="previousMonthsThisFiscalHalf"/>
+     &lt;enumeration value="previousMonthsThisFiscalQuarter"/>
+     &lt;enumeration value="previousMonthsThisFiscalYear"/>
+     &lt;enumeration value="previousOneDay"/>
+     &lt;enumeration value="previousOneHalf"/>
+     &lt;enumeration value="previousOneMonth"/>
+     &lt;enumeration value="previousOneQuarter"/>
+     &lt;enumeration value="previousOneWeek"/>
+     &lt;enumeration value="previousOneYear"/>
+     &lt;enumeration value="previousQuartersLastFiscalYear"/>
+     &lt;enumeration value="previousQuartersThisFiscalYear"/>
+     &lt;enumeration value="previousRollingHalf"/>
+     &lt;enumeration value="previousRollingQuarter"/>
+     &lt;enumeration value="previousRollingYear"/>
+     &lt;enumeration value="sameDayFiscalQuarterBeforeLast"/>
+     &lt;enumeration value="sameDayFiscalYearBeforeLast"/>
+     &lt;enumeration value="sameDayLastFiscalQuarter"/>
+     &lt;enumeration value="sameDayLastFiscalYear"/>
+     &lt;enumeration value="sameDayLastMonth"/>
+     &lt;enumeration value="sameDayLastWeek"/>
+     &lt;enumeration value="sameDayMonthBeforeLast"/>
+     &lt;enumeration value="sameDayWeekBeforeLast"/>
+     &lt;enumeration value="sameFiscalQuarterFiscalYearBeforeLast"/>
+     &lt;enumeration value="sameHalfLastFiscalYearToDate"/>
+     &lt;enumeration value="sameMonthFiscalQuarterBeforeLast"/>
+     &lt;enumeration value="sameMonthFiscalYearBeforeLast"/>
+     &lt;enumeration value="sameMonthLastFiscalQuarter"/>
+     &lt;enumeration value="sameMonthLastFiscalQuarterToDate"/>
+     &lt;enumeration value="sameMonthLastFiscalYear"/>
+     &lt;enumeration value="sameMonthLastFiscalYearToDate"/>
+     &lt;enumeration value="sameQuarterLastFiscalYear"/>
+     &lt;enumeration value="sameQuarterLastFiscalYearToDate"/>
+     &lt;enumeration value="sameWeekFiscalYearBeforeLast"/>
+     &lt;enumeration value="sameWeekLastFiscalYear"/>
+     &lt;enumeration value="startOfLastBusinessWeek"/>
+     &lt;enumeration value="startOfLastFiscalHalf"/>
+     &lt;enumeration value="startOfLastFiscalQuarter"/>
+     &lt;enumeration value="startOfLastFiscalYear"/>
+     &lt;enumeration value="startOfLastHalfOneYearAgo"/>
+     &lt;enumeration value="startOfLastMonth"/>
+     &lt;enumeration value="startOfLastMonthOneQuarterAgo"/>
+     &lt;enumeration value="startOfLastMonthOneYearAgo"/>
+     &lt;enumeration value="startOfLastQuarterOneYearAgo"/>
+     &lt;enumeration value="startOfLastRollingHalf"/>
+     &lt;enumeration value="startOfLastRollingQuarter"/>
+     &lt;enumeration value="startOfLastRollingYear"/>
+     &lt;enumeration value="startOfLastWeek"/>
+     &lt;enumeration value="startOfNextBusinessWeek"/>
+     &lt;enumeration value="startOfNextFiscalHalf"/>
+     &lt;enumeration value="startOfNextFiscalQuarter"/>
+     &lt;enumeration value="startOfNextMonth"/>
+     &lt;enumeration value="startOfNextWeek"/>
+     &lt;enumeration value="startOfNextYear"/>
+     &lt;enumeration value="startOfPreviousRollingHalf"/>
+     &lt;enumeration value="startOfPreviousRollingQuarter"/>
+     &lt;enumeration value="startOfPreviousRollingYear"/>
+     &lt;enumeration value="startOfSameHalfLastFiscalYear"/>
+     &lt;enumeration value="startOfSameMonthLastFiscalQuarter"/>
+     &lt;enumeration value="startOfSameMonthLastFiscalYear"/>
+     &lt;enumeration value="startOfSameQuarterLastFiscalYear"/>
+     &lt;enumeration value="startOfTheHalfBeforeLast"/>
+     &lt;enumeration value="startOfTheMonthBeforeLast"/>
+     &lt;enumeration value="startOfTheQuarterBeforeLast"/>
+     &lt;enumeration value="startOfTheWeekBeforeLast"/>
+     &lt;enumeration value="startOfTheYearBeforeLast"/>
+     &lt;enumeration value="startOfThisBusinessWeek"/>
+     &lt;enumeration value="startOfThisFiscalHalf"/>
+     &lt;enumeration value="startOfThisFiscalQuarter"/>
+     &lt;enumeration value="startOfThisFiscalYear"/>
+     &lt;enumeration value="startOfThisMonth"/>
+     &lt;enumeration value="startOfThisWeek"/>
+     &lt;enumeration value="startOfThisYear"/>
+     &lt;enumeration value="thisBusinessWeek"/>
+     &lt;enumeration value="thisFiscalHalf"/>
+     &lt;enumeration value="thisFiscalHalfToDate"/>
+     &lt;enumeration value="thisFiscalQuarter"/>
+     &lt;enumeration value="thisFiscalQuarterToDate"/>
+     &lt;enumeration value="thisFiscalYear"/>
+     &lt;enumeration value="thisFiscalYearToDate"/>
+     &lt;enumeration value="thisMonth"/>
+     &lt;enumeration value="thisMonthToDate"/>
+     &lt;enumeration value="thisRollingHalf"/>
+     &lt;enumeration value="thisRollingQuarter"/>
+     &lt;enumeration value="thisRollingYear"/>
+     &lt;enumeration value="thisWeek"/>
+     &lt;enumeration value="thisWeekToDate"/>
+     &lt;enumeration value="thisYear"/>
+     &lt;enumeration value="threeMonthAgo"/>
+     &lt;enumeration value="threeQuartersAgo"/>
+     &lt;enumeration value="threeYearsAgo"/>
+     &lt;enumeration value="today"/>
+     &lt;enumeration value="tomorrow"/>
+     &lt;enumeration value="twoDaysAgo"/>
+     &lt;enumeration value="weekBeforeLast"/>
+     &lt;enumeration value="weekBeforeLastToDate"/>
+     &lt;enumeration value="yesterday"/>
+   &lt;/restriction>
+ &lt;/simpleType>
+ </pre>
+ 
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="enumconstants" class="jd-sumtable"><tr><th colspan="12">Enum Values</th></tr>
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_HALF_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_HALF_BEFORE_LAST_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_QUARTER_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_QUARTER_BEFORE_LAST_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">FISCAL_YEAR_BEFORE_LAST_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_HALF_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_HALF_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_QUARTER_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_QUARTER_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_FISCAL_YEAR_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH_ONE_QUARTER_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH_TWO_QUARTERS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_MONTH_TWO_YEARS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_QUARTER_TWO_YEARS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_ROLLING_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_ROLLING_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_ROLLING_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">LAST_WEEK_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">MONTH_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">MONTH_BEFORE_LAST_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_FOUR_WEEKS&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_ONE_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_ONE_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_ONE_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_ONE_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_ONE_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">NEXT_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">ONE_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_LAST_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_SAME_FISCAL_HALF_LAST_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_SAME_FISCAL_QUARTHER_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_THIS_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_THIS_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_MONTHS_THIS_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_DAY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ONE_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_QUARTERS_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_QUARTERS_THIS_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ROLLING_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ROLLING_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">PREVIOUS_ROLLING_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_FISCAL_QUARTER_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_FISCAL_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_LAST_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_LAST_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_MONTH_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_DAY_WEEK_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_FISCAL_QUARTER_FISCAL_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_HALF_LAST_FISCAL_YEAR_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_FISCAL_QUARTER_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_FISCAL_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_LAST_FISCAL_QUARTER_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_MONTH_LAST_FISCAL_YEAR_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_QUARTER_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_QUARTER_LAST_FISCAL_YEAR_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_WEEK_FISCAL_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">SAME_WEEK_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_HALF_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_MONTH_ONE_QUARTER_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_MONTH_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_QUARTER_ONE_YEAR_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_ROLLING_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_ROLLING_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_ROLLING_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_LAST_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_NEXT_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_PREVIOUS_ROLLING_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_PREVIOUS_ROLLING_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_PREVIOUS_ROLLING_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_SAME_HALF_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_SAME_MONTH_LAST_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_SAME_MONTH_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_SAME_QUARTER_LAST_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THE_HALF_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THE_MONTH_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THE_QUARTER_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THE_WEEK_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THE_YEAR_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">START_OF_THIS_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_BUSINESS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_HALF_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_QUARTER_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_FISCAL_YEAR_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_MONTH&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_MONTH_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_ROLLING_HALF&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_ROLLING_QUARTER&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_ROLLING_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_WEEK&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_WEEK_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THIS_YEAR&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THREE_MONTH_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THREE_QUARTERS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">THREE_YEARS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">TODAY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">TOMORROW&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">TWO_DAYS_AGO&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">WEEK_BEFORE_LAST&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">WEEK_BEFORE_LAST_TO_DATE&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-descrcol"><a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>&nbsp;</td>
+        <td class="jd-linkcol">YESTERDAY&nbsp;</td>
+        <td class="jd-descrcol" width="100%">&nbsp;</td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html#value">value</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="inhfields" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Fields</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-fields-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-fields-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From class
+java.lang.Enum
+<div id="inherited-fields-java.lang.Enum">
+  <div id="inherited-fields-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-fields-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          String</nobr></td>
+          <td class="jd-linkcol">name</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol"><nobr>
+          private
+          
+          final
+          int</nobr></td>
+          <td class="jd-linkcol">ordinal</td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html#fromValue(java.lang.String)">fromValue</a></span>(String v)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html#value()">value</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html#valueOf(java.lang.String)">valueOf</a></span>(String name)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            static
+            
+            <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate[]</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../../../../../com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html#values()">values</a></span>()</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Enum" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Enum-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Enum
+
+<div id="inherited-methods-java.lang.Enum">
+  <div id="inherited-methods-java.lang.Enum-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Enum-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(E arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;E&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getDeclaringClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">name</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">ordinal</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            &lt;T&nbsp;extends&nbsp;Enum&lt;T&gt;&gt;
+            T</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">valueOf</span>(Class&lt;T&gt; arg0, String arg1)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  java.lang.Object
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            Object</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(Object arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            Class&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            String</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Comparable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Comparable-trigger"
+          src="../../../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  java.lang.Comparable
+
+<div id="inherited-methods-java.lang.Comparable">
+  <div id="inherited-methods-java.lang.Comparable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Comparable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">compareTo</span>(T arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Enum Values</h2>
+
+
+
+
+<A NAME="FISCAL_HALF_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_HALF_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FISCAL_HALF_BEFORE_LAST_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_HALF_BEFORE_LAST_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FISCAL_QUARTER_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_QUARTER_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FISCAL_QUARTER_BEFORE_LAST_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_QUARTER_BEFORE_LAST_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FISCAL_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FISCAL_YEAR_BEFORE_LAST_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        FISCAL_YEAR_BEFORE_LAST_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_HALF_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_HALF_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_HALF_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_HALF_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_QUARTER_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_QUARTER_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_QUARTER_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_QUARTER_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_FISCAL_YEAR_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_FISCAL_YEAR_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH_ONE_QUARTER_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH_ONE_QUARTER_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH_TWO_QUARTERS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH_TWO_QUARTERS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_MONTH_TWO_YEARS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_MONTH_TWO_YEARS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_QUARTER_TWO_YEARS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_QUARTER_TWO_YEARS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_ROLLING_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_ROLLING_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_ROLLING_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_ROLLING_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_ROLLING_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_ROLLING_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="LAST_WEEK_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        LAST_WEEK_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MONTH_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        MONTH_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="MONTH_BEFORE_LAST_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        MONTH_BEFORE_LAST_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_FOUR_WEEKS"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_FOUR_WEEKS
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_ONE_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_ONE_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_ONE_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_ONE_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_ONE_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_ONE_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_ONE_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_ONE_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_ONE_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_ONE_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="NEXT_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        NEXT_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="ONE_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        ONE_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_LAST_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_LAST_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_SAME_FISCAL_HALF_LAST_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_SAME_FISCAL_HALF_LAST_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_SAME_FISCAL_QUARTHER_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_SAME_FISCAL_QUARTHER_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_THIS_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_THIS_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_THIS_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_THIS_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_MONTHS_THIS_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_MONTHS_THIS_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_DAY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_DAY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ONE_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ONE_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_QUARTERS_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_QUARTERS_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_QUARTERS_THIS_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_QUARTERS_THIS_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ROLLING_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ROLLING_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ROLLING_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ROLLING_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="PREVIOUS_ROLLING_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        PREVIOUS_ROLLING_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_FISCAL_QUARTER_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_FISCAL_QUARTER_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_FISCAL_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_FISCAL_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_LAST_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_LAST_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_LAST_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_LAST_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_MONTH_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_MONTH_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_DAY_WEEK_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_DAY_WEEK_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_FISCAL_QUARTER_FISCAL_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_FISCAL_QUARTER_FISCAL_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_HALF_LAST_FISCAL_YEAR_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_HALF_LAST_FISCAL_YEAR_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_FISCAL_QUARTER_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_FISCAL_QUARTER_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_FISCAL_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_FISCAL_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_LAST_FISCAL_QUARTER_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_LAST_FISCAL_QUARTER_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_MONTH_LAST_FISCAL_YEAR_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_MONTH_LAST_FISCAL_YEAR_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_QUARTER_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_QUARTER_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_QUARTER_LAST_FISCAL_YEAR_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_QUARTER_LAST_FISCAL_YEAR_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_WEEK_FISCAL_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_WEEK_FISCAL_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="SAME_WEEK_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        SAME_WEEK_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_HALF_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_HALF_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_MONTH_ONE_QUARTER_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_MONTH_ONE_QUARTER_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_MONTH_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_MONTH_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_QUARTER_ONE_YEAR_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_QUARTER_ONE_YEAR_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_ROLLING_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_ROLLING_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_ROLLING_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_ROLLING_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_ROLLING_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_ROLLING_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_LAST_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_LAST_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_NEXT_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_NEXT_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_PREVIOUS_ROLLING_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_PREVIOUS_ROLLING_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_PREVIOUS_ROLLING_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_PREVIOUS_ROLLING_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_PREVIOUS_ROLLING_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_PREVIOUS_ROLLING_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_SAME_HALF_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_SAME_HALF_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_SAME_MONTH_LAST_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_SAME_MONTH_LAST_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_SAME_MONTH_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_SAME_MONTH_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_SAME_QUARTER_LAST_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_SAME_QUARTER_LAST_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THE_HALF_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THE_HALF_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THE_MONTH_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THE_MONTH_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THE_QUARTER_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THE_QUARTER_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THE_WEEK_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THE_WEEK_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THE_YEAR_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THE_YEAR_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="START_OF_THIS_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        START_OF_THIS_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_BUSINESS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_BUSINESS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_HALF_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_HALF_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_QUARTER_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_QUARTER_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_FISCAL_YEAR_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_FISCAL_YEAR_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_MONTH"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_MONTH
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_MONTH_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_MONTH_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_ROLLING_HALF"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_ROLLING_HALF
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_ROLLING_QUARTER"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_ROLLING_QUARTER
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_ROLLING_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_ROLLING_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_WEEK"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_WEEK
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_WEEK_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_WEEK_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THIS_YEAR"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THIS_YEAR
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THREE_MONTH_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THREE_MONTH_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THREE_QUARTERS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THREE_QUARTERS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="THREE_YEARS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        THREE_YEARS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TODAY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        TODAY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TOMORROW"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        TOMORROW
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="TWO_DAYS_AGO"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        TWO_DAYS_AGO
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="WEEK_BEFORE_LAST"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        WEEK_BEFORE_LAST
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="WEEK_BEFORE_LAST_TO_DATE"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        WEEK_BEFORE_LAST_TO_DATE
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="YESTERDAY"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+        YESTERDAY
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<A NAME="value"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        private 
+         
+        final 
+        String
+      </span>
+        value
+    </h4>
+      <div class="api-level">
+        
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="fromValue(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+      <span class="sympad">fromValue</span>
+      <span class="normal">(String v)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>v</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="value()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        String
+      </span>
+      <span class="sympad">value</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="valueOf(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate</a>
+      </span>
+      <span class="sympad">valueOf</span>
+      <span class="normal">(String name)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>name</td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="values()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+         
+         
+        <a href="../../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/SearchDate.html">SearchDate[]</a>
+      </span>
+      <span class="sympad">values</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>

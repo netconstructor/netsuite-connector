@@ -1,0 +1,999 @@
+
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Documentation for Mule NetSuite Connector." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  com.netsuite.webservices.platform.common_2010_2
+
+
+| Mule NetSuite Connector
+
+</title>
+<link href="../../../../../../assets/mule-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/mule-developer-prettify.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/mule-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/mule-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Mule NetSuite Connector</span>
+    
+    <ul id="header-tabs" class="java">
+    	<li id="guide"><a href="../../../../../../guide/install.html">
+	    	<span class="en">Install Guide</span>
+    	</a></li>
+    	<li id="java"><a href="../../../../../../java/packages.html">
+	    	<span class="en">Java API</span>
+    	</a></li>
+    	<li id="mule"><a href="../../../../../../mule/modules.html">
+	    	<span class="en">Mule API</span>
+    	</a></li>
+    </ul>
+    </div>
+    <div id="headerRight">
+      <a href="http://www.mulesoft.com" tabindex="-1">
+      <img src="../../../../../../assets//images/mulesoft-logo-final.gif" alt="MuleSoft" border="0" id="mulesoftlogo"></a><br/>
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../java/packages.html"  >Package Index</a> |
+                <a href="../../../../../../java/classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/activities/scheduling_2010_2/types/package-summary.html">com.netsuite.webservices.activities.scheduling_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/documents/filecabinet_2010_2/types/package-summary.html">com.netsuite.webservices.documents.filecabinet_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/package-summary.html">com.netsuite.webservices.general.communication_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/general/communication_2010_2/types/package-summary.html">com.netsuite.webservices.general.communication_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/accounting_2010_2/types/package-summary.html">com.netsuite.webservices.lists.accounting_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/package-summary.html">com.netsuite.webservices.lists.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/employees_2010_2/types/package-summary.html">com.netsuite.webservices.lists.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/marketing_2010_2/types/package-summary.html">com.netsuite.webservices.lists.marketing_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/relationships_2010_2/types/package-summary.html">com.netsuite.webservices.lists.relationships_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/package-summary.html">com.netsuite.webservices.lists.support_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/support_2010_2/types/package-summary.html">com.netsuite.webservices.lists.support_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/lists/website_2010_2/package-summary.html">com.netsuite.webservices.lists.website_2010_2</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/package-summary.html">com.netsuite.webservices.platform.common_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/types/package-summary.html">com.netsuite.webservices.platform.common_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/package-summary.html">com.netsuite.webservices.platform.core_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/core_2010_2/types/package-summary.html">com.netsuite.webservices.platform.core_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/package-summary.html">com.netsuite.webservices.platform.faults_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/faults_2010_2/types/package-summary.html">com.netsuite.webservices.platform.faults_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform/messages_2010_2/package-summary.html">com.netsuite.webservices.platform.messages_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/platform_2010_2/package-summary.html">com.netsuite.webservices.platform_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/package-summary.html">com.netsuite.webservices.setup.customization_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/setup/customization_2010_2/types/package-summary.html">com.netsuite.webservices.setup.customization_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/bank_2010_2/package-summary.html">com.netsuite.webservices.transactions.bank_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/customers_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.customers_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/employees_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.employees_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/financial_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.financial_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/general_2010_2/package-summary.html">com.netsuite.webservices.transactions.general_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/inventory_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.inventory_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/purchases_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.purchases_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/com/netsuite/webservices/transactions/sales_2010_2/types/package-summary.html">com.netsuite.webservices.transactions.sales_2010_2.types</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/package-summary.html">org.mule.module.netsuite</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/package-summary.html">org.mule.module.netsuite.api</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/annotation/package-summary.html">org.mule.module.netsuite.api.annotation</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/entity/package-summary.html">org.mule.module.netsuite.api.model.entity</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/package-summary.html">org.mule.module.netsuite.api.model.expression</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/date/package-summary.html">org.mule.module.netsuite.api.model.expression.date</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/model/expression/filter/package-summary.html">org.mule.module.netsuite.api.model.expression.filter</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/paging/package-summary.html">org.mule.module.netsuite.api.paging</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/api/util/package-summary.html">org.mule.module.netsuite.api.util</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/package-summary.html">org.mule.module.netsuite.config</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../java/org/mule/module/netsuite/config/spring/package-summary.html">org.mule.module.netsuite.config.spring</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountingPeriodSearchBasic.html">AccountingPeriodSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountingPeriodSearchRowBasic.html">AccountingPeriodSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountSearchBasic.html">AccountSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountSearchRowBasic.html">AccountSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BillAddress.html">BillAddress</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BinSearchBasic.html">BinSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BinSearchRowBasic.html">BinSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BudgetSearchBasic.html">BudgetSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BudgetSearchRowBasic.html">BudgetSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CalendarEventSearchBasic.html">CalendarEventSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CalendarEventSearchRowBasic.html">CalendarEventSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CampaignSearchBasic.html">CampaignSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CampaignSearchRowBasic.html">CampaignSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ClassificationSearchBasic.html">ClassificationSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ClassificationSearchRowBasic.html">ClassificationSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactCategorySearchBasic.html">ContactCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactCategorySearchRowBasic.html">ContactCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactRoleSearchBasic.html">ContactRoleSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactRoleSearchRowBasic.html">ContactRoleSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactSearchBasic.html">ContactSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactSearchRowBasic.html">ContactSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerCategorySearchBasic.html">CustomerCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerCategorySearchRowBasic.html">CustomerCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerSearchBasic.html">CustomerSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerSearchRowBasic.html">CustomerSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerStatusSearchBasic.html">CustomerStatusSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerStatusSearchRowBasic.html">CustomerStatusSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomListSearchBasic.html">CustomListSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomListSearchRowBasic.html">CustomListSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomRecordSearchBasic.html">CustomRecordSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomRecordSearchRowBasic.html">CustomRecordSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/DepartmentSearchBasic.html">DepartmentSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/DepartmentSearchRowBasic.html">DepartmentSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EmployeeSearchBasic.html">EmployeeSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EmployeeSearchRowBasic.html">EmployeeSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntityGroupSearchBasic.html">EntityGroupSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntityGroupSearchRowBasic.html">EntityGroupSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntitySearchBasic.html">EntitySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntitySearchRowBasic.html">EntitySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ExpenseCategorySearchBasic.html">ExpenseCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ExpenseCategorySearchRowBasic.html">ExpenseCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FileSearchBasic.html">FileSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FileSearchRowBasic.html">FileSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FolderSearchBasic.html">FolderSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FolderSearchRowBasic.html">FolderSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GiftCertificateSearchBasic.html">GiftCertificateSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GiftCertificateSearchRowBasic.html">GiftCertificateSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GroupMemberSearchBasic.html">GroupMemberSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/IssueSearchBasic.html">IssueSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/IssueSearchRowBasic.html">IssueSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ItemSearchBasic.html">ItemSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ItemSearchRowBasic.html">ItemSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobSearchBasic.html">JobSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobSearchRowBasic.html">JobSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobStatusSearchBasic.html">JobStatusSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobStatusSearchRowBasic.html">JobStatusSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobTypeSearchBasic.html">JobTypeSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobTypeSearchRowBasic.html">JobTypeSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LandedCost.html">LandedCost</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LocationSearchBasic.html">LocationSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LocationSearchRowBasic.html">LocationSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/MessageSearchBasic.html">MessageSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/MessageSearchRowBasic.html">MessageSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteSearchBasic.html">NoteSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteSearchRowBasic.html">NoteSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteTypeSearchBasic.html">NoteTypeSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteTypeSearchRowBasic.html">NoteTypeSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ObjectFactory.html">ObjectFactory</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OpportunitySearchBasic.html">OpportunitySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OpportunitySearchRowBasic.html">OpportunitySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OriginatingLeadSearchBasic.html">OriginatingLeadSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OriginatingLeadSearchRowBasic.html">OriginatingLeadSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerCategorySearchBasic.html">PartnerCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerCategorySearchRowBasic.html">PartnerCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/Partners.html">Partners</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerSearchBasic.html">PartnerSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerSearchRowBasic.html">PartnerSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PaymentMethodSearchBasic.html">PaymentMethodSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PaymentMethodSearchRowBasic.html">PaymentMethodSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PhoneCallSearchBasic.html">PhoneCallSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PhoneCallSearchRowBasic.html">PhoneCallSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PresentationItem.html">PresentationItem</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PriceLevelSearchBasic.html">PriceLevelSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PriceLevelSearchRowBasic.html">PriceLevelSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskAssignmentSearchBasic.html">ProjectTaskAssignmentSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskAssignmentSearchRowBasic.html">ProjectTaskAssignmentSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskSearchBasic.html">ProjectTaskSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskSearchRowBasic.html">ProjectTaskSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PromotionCodeSearchBasic.html">PromotionCodeSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PromotionCodeSearchRowBasic.html">PromotionCodeSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SalesRoleSearchBasic.html">SalesRoleSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SalesRoleSearchRowBasic.html">SalesRoleSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ShipAddress.html">ShipAddress</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SiteCategorySearchBasic.html">SiteCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SiteCategorySearchRowBasic.html">SiteCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SolutionSearchBasic.html">SolutionSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SolutionSearchRowBasic.html">SolutionSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SubsidiarySearchBasic.html">SubsidiarySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SubsidiarySearchRowBasic.html">SubsidiarySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SupportCaseSearchBasic.html">SupportCaseSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SupportCaseSearchRowBasic.html">SupportCaseSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TaskSearchBasic.html">TaskSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TaskSearchRowBasic.html">TaskSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TermSearchBasic.html">TermSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TermSearchRowBasic.html">TermSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TimeBillSearchBasic.html">TimeBillSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TimeBillSearchRowBasic.html">TimeBillSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TopicSearchBasic.html">TopicSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TopicSearchRowBasic.html">TopicSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TransactionSearchBasic.html">TransactionSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TransactionSearchRowBasic.html">TransactionSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/UnitsTypeSearchBasic.html">UnitsTypeSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/UnitsTypeSearchRowBasic.html">UnitsTypeSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorCategorySearchBasic.html">VendorCategorySearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorCategorySearchRowBasic.html">VendorCategorySearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorSearchBasic.html">VendorSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorSearchRowBasic.html">VendorSearchRowBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/WinLossReasonSearchBasic.html">WinLossReasonSearchBasic</a></li>
+        <li class="api apilevel-"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/WinLossReasonSearchRowBasic.html">WinLossReasonSearchRowBasic</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>com.netsuite.webservices.platform.common_2010_2</h1>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+
+
+  <div class="jd-descr">
+    Mule NetSuite Cloud Connector
+
+ Copyright (c) MuleSoft, Inc.  All rights reserved.  http://www.mulesoft.com
+
+ The software in this package is published under the terms of the CPAL v1.0
+ license, a copy of which has been included with this distribution in the
+ LICENSE.txt file.
+
+  </div>
+
+
+
+
+
+  
+
+
+  
+    <h2>Classes</h2>
+    <div class="jd-sumtable">
+    
+  <table class="jd-sumtable-expando">
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountingPeriodSearchBasic.html">AccountingPeriodSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for AccountingPeriodSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountingPeriodSearchRowBasic.html">AccountingPeriodSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for AccountingPeriodSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountSearchBasic.html">AccountSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for AccountSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/AccountSearchRowBasic.html">AccountSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for AccountSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BillAddress.html">BillAddress</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for BillAddress complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BinSearchBasic.html">BinSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for BinSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BinSearchRowBasic.html">BinSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for BinSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BudgetSearchBasic.html">BudgetSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for BudgetSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/BudgetSearchRowBasic.html">BudgetSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for BudgetSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CalendarEventSearchBasic.html">CalendarEventSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CalendarEventSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CalendarEventSearchRowBasic.html">CalendarEventSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CalendarEventSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CampaignSearchBasic.html">CampaignSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CampaignSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CampaignSearchRowBasic.html">CampaignSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CampaignSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ClassificationSearchBasic.html">ClassificationSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ClassificationSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ClassificationSearchRowBasic.html">ClassificationSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ClassificationSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactCategorySearchBasic.html">ContactCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactCategorySearchRowBasic.html">ContactCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactRoleSearchBasic.html">ContactRoleSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactRoleSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactRoleSearchRowBasic.html">ContactRoleSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactRoleSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactSearchBasic.html">ContactSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ContactSearchRowBasic.html">ContactSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ContactSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerCategorySearchBasic.html">CustomerCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerCategorySearchRowBasic.html">CustomerCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerSearchBasic.html">CustomerSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerSearchRowBasic.html">CustomerSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerStatusSearchBasic.html">CustomerStatusSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerStatusSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomerStatusSearchRowBasic.html">CustomerStatusSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomerStatusSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomListSearchBasic.html">CustomListSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomListSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomListSearchRowBasic.html">CustomListSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomListSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomRecordSearchBasic.html">CustomRecordSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomRecordSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/CustomRecordSearchRowBasic.html">CustomRecordSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for CustomRecordSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/DepartmentSearchBasic.html">DepartmentSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for DepartmentSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/DepartmentSearchRowBasic.html">DepartmentSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for DepartmentSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EmployeeSearchBasic.html">EmployeeSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EmployeeSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EmployeeSearchRowBasic.html">EmployeeSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EmployeeSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntityGroupSearchBasic.html">EntityGroupSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EntityGroupSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntityGroupSearchRowBasic.html">EntityGroupSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EntityGroupSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntitySearchBasic.html">EntitySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EntitySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/EntitySearchRowBasic.html">EntitySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for EntitySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ExpenseCategorySearchBasic.html">ExpenseCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ExpenseCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ExpenseCategorySearchRowBasic.html">ExpenseCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ExpenseCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FileSearchBasic.html">FileSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for FileSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FileSearchRowBasic.html">FileSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for FileSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FolderSearchBasic.html">FolderSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for FolderSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/FolderSearchRowBasic.html">FolderSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for FolderSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GiftCertificateSearchBasic.html">GiftCertificateSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for GiftCertificateSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GiftCertificateSearchRowBasic.html">GiftCertificateSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for GiftCertificateSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/GroupMemberSearchBasic.html">GroupMemberSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for GroupMemberSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/IssueSearchBasic.html">IssueSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for IssueSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/IssueSearchRowBasic.html">IssueSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for IssueSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ItemSearchBasic.html">ItemSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ItemSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ItemSearchRowBasic.html">ItemSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ItemSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobSearchBasic.html">JobSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobSearchRowBasic.html">JobSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobStatusSearchBasic.html">JobStatusSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobStatusSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobStatusSearchRowBasic.html">JobStatusSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobStatusSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobTypeSearchBasic.html">JobTypeSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobTypeSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/JobTypeSearchRowBasic.html">JobTypeSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for JobTypeSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LandedCost.html">LandedCost</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for LandedCost complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LocationSearchBasic.html">LocationSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for LocationSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/LocationSearchRowBasic.html">LocationSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for LocationSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/MessageSearchBasic.html">MessageSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for MessageSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/MessageSearchRowBasic.html">MessageSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for MessageSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteSearchBasic.html">NoteSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for NoteSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteSearchRowBasic.html">NoteSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for NoteSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteTypeSearchBasic.html">NoteTypeSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for NoteTypeSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/NoteTypeSearchRowBasic.html">NoteTypeSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for NoteTypeSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ObjectFactory.html">ObjectFactory</a></td>
+              <td class="jd-descrcol" width="100%">This object contains factory methods for each 
+ Java content interface and Java element interface 
+ generated in the com.netsuite.webservices.platform.common_2010_2 package.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OpportunitySearchBasic.html">OpportunitySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for OpportunitySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OpportunitySearchRowBasic.html">OpportunitySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for OpportunitySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OriginatingLeadSearchBasic.html">OriginatingLeadSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for OriginatingLeadSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/OriginatingLeadSearchRowBasic.html">OriginatingLeadSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for OriginatingLeadSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerCategorySearchBasic.html">PartnerCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PartnerCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerCategorySearchRowBasic.html">PartnerCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PartnerCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/Partners.html">Partners</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for Partners complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerSearchBasic.html">PartnerSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PartnerSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PartnerSearchRowBasic.html">PartnerSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PartnerSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PaymentMethodSearchBasic.html">PaymentMethodSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PaymentMethodSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PaymentMethodSearchRowBasic.html">PaymentMethodSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PaymentMethodSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PhoneCallSearchBasic.html">PhoneCallSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PhoneCallSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PhoneCallSearchRowBasic.html">PhoneCallSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PhoneCallSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PresentationItem.html">PresentationItem</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PresentationItem complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PriceLevelSearchBasic.html">PriceLevelSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PriceLevelSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PriceLevelSearchRowBasic.html">PriceLevelSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PriceLevelSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskAssignmentSearchBasic.html">ProjectTaskAssignmentSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ProjectTaskAssignmentSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskAssignmentSearchRowBasic.html">ProjectTaskAssignmentSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ProjectTaskAssignmentSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskSearchBasic.html">ProjectTaskSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ProjectTaskSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ProjectTaskSearchRowBasic.html">ProjectTaskSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ProjectTaskSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PromotionCodeSearchBasic.html">PromotionCodeSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PromotionCodeSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/PromotionCodeSearchRowBasic.html">PromotionCodeSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for PromotionCodeSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SalesRoleSearchBasic.html">SalesRoleSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SalesRoleSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SalesRoleSearchRowBasic.html">SalesRoleSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SalesRoleSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/ShipAddress.html">ShipAddress</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for ShipAddress complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SiteCategorySearchBasic.html">SiteCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SiteCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SiteCategorySearchRowBasic.html">SiteCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SiteCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SolutionSearchBasic.html">SolutionSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SolutionSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SolutionSearchRowBasic.html">SolutionSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SolutionSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SubsidiarySearchBasic.html">SubsidiarySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SubsidiarySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SubsidiarySearchRowBasic.html">SubsidiarySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SubsidiarySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SupportCaseSearchBasic.html">SupportCaseSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SupportCaseSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/SupportCaseSearchRowBasic.html">SupportCaseSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for SupportCaseSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TaskSearchBasic.html">TaskSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TaskSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TaskSearchRowBasic.html">TaskSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TaskSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TermSearchBasic.html">TermSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TermSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TermSearchRowBasic.html">TermSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TermSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TimeBillSearchBasic.html">TimeBillSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TimeBillSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TimeBillSearchRowBasic.html">TimeBillSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TimeBillSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TopicSearchBasic.html">TopicSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TopicSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TopicSearchRowBasic.html">TopicSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TopicSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TransactionSearchBasic.html">TransactionSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TransactionSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/TransactionSearchRowBasic.html">TransactionSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for TransactionSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/UnitsTypeSearchBasic.html">UnitsTypeSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for UnitsTypeSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/UnitsTypeSearchRowBasic.html">UnitsTypeSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for UnitsTypeSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorCategorySearchBasic.html">VendorCategorySearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for VendorCategorySearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorCategorySearchRowBasic.html">VendorCategorySearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for VendorCategorySearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorSearchBasic.html">VendorSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for VendorSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/VendorSearchRowBasic.html">VendorSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for VendorSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class=" api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/WinLossReasonSearchBasic.html">WinLossReasonSearchBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for WinLossReasonSearchBasic complex type.&nbsp;</td>
+          </tr>
+        <tr class="alt-color api apilevel-" >
+              <td class="jd-linkcol"><a href="../../../../../../java/com/netsuite/webservices/platform/common_2010_2/WinLossReasonSearchRowBasic.html">WinLossReasonSearchRowBasic</a></td>
+              <td class="jd-descrcol" width="100%"><p>Java class for WinLossReasonSearchRowBasic complex type.&nbsp;</td>
+          </tr>
+  </table>
+    </div>
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+<div id="footer">
+Generated by <a href="http://www.mulesoft.com/devkit">Mule DevKit</a>. Document generation technology based on <a href="http://code.google.com/p/doclava/">Google's Doclava</a>.
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div><!-- doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize mule-developer-docs.js */
+</script>
+
+</body>
+</html>
